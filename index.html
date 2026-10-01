@@ -34,7 +34,7 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="pulse"></span> Undergraduate researcher · AI &amp; algorithms</p>
           <h1>Yao Chunfan <span>姚俊帆</span></h1>
-          <p class="hero-lede">I build benchmarks, agents, and verification infrastructure for hard combinatorial reasoning.</p>
+          <p class="hero-lede">I build evaluation and verification infrastructure for coding and research agents.</p>
           <p class="hero-context">B.Eng. student in Artificial Intelligence at HKUST(GZ), currently a visiting undergraduate at UC Berkeley.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#research">Explore my research</a>
@@ -103,8 +103,8 @@
           <h2>Making intelligent systems answerable to evidence.</h2>
         </div>
         <div class="about-copy">
-          <p>I am a rising junior in Artificial Intelligence at HKUST(GZ), visiting UC Berkeley in Fall 2026. My work sits at the intersection of LLM reasoning, agentic systems, rigorous evaluation, and combinatorial problem-solving.</p>
-          <p>I am especially interested in systems whose outputs can be checked independently instead of accepted on plausibility alone. That has led me from benchmark and certificate-verifier design toward a growing interest in formal specifications and machine-checkable verification. I am currently building the foundations to explore formal methods more deeply.</p>
+          <p>I am an undergraduate AI researcher at HKUST(GZ), visiting UC Berkeley in Fall 2026. My work connects LLM evaluation, executable verifiers, trustworthy research-agent workflows, and graph-search methods for combinatorial optimization.</p>
+          <p>I am especially interested in systems whose outputs can be checked independently instead of accepted on plausibility alone. My current work uses certificate-based verification, independent review, and explicit assurance gates. Formal specifications and machine-checkable proofs are a research direction I am actively preparing to explore more deeply.</p>
         </div>
       </div>
     </section>
@@ -123,13 +123,13 @@
           <article class="research-card featured">
             <p class="card-number">01</p>
             <h3>Reliable coding &amp; research agents</h3>
-            <p>Evaluation systems for agents working on reasoning-heavy code: controlled task extraction, structured prompting, cost-aware metrics, and independent checks of candidate discoveries.</p>
+            <p>Evaluation systems for agents working on reasoning-heavy code: SWE-style and mini-SWE-agent runners, controlled task extraction, reproducible trajectories, cost-aware metrics, and independent checks of candidate discoveries.</p>
             <div class="tag-row"><span>LLM agents</span><span>Benchmarks</span><span>Evaluation</span></div>
           </article>
           <article class="research-card">
             <p class="card-number">02</p>
             <h3>Verifiers &amp; formal methods</h3>
-            <p>Certificate-based verification today; formal specifications and machine-checkable proofs as an emerging research interest. I am interested in how code, specs, and proofs can reinforce one another.</p>
+            <p>Executable certificate verification today; no-shared-code checks, cold-context review, and optional formalization as explicit assurance gates. Formal specifications and machine-checkable proofs remain a growing research interest.</p>
             <div class="tag-row"><span>Verification</span><span>Specifications</span></div>
           </article>
           <article class="research-card">
@@ -157,7 +157,7 @@
             <div class="project-meta"><span>Research infrastructure</span><span>2025–2026</span></div>
             <div class="project-body">
               <h3>Problem Reductions Benchmark</h3>
-              <p>An SWE-bench-inspired evaluation harness for finding subtle logical bugs in combinatorial reduction rules. I built automated instance extraction, structured agent prompting, independent certificate verification through the <code>pred</code> CLI, and the cost-aware <code>bugs/Ktok</code> metric.</p>
+              <p>An evaluation harness for finding subtle logical bugs in combinatorial reduction rules. I developed the initial SWE-style and mini-SWE-agent runners, implemented the <code>pred</code>-based verifier and certificate pipeline, and added an AgentRunner interface, concurrent scheduling, trajectory archiving, and 99 automated tests. The benchmark reports reproducible <code>bugs/Ktok</code> and <code>bugs/dollar</code> metrics.</p>
               <a class="project-link" href="https://github.com/CodingThrust/problem-reductions-benchmark" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
             </div>
             <div class="project-tech"><span>Python</span><span>LLM evaluation</span><span>Verifiers</span></div>
@@ -174,13 +174,12 @@
           </article>
 
           <article class="project">
-            <div class="project-meta"><span>Course project</span><span>2025</span></div>
+            <div class="project-meta"><span>Research workflow design</span><span>2026</span></div>
             <div class="project-body">
-              <h3>F5-TTS: Few-shot Mandarin voice cloning</h3>
-              <p>A LoRA-based adaptation pipeline for Mandarin child-voice cloning, including Whisper transcription of 220 audio files, a hyperparameter sweep, and evaluation with PESQ, STOI, DNSMOS, CSIG, CBAK, and COVL.</p>
-              <a class="project-link" href="https://github.com/Ferrari-72/F5TTS-Child-Voice-Finetune" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+              <h3>AutoResearch for Reduction-Rule Discovery</h3>
+              <p>A verify-first agentic pipeline built around fixed polynomial-time F/G contracts and at least 100 independently labeled instances before generation. The workflow preserves counterexamples across propose-test-diagnose rounds and separates no-shared-code verification, cold-context review, and optional Lean formalization into explicit assurance gates.</p>
             </div>
-            <div class="project-tech"><span>PyTorch</span><span>LoRA</span><span>Speech</span></div>
+            <div class="project-tech"><span>Research agents</span><span>Independent review</span><span>Verify-first design</span></div>
           </article>
         </div>
       </div>
@@ -195,19 +194,27 @@
         </div>
         <div class="timeline">
           <article class="timeline-item">
-            <div class="timeline-date">2025–present</div>
+            <div class="timeline-date">2025–2026</div>
             <div>
-              <h3>Undergraduate Research Assistant</h3>
-              <p class="timeline-place">Quantum Computing &amp; Graph Optimization Lab · Prof. Jinguo Liu · HKUST</p>
-              <p>Co-first author on a manuscript in preparation for <em>Physical Review X Quantum</em> on unit-weight gadgets for triangular Rydberg lattices; contributed theoretical observations and core search and verification algorithms.</p>
+              <h3>LLM Bug-Finding Benchmark</h3>
+              <p class="timeline-place">Evaluation &amp; Verification · Prof. Jinguo Liu’s Group · HKUST(GZ)</p>
+              <p>Built agent runners, executable verifiers, reproducible scheduling and trajectory infrastructure, automated tests, and cost-aware metrics for evaluating logical bug discovery in combinatorial reduction code.</p>
             </div>
           </article>
           <article class="timeline-item">
-            <div class="timeline-date">2025–2026</div>
+            <div class="timeline-date">2026</div>
             <div>
-              <h3>Research Contributor</h3>
-              <p class="timeline-place">LLM Combinatorial Reasoning Benchmark · Prof. Jinguo Liu’s Group</p>
-              <p>Designed evaluation infrastructure for measuring how efficiently language models find logical errors in combinatorial reduction code.</p>
+              <h3>AutoResearch for Reduction-Rule Discovery</h3>
+              <p class="timeline-place">Research Workflow Design · Trustworthy Research Agents</p>
+              <p>Designed a verify-first pipeline that preserves counterexamples across iterative discovery and separates independent verification, cold-context review, and optional formalization into assurance gates.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2025–present</div>
+            <div>
+              <h3>Undergraduate Research Assistant</h3>
+              <p class="timeline-place">Quantum Computing &amp; Graph Optimization Lab · Prof. Jinguo Liu · HKUST(GZ)</p>
+              <p>Co-first author on a manuscript in preparation for submission to <em>PRX Quantum</em>. Proposed a tensor-preserving vertex-split decomposition and implemented certification and search infrastructure supporting 5.6 billion candidates.</p>
             </div>
           </article>
           <article class="timeline-item">
@@ -215,7 +222,7 @@
             <div>
               <h3>Solutions Engineer Intern</h3>
               <p class="timeline-place">Hikvision · Hangzhou Headquarters</p>
-              <p>Contributed to pre-sales technical solution drafting for smart-city AI projects and gained exposure to production deep-learning requirements.</p>
+              <p>Supported pre-sales solution design for smart-city AI deployments by translating client requirements into system architectures, integration documents, and technical demonstrations of production video-analytics pipelines.</p>
             </div>
           </article>
         </div>
@@ -230,10 +237,10 @@
         </div>
         <div class="education-cards">
           <article>
-            <div class="edu-topline"><span>2024–present</span><span>Hong Kong</span></div>
+            <div class="edu-topline"><span>2024–present</span><span>Guangzhou, China</span></div>
             <h3>The Hong Kong University of Science and Technology (Guangzhou)</h3>
             <p>B.Eng. in Artificial Intelligence</p>
-            <p class="edu-detail">Coursework includes Algorithms &amp; Data Structures, Machine Learning, Neural Networks, Probability Theory, Linear Algebra, and Quantum Computing.</p>
+            <p class="edu-detail">Research and coursework spanning artificial intelligence, algorithms, machine learning, and optimization.</p>
           </article>
           <article>
             <div class="edu-topline"><span>Fall 2026</span><span>Berkeley, CA</span></div>
@@ -250,8 +257,8 @@
         <p class="section-kicker">Skills</p>
         <div class="skills-grid">
           <div><h3>Languages &amp; tools</h3><p>Python · Julia · Rust (reading) · Git · Linux/CLI · LaTeX</p></div>
-          <div><h3>ML &amp; agents</h3><p>PyTorch · Transformers · LoRA · Diffusion models · LLM evaluation &amp; prompting</p></div>
-          <div><h3>Algorithms &amp; theory</h3><p>Combinatorial optimization · NP-hard reductions · Tensor networks · Graph algorithms · MIS/QUBO</p></div>
+          <div><h3>Agent evaluation</h3><p>LLM evaluation harnesses · Executable verifiers · Benchmark design · RAG/context retrieval</p></div>
+          <div><h3>Methods</h3><p>Combinatorial optimization · Graph algorithms · PyTorch · Transformers · Experiment automation</p></div>
         </div>
       </div>
     </section>
@@ -275,7 +282,7 @@
   <footer>
     <div class="shell footer-inner">
       <p>© 2026 Yao Chunfan</p>
-      <p>Berkeley, CA · Hong Kong</p>
+      <p>Berkeley, CA · Guangzhou, China</p>
     </div>
   </footer>
 </body>
