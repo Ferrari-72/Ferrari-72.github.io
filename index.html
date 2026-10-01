@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yao Chunfan is an undergraduate researcher working on LLM agents, evaluation, verifiers, and combinatorial optimization.">
+  <meta name="theme-color" content="#08111f">
+  <title>Yao Chunfan | Undergraduate Researcher</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308111f'/%3E%3Cpath d='M15 18h9l8 13 8-13h9L36 39v9h-8v-9z' fill='%237ce7d4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="#top" aria-label="Yao Chunfan, home">
+        <span class="wordmark-mark">YC</span>
+        <span>Yao Chunfan</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-cv" href="resume.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse"></span> Undergraduate researcher · AI &amp; algorithms</p>
+          <h1>Yao Chunfan <span>姚俊帆</span></h1>
+          <p class="hero-lede">I build benchmarks, agents, and verification infrastructure for hard combinatorial reasoning.</p>
+          <p class="hero-context">B.Eng. student in Artificial Intelligence at HKUST(GZ), currently a visiting undergraduate at UC Berkeley.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#research">Explore my research</a>
+            <a class="button button-secondary" href="resume.pdf" target="_blank" rel="noopener">View CV</a>
+          </div>
+          <ul class="quick-facts" aria-label="Current focus">
+            <li>LLM &amp; coding agents</li>
+            <li>Evaluation &amp; verifiers</li>
+            <li>Combinatorial optimization</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-label="Research workflow: agent output passes through independent verification before becoming a trusted result">
+          <div class="visual-label">VERIFY-FIRST RESEARCH</div>
+          <svg viewBox="0 0 540 430" role="img" aria-labelledby="workflow-title workflow-desc">
+            <title id="workflow-title">Verify-first agent workflow</title>
+            <desc id="workflow-desc">A coding or research agent produces a candidate result, which is checked by a certificate verifier before becoming a trusted result. Formalization is a longer-term research direction.</desc>
+            <defs>
+              <linearGradient id="line" x1="0" x2="1">
+                <stop offset="0" stop-color="#7ce7d4" stop-opacity=".25"/>
+                <stop offset=".55" stop-color="#7ce7d4"/>
+                <stop offset="1" stop-color="#67a9ff"/>
+              </linearGradient>
+            </defs>
+            <path class="flow-line" d="M108 102 C210 102 208 214 300 214 S380 326 455 326"/>
+            <path class="branch-line" d="M300 214 C368 214 398 130 455 102"/>
+            <g class="node node-agent" transform="translate(34 58)">
+              <rect width="150" height="88" rx="18"/>
+              <circle cx="28" cy="27" r="7"/>
+              <text x="28" y="57">AGENT</text>
+              <text class="node-sub" x="28" y="75">candidate output</text>
+            </g>
+            <g class="node node-verify" transform="translate(222 170)">
+              <rect width="160" height="88" rx="18"/>
+              <path d="M28 20l10 5v9c0 8-5 14-10 17-5-3-10-9-10-17v-9z"/>
+              <text x="51" y="37">VERIFIER</text>
+              <text class="node-sub" x="28" y="67">independent check</text>
+            </g>
+            <g class="node node-formal" transform="translate(390 58)">
+              <rect width="116" height="88" rx="18"/>
+              <text x="22" y="38">FORMAL</text>
+              <text class="node-sub" x="22" y="60">research interest</text>
+            </g>
+            <g class="node node-result" transform="translate(390 282)">
+              <rect width="116" height="88" rx="18"/>
+              <path d="M22 29l8 8 15-18"/>
+              <text x="22" y="59">TRUSTED</text>
+              <text class="node-sub" x="22" y="76">result</text>
+            </g>
+            <text class="flow-note" x="208" y="92">generate</text>
+            <text class="flow-note" x="392" y="251">certify</text>
+          </svg>
+          <div class="visual-footer">
+            <span>01 / Generate</span>
+            <span>02 / Verify</span>
+            <span>03 / Trust</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell split-intro">
+        <div>
+          <p class="section-kicker">About</p>
+          <h2>Making intelligent systems answerable to evidence.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I am a rising junior in Artificial Intelligence at HKUST(GZ), visiting UC Berkeley in Fall 2026. My work sits at the intersection of LLM reasoning, agentic systems, rigorous evaluation, and combinatorial problem-solving.</p>
+          <p>I am especially interested in systems whose outputs can be checked independently instead of accepted on plausibility alone. That has led me from benchmark and certificate-verifier design toward a growing interest in formal specifications and machine-checkable verification. I am currently building the foundations to explore formal methods more deeply.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="research">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Research</p>
+            <h2>Current directions</h2>
+          </div>
+          <p>Problems I am actively working on—or preparing to pursue next.</p>
+        </div>
+
+        <div class="research-grid">
+          <article class="research-card featured">
+            <p class="card-number">01</p>
+            <h3>Reliable coding &amp; research agents</h3>
+            <p>Evaluation systems for agents working on reasoning-heavy code: controlled task extraction, structured prompting, cost-aware metrics, and independent checks of candidate discoveries.</p>
+            <div class="tag-row"><span>LLM agents</span><span>Benchmarks</span><span>Evaluation</span></div>
+          </article>
+          <article class="research-card">
+            <p class="card-number">02</p>
+            <h3>Verifiers &amp; formal methods</h3>
+            <p>Certificate-based verification today; formal specifications and machine-checkable proofs as an emerging research interest. I am interested in how code, specs, and proofs can reinforce one another.</p>
+            <div class="tag-row"><span>Verification</span><span>Specifications</span></div>
+          </article>
+          <article class="research-card">
+            <p class="card-number">03</p>
+            <h3>Combinatorial optimization</h3>
+            <p>Graph algorithms, NP-hard reductions, tensor-based certification, and large-scale search for structures that encode optimization problems under physical constraints.</p>
+            <div class="tag-row"><span>MIS / QUBO</span><span>Graph search</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Selected projects</p>
+            <h2>Work with measurable checks.</h2>
+          </div>
+          <a class="text-link" href="https://github.com/Ferrari-72" target="_blank" rel="noopener">All GitHub projects <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="project-list">
+          <article class="project">
+            <div class="project-meta"><span>Research infrastructure</span><span>2025–2026</span></div>
+            <div class="project-body">
+              <h3>Problem Reductions Benchmark</h3>
+              <p>An SWE-bench-inspired evaluation harness for finding subtle logical bugs in combinatorial reduction rules. I built automated instance extraction, structured agent prompting, independent certificate verification through the <code>pred</code> CLI, and the cost-aware <code>bugs/Ktok</code> metric.</p>
+              <a class="project-link" href="https://github.com/CodingThrust/problem-reductions-benchmark" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="project-tech"><span>Python</span><span>LLM evaluation</span><span>Verifiers</span></div>
+          </article>
+
+          <article class="project">
+            <div class="project-meta"><span>Research software</span><span>2025–present</span></div>
+            <div class="project-body">
+              <h3>GadgetSearch.jl</h3>
+              <p>Search and certification tools supporting unit-weight gadget discovery for triangular Rydberg lattices. Contributions include reduced-α tensor certification, lattice-animal enumeration across 5.6 billion candidates, and convex-hull port validation.</p>
+              <a class="project-link" href="https://github.com/isPANN/GadgetSearch.jl" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="project-tech"><span>Julia</span><span>Graph algorithms</span><span>Exhaustive search</span></div>
+          </article>
+
+          <article class="project">
+            <div class="project-meta"><span>Course project</span><span>2025</span></div>
+            <div class="project-body">
+              <h3>F5-TTS: Few-shot Mandarin voice cloning</h3>
+              <p>A LoRA-based adaptation pipeline for Mandarin child-voice cloning, including Whisper transcription of 220 audio files, a hyperparameter sweep, and evaluation with PESQ, STOI, DNSMOS, CSIG, CBAK, and COVL.</p>
+              <a class="project-link" href="https://github.com/Ferrari-72/F5TTS-Child-Voice-Finetune" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="project-tech"><span>PyTorch</span><span>LoRA</span><span>Speech</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="experience">
+      <div class="shell timeline-layout">
+        <div class="timeline-intro">
+          <p class="section-kicker">Experience</p>
+          <h2>Research, education, and practice.</h2>
+          <p>My recent work connects algorithm design, evaluation infrastructure, and real-world AI systems.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2025–present</div>
+            <div>
+              <h3>Undergraduate Research Assistant</h3>
+              <p class="timeline-place">Quantum Computing &amp; Graph Optimization Lab · Prof. Jinguo Liu · HKUST</p>
+              <p>Co-first author on a manuscript in preparation for <em>Physical Review X Quantum</em> on unit-weight gadgets for triangular Rydberg lattices; contributed theoretical observations and core search and verification algorithms.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2025–2026</div>
+            <div>
+              <h3>Research Contributor</h3>
+              <p class="timeline-place">LLM Combinatorial Reasoning Benchmark · Prof. Jinguo Liu’s Group</p>
+              <p>Designed evaluation infrastructure for measuring how efficiently language models find logical errors in combinatorial reduction code.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Jun–Jul 2026</div>
+            <div>
+              <h3>Solutions Engineer Intern</h3>
+              <p class="timeline-place">Hikvision · Hangzhou Headquarters</p>
+              <p>Contributed to pre-sales technical solution drafting for smart-city AI projects and gained exposure to production deep-learning requirements.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="shell education-grid">
+        <div>
+          <p class="section-kicker">Education</p>
+          <h2>Building breadth across AI and algorithms.</h2>
+        </div>
+        <div class="education-cards">
+          <article>
+            <div class="edu-topline"><span>2024–present</span><span>Hong Kong</span></div>
+            <h3>The Hong Kong University of Science and Technology (Guangzhou)</h3>
+            <p>B.Eng. in Artificial Intelligence</p>
+            <p class="edu-detail">Coursework includes Algorithms &amp; Data Structures, Machine Learning, Neural Networks, Probability Theory, Linear Algebra, and Quantum Computing.</p>
+          </article>
+          <article>
+            <div class="edu-topline"><span>Fall 2026</span><span>Berkeley, CA</span></div>
+            <h3>UC Berkeley Global Access Program</h3>
+            <p>Visiting Undergraduate Student</p>
+            <p class="edu-detail">Selected by HKUST for a semester exchange; engaging with research communities in AI, robotics, and machine learning.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills">
+      <div class="shell">
+        <p class="section-kicker">Skills</p>
+        <div class="skills-grid">
+          <div><h3>Languages &amp; tools</h3><p>Python · Julia · Rust (reading) · Git · Linux/CLI · LaTeX</p></div>
+          <div><h3>ML &amp; agents</h3><p>PyTorch · Transformers · LoRA · Diffusion models · LLM evaluation &amp; prompting</p></div>
+          <div><h3>Algorithms &amp; theory</h3><p>Combinatorial optimization · NP-hard reductions · Tensor networks · Graph algorithms · MIS/QUBO</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="shell contact-grid">
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2>Interested in reliable agents and verifiable reasoning?</h2>
+          <p>I would be glad to discuss research collaborations, undergraduate research opportunities, or adjacent problems in agents, evaluation, and combinatorial optimization.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:cfyao_berk@berkeley.edu"><span>Email</span><strong>cfyao_berk@berkeley.edu</strong></a>
+          <a href="https://github.com/Ferrari-72" target="_blank" rel="noopener"><span>GitHub</span><strong>@Ferrari-72</strong></a>
+          <a href="resume.pdf" target="_blank" rel="noopener"><span>Curriculum vitae</span><strong>Download PDF</strong></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <p>© 2026 Yao Chunfan</p>
+      <p>Berkeley, CA · Hong Kong</p>
+    </div>
+  </footer>
+</body>
+</html>
