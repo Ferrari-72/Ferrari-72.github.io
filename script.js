@@ -70,19 +70,16 @@
   if (!reduceMotion && 'IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
+        entry.target.classList.toggle('is-visible', entry.isIntersecting);
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    }, { rootMargin: '-5% 0px -10% 0px', threshold: 0.1 });
 
     revealItems.forEach((item) => {
       item.classList.add('reveal-on-scroll');
-      if (item.getBoundingClientRect().top < window.innerHeight * 0.92) {
+      if (item.getBoundingClientRect().top < window.innerHeight * 0.9) {
         item.classList.add('is-visible');
-      } else {
-        revealObserver.observe(item);
       }
+      revealObserver.observe(item);
     });
   }
 

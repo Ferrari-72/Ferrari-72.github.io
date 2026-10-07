@@ -38,7 +38,7 @@ body {
   background: var(--paper);
   font-family: var(--sans);
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.7;
   text-rendering: optimizeLegibility;
   transition: color .2s ease, background-color .2s ease;
 }
@@ -64,7 +64,7 @@ a { color: inherit; }
 
 .masthead {
   display: flex;
-  min-height: 92px;
+  min-height: 96px;
   align-items: center;
   gap: 2rem;
   border-bottom: 1px solid var(--line);
@@ -166,8 +166,8 @@ nav a:hover,
 .intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 235px;
-  gap: 4.5rem;
-  padding: 5.5rem 0 4.5rem;
+  gap: 5rem;
+  padding: 6.25rem 0 5.25rem;
 }
 
 .intro-copy,
@@ -200,7 +200,7 @@ h1 {
 }
 
 .lede {
-  max-width: 680px;
+  max-width: 650px;
   color: #454545;
   font-family: var(--serif);
   font-size: 1.16rem;
@@ -254,8 +254,8 @@ html[data-theme="dark"] .details div + div {
 main > section:not(.intro) {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
-  gap: 2.5rem;
-  padding: 3.4rem 0;
+  gap: 3rem;
+  padding: 4rem 0;
   border-top: 1px solid var(--line);
 }
 
@@ -270,8 +270,8 @@ main > section:not(.intro) {
 }
 
 .prose p {
-  max-width: 700px;
-  margin-bottom: 1rem;
+  max-width: 660px;
+  margin-bottom: 1.15rem;
 }
 
 .prose p:last-child { margin-bottom: 0; }
@@ -331,7 +331,7 @@ main > section:not(.intro) {
 .entries { border-top: 1px solid var(--line); }
 
 .entry {
-  padding: 1.6rem 0 1.8rem;
+  padding: 1.9rem 0 2.1rem;
   border-bottom: 1px solid var(--line);
 }
 
@@ -365,7 +365,7 @@ main > section:not(.intro) {
 }
 
 .entry p:not(.meta) {
-  max-width: 720px;
+  max-width: 680px;
   margin-bottom: .7rem;
 }
 
@@ -398,7 +398,7 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 2rem 0 3.5rem;
+  padding: 2.5rem 0 4.5rem;
   border-top: 1px solid var(--line);
   color: var(--faint);
   font-size: .75rem;
@@ -428,17 +428,17 @@ footer p { margin: 0; }
 }
 
 .reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(12px);
+  opacity: .02;
+  transform: translateY(20px) scale(.995);
   transition:
-    opacity .55s cubic-bezier(.22, 1, .36, 1),
-    transform .55s cubic-bezier(.22, 1, .36, 1);
+    opacity .68s cubic-bezier(.22, 1, .36, 1),
+    transform .68s cubic-bezier(.22, 1, .36, 1);
   will-change: opacity, transform;
 }
 
 .reveal-on-scroll.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   will-change: auto;
 }
 
@@ -517,7 +517,7 @@ main > section.reading-intro {
 .paper-list { border-top: 1px solid var(--line); }
 
 .paper-item {
-  padding: 1.75rem 0 1.9rem;
+  padding: 2.05rem 0 2.2rem;
   border-bottom: 1px solid var(--line);
 }
 
