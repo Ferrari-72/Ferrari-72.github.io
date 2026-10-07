@@ -5,6 +5,8 @@ A quiet, responsive academic homepage for GitHub Pages.
 ## Structure
 
 - `index.html` contains the page content.
+- `reading/index.html` contains the curated paper list.
+- `reading/reading.js` provides paper search and topic filters.
 - `style.css` contains the complete visual design.
 - `script.js` provides research filters, active navigation, theme persistence, and back-to-top behavior.
 - `resume.pdf` is linked from the homepage.
