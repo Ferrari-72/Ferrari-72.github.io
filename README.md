@@ -1,14 +1,22 @@
-# Yao Chunfan — Academic Homepage
+# Chunfan Yao — Academic Homepage
 
-A lightweight static academic homepage designed for GitHub Pages.
+A quiet, responsive academic homepage for GitHub Pages.
 
-## Deploy as a user site
+## Structure
 
-1. Create a public GitHub repository named `Ferrari-72.github.io`.
-2. Upload `index.html`, `style.css`, `resume.pdf`, and `.nojekyll` to the repository root.
-3. In **Settings → Pages**, set the source to **Deploy from a branch**, then choose `main` and `/ (root)`.
-4. The site will be available at `https://ferrari-72.github.io/` after GitHub finishes the first deployment.
+- `index.html` contains the page content.
+- `style.css` contains the complete visual design.
+- `resume.pdf` is linked from the homepage.
+- `.nojekyll` keeps deployment as a plain static site.
 
-## Edit
+The site intentionally has no framework, dependency, analytics script, or build step.
 
-All visible content is in `index.html`; the visual design is in `style.css`. Replace `resume.pdf` whenever the CV is updated while keeping the filename unchanged.
+## Publish
+
+GitHub Pages should deploy from the `main` branch and repository root. The public URL is:
+
+<https://ferrari-72.github.io/>
+
+## Update
+
+Edit the text in `index.html`. Replace `resume.pdf` while keeping the same filename whenever the CV changes.
