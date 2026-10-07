@@ -64,7 +64,7 @@
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealItems = [...document.querySelectorAll(
-    '.intro-copy, .details, .reading-intro, .section-label, .prose, .news-list li, .research-tools, .entry, .reading-controls, .paper-item, footer'
+    '.intro-copy, .details, .reading-intro, .page-index, .section-label, .prose, .news-list li, .research-tools, .entry, .reading-controls, .paper-item, footer'
   )];
 
   if (!reduceMotion && 'IntersectionObserver' in window) {

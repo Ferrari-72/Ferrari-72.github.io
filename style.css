@@ -274,6 +274,55 @@ html[data-theme="dark"] .details div + div {
   line-height: 1.55;
 }
 
+nav.page-index {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 3rem;
+  margin: 0;
+  padding: 1.45rem 0 1.6rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-index-title {
+  margin: 0;
+  color: var(--faint);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.page-index-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .65rem 1.5rem;
+}
+
+nav.page-index a {
+  display: flex;
+  align-items: baseline;
+  gap: .55rem;
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+nav.page-index a::after { display: none; }
+
+nav.page-index a span {
+  color: var(--faint);
+  font-size: .62rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .08em;
+}
+
+nav.page-index a:hover,
+nav.page-index a.active {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav.page-index a.active span { color: var(--link); }
+
 main { counter-reset: section-index; }
 
 main > section:not(.intro):not(.reading-intro) {
@@ -642,6 +691,17 @@ main > section.reading-intro {
   main > section.reading-intro { padding: 4rem 0 3.5rem; }
 
   .details { max-width: 420px; }
+
+  nav.page-index {
+    grid-template-columns: 1fr;
+    gap: .8rem;
+    margin-top: 0;
+  }
+
+  .page-index-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .65rem 1rem;
+  }
 
   main > section:not(.intro) {
     grid-template-columns: 1fr;
