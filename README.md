@@ -6,10 +6,11 @@ A quiet, responsive academic homepage for GitHub Pages.
 
 - `index.html` contains the page content.
 - `style.css` contains the complete visual design.
+- `script.js` provides research filters, active navigation, theme persistence, and back-to-top behavior.
 - `resume.pdf` is linked from the homepage.
 - `.nojekyll` keeps deployment as a plain static site.
 
-The site intentionally has no framework, dependency, analytics script, or build step.
+The site intentionally has no framework, dependency, analytics script, or build step. All interaction is implemented with a small vanilla JavaScript file.
 
 ## Publish
 

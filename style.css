@@ -10,6 +10,19 @@
   --width: 980px;
   --serif: Georgia, "Times New Roman", serif;
   --sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --paper: #181817;
+  --surface: #222220;
+  --ink: #eeeeea;
+  --muted: #b4b4ae;
+  --faint: #8f8f89;
+  --line: #3b3b38;
+  --link: #8db8dc;
+  --accent: #272725;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -27,6 +40,7 @@ body {
   font-size: 15px;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
+  transition: color .2s ease, background-color .2s ease;
 }
 
 a { color: inherit; }
@@ -85,8 +99,31 @@ nav a,
 }
 
 nav a {
+  position: relative;
   color: var(--muted);
   font-size: .84rem;
+}
+
+nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -.45rem;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  opacity: 0;
+  transform: scaleX(.25);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+nav a.active {
+  color: var(--ink);
+}
+
+nav a.active::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 nav a:hover,
@@ -95,6 +132,32 @@ nav a:hover,
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: .2em;
+}
+
+.theme-toggle,
+.research-tools button,
+.back-to-top {
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .38rem;
+  padding: .3rem .55rem;
+  font-size: .76rem;
+}
+
+.theme-toggle:hover,
+.research-tools button:hover,
+.research-tools button[aria-pressed="true"],
+.back-to-top:hover {
+  border-color: var(--ink);
+  color: var(--ink);
 }
 
 .intro {
@@ -141,6 +204,12 @@ h1 {
   line-height: 1.7;
 }
 
+html[data-theme="dark"] .lede,
+html[data-theme="dark"] .details p,
+html[data-theme="dark"] .section-label h2 {
+  color: var(--ink);
+}
+
 .links {
   display: flex;
   gap: 1.15rem;
@@ -153,6 +222,10 @@ h1 {
   padding: 1.25rem 1.4rem;
   border-top: 3px solid var(--ink);
   background: var(--accent);
+}
+
+html[data-theme="dark"] .details div + div {
+  border-color: var(--line);
 }
 
 .details div + div {
@@ -219,12 +292,39 @@ main > section:not(.intro) {
   font-variant-numeric: tabular-nums;
 }
 
+.research-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .45rem;
+  margin-bottom: 1rem;
+}
+
+.research-tools > span {
+  margin-right: .2rem;
+  color: var(--faint);
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.research-tools button {
+  padding: .28rem .65rem;
+  font-size: .75rem;
+}
+
+.research-tools button[aria-pressed="true"] {
+  background: var(--accent);
+}
+
 .entries { border-top: 1px solid var(--line); }
 
 .entry {
   padding: 1.6rem 0 1.8rem;
   border-bottom: 1px solid var(--line);
 }
+
+.entry[hidden] { display: none; }
 
 .entry-heading {
   display: flex;
@@ -295,6 +395,27 @@ footer {
 
 footer p { margin: 0; }
 
+.back-to-top {
+  position: fixed;
+  right: 1.3rem;
+  bottom: 1.3rem;
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  background: var(--paper);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(.5rem);
+  transition: opacity .18s ease, transform .18s ease, color .18s ease, border-color .18s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 :focus-visible {
   outline: 2px solid var(--link);
   outline-offset: 3px;
@@ -304,13 +425,20 @@ footer p { margin: 0; }
   .page { width: min(calc(100% - 2rem), var(--width)); }
 
   .masthead {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr auto;
     padding: 1.2rem 0 1rem;
   }
 
   nav {
+    grid-column: 1 / -1;
+    margin-left: 0;
     margin-top: .75rem;
     gap: .65rem 1rem;
+  }
+
+  .theme-toggle {
+    align-self: center;
   }
 
   .intro {
@@ -341,4 +469,5 @@ footer p { margin: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
 }
