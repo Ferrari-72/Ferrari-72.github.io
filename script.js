@@ -25,6 +25,18 @@
 
   const filterButtons = [...document.querySelectorAll('[data-filter]')];
   const researchEntries = [...document.querySelectorAll('#research-list .entry')];
+  const researchList = document.querySelector('#research-list');
+  const sortButtons = [...document.querySelectorAll('[data-research-sort]')];
+
+  function sortResearch(direction) {
+    const multiplier = direction === 'desc' ? -1 : 1;
+    researchEntries
+      .slice()
+      .sort((a, b) => (Number(a.dataset.sequence) - Number(b.dataset.sequence)) * multiplier)
+      .forEach((entry) => researchList.append(entry));
+  }
+
+  if (researchList && researchEntries.length) sortResearch('asc');
 
   filterButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -38,6 +50,15 @@
         const topics = entry.dataset.topics.split(' ');
         entry.hidden = filter !== 'all' && !topics.includes(filter);
       });
+    });
+  });
+
+  sortButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      sortButtons.forEach((item) => {
+        item.setAttribute('aria-pressed', String(item === button));
+      });
+      sortResearch(button.dataset.researchSort);
     });
   });
 

@@ -85,15 +85,22 @@
       <section id="research">
         <div class="section-label"><h2>Research</h2></div>
         <div class="section-content">
-          <div class="research-tools" aria-label="Filter research by topic">
-            <span>Filter</span>
-            <button type="button" data-filter="all" aria-pressed="true">All</button>
-            <button type="button" data-filter="agents" aria-pressed="false">Agents</button>
-            <button type="button" data-filter="verification" aria-pressed="false">Verification</button>
-            <button type="button" data-filter="optimization" aria-pressed="false">Optimization</button>
+          <div class="research-tools">
+            <div class="research-tool-group" aria-label="Filter research by topic">
+              <span>Topic</span>
+              <button type="button" data-filter="all" aria-pressed="true">All</button>
+              <button type="button" data-filter="agents" aria-pressed="false">Agents</button>
+              <button type="button" data-filter="verification" aria-pressed="false">Verification</button>
+              <button type="button" data-filter="optimization" aria-pressed="false">Optimization</button>
+            </div>
+            <div class="research-tool-group" aria-label="Sort research by time">
+              <span>Order</span>
+              <button type="button" data-research-sort="asc" aria-pressed="true">Earliest first</button>
+              <button type="button" data-research-sort="desc" aria-pressed="false">Latest first</button>
+            </div>
           </div>
           <div class="entries" id="research-list" aria-live="polite">
-          <article class="entry" data-topics="agents verification">
+          <article class="entry" data-topics="agents verification" data-sequence="3">
             <div class="entry-heading">
               <h3>AutoResearch for Reduction-Rule Discovery</h3>
               <span>2026–present</span>
@@ -103,7 +110,7 @@
             <ul class="tags" aria-label="Topics"><li>Research agents</li><li>Independent verification</li><li>Combinatorial reductions</li></ul>
           </article>
 
-          <article class="entry" data-topics="agents verification">
+          <article class="entry" data-topics="agents verification" data-sequence="2">
             <div class="entry-heading">
               <h3>LLM Combinatorial Reasoning Benchmark</h3>
               <span>2025–2026</span>
@@ -114,7 +121,7 @@
             <ul class="tags" aria-label="Topics"><li>LLM evaluation</li><li>Agent environments</li><li>Executable verifiers</li></ul>
           </article>
 
-          <article class="entry" data-topics="verification optimization">
+          <article class="entry" data-topics="verification optimization" data-sequence="1">
             <div class="entry-heading">
               <h3>Unit-Weight Gadgets for Rydberg-Atom Arrays</h3>
               <span>2025–present</span>
@@ -125,7 +132,7 @@
             <ul class="tags" aria-label="Topics"><li>Graph algorithms</li><li>Julia</li><li>Exhaustive search</li></ul>
           </article>
 
-          <article class="entry" data-topics="agents">
+          <article class="entry" data-topics="agents" data-sequence="4">
             <div class="entry-heading">
               <h3>State-Machine Extraction from the Linux Kernel</h3>
               <span>2026–present</span>

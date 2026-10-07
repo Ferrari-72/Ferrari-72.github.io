@@ -298,12 +298,20 @@ main > section:not(.intro) {
 .research-tools {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: .45rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .75rem 1.5rem;
   margin-bottom: 1rem;
 }
 
-.research-tools > span {
+.research-tool-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .45rem;
+}
+
+.research-tool-group > span {
   margin-right: .2rem;
   color: var(--faint);
   font-size: .75rem;
