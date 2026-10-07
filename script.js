@@ -62,6 +62,30 @@
     });
   });
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealItems = [...document.querySelectorAll(
+    '.intro-copy, .details, .reading-intro, .section-label, .prose, .news-list li, .research-tools, .entry, .reading-controls, .paper-item, footer'
+  )];
+
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    revealItems.forEach((item) => {
+      item.classList.add('reveal-on-scroll');
+      if (item.getBoundingClientRect().top < window.innerHeight * 0.92) {
+        item.classList.add('is-visible');
+      } else {
+        revealObserver.observe(item);
+      }
+    });
+  }
+
   const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
   const observedSections = navLinks
     .map((link) => document.querySelector(link.getAttribute('href')))
