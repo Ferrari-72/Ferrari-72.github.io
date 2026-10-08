@@ -6,7 +6,7 @@
   <meta name="description" content="Chunfan Yao is an undergraduate researcher working on reliable AI agents, executable verification, and combinatorial optimization.">
   <meta name="theme-color" content="#f7f7f5">
   <title>Chunfan Yao</title>
-  <link rel="stylesheet" href="style.css?v=20261008-2">
+  <link rel="stylesheet" href="style.css?v=20261008-3">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -194,10 +194,14 @@
                 <p>Built an end-to-end workflow covering transcription of 220 audio files, LoRA adaptation, inference-parameter search, and multi-metric speech-quality evaluation. Diagnosed a critical vocabulary-configuration mismatch and packaged batch inference in a small desktop interface.</p>
                 <p><a class="inline-link" href="https://github.com/Ferrari-72/F5TTS-Child-Voice-Finetune" target="_blank" rel="noopener">Project repository ↗</a> <span aria-hidden="true">·</span> <a class="inline-link" href="https://ferrari-72.github.io/F5TTS-Child-Voice-Finetune/" target="_blank" rel="noopener">Full audio comparison ↗</a></p>
               </div>
-              <div class="audio-demo">
+              <div class="audio-demo" data-audio-switcher>
                 <div class="audio-demo-label">
-                  <span>Playable demo · fine-tuned model</span>
+                  <span data-audio-status>Synthetic comparison · fine-tuned</span>
                   <strong lang="zh-CN">“好久不见，最近怎么样？”</strong>
+                </div>
+                <div class="audio-variant-switch" role="group" aria-label="Choose and play an F5-TTS model sample">
+                  <button type="button" data-audio-src="assets/audio/f5tts-pretrained-demo.wav" data-audio-name="Pretrained" aria-pressed="false">▶ Pretrained</button>
+                  <button type="button" data-audio-src="assets/audio/f5tts-mandarin-demo.wav" data-audio-name="Fine-tuned" aria-pressed="true">▶ Fine-tuned</button>
                 </div>
                 <audio controls preload="metadata" aria-label="F5-TTS synthesized Mandarin speech sample">
                   <source src="assets/audio/f5tts-mandarin-demo.wav" type="audio/wav">
@@ -241,6 +245,6 @@
     </footer>
   </div>
   <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
-  <script src="script.js"></script>
+  <script src="script.js?v=20261008-3"></script>
 </body>
 </html>

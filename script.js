@@ -62,6 +62,27 @@
     });
   });
 
+  document.querySelectorAll('[data-audio-switcher]').forEach((demo) => {
+    const audio = demo.querySelector('audio');
+    const status = demo.querySelector('[data-audio-status]');
+    const variantButtons = [...demo.querySelectorAll('[data-audio-src]')];
+
+    variantButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        variantButtons.forEach((item) => {
+          item.setAttribute('aria-pressed', String(item === button));
+        });
+
+        audio.pause();
+        audio.src = button.dataset.audioSrc;
+        audio.setAttribute('aria-label', `Play the ${button.dataset.audioName} F5-TTS Mandarin sample`);
+        status.textContent = `Synthetic comparison · ${button.dataset.audioName}`;
+        audio.load();
+        audio.play().catch(() => {});
+      });
+    });
+  });
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealItems = [...document.querySelectorAll(
     '.intro-copy, .details, .reading-intro, .page-index, .section-label, .prose, .news-list li, .research-tools, .entry, .reading-controls, .paper-item, footer'
