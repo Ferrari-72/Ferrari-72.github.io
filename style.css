@@ -365,6 +365,19 @@ main > section:not(.intro) {
 
 .prose p:last-child { margin-bottom: 0; }
 
+.personal-quote {
+  max-width: 660px;
+  margin: 2rem 0 0;
+  padding: 1rem 0 1rem 1.25rem;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.personal-quote p { margin: 0; }
+
 .news-list {
   margin: 0;
   padding: 0;
