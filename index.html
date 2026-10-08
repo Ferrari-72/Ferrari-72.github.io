@@ -131,9 +131,19 @@
               <span>2025–2026</span>
             </div>
             <p class="meta">Prof. Jinguo Liu's group · HKUST(GZ)</p>
-            <p>I developed early SWE-style and mini-SWE-agent runners for evaluating language models on subtle logical bugs in problem reductions. My work included a common agent interface, concurrent execution, trajectory archiving, certificate-based checks through the <code>pred</code> verifier, and cost-normalized metrics. Early results helped motivate the shift from bug-finding alone toward automated research.</p>
-            <p><a class="inline-link" href="https://github.com/CodingThrust/problem-reductions-benchmark" target="_blank" rel="noopener">Project repository ↗</a></p>
-            <ul class="tags" aria-label="Topics"><li>LLM evaluation</li><li>Agent environments</li><li>Executable verifiers</li></ul>
+            <div class="entry-layout">
+              <div class="entry-copy">
+                <p>I developed early SWE-style and mini-SWE-agent runners for evaluating language models on subtle logical bugs in problem reductions. My work included a common agent interface, concurrent execution, trajectory archiving, certificate-based checks through the <code>pred</code> verifier, and cost-normalized metrics. Early results helped motivate the shift from bug-finding alone toward automated research.</p>
+                <p><a class="inline-link" href="https://github.com/CodingThrust/problem-reductions-benchmark" target="_blank" rel="noopener">Project repository ↗</a></p>
+                <ul class="tags" aria-label="Topics"><li>LLM evaluation</li><li>Agent environments</li><li>Executable verifiers</li></ul>
+              </div>
+              <figure class="project-visual">
+                <a href="assets/projects/benchmark-verification.png" target="_blank" rel="noopener" aria-label="Open the benchmark verification diagram at full size">
+                  <img src="assets/projects/benchmark-verification.png" width="1400" height="1120" loading="lazy" decoding="async" alt="Diagram showing how direct and reduced solutions are independently compared to identify invalid problem reductions.">
+                </a>
+                <figcaption>Independent verification of candidate reduction bugs. Open for full size.</figcaption>
+              </figure>
+            </div>
           </article>
 
           <article class="entry" data-topics="verification optimization" data-sequence="1">
@@ -179,8 +189,22 @@
         <div class="section-content entries compact">
           <article class="entry">
             <div class="entry-heading"><h3>F5-TTS: Few-Shot Mandarin Voice Cloning</h3><span>2025</span></div>
-            <p>Built an end-to-end workflow covering transcription of 220 audio files, LoRA adaptation, inference-parameter search, and multi-metric speech-quality evaluation. Diagnosed a critical vocabulary-configuration mismatch and packaged batch inference in a small desktop interface.</p>
-            <p><a class="inline-link" href="https://github.com/Ferrari-72/F5TTS-Child-Voice-Finetune" target="_blank" rel="noopener">Project repository ↗</a></p>
+            <div class="entry-layout entry-layout--audio">
+              <div class="entry-copy">
+                <p>Built an end-to-end workflow covering transcription of 220 audio files, LoRA adaptation, inference-parameter search, and multi-metric speech-quality evaluation. Diagnosed a critical vocabulary-configuration mismatch and packaged batch inference in a small desktop interface.</p>
+                <p><a class="inline-link" href="https://github.com/Ferrari-72/F5TTS-Child-Voice-Finetune" target="_blank" rel="noopener">Project repository ↗</a> <span aria-hidden="true">·</span> <a class="inline-link" href="https://ferrari-72.github.io/F5TTS-Child-Voice-Finetune/" target="_blank" rel="noopener">Full audio comparison ↗</a></p>
+              </div>
+              <div class="audio-demo">
+                <div class="audio-demo-label">
+                  <span>Playable demo · fine-tuned model</span>
+                  <strong lang="zh-CN">“好久不见，最近怎么样？”</strong>
+                </div>
+                <audio controls preload="metadata" aria-label="F5-TTS synthesized Mandarin speech sample">
+                  <source src="assets/audio/f5tts-mandarin-demo.wav" type="audio/wav">
+                  Your browser does not support embedded audio.
+                </audio>
+              </div>
+            </div>
           </article>
           <article class="entry">
             <div class="entry-heading"><h3>CausVid Reproduction</h3><span>2025</span></div>
