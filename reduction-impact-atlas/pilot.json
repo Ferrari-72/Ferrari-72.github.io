@@ -32,9 +32,9 @@
         "rank": 28
       },
       "scenario": {
-        "N": 95,
+        "N": 94,
         "B": 0,
-        "V": 121,
+        "V": 118,
         "rank": 1,
         "new_problem_pairs": [
           {
@@ -166,21 +166,6 @@
               "Satisfiability",
               "KColoring (graph=SimpleGraph, k=K3)",
               "Clustering"
-            ]
-          },
-          {
-            "source": "BFS tree support",
-            "target": "ComparativeContainment",
-            "witness_nodes": [
-              "BFS tree support [board]",
-              "Horn satisfiability [board]",
-              "Satisfiability",
-              "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-              "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
-              "MaximumIndependentSet (graph=SimpleGraph, weight=i64)",
-              "MinimumVertexCover (graph=SimpleGraph, weight=i64)",
-              "DecisionMinimumVertexCover (graph=SimpleGraph, weight=i64)",
-              "ComparativeContainment (weight=i64)"
             ]
           },
           {
@@ -1394,31 +1379,6 @@
           },
           {
             "source_node": 257,
-            "target_node": 22,
-            "path": [
-              "candidate:Q001",
-              "edge:354",
-              "edge:294",
-              "edge:32",
-              "edge:169",
-              "edge:175",
-              "edge:228",
-              "edge:43"
-            ],
-            "node_path": [
-              257,
-              258,
-              220,
-              37,
-              119,
-              121,
-              172,
-              45,
-              22
-            ]
-          },
-          {
-            "source_node": 257,
             "target_node": 23,
             "path": [
               "candidate:Q001",
@@ -1563,27 +1523,6 @@
           },
           {
             "source_node": 257,
-            "target_node": 38,
-            "path": [
-              "candidate:Q001",
-              "edge:354",
-              "edge:294",
-              "edge:32",
-              "edge:169",
-              "edge:172"
-            ],
-            "node_path": [
-              257,
-              258,
-              220,
-              37,
-              119,
-              121,
-              38
-            ]
-          },
-          {
-            "source_node": 257,
             "target_node": 40,
             "path": [
               "candidate:Q001",
@@ -1633,29 +1572,6 @@
               220,
               92,
               44
-            ]
-          },
-          {
-            "source_node": 257,
-            "target_node": 45,
-            "path": [
-              "candidate:Q001",
-              "edge:354",
-              "edge:294",
-              "edge:32",
-              "edge:169",
-              "edge:175",
-              "edge:228"
-            ],
-            "node_path": [
-              257,
-              258,
-              220,
-              37,
-              119,
-              121,
-              172,
-              45
             ]
           },
           {
@@ -3565,9 +3481,9 @@
         "rank": 28
       },
       "scenario": {
-        "N": 95,
+        "N": 94,
         "B": 0,
-        "V": 122,
+        "V": 119,
         "rank": 1,
         "new_problem_pairs": [
           {
@@ -3721,23 +3637,6 @@
               "Satisfiability",
               "KColoring (graph=SimpleGraph, k=K3)",
               "Clustering"
-            ]
-          },
-          {
-            "source": "Common stable matching with two changed agents on each side",
-            "target": "ComparativeContainment",
-            "witness_nodes": [
-              "Common stable matching with two changed agents on each side [board]",
-              "2-SAT search [board]",
-              "KSatisfiability (k=K2)",
-              "KSatisfiability (k=KN)",
-              "Satisfiability",
-              "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-              "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
-              "MaximumIndependentSet (graph=SimpleGraph, weight=i64)",
-              "MinimumVertexCover (graph=SimpleGraph, weight=i64)",
-              "DecisionMinimumVertexCover (graph=SimpleGraph, weight=i64)",
-              "ComparativeContainment (weight=i64)"
             ]
           },
           {
@@ -5150,35 +5049,6 @@
           },
           {
             "source_node": 343,
-            "target_node": 22,
-            "path": [
-              "candidate:Q057",
-              "edge:354",
-              "edge:114",
-              "edge:134",
-              "edge:294",
-              "edge:32",
-              "edge:169",
-              "edge:175",
-              "edge:228",
-              "edge:43"
-            ],
-            "node_path": [
-              343,
-              344,
-              91,
-              93,
-              220,
-              37,
-              119,
-              121,
-              172,
-              45,
-              22
-            ]
-          },
-          {
-            "source_node": 343,
             "target_node": 23,
             "path": [
               "candidate:Q057",
@@ -5355,31 +5225,6 @@
           },
           {
             "source_node": 343,
-            "target_node": 38,
-            "path": [
-              "candidate:Q057",
-              "edge:354",
-              "edge:114",
-              "edge:134",
-              "edge:294",
-              "edge:32",
-              "edge:169",
-              "edge:172"
-            ],
-            "node_path": [
-              343,
-              344,
-              91,
-              93,
-              220,
-              37,
-              119,
-              121,
-              38
-            ]
-          },
-          {
-            "source_node": 343,
             "target_node": 40,
             "path": [
               "candidate:Q057",
@@ -5441,33 +5286,6 @@
               220,
               92,
               44
-            ]
-          },
-          {
-            "source_node": 343,
-            "target_node": 45,
-            "path": [
-              "candidate:Q057",
-              "edge:354",
-              "edge:114",
-              "edge:134",
-              "edge:294",
-              "edge:32",
-              "edge:169",
-              "edge:175",
-              "edge:228"
-            ],
-            "node_path": [
-              343,
-              344,
-              91,
-              93,
-              220,
-              37,
-              119,
-              121,
-              172,
-              45
             ]
           },
           {
