@@ -3,6 +3,7 @@
   "graph_sha256": "aea94690549b3d2199c92762e83b0d63f0950a9b7e77c1183a1183495952d2ab",
   "graph_nodes": 257,
   "graph_edges": 344,
+  "excluded_turing_edges": 22,
   "augmented_nodes": 380,
   "baseline_bridge_edges": [
     {
@@ -139,1148 +140,12 @@
   "N_distribution": {
     "1": 50,
     "4": 17,
-    "6": 8,
-    "12": 1
+    "5": 3,
+    "6": 6
   },
   "ranking_rule": "Provisional N descending, then B descending, then V (new variant pairs) descending; ID only sets display order within ties",
   "interpretation": "Hypothetical topology estimate under stated endpoint assumptions; not proof validity, literature openness, resource compatibility, or total research value.",
   "questions": [
-    {
-      "id": "Q042",
-      "slug": "three-agent-additive-maximal-ef1",
-      "source": "Independent Set",
-      "target": "Three-agent additive maximal EF1 allocation",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "N": 12,
-      "B": 0,
-      "V": 21,
-      "reason": null,
-      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 350 (graph_to_board)",
-      "mapping_evidence": null,
-      "source_node": 322,
-      "target_node": 323,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        },
-        {
-          "source": "DecisionMaximumIndependentSet",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        },
-        {
-          "source": "DecisionMinimumVertexCover",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "MinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "LongestCommonSubsequence",
-            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        },
-        {
-          "source": "ExactCoverBy3Sets",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "ExactCoverBy3Sets",
-            "MaximumSetPacking (weight=One)",
-            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "KSatisfiability (k=KN)",
-            "Satisfiability",
-            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        },
-        {
-          "source": "LongestCommonSubsequence",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "LongestCommonSubsequence",
-            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        },
-        {
-          "source": "MaximumClique",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "MaximumClique (graph=SimpleGraph, weight=One)",
-            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        },
-        {
-          "source": "MaximumIndependentSet",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        },
-        {
-          "source": "MaximumSetPacking",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "MaximumSetPacking (weight=One)",
-            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        },
-        {
-          "source": "MinimumVertexCover",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "MinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "LongestCommonSubsequence",
-            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "Satisfiability",
-            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 323,
-          "path": [
-            "edge:14",
-            "edge:294",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            15,
-            220,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 37,
-          "target_node": 323,
-          "path": [
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 44,
-          "target_node": 323,
-          "path": [
-            "edge:42",
-            "edge:226",
-            "edge:142",
-            "edge:166",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            44,
-            171,
-            100,
-            119,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 62,
-          "target_node": 323,
-          "path": [
-            "edge:63",
-            "edge:184",
-            "edge:166",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            62,
-            128,
-            119,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 323,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:294",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 323,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:294",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 323,
-          "path": [
-            "edge:123",
-            "edge:134",
-            "edge:294",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            92,
-            93,
-            220,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 323,
-          "path": [
-            "edge:134",
-            "edge:294",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            93,
-            220,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 100,
-          "target_node": 323,
-          "path": [
-            "edge:142",
-            "edge:166",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            100,
-            119,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 108,
-          "target_node": 323,
-          "path": [
-            "edge:153",
-            "edge:166",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            108,
-            119,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 117,
-          "target_node": 323,
-          "path": [
-            "edge:164",
-            "edge:177",
-            "edge:166",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            117,
-            123,
-            119,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 119,
-          "target_node": 323,
-          "path": [
-            "edge:166",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            119,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 123,
-          "target_node": 323,
-          "path": [
-            "edge:177",
-            "edge:166",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            123,
-            119,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 128,
-          "target_node": 323,
-          "path": [
-            "edge:184",
-            "edge:166",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            128,
-            119,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 171,
-          "target_node": 323,
-          "path": [
-            "edge:226",
-            "edge:142",
-            "edge:166",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            171,
-            100,
-            119,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 323,
-          "path": [
-            "edge:294",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            220,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 313,
-          "target_node": 323,
-          "path": [
-            "edge:346",
-            "edge:123",
-            "edge:134",
-            "edge:294",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            313,
-            92,
-            93,
-            220,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 322,
-          "target_node": 323,
-          "path": [
-            "candidate:Q042"
-          ],
-          "node_path": [
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 345,
-          "target_node": 323,
-          "path": [
-            "edge:347",
-            "edge:123",
-            "edge:134",
-            "edge:294",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            345,
-            92,
-            93,
-            220,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 347,
-          "target_node": 323,
-          "path": [
-            "edge:348",
-            "edge:123",
-            "edge:134",
-            "edge:294",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            347,
-            92,
-            93,
-            220,
-            37,
-            322,
-            323
-          ]
-        },
-        {
-          "source_node": 356,
-          "target_node": 323,
-          "path": [
-            "edge:349",
-            "edge:123",
-            "edge:134",
-            "edge:294",
-            "edge:350",
-            "candidate:Q042"
-          ],
-          "node_path": [
-            356,
-            92,
-            93,
-            220,
-            37,
-            322,
-            323
-          ]
-        }
-      ],
-      "rank": 1
-    },
-    {
-      "id": "Q055",
-      "slug": "vertex-cover-external-macro-compression",
-      "source": "Vertex Cover",
-      "target": "External macro data compression",
-      "category": "Construction open",
-      "status": "unsolved",
-      "N": 6,
-      "B": 0,
-      "V": 13,
-      "reason": null,
-      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 351 (graph_to_board)",
-      "mapping_evidence": null,
-      "source_node": 340,
-      "target_node": 341,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "External macro data compression",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "Vertex Cover [board]",
-            "External macro data compression [board]"
-          ]
-        },
-        {
-          "source": "DecisionMinimumVertexCover",
-          "target": "External macro data compression",
-          "witness_nodes": [
-            "Vertex Cover [board]",
-            "External macro data compression [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "External macro data compression",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "Vertex Cover [board]",
-            "External macro data compression [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "External macro data compression",
-          "witness_nodes": [
-            "KSatisfiability (k=K3)",
-            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "Vertex Cover [board]",
-            "External macro data compression [board]"
-          ]
-        },
-        {
-          "source": "MinimumVertexCover",
-          "target": "External macro data compression",
-          "witness_nodes": [
-            "MinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "Vertex Cover [board]",
-            "External macro data compression [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "External macro data compression",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "Vertex Cover [board]",
-            "External macro data compression [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 341,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:118",
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            15,
-            220,
-            92,
-            44,
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 44,
-          "target_node": 341,
-          "path": [
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            44,
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 341,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:118",
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            44,
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 341,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:118",
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            44,
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 341,
-          "path": [
-            "edge:118",
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            92,
-            44,
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 341,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:118",
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            44,
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 171,
-          "target_node": 341,
-          "path": [
-            "edge:224",
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            171,
-            44,
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 341,
-          "path": [
-            "edge:298",
-            "edge:118",
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            220,
-            92,
-            44,
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 313,
-          "target_node": 341,
-          "path": [
-            "edge:346",
-            "edge:118",
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            313,
-            92,
-            44,
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 340,
-          "target_node": 341,
-          "path": [
-            "candidate:Q055"
-          ],
-          "node_path": [
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 345,
-          "target_node": 341,
-          "path": [
-            "edge:347",
-            "edge:118",
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            345,
-            92,
-            44,
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 347,
-          "target_node": 341,
-          "path": [
-            "edge:348",
-            "edge:118",
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            347,
-            92,
-            44,
-            340,
-            341
-          ]
-        },
-        {
-          "source_node": 356,
-          "target_node": 341,
-          "path": [
-            "edge:349",
-            "edge:118",
-            "edge:351",
-            "candidate:Q055"
-          ],
-          "node_path": [
-            356,
-            92,
-            44,
-            340,
-            341
-          ]
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "id": "Q056",
-      "slug": "vertex-cover-set-basis",
-      "source": "Vertex Cover",
-      "target": "Set Basis",
-      "category": "Construction open",
-      "status": "unsolved",
-      "N": 6,
-      "B": 0,
-      "V": 13,
-      "reason": null,
-      "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 230; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 352 (graph_to_board)",
-      "mapping_evidence": null,
-      "source_node": 342,
-      "target_node": 230,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "SetBasis",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "Vertex Cover [board]",
-            "SetBasis"
-          ]
-        },
-        {
-          "source": "DecisionMinimumVertexCover",
-          "target": "SetBasis",
-          "witness_nodes": [
-            "Vertex Cover [board]",
-            "SetBasis"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "SetBasis",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "Vertex Cover [board]",
-            "SetBasis"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "SetBasis",
-          "witness_nodes": [
-            "KSatisfiability (k=K3)",
-            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "Vertex Cover [board]",
-            "SetBasis"
-          ]
-        },
-        {
-          "source": "MinimumVertexCover",
-          "target": "SetBasis",
-          "witness_nodes": [
-            "MinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "Vertex Cover [board]",
-            "SetBasis"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "SetBasis",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
-            "Vertex Cover [board]",
-            "SetBasis"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 230,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:118",
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            15,
-            220,
-            92,
-            44,
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 44,
-          "target_node": 230,
-          "path": [
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            44,
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 230,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:118",
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            44,
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 230,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:118",
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            44,
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 230,
-          "path": [
-            "edge:118",
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            92,
-            44,
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 230,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:118",
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            44,
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 171,
-          "target_node": 230,
-          "path": [
-            "edge:224",
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            171,
-            44,
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 230,
-          "path": [
-            "edge:298",
-            "edge:118",
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            220,
-            92,
-            44,
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 313,
-          "target_node": 230,
-          "path": [
-            "edge:346",
-            "edge:118",
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            313,
-            92,
-            44,
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 342,
-          "target_node": 230,
-          "path": [
-            "candidate:Q056"
-          ],
-          "node_path": [
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 345,
-          "target_node": 230,
-          "path": [
-            "edge:347",
-            "edge:118",
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            345,
-            92,
-            44,
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 347,
-          "target_node": 230,
-          "path": [
-            "edge:348",
-            "edge:118",
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            347,
-            92,
-            44,
-            342,
-            230
-          ]
-        },
-        {
-          "source_node": 356,
-          "target_node": 230,
-          "path": [
-            "edge:349",
-            "edge:118",
-            "edge:352",
-            "candidate:Q056"
-          ],
-          "node_path": [
-            356,
-            92,
-            44,
-            342,
-            230
-          ]
-        }
-      ],
-      "rank": 2
-    },
     {
       "id": "Q002",
       "slug": "binary-network-common-contraction",
@@ -1575,7 +440,7 @@
           ]
         }
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "id": "Q009",
@@ -1863,7 +728,7 @@
           ]
         }
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "id": "Q017",
@@ -2151,7 +1016,7 @@
           ]
         }
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "id": "Q026",
@@ -2439,7 +1304,7 @@
           ]
         }
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "id": "Q048",
@@ -2727,7 +1592,7 @@
           ]
         }
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "id": "Q062",
@@ -2991,7 +1856,852 @@
           ]
         }
       ],
-      "rank": 4
+      "rank": 1
+    },
+    {
+      "id": "Q042",
+      "slug": "three-agent-additive-maximal-ef1",
+      "source": "Independent Set",
+      "target": "Three-agent additive maximal EF1 allocation",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "N": 5,
+      "B": 0,
+      "V": 12,
+      "reason": null,
+      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 350 (graph_to_board)",
+      "mapping_evidence": null,
+      "source_node": 322,
+      "target_node": 323,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "DecisionMaximumIndependentSet",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "KSatisfiability (k=KN)",
+            "Satisfiability",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "Satisfiability",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 323,
+          "path": [
+            "edge:14",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            15,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 37,
+          "target_node": 323,
+          "path": [
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 323,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 323,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 323,
+          "path": [
+            "edge:123",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            92,
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 323,
+          "path": [
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 323,
+          "path": [
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 323,
+          "path": [
+            "edge:346",
+            "edge:123",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            313,
+            92,
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 322,
+          "target_node": 323,
+          "path": [
+            "candidate:Q042"
+          ],
+          "node_path": [
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 323,
+          "path": [
+            "edge:347",
+            "edge:123",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            345,
+            92,
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 323,
+          "path": [
+            "edge:348",
+            "edge:123",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            347,
+            92,
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 323,
+          "path": [
+            "edge:349",
+            "edge:123",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            356,
+            92,
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "id": "Q055",
+      "slug": "vertex-cover-external-macro-compression",
+      "source": "Vertex Cover",
+      "target": "External macro data compression",
+      "category": "Construction open",
+      "status": "unsolved",
+      "N": 5,
+      "B": 0,
+      "V": 12,
+      "reason": null,
+      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 351 (graph_to_board)",
+      "mapping_evidence": null,
+      "source_node": 340,
+      "target_node": 341,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "External macro data compression",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "External macro data compression [board]"
+          ]
+        },
+        {
+          "source": "DecisionMinimumVertexCover",
+          "target": "External macro data compression",
+          "witness_nodes": [
+            "Vertex Cover [board]",
+            "External macro data compression [board]"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "External macro data compression",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "External macro data compression [board]"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "External macro data compression",
+          "witness_nodes": [
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "External macro data compression [board]"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "External macro data compression",
+          "witness_nodes": [
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "External macro data compression [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 341,
+          "path": [
+            "edge:14",
+            "edge:298",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            15,
+            220,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 44,
+          "target_node": 341,
+          "path": [
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 341,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:298",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 341,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:298",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 341,
+          "path": [
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 341,
+          "path": [
+            "edge:134",
+            "edge:298",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            93,
+            220,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 341,
+          "path": [
+            "edge:298",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            220,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 341,
+          "path": [
+            "edge:346",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            313,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 340,
+          "target_node": 341,
+          "path": [
+            "candidate:Q055"
+          ],
+          "node_path": [
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 341,
+          "path": [
+            "edge:347",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            345,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 341,
+          "path": [
+            "edge:348",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            347,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 341,
+          "path": [
+            "edge:349",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            356,
+            92,
+            44,
+            340,
+            341
+          ]
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "id": "Q056",
+      "slug": "vertex-cover-set-basis",
+      "source": "Vertex Cover",
+      "target": "Set Basis",
+      "category": "Construction open",
+      "status": "unsolved",
+      "N": 5,
+      "B": 0,
+      "V": 12,
+      "reason": null,
+      "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 230; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 352 (graph_to_board)",
+      "mapping_evidence": null,
+      "source_node": 342,
+      "target_node": 230,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "SetBasis",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "SetBasis"
+          ]
+        },
+        {
+          "source": "DecisionMinimumVertexCover",
+          "target": "SetBasis",
+          "witness_nodes": [
+            "Vertex Cover [board]",
+            "SetBasis"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "SetBasis",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "SetBasis"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "SetBasis",
+          "witness_nodes": [
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "SetBasis"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "SetBasis",
+          "witness_nodes": [
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "SetBasis"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 230,
+          "path": [
+            "edge:14",
+            "edge:298",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            15,
+            220,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 44,
+          "target_node": 230,
+          "path": [
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 230,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:298",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 230,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:298",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 230,
+          "path": [
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 230,
+          "path": [
+            "edge:134",
+            "edge:298",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            93,
+            220,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 230,
+          "path": [
+            "edge:298",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            220,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 230,
+          "path": [
+            "edge:346",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            313,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 342,
+          "target_node": 230,
+          "path": [
+            "candidate:Q056"
+          ],
+          "node_path": [
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 230,
+          "path": [
+            "edge:347",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            345,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 230,
+          "path": [
+            "edge:348",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            347,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 230,
+          "path": [
+            "edge:349",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            356,
+            92,
+            44,
+            342,
+            230
+          ]
+        }
+      ],
+      "rank": 7
     },
     {
       "id": "Q054",
@@ -3001,8 +2711,8 @@
       "category": "Construction open",
       "status": "unsolved",
       "N": 4,
-      "B": 0.388888888889,
-      "V": 20,
+      "B": 0.277777777778,
+      "V": 19,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 214; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 345 (graph_to_board)",
       "mapping_evidence": null,
@@ -3165,23 +2875,6 @@
             92,
             339,
             214
-          ]
-        },
-        {
-          "source_node": 339,
-          "target_node": 48,
-          "path": [
-            "candidate:Q054",
-            "edge:285",
-            "edge:95",
-            "edge:280"
-          ],
-          "node_path": [
-            339,
-            214,
-            78,
-            209,
-            48
           ]
         },
         {
