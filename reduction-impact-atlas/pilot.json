@@ -50,6 +50,12 @@
           "7": 13,
           "8": 1
         },
+        "variant_gain_breakdown": {
+          "direct": 1,
+          "upstream": 0,
+          "downstream": 117,
+          "both_sides": 0
+        },
         "rank": 1,
         "new_problem_pairs": [
           {
@@ -3703,6 +3709,12 @@
           "8": 25,
           "9": 13,
           "10": 1
+        },
+        "variant_gain_breakdown": {
+          "direct": 1,
+          "upstream": 0,
+          "downstream": 118,
+          "both_sides": 0
         },
         "rank": 1,
         "new_problem_pairs": [
