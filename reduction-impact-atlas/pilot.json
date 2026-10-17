@@ -9,6 +9,8 @@
       "id": "Q001",
       "source": "BFS tree support",
       "target": "Horn satisfiability",
+      "board_importance": "A polynomial reduction would give both recognition and tree construction for the remaining traversal-support case.",
+      "literature_checked": "2026-09-16",
       "review_state": "AI-proposed semantic bridge; independent review pending",
       "bridge": {
         "question_ids": [
@@ -3667,6 +3669,8 @@
       "id": "Q057",
       "source": "Common stable matching with two changed agents on each side",
       "target": "2-SAT search",
+      "board_importance": "Moderate: a successful structured encoding would settle the first unresolved case after one-sided preference changes and could support robust market design when a few participants revise rankings. It would not classify arbitrary numbers of changed agents.",
+      "literature_checked": "2026-09-26",
       "review_state": "AI-proposed semantic bridge; independent review pending",
       "bridge": {
         "question_ids": [
