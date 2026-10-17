@@ -87,20 +87,2265 @@
       "question_ids": [
         "Q064"
       ]
+    },
+    {
+      "source_node": 37,
+      "target_node": 322,
+      "edge_index": 350,
+      "direction": "graph_to_board",
+      "evidence": "The graph DecisionMaximumIndependentSet<SimpleGraph,One> asks whether an unweighted simple graph has an independent set of at least the input threshold. The board source takes the same graph and threshold and returns a witness or NO-SOLUTION. Its output decides the graph problem by checking whether a witness exists. This is a one-call graph-to-board reduction.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf",
+      "question_ids": [
+        "Q042"
+      ]
+    },
+    {
+      "source_node": 44,
+      "target_node": 340,
+      "edge_index": 351,
+      "direction": "graph_to_board",
+      "evidence": "The graph DecisionMinimumVertexCover<SimpleGraph,One> asks whether an unweighted simple graph has a vertex cover of size at most the input threshold. The board source takes the same graph and threshold and returns a witness or NO-SOLUTION. Its output decides the graph problem by checking whether a witness exists. This is a one-call graph-to-board reduction.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf",
+      "question_ids": [
+        "Q055"
+      ]
+    },
+    {
+      "source_node": 44,
+      "target_node": 342,
+      "edge_index": 352,
+      "direction": "graph_to_board",
+      "evidence": "The graph DecisionMinimumVertexCover<SimpleGraph,One> asks whether an unweighted simple graph has a vertex cover of size at most the input threshold. The board source takes the same graph and threshold and returns a witness or NO-SOLUTION. Its output decides the graph problem by checking whether a witness exists. This is a one-call graph-to-board reduction.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf",
+      "question_ids": [
+        "Q056"
+      ]
     }
   ],
   "question_count": 76,
   "scored_count": 76,
   "reviewed_count": 0,
   "N_distribution": {
-    "1": 47,
-    "5": 22,
-    "6": 6,
-    "9": 1
+    "1": 44,
+    "4": 23,
+    "6": 8,
+    "12": 1
   },
-  "ranking_rule": "Provisional N descending, then B descending, then question ID ascending",
+  "ranking_rule": "Provisional N descending, then B descending, then V (new variant pairs) descending; ID only sets display order within ties",
   "interpretation": "Hypothetical topology estimate under stated endpoint assumptions; not proof validity, literature openness, resource compatibility, or total research value.",
   "questions": [
+    {
+      "id": "Q042",
+      "slug": "three-agent-additive-maximal-ef1",
+      "source": "Independent Set",
+      "target": "Three-agent additive maximal EF1 allocation",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "N": 12,
+      "B": 0,
+      "V": 17,
+      "reason": null,
+      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 350 (graph_to_board)",
+      "mapping_evidence": null,
+      "source_node": 322,
+      "target_node": 323,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "DecisionMaximumIndependentSet",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "DecisionMinimumVertexCover",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "MinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "LongestCommonSubsequence",
+            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "ExactCoverBy3Sets",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "ExactCoverBy3Sets",
+            "MaximumSetPacking (weight=One)",
+            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "KSatisfiability (k=KN)",
+            "Satisfiability",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "LongestCommonSubsequence",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "LongestCommonSubsequence",
+            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "MaximumClique",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "MaximumClique (graph=SimpleGraph, weight=One)",
+            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "MaximumIndependentSet",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "MaximumSetPacking",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "MaximumSetPacking (weight=One)",
+            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "MinimumVertexCover",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "MinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "LongestCommonSubsequence",
+            "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "Three-agent additive maximal EF1 allocation",
+          "witness_nodes": [
+            "Satisfiability",
+            "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
+            "Independent Set [board]",
+            "Three-agent additive maximal EF1 allocation [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 323,
+          "path": [
+            "edge:14",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            15,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 37,
+          "target_node": 323,
+          "path": [
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 44,
+          "target_node": 323,
+          "path": [
+            "edge:42",
+            "edge:226",
+            "edge:142",
+            "edge:166",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            44,
+            171,
+            100,
+            119,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 62,
+          "target_node": 323,
+          "path": [
+            "edge:63",
+            "edge:184",
+            "edge:166",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            62,
+            128,
+            119,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 323,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 323,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 323,
+          "path": [
+            "edge:123",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            92,
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 323,
+          "path": [
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 100,
+          "target_node": 323,
+          "path": [
+            "edge:142",
+            "edge:166",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            100,
+            119,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 108,
+          "target_node": 323,
+          "path": [
+            "edge:153",
+            "edge:166",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            108,
+            119,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 117,
+          "target_node": 323,
+          "path": [
+            "edge:164",
+            "edge:177",
+            "edge:166",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            117,
+            123,
+            119,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 119,
+          "target_node": 323,
+          "path": [
+            "edge:166",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            119,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 123,
+          "target_node": 323,
+          "path": [
+            "edge:177",
+            "edge:166",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            123,
+            119,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 128,
+          "target_node": 323,
+          "path": [
+            "edge:184",
+            "edge:166",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            128,
+            119,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 171,
+          "target_node": 323,
+          "path": [
+            "edge:226",
+            "edge:142",
+            "edge:166",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            171,
+            100,
+            119,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 323,
+          "path": [
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 322,
+          "target_node": 323,
+          "path": [
+            "candidate:Q042"
+          ],
+          "node_path": [
+            322,
+            323
+          ]
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "id": "Q055",
+      "slug": "vertex-cover-external-macro-compression",
+      "source": "Vertex Cover",
+      "target": "External macro data compression",
+      "category": "Construction open",
+      "status": "unsolved",
+      "N": 6,
+      "B": 0,
+      "V": 9,
+      "reason": null,
+      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 351 (graph_to_board)",
+      "mapping_evidence": null,
+      "source_node": 340,
+      "target_node": 341,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "External macro data compression",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "External macro data compression [board]"
+          ]
+        },
+        {
+          "source": "DecisionMinimumVertexCover",
+          "target": "External macro data compression",
+          "witness_nodes": [
+            "Vertex Cover [board]",
+            "External macro data compression [board]"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "External macro data compression",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "External macro data compression [board]"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "External macro data compression",
+          "witness_nodes": [
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "External macro data compression [board]"
+          ]
+        },
+        {
+          "source": "MinimumVertexCover",
+          "target": "External macro data compression",
+          "witness_nodes": [
+            "MinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "External macro data compression [board]"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "External macro data compression",
+          "witness_nodes": [
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "External macro data compression [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 341,
+          "path": [
+            "edge:14",
+            "edge:298",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            15,
+            220,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 44,
+          "target_node": 341,
+          "path": [
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 341,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:298",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 341,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:298",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 341,
+          "path": [
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 341,
+          "path": [
+            "edge:134",
+            "edge:298",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            93,
+            220,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 171,
+          "target_node": 341,
+          "path": [
+            "edge:224",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            171,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 341,
+          "path": [
+            "edge:298",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            220,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 340,
+          "target_node": 341,
+          "path": [
+            "candidate:Q055"
+          ],
+          "node_path": [
+            340,
+            341
+          ]
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "id": "Q056",
+      "slug": "vertex-cover-set-basis",
+      "source": "Vertex Cover",
+      "target": "Set Basis",
+      "category": "Construction open",
+      "status": "unsolved",
+      "N": 6,
+      "B": 0,
+      "V": 9,
+      "reason": null,
+      "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 230; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 352 (graph_to_board)",
+      "mapping_evidence": null,
+      "source_node": 342,
+      "target_node": 230,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "SetBasis",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "SetBasis"
+          ]
+        },
+        {
+          "source": "DecisionMinimumVertexCover",
+          "target": "SetBasis",
+          "witness_nodes": [
+            "Vertex Cover [board]",
+            "SetBasis"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "SetBasis",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "SetBasis"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "SetBasis",
+          "witness_nodes": [
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "SetBasis"
+          ]
+        },
+        {
+          "source": "MinimumVertexCover",
+          "target": "SetBasis",
+          "witness_nodes": [
+            "MinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "SetBasis"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "SetBasis",
+          "witness_nodes": [
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
+            "Vertex Cover [board]",
+            "SetBasis"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 230,
+          "path": [
+            "edge:14",
+            "edge:298",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            15,
+            220,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 44,
+          "target_node": 230,
+          "path": [
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 230,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:298",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 230,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:298",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 230,
+          "path": [
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 230,
+          "path": [
+            "edge:134",
+            "edge:298",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            93,
+            220,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 171,
+          "target_node": 230,
+          "path": [
+            "edge:224",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            171,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 230,
+          "path": [
+            "edge:298",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            220,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 342,
+          "target_node": 230,
+          "path": [
+            "candidate:Q056"
+          ],
+          "node_path": [
+            342,
+            230
+          ]
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "id": "Q002",
+      "slug": "binary-network-common-contraction",
+      "source": "Set Splitting",
+      "target": "Binary-network common contraction",
+      "category": "Complexity open",
+      "status": "submitted",
+      "N": 6,
+      "B": 0,
+      "V": 8,
+      "reason": null,
+      "assumptions": "source: name-only match to graph node 231; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "mapping_evidence": null,
+      "source_node": 231,
+      "target_node": 259,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "Binary-network common contraction",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "NAESatisfiability",
+            "SetSplitting",
+            "Binary-network common contraction [board]"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "Binary-network common contraction",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "NAESatisfiability",
+            "SetSplitting",
+            "Binary-network common contraction [board]"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "Binary-network common contraction",
+          "witness_nodes": [
+            "KSatisfiability (k=KN)",
+            "Satisfiability",
+            "NAESatisfiability",
+            "SetSplitting",
+            "Binary-network common contraction [board]"
+          ]
+        },
+        {
+          "source": "NAESatisfiability",
+          "target": "Binary-network common contraction",
+          "witness_nodes": [
+            "NAESatisfiability",
+            "SetSplitting",
+            "Binary-network common contraction [board]"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "Binary-network common contraction",
+          "witness_nodes": [
+            "Satisfiability",
+            "NAESatisfiability",
+            "SetSplitting",
+            "Binary-network common contraction [board]"
+          ]
+        },
+        {
+          "source": "SetSplitting",
+          "target": "Binary-network common contraction",
+          "witness_nodes": [
+            "SetSplitting",
+            "Binary-network common contraction [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 259,
+          "path": [
+            "edge:14",
+            "edge:299",
+            "edge:244",
+            "candidate:Q002"
+          ],
+          "node_path": [
+            15,
+            220,
+            182,
+            231,
+            259
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 259,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:299",
+            "edge:244",
+            "candidate:Q002"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            182,
+            231,
+            259
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 259,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:299",
+            "edge:244",
+            "candidate:Q002"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            182,
+            231,
+            259
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 259,
+          "path": [
+            "edge:123",
+            "edge:134",
+            "edge:299",
+            "edge:244",
+            "candidate:Q002"
+          ],
+          "node_path": [
+            92,
+            93,
+            220,
+            182,
+            231,
+            259
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 259,
+          "path": [
+            "edge:134",
+            "edge:299",
+            "edge:244",
+            "candidate:Q002"
+          ],
+          "node_path": [
+            93,
+            220,
+            182,
+            231,
+            259
+          ]
+        },
+        {
+          "source_node": 182,
+          "target_node": 259,
+          "path": [
+            "edge:244",
+            "candidate:Q002"
+          ],
+          "node_path": [
+            182,
+            231,
+            259
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 259,
+          "path": [
+            "edge:299",
+            "edge:244",
+            "candidate:Q002"
+          ],
+          "node_path": [
+            220,
+            182,
+            231,
+            259
+          ]
+        },
+        {
+          "source_node": 231,
+          "target_node": 259,
+          "path": [
+            "candidate:Q002"
+          ],
+          "node_path": [
+            231,
+            259
+          ]
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "id": "Q009",
+      "slug": "common-delay-coupled-lateness",
+      "source": "Partition",
+      "target": "Common-delay coupled-task deadline feasibility",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "N": 6,
+      "B": 0,
+      "V": 8,
+      "reason": null,
+      "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "mapping_evidence": null,
+      "source_node": 194,
+      "target_node": 271,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "Common-delay coupled-task deadline feasibility",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Common-delay coupled-task deadline feasibility [board]"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "Common-delay coupled-task deadline feasibility",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Common-delay coupled-task deadline feasibility [board]"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "Common-delay coupled-task deadline feasibility",
+          "witness_nodes": [
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Common-delay coupled-task deadline feasibility [board]"
+          ]
+        },
+        {
+          "source": "Partition",
+          "target": "Common-delay coupled-task deadline feasibility",
+          "witness_nodes": [
+            "Partition",
+            "Common-delay coupled-task deadline feasibility [board]"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "Common-delay coupled-task deadline feasibility",
+          "witness_nodes": [
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Common-delay coupled-task deadline feasibility [board]"
+          ]
+        },
+        {
+          "source": "SubsetSum",
+          "target": "Common-delay coupled-task deadline feasibility",
+          "witness_nodes": [
+            "SubsetSum",
+            "Partition",
+            "Common-delay coupled-task deadline feasibility [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 271,
+          "path": [
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q009"
+          ],
+          "node_path": [
+            15,
+            220,
+            92,
+            248,
+            194,
+            271
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 271,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q009"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            92,
+            248,
+            194,
+            271
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 271,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q009"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            92,
+            248,
+            194,
+            271
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 271,
+          "path": [
+            "edge:132",
+            "edge:330",
+            "candidate:Q009"
+          ],
+          "node_path": [
+            92,
+            248,
+            194,
+            271
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 271,
+          "path": [
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q009"
+          ],
+          "node_path": [
+            93,
+            220,
+            92,
+            248,
+            194,
+            271
+          ]
+        },
+        {
+          "source_node": 194,
+          "target_node": 271,
+          "path": [
+            "candidate:Q009"
+          ],
+          "node_path": [
+            194,
+            271
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 271,
+          "path": [
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q009"
+          ],
+          "node_path": [
+            220,
+            92,
+            248,
+            194,
+            271
+          ]
+        },
+        {
+          "source_node": 248,
+          "target_node": 271,
+          "path": [
+            "edge:330",
+            "candidate:Q009"
+          ],
+          "node_path": [
+            248,
+            194,
+            271
+          ]
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "id": "Q017",
+      "slug": "fixed-order-three-machine-flexible-blocking",
+      "source": "Partition",
+      "target": "Fixed-order three-machine flexible blocking",
+      "category": "Complexity open",
+      "status": "submitted",
+      "N": 6,
+      "B": 0,
+      "V": 8,
+      "reason": null,
+      "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "mapping_evidence": null,
+      "source_node": 194,
+      "target_node": 283,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "Fixed-order three-machine flexible blocking",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Fixed-order three-machine flexible blocking [board]"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "Fixed-order three-machine flexible blocking",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Fixed-order three-machine flexible blocking [board]"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "Fixed-order three-machine flexible blocking",
+          "witness_nodes": [
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Fixed-order three-machine flexible blocking [board]"
+          ]
+        },
+        {
+          "source": "Partition",
+          "target": "Fixed-order three-machine flexible blocking",
+          "witness_nodes": [
+            "Partition",
+            "Fixed-order three-machine flexible blocking [board]"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "Fixed-order three-machine flexible blocking",
+          "witness_nodes": [
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Fixed-order three-machine flexible blocking [board]"
+          ]
+        },
+        {
+          "source": "SubsetSum",
+          "target": "Fixed-order three-machine flexible blocking",
+          "witness_nodes": [
+            "SubsetSum",
+            "Partition",
+            "Fixed-order three-machine flexible blocking [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 283,
+          "path": [
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q017"
+          ],
+          "node_path": [
+            15,
+            220,
+            92,
+            248,
+            194,
+            283
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 283,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q017"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            92,
+            248,
+            194,
+            283
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 283,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q017"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            92,
+            248,
+            194,
+            283
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 283,
+          "path": [
+            "edge:132",
+            "edge:330",
+            "candidate:Q017"
+          ],
+          "node_path": [
+            92,
+            248,
+            194,
+            283
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 283,
+          "path": [
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q017"
+          ],
+          "node_path": [
+            93,
+            220,
+            92,
+            248,
+            194,
+            283
+          ]
+        },
+        {
+          "source_node": 194,
+          "target_node": 283,
+          "path": [
+            "candidate:Q017"
+          ],
+          "node_path": [
+            194,
+            283
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 283,
+          "path": [
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q017"
+          ],
+          "node_path": [
+            220,
+            92,
+            248,
+            194,
+            283
+          ]
+        },
+        {
+          "source_node": 248,
+          "target_node": 283,
+          "path": [
+            "edge:330",
+            "candidate:Q017"
+          ],
+          "node_path": [
+            248,
+            194,
+            283
+          ]
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "id": "Q026",
+      "slug": "nonuniform-cost-unanimous-vote",
+      "source": "Partition",
+      "target": "Nonuniform-cost Unanimous Vote",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "N": 6,
+      "B": 0,
+      "V": 8,
+      "reason": null,
+      "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "mapping_evidence": null,
+      "source_node": 194,
+      "target_node": 295,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "Nonuniform-cost Unanimous Vote",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Nonuniform-cost Unanimous Vote [board]"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "Nonuniform-cost Unanimous Vote",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Nonuniform-cost Unanimous Vote [board]"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "Nonuniform-cost Unanimous Vote",
+          "witness_nodes": [
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Nonuniform-cost Unanimous Vote [board]"
+          ]
+        },
+        {
+          "source": "Partition",
+          "target": "Nonuniform-cost Unanimous Vote",
+          "witness_nodes": [
+            "Partition",
+            "Nonuniform-cost Unanimous Vote [board]"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "Nonuniform-cost Unanimous Vote",
+          "witness_nodes": [
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Nonuniform-cost Unanimous Vote [board]"
+          ]
+        },
+        {
+          "source": "SubsetSum",
+          "target": "Nonuniform-cost Unanimous Vote",
+          "witness_nodes": [
+            "SubsetSum",
+            "Partition",
+            "Nonuniform-cost Unanimous Vote [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 295,
+          "path": [
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q026"
+          ],
+          "node_path": [
+            15,
+            220,
+            92,
+            248,
+            194,
+            295
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 295,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q026"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            92,
+            248,
+            194,
+            295
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 295,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q026"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            92,
+            248,
+            194,
+            295
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 295,
+          "path": [
+            "edge:132",
+            "edge:330",
+            "candidate:Q026"
+          ],
+          "node_path": [
+            92,
+            248,
+            194,
+            295
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 295,
+          "path": [
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q026"
+          ],
+          "node_path": [
+            93,
+            220,
+            92,
+            248,
+            194,
+            295
+          ]
+        },
+        {
+          "source_node": 194,
+          "target_node": 295,
+          "path": [
+            "candidate:Q026"
+          ],
+          "node_path": [
+            194,
+            295
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 295,
+          "path": [
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q026"
+          ],
+          "node_path": [
+            220,
+            92,
+            248,
+            194,
+            295
+          ]
+        },
+        {
+          "source_node": 248,
+          "target_node": 295,
+          "path": [
+            "edge:330",
+            "candidate:Q026"
+          ],
+          "node_path": [
+            248,
+            194,
+            295
+          ]
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "id": "Q048",
+      "slug": "two-machine-flexible-blocking",
+      "source": "Partition",
+      "target": "Two-machine flexible blocking",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "N": 6,
+      "B": 0,
+      "V": 8,
+      "reason": null,
+      "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "mapping_evidence": null,
+      "source_node": 194,
+      "target_node": 331,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "Two-machine flexible blocking",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Two-machine flexible blocking [board]"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "Two-machine flexible blocking",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Two-machine flexible blocking [board]"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "Two-machine flexible blocking",
+          "witness_nodes": [
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Two-machine flexible blocking [board]"
+          ]
+        },
+        {
+          "source": "Partition",
+          "target": "Two-machine flexible blocking",
+          "witness_nodes": [
+            "Partition",
+            "Two-machine flexible blocking [board]"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "Two-machine flexible blocking",
+          "witness_nodes": [
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Partition",
+            "Two-machine flexible blocking [board]"
+          ]
+        },
+        {
+          "source": "SubsetSum",
+          "target": "Two-machine flexible blocking",
+          "witness_nodes": [
+            "SubsetSum",
+            "Partition",
+            "Two-machine flexible blocking [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 331,
+          "path": [
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q048"
+          ],
+          "node_path": [
+            15,
+            220,
+            92,
+            248,
+            194,
+            331
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 331,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q048"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            92,
+            248,
+            194,
+            331
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 331,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q048"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            92,
+            248,
+            194,
+            331
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 331,
+          "path": [
+            "edge:132",
+            "edge:330",
+            "candidate:Q048"
+          ],
+          "node_path": [
+            92,
+            248,
+            194,
+            331
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 331,
+          "path": [
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q048"
+          ],
+          "node_path": [
+            93,
+            220,
+            92,
+            248,
+            194,
+            331
+          ]
+        },
+        {
+          "source_node": 194,
+          "target_node": 331,
+          "path": [
+            "candidate:Q048"
+          ],
+          "node_path": [
+            194,
+            331
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 331,
+          "path": [
+            "edge:298",
+            "edge:132",
+            "edge:330",
+            "candidate:Q048"
+          ],
+          "node_path": [
+            220,
+            92,
+            248,
+            194,
+            331
+          ]
+        },
+        {
+          "source_node": 248,
+          "target_node": 331,
+          "path": [
+            "edge:330",
+            "candidate:Q048"
+          ],
+          "node_path": [
+            248,
+            194,
+            331
+          ]
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "id": "Q062",
+      "slug": "unary-profit-product-knapsack",
+      "source": "Subset Sum",
+      "target": "Product Knapsack with unary profits and binary weights",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "N": 6,
+      "B": 0,
+      "V": 8,
+      "reason": null,
+      "assumptions": "source: name-only match to graph node 248; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "mapping_evidence": null,
+      "source_node": 248,
+      "target_node": 353,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ]
+        },
+        {
+          "source": "Factoring",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ]
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ]
+        },
+        {
+          "source": "Partition",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "Partition",
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ]
+        },
+        {
+          "source": "Satisfiability",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ]
+        },
+        {
+          "source": "SubsetSum",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 353,
+          "path": [
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            15,
+            220,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 353,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 353,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 353,
+          "path": [
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 353,
+          "path": [
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            93,
+            220,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 194,
+          "target_node": 353,
+          "path": [
+            "edge:265",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            194,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 353,
+          "path": [
+            "edge:298",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            220,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 248,
+          "target_node": 353,
+          "path": [
+            "candidate:Q062"
+          ],
+          "node_path": [
+            248,
+            353
+          ]
+        }
+      ],
+      "rank": 4
+    },
     {
       "id": "Q054",
       "slug": "three-sat-rectilinear-picture-compression",
@@ -108,8 +2353,9 @@
       "target": "Rectilinear picture compression",
       "category": "Construction open",
       "status": "unsolved",
-      "N": 9,
-      "B": 0,
+      "N": 4,
+      "B": 0.388888888889,
+      "V": 16,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 214; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 346 (graph_to_board)",
       "mapping_evidence": null,
@@ -143,7 +2389,6 @@
           "source": "KSatisfiability",
           "target": "RectilinearPictureCompression",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "RectilinearPictureCompression"
           ]
@@ -156,56 +2401,6 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "RectilinearPictureCompression"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "DecisionQUBO",
-          "witness_nodes": [
-            "3-SAT [board]",
-            "RectilinearPictureCompression",
-            "ILP (bounds=general, coefficient=i64, variable=bool)",
-            "QUBO (weight=i64)",
-            "DecisionQUBO (weight=i64)"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "ILP",
-          "witness_nodes": [
-            "3-SAT [board]",
-            "RectilinearPictureCompression",
-            "ILP (bounds=general, coefficient=i64, variable=bool)"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "QUBO",
-          "witness_nodes": [
-            "3-SAT [board]",
-            "RectilinearPictureCompression",
-            "ILP (bounds=general, coefficient=i64, variable=bool)",
-            "QUBO (weight=i64)"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "RectilinearPictureCompression",
-          "witness_nodes": [
-            "3-SAT [board]",
-            "RectilinearPictureCompression"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "SpinGlass",
-          "witness_nodes": [
-            "3-SAT [board]",
-            "RectilinearPictureCompression",
-            "ILP (bounds=general, coefficient=i64, variable=bool)",
-            "QUBO (weight=i64)",
-            "QUBO (weight=f64)",
-            "SpinGlass (graph=SimpleGraph, weight=f64)"
           ]
         }
       ],
@@ -469,1297 +2664,7 @@
           ]
         }
       ],
-      "rank": 1
-    },
-    {
-      "id": "Q002",
-      "slug": "binary-network-common-contraction",
-      "source": "Set Splitting",
-      "target": "Binary-network common contraction",
-      "category": "Complexity open",
-      "status": "submitted",
-      "N": 6,
-      "B": 0,
-      "reason": null,
-      "assumptions": "source: name-only match to graph node 231; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
-      "mapping_evidence": null,
-      "source_node": 231,
-      "target_node": 259,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Binary-network common contraction",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "NAESatisfiability",
-            "SetSplitting",
-            "Binary-network common contraction [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Binary-network common contraction",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "NAESatisfiability",
-            "SetSplitting",
-            "Binary-network common contraction [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Binary-network common contraction",
-          "witness_nodes": [
-            "KSatisfiability (k=KN)",
-            "Satisfiability",
-            "NAESatisfiability",
-            "SetSplitting",
-            "Binary-network common contraction [board]"
-          ]
-        },
-        {
-          "source": "NAESatisfiability",
-          "target": "Binary-network common contraction",
-          "witness_nodes": [
-            "NAESatisfiability",
-            "SetSplitting",
-            "Binary-network common contraction [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Binary-network common contraction",
-          "witness_nodes": [
-            "Satisfiability",
-            "NAESatisfiability",
-            "SetSplitting",
-            "Binary-network common contraction [board]"
-          ]
-        },
-        {
-          "source": "SetSplitting",
-          "target": "Binary-network common contraction",
-          "witness_nodes": [
-            "SetSplitting",
-            "Binary-network common contraction [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 259,
-          "path": [
-            "edge:14",
-            "edge:299",
-            "edge:244",
-            "candidate:Q002"
-          ],
-          "node_path": [
-            15,
-            220,
-            182,
-            231,
-            259
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 259,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:299",
-            "edge:244",
-            "candidate:Q002"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            182,
-            231,
-            259
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 259,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:299",
-            "edge:244",
-            "candidate:Q002"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            182,
-            231,
-            259
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 259,
-          "path": [
-            "edge:123",
-            "edge:134",
-            "edge:299",
-            "edge:244",
-            "candidate:Q002"
-          ],
-          "node_path": [
-            92,
-            93,
-            220,
-            182,
-            231,
-            259
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 259,
-          "path": [
-            "edge:134",
-            "edge:299",
-            "edge:244",
-            "candidate:Q002"
-          ],
-          "node_path": [
-            93,
-            220,
-            182,
-            231,
-            259
-          ]
-        },
-        {
-          "source_node": 182,
-          "target_node": 259,
-          "path": [
-            "edge:244",
-            "candidate:Q002"
-          ],
-          "node_path": [
-            182,
-            231,
-            259
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 259,
-          "path": [
-            "edge:299",
-            "edge:244",
-            "candidate:Q002"
-          ],
-          "node_path": [
-            220,
-            182,
-            231,
-            259
-          ]
-        },
-        {
-          "source_node": 231,
-          "target_node": 259,
-          "path": [
-            "candidate:Q002"
-          ],
-          "node_path": [
-            231,
-            259
-          ]
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "id": "Q009",
-      "slug": "common-delay-coupled-lateness",
-      "source": "Partition",
-      "target": "Common-delay coupled-task deadline feasibility",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "N": 6,
-      "B": 0,
-      "reason": null,
-      "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
-      "mapping_evidence": null,
-      "source_node": 194,
-      "target_node": 271,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Common-delay coupled-task deadline feasibility",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Common-delay coupled-task deadline feasibility [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Common-delay coupled-task deadline feasibility",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Common-delay coupled-task deadline feasibility [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Common-delay coupled-task deadline feasibility",
-          "witness_nodes": [
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Common-delay coupled-task deadline feasibility [board]"
-          ]
-        },
-        {
-          "source": "Partition",
-          "target": "Common-delay coupled-task deadline feasibility",
-          "witness_nodes": [
-            "Partition",
-            "Common-delay coupled-task deadline feasibility [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Common-delay coupled-task deadline feasibility",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Common-delay coupled-task deadline feasibility [board]"
-          ]
-        },
-        {
-          "source": "SubsetSum",
-          "target": "Common-delay coupled-task deadline feasibility",
-          "witness_nodes": [
-            "SubsetSum",
-            "Partition",
-            "Common-delay coupled-task deadline feasibility [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 271,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q009"
-          ],
-          "node_path": [
-            15,
-            220,
-            92,
-            248,
-            194,
-            271
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 271,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q009"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            248,
-            194,
-            271
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 271,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q009"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            248,
-            194,
-            271
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 271,
-          "path": [
-            "edge:132",
-            "edge:330",
-            "candidate:Q009"
-          ],
-          "node_path": [
-            92,
-            248,
-            194,
-            271
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 271,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q009"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            248,
-            194,
-            271
-          ]
-        },
-        {
-          "source_node": 194,
-          "target_node": 271,
-          "path": [
-            "candidate:Q009"
-          ],
-          "node_path": [
-            194,
-            271
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 271,
-          "path": [
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q009"
-          ],
-          "node_path": [
-            220,
-            92,
-            248,
-            194,
-            271
-          ]
-        },
-        {
-          "source_node": 248,
-          "target_node": 271,
-          "path": [
-            "edge:330",
-            "candidate:Q009"
-          ],
-          "node_path": [
-            248,
-            194,
-            271
-          ]
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "id": "Q017",
-      "slug": "fixed-order-three-machine-flexible-blocking",
-      "source": "Partition",
-      "target": "Fixed-order three-machine flexible blocking",
-      "category": "Complexity open",
-      "status": "submitted",
-      "N": 6,
-      "B": 0,
-      "reason": null,
-      "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
-      "mapping_evidence": null,
-      "source_node": 194,
-      "target_node": 283,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Fixed-order three-machine flexible blocking",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Fixed-order three-machine flexible blocking [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Fixed-order three-machine flexible blocking",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Fixed-order three-machine flexible blocking [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Fixed-order three-machine flexible blocking",
-          "witness_nodes": [
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Fixed-order three-machine flexible blocking [board]"
-          ]
-        },
-        {
-          "source": "Partition",
-          "target": "Fixed-order three-machine flexible blocking",
-          "witness_nodes": [
-            "Partition",
-            "Fixed-order three-machine flexible blocking [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Fixed-order three-machine flexible blocking",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Fixed-order three-machine flexible blocking [board]"
-          ]
-        },
-        {
-          "source": "SubsetSum",
-          "target": "Fixed-order three-machine flexible blocking",
-          "witness_nodes": [
-            "SubsetSum",
-            "Partition",
-            "Fixed-order three-machine flexible blocking [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 283,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q017"
-          ],
-          "node_path": [
-            15,
-            220,
-            92,
-            248,
-            194,
-            283
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 283,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q017"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            248,
-            194,
-            283
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 283,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q017"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            248,
-            194,
-            283
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 283,
-          "path": [
-            "edge:132",
-            "edge:330",
-            "candidate:Q017"
-          ],
-          "node_path": [
-            92,
-            248,
-            194,
-            283
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 283,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q017"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            248,
-            194,
-            283
-          ]
-        },
-        {
-          "source_node": 194,
-          "target_node": 283,
-          "path": [
-            "candidate:Q017"
-          ],
-          "node_path": [
-            194,
-            283
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 283,
-          "path": [
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q017"
-          ],
-          "node_path": [
-            220,
-            92,
-            248,
-            194,
-            283
-          ]
-        },
-        {
-          "source_node": 248,
-          "target_node": 283,
-          "path": [
-            "edge:330",
-            "candidate:Q017"
-          ],
-          "node_path": [
-            248,
-            194,
-            283
-          ]
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "id": "Q026",
-      "slug": "nonuniform-cost-unanimous-vote",
-      "source": "Partition",
-      "target": "Nonuniform-cost Unanimous Vote",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "N": 6,
-      "B": 0,
-      "reason": null,
-      "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
-      "mapping_evidence": null,
-      "source_node": 194,
-      "target_node": 295,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Nonuniform-cost Unanimous Vote",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Nonuniform-cost Unanimous Vote [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Nonuniform-cost Unanimous Vote",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Nonuniform-cost Unanimous Vote [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Nonuniform-cost Unanimous Vote",
-          "witness_nodes": [
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Nonuniform-cost Unanimous Vote [board]"
-          ]
-        },
-        {
-          "source": "Partition",
-          "target": "Nonuniform-cost Unanimous Vote",
-          "witness_nodes": [
-            "Partition",
-            "Nonuniform-cost Unanimous Vote [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Nonuniform-cost Unanimous Vote",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Nonuniform-cost Unanimous Vote [board]"
-          ]
-        },
-        {
-          "source": "SubsetSum",
-          "target": "Nonuniform-cost Unanimous Vote",
-          "witness_nodes": [
-            "SubsetSum",
-            "Partition",
-            "Nonuniform-cost Unanimous Vote [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 295,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q026"
-          ],
-          "node_path": [
-            15,
-            220,
-            92,
-            248,
-            194,
-            295
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 295,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q026"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            248,
-            194,
-            295
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 295,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q026"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            248,
-            194,
-            295
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 295,
-          "path": [
-            "edge:132",
-            "edge:330",
-            "candidate:Q026"
-          ],
-          "node_path": [
-            92,
-            248,
-            194,
-            295
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 295,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q026"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            248,
-            194,
-            295
-          ]
-        },
-        {
-          "source_node": 194,
-          "target_node": 295,
-          "path": [
-            "candidate:Q026"
-          ],
-          "node_path": [
-            194,
-            295
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 295,
-          "path": [
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q026"
-          ],
-          "node_path": [
-            220,
-            92,
-            248,
-            194,
-            295
-          ]
-        },
-        {
-          "source_node": 248,
-          "target_node": 295,
-          "path": [
-            "edge:330",
-            "candidate:Q026"
-          ],
-          "node_path": [
-            248,
-            194,
-            295
-          ]
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "id": "Q048",
-      "slug": "two-machine-flexible-blocking",
-      "source": "Partition",
-      "target": "Two-machine flexible blocking",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "N": 6,
-      "B": 0,
-      "reason": null,
-      "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
-      "mapping_evidence": null,
-      "source_node": 194,
-      "target_node": 331,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Two-machine flexible blocking",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Two-machine flexible blocking [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Two-machine flexible blocking",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Two-machine flexible blocking [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Two-machine flexible blocking",
-          "witness_nodes": [
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Two-machine flexible blocking [board]"
-          ]
-        },
-        {
-          "source": "Partition",
-          "target": "Two-machine flexible blocking",
-          "witness_nodes": [
-            "Partition",
-            "Two-machine flexible blocking [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Two-machine flexible blocking",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Partition",
-            "Two-machine flexible blocking [board]"
-          ]
-        },
-        {
-          "source": "SubsetSum",
-          "target": "Two-machine flexible blocking",
-          "witness_nodes": [
-            "SubsetSum",
-            "Partition",
-            "Two-machine flexible blocking [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 331,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q048"
-          ],
-          "node_path": [
-            15,
-            220,
-            92,
-            248,
-            194,
-            331
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 331,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q048"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            248,
-            194,
-            331
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 331,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q048"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            248,
-            194,
-            331
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 331,
-          "path": [
-            "edge:132",
-            "edge:330",
-            "candidate:Q048"
-          ],
-          "node_path": [
-            92,
-            248,
-            194,
-            331
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 331,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q048"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            248,
-            194,
-            331
-          ]
-        },
-        {
-          "source_node": 194,
-          "target_node": 331,
-          "path": [
-            "candidate:Q048"
-          ],
-          "node_path": [
-            194,
-            331
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 331,
-          "path": [
-            "edge:298",
-            "edge:132",
-            "edge:330",
-            "candidate:Q048"
-          ],
-          "node_path": [
-            220,
-            92,
-            248,
-            194,
-            331
-          ]
-        },
-        {
-          "source_node": 248,
-          "target_node": 331,
-          "path": [
-            "edge:330",
-            "candidate:Q048"
-          ],
-          "node_path": [
-            248,
-            194,
-            331
-          ]
-        }
-      ],
-      "rank": 2
-    },
-    {
-      "id": "Q062",
-      "slug": "unary-profit-product-knapsack",
-      "source": "Subset Sum",
-      "target": "Product Knapsack with unary profits and binary weights",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "N": 6,
-      "B": 0,
-      "reason": null,
-      "assumptions": "source: name-only match to graph node 248; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
-      "mapping_evidence": null,
-      "source_node": 248,
-      "target_node": 353,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ]
-        },
-        {
-          "source": "Partition",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "Partition",
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ]
-        },
-        {
-          "source": "SubsetSum",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 353,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            15,
-            220,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 353,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 353,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 353,
-          "path": [
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 353,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 194,
-          "target_node": 353,
-          "path": [
-            "edge:265",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            194,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 353,
-          "path": [
-            "edge:298",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            220,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 248,
-          "target_node": 353,
-          "path": [
-            "candidate:Q062"
-          ],
-          "node_path": [
-            248,
-            353
-          ]
-        }
-      ],
-      "rank": 2
+      "rank": 10
     },
     {
       "id": "Q010",
@@ -1768,8 +2673,9 @@
       "target": "Constant-free graph orientation",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -1803,7 +2709,6 @@
           "source": "KSatisfiability",
           "target": "Constant-free graph orientation",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Constant-free graph orientation [board]"
           ]
@@ -1814,14 +2719,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Constant-free graph orientation [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Constant-free graph orientation",
-          "witness_nodes": [
             "3-SAT [board]",
             "Constant-free graph orientation [board]"
           ]
@@ -1940,7 +2837,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q011",
@@ -1949,8 +2846,9 @@
       "target": "Depth-three unit 2-interval recognition",
       "category": "Complexity open",
       "status": "submitted",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -1984,7 +2882,6 @@
           "source": "KSatisfiability",
           "target": "Depth-three unit 2-interval recognition",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Depth-three unit 2-interval recognition [board]"
           ]
@@ -1995,14 +2892,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Depth-three unit 2-interval recognition [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Depth-three unit 2-interval recognition",
-          "witness_nodes": [
             "3-SAT [board]",
             "Depth-three unit 2-interval recognition [board]"
           ]
@@ -2121,7 +3010,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q013",
@@ -2130,8 +3019,9 @@
       "target": "Distinct Restricted Numerical 3-Dimensional Matching",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -2165,7 +3055,6 @@
           "source": "KSatisfiability",
           "target": "Distinct Restricted Numerical 3-Dimensional Matching",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Distinct Restricted Numerical 3-Dimensional Matching [board]"
           ]
@@ -2176,14 +3065,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Distinct Restricted Numerical 3-Dimensional Matching [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Distinct Restricted Numerical 3-Dimensional Matching",
-          "witness_nodes": [
             "3-SAT [board]",
             "Distinct Restricted Numerical 3-Dimensional Matching [board]"
           ]
@@ -2302,7 +3183,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q014",
@@ -2311,8 +3192,9 @@
       "target": "Elastic-degenerate string inequivalence",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -2346,7 +3228,6 @@
           "source": "KSatisfiability",
           "target": "Elastic-degenerate string inequivalence",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Elastic-degenerate string inequivalence [board]"
           ]
@@ -2357,14 +3238,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Elastic-degenerate string inequivalence [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Elastic-degenerate string inequivalence",
-          "witness_nodes": [
             "3-SAT [board]",
             "Elastic-degenerate string inequivalence [board]"
           ]
@@ -2483,7 +3356,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q018",
@@ -2492,8 +3365,9 @@
       "target": "Exact Hadamard decomposition",
       "category": "Complexity open",
       "status": "submitted",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -2527,7 +3401,6 @@
           "source": "KSatisfiability",
           "target": "Exact Hadamard decomposition",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Exact Hadamard decomposition [board]"
           ]
@@ -2538,14 +3411,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Exact Hadamard decomposition [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Exact Hadamard decomposition",
-          "witness_nodes": [
             "3-SAT [board]",
             "Exact Hadamard decomposition [board]"
           ]
@@ -2664,7 +3529,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q019",
@@ -2673,8 +3538,9 @@
       "target": "Total-budget Hadamard complexity",
       "category": "Complexity open",
       "status": "submitted",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -2708,7 +3574,6 @@
           "source": "KSatisfiability",
           "target": "Total-budget Hadamard complexity",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Total-budget Hadamard complexity [board]"
           ]
@@ -2719,14 +3584,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Total-budget Hadamard complexity [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Total-budget Hadamard complexity",
-          "witness_nodes": [
             "3-SAT [board]",
             "Total-budget Hadamard complexity [board]"
           ]
@@ -2845,7 +3702,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q021",
@@ -2854,8 +3711,9 @@
       "target": "Variable-alphabet lettericity",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -2889,7 +3747,6 @@
           "source": "KSatisfiability",
           "target": "Variable-alphabet lettericity",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Variable-alphabet lettericity [board]"
           ]
@@ -2900,14 +3757,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Variable-alphabet lettericity [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Variable-alphabet lettericity",
-          "witness_nodes": [
             "3-SAT [board]",
             "Variable-alphabet lettericity [board]"
           ]
@@ -3026,7 +3875,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q025",
@@ -3035,8 +3884,9 @@
       "target": "Nonnegative integer rank two for 3×3 matrices",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -3070,7 +3920,6 @@
           "source": "KSatisfiability",
           "target": "Nonnegative integer rank two for 3×3 matrices",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Nonnegative integer rank two for 3×3 matrices [board]"
           ]
@@ -3081,14 +3930,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Nonnegative integer rank two for 3×3 matrices [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Nonnegative integer rank two for 3×3 matrices",
-          "witness_nodes": [
             "3-SAT [board]",
             "Nonnegative integer rank two for 3×3 matrices [board]"
           ]
@@ -3207,7 +4048,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q033",
@@ -3216,8 +4057,9 @@
       "target": "Dimension of a poset with a planar diagram",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -3251,7 +4093,6 @@
           "source": "KSatisfiability",
           "target": "Dimension of a poset with a planar diagram",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Dimension of a poset with a planar diagram [board]"
           ]
@@ -3262,14 +4103,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Dimension of a poset with a planar diagram [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Dimension of a poset with a planar diagram",
-          "witness_nodes": [
             "3-SAT [board]",
             "Dimension of a poset with a planar diagram [board]"
           ]
@@ -3388,7 +4221,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q036",
@@ -3397,8 +4230,9 @@
       "target": "Rank-two nonnegative approximation",
       "category": "Complexity open",
       "status": "lean_checked",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 345 (graph_to_board)",
       "mapping_evidence": null,
@@ -3432,7 +4266,6 @@
           "source": "KSatisfiability",
           "target": "Rank-two nonnegative approximation",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Rank-two nonnegative approximation [board]"
           ]
@@ -3443,14 +4276,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Rank-two nonnegative approximation [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Rank-two nonnegative approximation",
-          "witness_nodes": [
             "3-SAT [board]",
             "Rank-two nonnegative approximation [board]"
           ]
@@ -3569,7 +4394,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q039",
@@ -3578,8 +4403,9 @@
       "target": "Simple-polygon visibility graph recognition",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -3613,7 +4439,6 @@
           "source": "KSatisfiability",
           "target": "Simple-polygon visibility graph recognition",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Simple-polygon visibility graph recognition [board]"
           ]
@@ -3624,14 +4449,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Simple-polygon visibility graph recognition [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Simple-polygon visibility graph recognition",
-          "witness_nodes": [
             "3-SAT [board]",
             "Simple-polygon visibility graph recognition [board]"
           ]
@@ -3750,7 +4567,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q040",
@@ -3759,8 +4576,9 @@
       "target": "Proper star colouring on split graphs",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -3794,7 +4612,6 @@
           "source": "KSatisfiability",
           "target": "Proper star colouring on split graphs",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Proper star colouring on split graphs [board]"
           ]
@@ -3805,14 +4622,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Proper star colouring on split graphs [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Proper star colouring on split graphs",
-          "witness_nodes": [
             "3-SAT [board]",
             "Proper star colouring on split graphs [board]"
           ]
@@ -3931,7 +4740,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q043",
@@ -3940,8 +4749,9 @@
       "target": "Three-machine unit-job precedence scheduling",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -3975,7 +4785,6 @@
           "source": "KSatisfiability",
           "target": "Three-machine unit-job precedence scheduling",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Three-machine unit-job precedence scheduling [board]"
           ]
@@ -3986,14 +4795,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Three-machine unit-job precedence scheduling [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Three-machine unit-job precedence scheduling",
-          "witness_nodes": [
             "3-SAT [board]",
             "Three-machine unit-job precedence scheduling [board]"
           ]
@@ -4112,7 +4913,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q046",
@@ -4121,8 +4922,9 @@
       "target": "Threshold-two Fitting Hexasort",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -4156,7 +4958,6 @@
           "source": "KSatisfiability",
           "target": "Threshold-two Fitting Hexasort",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Threshold-two Fitting Hexasort [board]"
           ]
@@ -4167,14 +4968,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Threshold-two Fitting Hexasort [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Threshold-two Fitting Hexasort",
-          "witness_nodes": [
             "3-SAT [board]",
             "Threshold-two Fitting Hexasort [board]"
           ]
@@ -4293,7 +5086,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q047",
@@ -4302,8 +5095,9 @@
       "target": "Tiles without teleport moves",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -4337,7 +5131,6 @@
           "source": "KSatisfiability",
           "target": "Tiles without teleport moves",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Tiles without teleport moves [board]"
           ]
@@ -4348,14 +5141,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Tiles without teleport moves [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Tiles without teleport moves",
-          "witness_nodes": [
             "3-SAT [board]",
             "Tiles without teleport moves [board]"
           ]
@@ -4474,7 +5259,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q051",
@@ -4483,8 +5268,9 @@
       "target": "Mixed-layout recognition of 2-trees",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -4518,7 +5304,6 @@
           "source": "KSatisfiability",
           "target": "Mixed-layout recognition of 2-trees",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Mixed-layout recognition of 2-trees [board]"
           ]
@@ -4529,14 +5314,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Mixed-layout recognition of 2-trees [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Mixed-layout recognition of 2-trees",
-          "witness_nodes": [
             "3-SAT [board]",
             "Mixed-layout recognition of 2-trees [board]"
           ]
@@ -4655,7 +5432,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q052",
@@ -4664,8 +5441,9 @@
       "target": "Three-subcoloring of unit disk graphs",
       "category": "Complexity open",
       "status": "submitted",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -4699,7 +5477,6 @@
           "source": "KSatisfiability",
           "target": "Three-subcoloring of unit disk graphs",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Three-subcoloring of unit disk graphs [board]"
           ]
@@ -4710,14 +5487,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Three-subcoloring of unit disk graphs [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Three-subcoloring of unit disk graphs",
-          "witness_nodes": [
             "3-SAT [board]",
             "Three-subcoloring of unit disk graphs [board]"
           ]
@@ -4836,7 +5605,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q058",
@@ -4845,8 +5614,9 @@
       "target": "Minimum-cost time-feasible reconciliation with host switches of distance at most three",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 347 (graph_to_board)",
       "mapping_evidence": null,
@@ -4880,7 +5650,6 @@
           "source": "KSatisfiability",
           "target": "Minimum-cost time-feasible reconciliation with host switches of distance at most three",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Minimum-cost time-feasible reconciliation with host switches of distance at most three [board]"
           ]
@@ -4891,14 +5660,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Minimum-cost time-feasible reconciliation with host switches of distance at most three [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Minimum-cost time-feasible reconciliation with host switches of distance at most three",
-          "witness_nodes": [
             "3-SAT [board]",
             "Minimum-cost time-feasible reconciliation with host switches of distance at most three [board]"
           ]
@@ -5017,7 +5778,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q059",
@@ -5026,8 +5787,9 @@
       "target": "Allowed-centers min-sum-radii on unweighted graph metrics",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (graph_to_board)",
       "mapping_evidence": null,
@@ -5061,7 +5823,6 @@
           "source": "KSatisfiability",
           "target": "Allowed-centers min-sum-radii on unweighted graph metrics",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Allowed-centers min-sum-radii on unweighted graph metrics [board]"
           ]
@@ -5072,14 +5833,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Allowed-centers min-sum-radii on unweighted graph metrics [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Allowed-centers min-sum-radii on unweighted graph metrics",
-          "witness_nodes": [
             "3-SAT [board]",
             "Allowed-centers min-sum-radii on unweighted graph metrics [board]"
           ]
@@ -5198,7 +5951,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q064",
@@ -5207,8 +5960,9 @@
       "target": "Reachability in priority-inhibited unimolecular reaction networks",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 349 (graph_to_board)",
       "mapping_evidence": null,
@@ -5242,7 +5996,6 @@
           "source": "KSatisfiability",
           "target": "Reachability in priority-inhibited unimolecular reaction networks",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Reachability in priority-inhibited unimolecular reaction networks [board]"
           ]
@@ -5253,14 +6006,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Reachability in priority-inhibited unimolecular reaction networks [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Reachability in priority-inhibited unimolecular reaction networks",
-          "witness_nodes": [
             "3-SAT [board]",
             "Reachability in priority-inhibited unimolecular reaction networks [board]"
           ]
@@ -5379,7 +6124,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q065",
@@ -5388,8 +6133,9 @@
       "target": "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (graph_to_board)",
       "mapping_evidence": null,
@@ -5423,7 +6169,6 @@
           "source": "KSatisfiability",
           "target": "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound [board]"
           ]
@@ -5434,14 +6179,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound",
-          "witness_nodes": [
             "3-SAT [board]",
             "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound [board]"
           ]
@@ -5560,7 +6297,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q066",
@@ -5569,8 +6306,9 @@
       "target": "Iterated weak-dominance solvability of two-action anonymous games",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 5,
+      "N": 4,
       "B": 0,
+      "V": 7,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (graph_to_board)",
       "mapping_evidence": null,
@@ -5604,7 +6342,6 @@
           "source": "KSatisfiability",
           "target": "Iterated weak-dominance solvability of two-action anonymous games",
           "witness_nodes": [
-            "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Iterated weak-dominance solvability of two-action anonymous games [board]"
           ]
@@ -5615,14 +6352,6 @@
           "witness_nodes": [
             "Satisfiability",
             "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Iterated weak-dominance solvability of two-action anonymous games [board]"
-          ]
-        },
-        {
-          "source": "3-SAT",
-          "target": "Iterated weak-dominance solvability of two-action anonymous games",
-          "witness_nodes": [
             "3-SAT [board]",
             "Iterated weak-dominance solvability of two-action anonymous games [board]"
           ]
@@ -5741,7 +6470,7 @@
           ]
         }
       ],
-      "rank": 8
+      "rank": 11
     },
     {
       "id": "Q001",
@@ -5752,6 +6481,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -5780,7 +6510,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q003",
@@ -5791,6 +6521,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -5819,7 +6550,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q004",
@@ -5830,6 +6561,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -5858,7 +6590,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q005",
@@ -5869,6 +6601,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -5897,7 +6630,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q006",
@@ -5908,6 +6641,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -5936,7 +6670,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q007",
@@ -5947,6 +6681,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -5975,7 +6710,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q008",
@@ -5986,6 +6721,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6014,7 +6750,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q012",
@@ -6025,6 +6761,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6053,7 +6790,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q015",
@@ -6064,6 +6801,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6092,7 +6830,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q016",
@@ -6103,6 +6841,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6131,7 +6870,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q020",
@@ -6142,6 +6881,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6170,7 +6910,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q022",
@@ -6181,6 +6921,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6209,7 +6950,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q023",
@@ -6220,6 +6961,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6248,7 +6990,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q024",
@@ -6259,6 +7001,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6287,7 +7030,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q027",
@@ -6298,6 +7041,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6326,7 +7070,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q028",
@@ -6337,6 +7081,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6365,7 +7110,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q029",
@@ -6376,6 +7121,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6404,7 +7150,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q030",
@@ -6415,6 +7161,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6443,7 +7190,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q031",
@@ -6454,6 +7201,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6482,7 +7230,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q032",
@@ -6493,6 +7241,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6521,7 +7270,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q034",
@@ -6532,6 +7281,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6560,7 +7310,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q035",
@@ -6571,6 +7321,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6599,7 +7350,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q037",
@@ -6610,6 +7361,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6638,7 +7390,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q038",
@@ -6649,6 +7401,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6677,7 +7430,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q041",
@@ -6688,6 +7441,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6716,46 +7470,7 @@
           ]
         }
       ],
-      "rank": 30
-    },
-    {
-      "id": "Q042",
-      "slug": "three-agent-additive-maximal-ef1",
-      "source": "Independent Set",
-      "target": "Three-agent additive maximal EF1 allocation",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "N": 1,
-      "B": 0,
-      "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
-      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
-      "mapping_evidence": null,
-      "source_node": 322,
-      "target_node": 323,
-      "new_problem_pairs": [
-        {
-          "source": "Independent Set",
-          "target": "Three-agent additive maximal EF1 allocation",
-          "witness_nodes": [
-            "Independent Set [board]",
-            "Three-agent additive maximal EF1 allocation [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 322,
-          "target_node": 323,
-          "path": [
-            "candidate:Q042"
-          ],
-          "node_path": [
-            322,
-            323
-          ]
-        }
-      ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q044",
@@ -6766,6 +7481,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6794,7 +7510,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q045",
@@ -6805,6 +7521,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6833,7 +7550,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q049",
@@ -6844,6 +7561,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6872,7 +7590,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q050",
@@ -6883,6 +7601,7 @@
       "status": "submitted",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6911,7 +7630,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q053",
@@ -6922,6 +7641,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -6950,85 +7670,7 @@
           ]
         }
       ],
-      "rank": 30
-    },
-    {
-      "id": "Q055",
-      "slug": "vertex-cover-external-macro-compression",
-      "source": "Vertex Cover",
-      "target": "External macro data compression",
-      "category": "Construction open",
-      "status": "unsolved",
-      "N": 1,
-      "B": 0,
-      "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
-      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
-      "mapping_evidence": null,
-      "source_node": 340,
-      "target_node": 341,
-      "new_problem_pairs": [
-        {
-          "source": "Vertex Cover",
-          "target": "External macro data compression",
-          "witness_nodes": [
-            "Vertex Cover [board]",
-            "External macro data compression [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 340,
-          "target_node": 341,
-          "path": [
-            "candidate:Q055"
-          ],
-          "node_path": [
-            340,
-            341
-          ]
-        }
-      ],
-      "rank": 30
-    },
-    {
-      "id": "Q056",
-      "slug": "vertex-cover-set-basis",
-      "source": "Vertex Cover",
-      "target": "Set Basis",
-      "category": "Construction open",
-      "status": "unsolved",
-      "N": 1,
-      "B": 0,
-      "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
-      "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 230; exact definitions still need review; hypothetical rule and path composition unverified",
-      "mapping_evidence": null,
-      "source_node": 342,
-      "target_node": 230,
-      "new_problem_pairs": [
-        {
-          "source": "Vertex Cover",
-          "target": "SetBasis",
-          "witness_nodes": [
-            "Vertex Cover [board]",
-            "SetBasis"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 342,
-          "target_node": 230,
-          "path": [
-            "candidate:Q056"
-          ],
-          "node_path": [
-            342,
-            230
-          ]
-        }
-      ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q057",
@@ -7039,6 +7681,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7067,7 +7710,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q060",
@@ -7078,6 +7721,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7106,7 +7750,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q061",
@@ -7117,6 +7761,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7145,7 +7790,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q063",
@@ -7156,6 +7801,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7184,7 +7830,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q067",
@@ -7195,6 +7841,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7223,7 +7870,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q068",
@@ -7234,6 +7881,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7262,7 +7910,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q069",
@@ -7273,6 +7921,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7301,7 +7950,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q070",
@@ -7312,6 +7961,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7340,7 +7990,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q071",
@@ -7351,6 +8001,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7379,7 +8030,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q072",
@@ -7390,6 +8041,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7418,7 +8070,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q073",
@@ -7429,6 +8081,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7457,7 +8110,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q074",
@@ -7468,6 +8121,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7496,7 +8150,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q075",
@@ -7507,6 +8161,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7535,7 +8190,7 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     },
     {
       "id": "Q076",
@@ -7546,6 +8201,7 @@
       "status": "unsolved",
       "N": 1,
       "B": 0,
+      "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -7574,10 +8230,10 @@
           ]
         }
       ],
-      "rank": 30
+      "rank": 33
     }
   ],
   "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
-  "bridges_sha256": "03afc575efb98a91c819ba921755e6ab9f5282488d9932cf23a6b0efa08a21dd",
+  "bridges_sha256": "b5d404aa49b40388d1c23d578b755153518c2cc7386e0c2efd36b62bbd77accb",
   "mappings_sha256": "5df1c05be1623851d4250016c92866494ad785620fe083ee32ef35861c4af532"
 }

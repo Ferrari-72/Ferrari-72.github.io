@@ -7,8 +7,29 @@
       "side": "source",
       "label": "3-SAT",
       "graph_node": 92,
+      "problem_family": "KSatisfiability",
       "direction": "graph_to_board",
       "evidence": "KSatisfiability<K3> has exactly three literals per clause. Each such formula is a legal instance of the listed board 3-SAT source definitions (three or at most three literals per clause). A satisfying assignment stays an assignment; for decision-output entries, test whether one exists. This is a restriction/inclusion bridge, not an assertion that all board source definitions equal the graph variant.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+    },
+    {
+      "question_ids": ["Q042"],
+      "side": "source",
+      "label": "Independent Set",
+      "graph_node": 37,
+      "problem_family": "DecisionMaximumIndependentSet",
+      "direction": "graph_to_board",
+      "evidence": "The graph DecisionMaximumIndependentSet<SimpleGraph,One> asks whether an unweighted simple graph has an independent set of at least the input threshold. The board source takes the same graph and threshold and returns a witness or NO-SOLUTION. Its output decides the graph problem by checking whether a witness exists. This is a one-call graph-to-board reduction.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+    },
+    {
+      "question_ids": ["Q055", "Q056"],
+      "side": "source",
+      "label": "Vertex Cover",
+      "graph_node": 44,
+      "problem_family": "DecisionMinimumVertexCover",
+      "direction": "graph_to_board",
+      "evidence": "The graph DecisionMinimumVertexCover<SimpleGraph,One> asks whether an unweighted simple graph has a vertex cover of size at most the input threshold. The board source takes the same graph and threshold and returns a witness or NO-SOLUTION. Its output decides the graph problem by checking whether a witness exists. This is a one-call graph-to-board reduction.",
       "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
     }
   ]
