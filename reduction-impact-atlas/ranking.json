@@ -166,6 +166,12 @@
       "D_half": 2.0625,
       "direct_count": 1,
       "transitive_count": 5,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 11,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "2": 1,
@@ -484,6 +490,12 @@
       "D_half": 1.96875,
       "direct_count": 1,
       "transitive_count": 5,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 11,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "2": 1,
@@ -795,6 +807,12 @@
       "D_half": 1.96875,
       "direct_count": 1,
       "transitive_count": 5,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 11,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "2": 1,
@@ -1106,6 +1124,12 @@
       "D_half": 1.96875,
       "direct_count": 1,
       "transitive_count": 5,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 11,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "2": 1,
@@ -1417,6 +1441,12 @@
       "D_half": 1.96875,
       "direct_count": 1,
       "transitive_count": 5,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 11,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "2": 1,
@@ -1728,6 +1758,12 @@
       "D_half": 2.4375,
       "direct_count": 1,
       "transitive_count": 5,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 11,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "2": 2,
@@ -2014,6 +2050,12 @@
       "D_half": 1.5625,
       "direct_count": 1,
       "transitive_count": 4,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 11,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -2320,6 +2362,12 @@
       "D_half": 1.46875,
       "direct_count": 1,
       "transitive_count": 4,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 11,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -2619,6 +2667,12 @@
       "D_half": 1.46875,
       "direct_count": 1,
       "transitive_count": 4,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 11,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -2918,6 +2972,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 8,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -3298,6 +3358,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -3548,6 +3614,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -3798,6 +3870,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -4048,6 +4126,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -4298,6 +4382,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -4548,6 +4638,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -4798,6 +4894,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -5048,6 +5150,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -5298,6 +5406,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -5548,6 +5662,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -5798,6 +5918,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -6048,6 +6174,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -6298,6 +6430,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -6548,6 +6686,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -6798,6 +6942,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -7048,6 +7198,12 @@
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 10,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1,
         "3": 1,
@@ -7298,6 +7454,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 1,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7359,6 +7521,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7407,6 +7575,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7455,6 +7629,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7503,6 +7683,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7551,6 +7737,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7599,6 +7791,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7647,6 +7845,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7695,6 +7899,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7743,6 +7953,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7791,6 +8007,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7839,6 +8061,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7887,6 +8115,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7935,6 +8169,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -7983,6 +8223,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8031,6 +8277,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8079,6 +8331,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8127,6 +8385,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8175,6 +8439,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8223,6 +8493,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8271,6 +8547,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8319,6 +8601,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8367,6 +8655,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8415,6 +8709,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8463,6 +8763,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8511,6 +8817,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8559,6 +8871,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8607,6 +8925,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8655,6 +8979,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8703,6 +9033,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8751,6 +9087,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8799,6 +9141,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8847,6 +9195,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8895,6 +9249,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8943,6 +9303,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -8991,6 +9357,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9039,6 +9411,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9087,6 +9465,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9135,6 +9519,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9183,6 +9573,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9231,6 +9627,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9279,6 +9681,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9327,6 +9735,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9375,6 +9789,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9423,6 +9843,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9471,6 +9897,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9519,6 +9951,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9567,6 +10005,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9615,6 +10059,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
@@ -9663,6 +10113,12 @@
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 0,
+        "downstream": 0,
+        "both_sides": 0
+      },
       "hop_histogram": {
         "1": 1
       },
