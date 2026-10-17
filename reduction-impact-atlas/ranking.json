@@ -143,6 +143,11 @@
     "5": 3,
     "6": 6
   },
+  "distance_discount": {
+    "lambda": 0.5,
+    "unit": "shortest witness-chain edge",
+    "role": "diagnostic only; not the official ranking key"
+  },
   "ranking_rule": "Provisional N descending, then B descending, then V (new variant pairs) descending; ID only sets display order within ties",
   "interpretation": "Hypothetical topology estimate under stated endpoint assumptions; not proof validity, literature openness, resource compatibility, or total research value.",
   "questions": [
@@ -158,6 +163,16 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 231; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 2.0625,
+      "direct_count": 1,
+      "transitive_count": 5,
+      "hop_histogram": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 2,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 231,
       "target_node": 259,
@@ -171,7 +186,9 @@
             "NAESatisfiability",
             "SetSplitting",
             "Binary-network common contraction [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -183,7 +200,9 @@
             "NAESatisfiability",
             "SetSplitting",
             "Binary-network common contraction [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -194,7 +213,9 @@
             "NAESatisfiability",
             "SetSplitting",
             "Binary-network common contraction [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "NAESatisfiability",
@@ -203,7 +224,9 @@
             "NAESatisfiability",
             "SetSplitting",
             "Binary-network common contraction [board]"
-          ]
+          ],
+          "hops": 2,
+          "discount_weight": 0.5
         },
         {
           "source": "Satisfiability",
@@ -213,7 +236,9 @@
             "NAESatisfiability",
             "SetSplitting",
             "Binary-network common contraction [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         },
         {
           "source": "SetSplitting",
@@ -221,7 +246,9 @@
           "witness_nodes": [
             "SetSplitting",
             "Binary-network common contraction [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -454,6 +481,17 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.96875,
+      "direct_count": 1,
+      "transitive_count": 5,
+      "hop_histogram": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1
+      },
       "mapping_evidence": null,
       "source_node": 194,
       "target_node": 271,
@@ -468,7 +506,9 @@
             "SubsetSum",
             "Partition",
             "Common-delay coupled-task deadline feasibility [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "Factoring",
@@ -481,7 +521,9 @@
             "SubsetSum",
             "Partition",
             "Common-delay coupled-task deadline feasibility [board]"
-          ]
+          ],
+          "hops": 6,
+          "discount_weight": 0.03125
         },
         {
           "source": "KSatisfiability",
@@ -491,7 +533,9 @@
             "SubsetSum",
             "Partition",
             "Common-delay coupled-task deadline feasibility [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         },
         {
           "source": "Partition",
@@ -499,7 +543,9 @@
           "witness_nodes": [
             "Partition",
             "Common-delay coupled-task deadline feasibility [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -510,7 +556,9 @@
             "SubsetSum",
             "Partition",
             "Common-delay coupled-task deadline feasibility [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "SubsetSum",
@@ -519,7 +567,9 @@
             "SubsetSum",
             "Partition",
             "Common-delay coupled-task deadline feasibility [board]"
-          ]
+          ],
+          "hops": 2,
+          "discount_weight": 0.5
         }
       ],
       "witnesses": [
@@ -742,6 +792,17 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.96875,
+      "direct_count": 1,
+      "transitive_count": 5,
+      "hop_histogram": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1
+      },
       "mapping_evidence": null,
       "source_node": 194,
       "target_node": 283,
@@ -756,7 +817,9 @@
             "SubsetSum",
             "Partition",
             "Fixed-order three-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "Factoring",
@@ -769,7 +832,9 @@
             "SubsetSum",
             "Partition",
             "Fixed-order three-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 6,
+          "discount_weight": 0.03125
         },
         {
           "source": "KSatisfiability",
@@ -779,7 +844,9 @@
             "SubsetSum",
             "Partition",
             "Fixed-order three-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         },
         {
           "source": "Partition",
@@ -787,7 +854,9 @@
           "witness_nodes": [
             "Partition",
             "Fixed-order three-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -798,7 +867,9 @@
             "SubsetSum",
             "Partition",
             "Fixed-order three-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "SubsetSum",
@@ -807,7 +878,9 @@
             "SubsetSum",
             "Partition",
             "Fixed-order three-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 2,
+          "discount_weight": 0.5
         }
       ],
       "witnesses": [
@@ -1030,6 +1103,17 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.96875,
+      "direct_count": 1,
+      "transitive_count": 5,
+      "hop_histogram": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1
+      },
       "mapping_evidence": null,
       "source_node": 194,
       "target_node": 295,
@@ -1044,7 +1128,9 @@
             "SubsetSum",
             "Partition",
             "Nonuniform-cost Unanimous Vote [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "Factoring",
@@ -1057,7 +1143,9 @@
             "SubsetSum",
             "Partition",
             "Nonuniform-cost Unanimous Vote [board]"
-          ]
+          ],
+          "hops": 6,
+          "discount_weight": 0.03125
         },
         {
           "source": "KSatisfiability",
@@ -1067,7 +1155,9 @@
             "SubsetSum",
             "Partition",
             "Nonuniform-cost Unanimous Vote [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         },
         {
           "source": "Partition",
@@ -1075,7 +1165,9 @@
           "witness_nodes": [
             "Partition",
             "Nonuniform-cost Unanimous Vote [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -1086,7 +1178,9 @@
             "SubsetSum",
             "Partition",
             "Nonuniform-cost Unanimous Vote [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "SubsetSum",
@@ -1095,7 +1189,9 @@
             "SubsetSum",
             "Partition",
             "Nonuniform-cost Unanimous Vote [board]"
-          ]
+          ],
+          "hops": 2,
+          "discount_weight": 0.5
         }
       ],
       "witnesses": [
@@ -1318,6 +1414,17 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.96875,
+      "direct_count": 1,
+      "transitive_count": 5,
+      "hop_histogram": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1
+      },
       "mapping_evidence": null,
       "source_node": 194,
       "target_node": 331,
@@ -1332,7 +1439,9 @@
             "SubsetSum",
             "Partition",
             "Two-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "Factoring",
@@ -1345,7 +1454,9 @@
             "SubsetSum",
             "Partition",
             "Two-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 6,
+          "discount_weight": 0.03125
         },
         {
           "source": "KSatisfiability",
@@ -1355,7 +1466,9 @@
             "SubsetSum",
             "Partition",
             "Two-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         },
         {
           "source": "Partition",
@@ -1363,7 +1476,9 @@
           "witness_nodes": [
             "Partition",
             "Two-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -1374,7 +1489,9 @@
             "SubsetSum",
             "Partition",
             "Two-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "SubsetSum",
@@ -1383,7 +1500,9 @@
             "SubsetSum",
             "Partition",
             "Two-machine flexible blocking [board]"
-          ]
+          ],
+          "hops": 2,
+          "discount_weight": 0.5
         }
       ],
       "witnesses": [
@@ -1606,6 +1725,16 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 248; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 2.4375,
+      "direct_count": 1,
+      "transitive_count": 5,
+      "hop_histogram": {
+        "1": 1,
+        "2": 2,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 248,
       "target_node": 353,
@@ -1619,7 +1748,9 @@
             "KSatisfiability (k=K3)",
             "SubsetSum",
             "Product Knapsack with unary profits and binary weights [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -1631,7 +1762,9 @@
             "KSatisfiability (k=K3)",
             "SubsetSum",
             "Product Knapsack with unary profits and binary weights [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -1640,7 +1773,9 @@
             "KSatisfiability (k=K3)",
             "SubsetSum",
             "Product Knapsack with unary profits and binary weights [board]"
-          ]
+          ],
+          "hops": 2,
+          "discount_weight": 0.5
         },
         {
           "source": "Partition",
@@ -1649,7 +1784,9 @@
             "Partition",
             "SubsetSum",
             "Product Knapsack with unary profits and binary weights [board]"
-          ]
+          ],
+          "hops": 2,
+          "discount_weight": 0.5
         },
         {
           "source": "Satisfiability",
@@ -1659,7 +1796,9 @@
             "KSatisfiability (k=K3)",
             "SubsetSum",
             "Product Knapsack with unary profits and binary weights [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         },
         {
           "source": "SubsetSum",
@@ -1667,7 +1806,9 @@
           "witness_nodes": [
             "SubsetSum",
             "Product Knapsack with unary profits and binary weights [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -1870,6 +2011,15 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 350 (graph_to_board)",
+      "D_half": 1.5625,
+      "direct_count": 1,
+      "transitive_count": 4,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 2,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 322,
       "target_node": 323,
@@ -1883,7 +2033,9 @@
             "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
             "Independent Set [board]",
             "Three-agent additive maximal EF1 allocation [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "DecisionMaximumIndependentSet",
@@ -1891,7 +2043,9 @@
           "witness_nodes": [
             "Independent Set [board]",
             "Three-agent additive maximal EF1 allocation [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Factoring",
@@ -1903,7 +2057,9 @@
             "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
             "Independent Set [board]",
             "Three-agent additive maximal EF1 allocation [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -1914,7 +2070,9 @@
             "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
             "Independent Set [board]",
             "Three-agent additive maximal EF1 allocation [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Satisfiability",
@@ -1924,7 +2082,9 @@
             "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
             "Independent Set [board]",
             "Three-agent additive maximal EF1 allocation [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -2157,6 +2317,16 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 351 (graph_to_board)",
+      "D_half": 1.46875,
+      "direct_count": 1,
+      "transitive_count": 4,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1
+      },
       "mapping_evidence": null,
       "source_node": 340,
       "target_node": 341,
@@ -2171,7 +2341,9 @@
             "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
             "Vertex Cover [board]",
             "External macro data compression [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "DecisionMinimumVertexCover",
@@ -2179,7 +2351,9 @@
           "witness_nodes": [
             "Vertex Cover [board]",
             "External macro data compression [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Factoring",
@@ -2192,7 +2366,9 @@
             "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
             "Vertex Cover [board]",
             "External macro data compression [board]"
-          ]
+          ],
+          "hops": 6,
+          "discount_weight": 0.03125
         },
         {
           "source": "KSatisfiability",
@@ -2202,7 +2378,9 @@
             "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
             "Vertex Cover [board]",
             "External macro data compression [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         },
         {
           "source": "Satisfiability",
@@ -2213,7 +2391,9 @@
             "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
             "Vertex Cover [board]",
             "External macro data compression [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         }
       ],
       "witnesses": [
@@ -2436,6 +2616,16 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 230; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 352 (graph_to_board)",
+      "D_half": 1.46875,
+      "direct_count": 1,
+      "transitive_count": 4,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1
+      },
       "mapping_evidence": null,
       "source_node": 342,
       "target_node": 230,
@@ -2450,7 +2640,9 @@
             "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
             "Vertex Cover [board]",
             "SetBasis"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "DecisionMinimumVertexCover",
@@ -2458,7 +2650,9 @@
           "witness_nodes": [
             "Vertex Cover [board]",
             "SetBasis"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Factoring",
@@ -2471,7 +2665,9 @@
             "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
             "Vertex Cover [board]",
             "SetBasis"
-          ]
+          ],
+          "hops": 6,
+          "discount_weight": 0.03125
         },
         {
           "source": "KSatisfiability",
@@ -2481,7 +2677,9 @@
             "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
             "Vertex Cover [board]",
             "SetBasis"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         },
         {
           "source": "Satisfiability",
@@ -2492,7 +2690,9 @@
             "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
             "Vertex Cover [board]",
             "SetBasis"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         }
       ],
       "witnesses": [
@@ -2715,6 +2915,15 @@
       "V": 19,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 214; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 345 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 339,
       "target_node": 214,
@@ -2728,7 +2937,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "RectilinearPictureCompression"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -2740,7 +2951,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "RectilinearPictureCompression"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -2748,7 +2961,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "RectilinearPictureCompression"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -2758,7 +2973,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "RectilinearPictureCompression"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -3078,6 +3295,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 273,
@@ -3091,7 +3317,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Constant-free graph orientation [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -3103,7 +3331,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Constant-free graph orientation [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -3111,7 +3341,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Constant-free graph orientation [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -3121,7 +3353,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Constant-free graph orientation [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -3311,6 +3545,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 274,
@@ -3324,7 +3567,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Depth-three unit 2-interval recognition [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -3336,7 +3581,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Depth-three unit 2-interval recognition [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -3344,7 +3591,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Depth-three unit 2-interval recognition [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -3354,7 +3603,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Depth-three unit 2-interval recognition [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -3544,6 +3795,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 277,
@@ -3557,7 +3817,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Distinct Restricted Numerical 3-Dimensional Matching [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -3569,7 +3831,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Distinct Restricted Numerical 3-Dimensional Matching [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -3577,7 +3841,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Distinct Restricted Numerical 3-Dimensional Matching [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -3587,7 +3853,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Distinct Restricted Numerical 3-Dimensional Matching [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -3777,6 +4045,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 278,
@@ -3790,7 +4067,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Elastic-degenerate string inequivalence [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -3802,7 +4081,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Elastic-degenerate string inequivalence [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -3810,7 +4091,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Elastic-degenerate string inequivalence [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -3820,7 +4103,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Elastic-degenerate string inequivalence [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -4010,6 +4295,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 284,
@@ -4023,7 +4317,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Exact Hadamard decomposition [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -4035,7 +4331,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Exact Hadamard decomposition [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -4043,7 +4341,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Exact Hadamard decomposition [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -4053,7 +4353,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Exact Hadamard decomposition [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -4243,6 +4545,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 285,
@@ -4256,7 +4567,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Total-budget Hadamard complexity [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -4268,7 +4581,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Total-budget Hadamard complexity [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -4276,7 +4591,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Total-budget Hadamard complexity [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -4286,7 +4603,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Total-budget Hadamard complexity [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -4476,6 +4795,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 288,
@@ -4489,7 +4817,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Variable-alphabet lettericity [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -4501,7 +4831,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Variable-alphabet lettericity [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -4509,7 +4841,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Variable-alphabet lettericity [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -4519,7 +4853,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Variable-alphabet lettericity [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -4709,6 +5045,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 294,
@@ -4722,7 +5067,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Nonnegative integer rank two for 3×3 matrices [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -4734,7 +5081,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Nonnegative integer rank two for 3×3 matrices [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -4742,7 +5091,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Nonnegative integer rank two for 3×3 matrices [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -4752,7 +5103,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Nonnegative integer rank two for 3×3 matrices [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -4942,6 +5295,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 308,
@@ -4955,7 +5317,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Dimension of a poset with a planar diagram [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -4967,7 +5331,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Dimension of a poset with a planar diagram [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -4975,7 +5341,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Dimension of a poset with a planar diagram [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -4985,7 +5353,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Dimension of a poset with a planar diagram [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -5175,6 +5545,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 318,
@@ -5188,7 +5567,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Simple-polygon visibility graph recognition [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -5200,7 +5581,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Simple-polygon visibility graph recognition [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -5208,7 +5591,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Simple-polygon visibility graph recognition [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -5218,7 +5603,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Simple-polygon visibility graph recognition [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -5408,6 +5795,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 319,
@@ -5421,7 +5817,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Proper star colouring on split graphs [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -5433,7 +5831,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Proper star colouring on split graphs [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -5441,7 +5841,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Proper star colouring on split graphs [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -5451,7 +5853,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Proper star colouring on split graphs [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -5641,6 +6045,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 324,
@@ -5654,7 +6067,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Three-machine unit-job precedence scheduling [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -5666,7 +6081,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Three-machine unit-job precedence scheduling [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -5674,7 +6091,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Three-machine unit-job precedence scheduling [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -5684,7 +6103,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Three-machine unit-job precedence scheduling [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -5874,6 +6295,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 329,
@@ -5887,7 +6317,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Threshold-two Fitting Hexasort [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -5899,7 +6331,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Threshold-two Fitting Hexasort [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -5907,7 +6341,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Threshold-two Fitting Hexasort [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -5917,7 +6353,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Threshold-two Fitting Hexasort [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -6107,6 +6545,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 330,
@@ -6120,7 +6567,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Tiles without teleport moves [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -6132,7 +6581,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Tiles without teleport moves [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -6140,7 +6591,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Tiles without teleport moves [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -6150,7 +6603,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Tiles without teleport moves [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -6340,6 +6795,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 335,
@@ -6353,7 +6817,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Mixed-layout recognition of 2-trees [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -6365,7 +6831,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Mixed-layout recognition of 2-trees [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -6373,7 +6841,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Mixed-layout recognition of 2-trees [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -6383,7 +6853,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Mixed-layout recognition of 2-trees [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -6573,6 +7045,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "D_half": 1.4375,
+      "direct_count": 1,
+      "transitive_count": 3,
+      "hop_histogram": {
+        "1": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
       "mapping_evidence": null,
       "source_node": 272,
       "target_node": 336,
@@ -6586,7 +7067,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Three-subcoloring of unit disk graphs [board]"
-          ]
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
         },
         {
           "source": "Factoring",
@@ -6598,7 +7081,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Three-subcoloring of unit disk graphs [board]"
-          ]
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
         },
         {
           "source": "KSatisfiability",
@@ -6606,7 +7091,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Three-subcoloring of unit disk graphs [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         },
         {
           "source": "Satisfiability",
@@ -6616,7 +7103,9 @@
             "KSatisfiability (k=K3)",
             "3-SAT [board]",
             "Three-subcoloring of unit disk graphs [board]"
-          ]
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
         }
       ],
       "witnesses": [
@@ -6806,6 +7295,12 @@
       "V": 2,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 353 (graph_to_board)",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 320,
       "target_node": 321,
@@ -6816,7 +7311,9 @@
           "witness_nodes": [
             "Triangle Partition [board]",
             "Ternary symmetric justified envy-free triples [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -6859,6 +7356,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 257,
       "target_node": 258,
@@ -6869,7 +7372,9 @@
           "witness_nodes": [
             "BFS tree support [board]",
             "Horn satisfiability [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -6899,6 +7404,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 260,
       "target_node": 261,
@@ -6909,7 +7420,9 @@
           "witness_nodes": [
             "3-uniform Set Splitting [board]",
             "Binary two-root proper forest [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -6939,6 +7452,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 262,
       "target_node": 263,
@@ -6949,7 +7468,9 @@
           "witness_nodes": [
             "Positive NAE-3-SAT [board]",
             "Bipartite diameter-five Perfect Matching Cut [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -6979,6 +7500,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 264,
       "target_node": 265,
@@ -6989,7 +7516,9 @@
           "witness_nodes": [
             "Bipartite radius-four Disconnected Perfect Matching [board]",
             "Bipartite radius-three Disconnected Perfect Matching [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7019,6 +7548,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 266,
       "target_node": 267,
@@ -7029,7 +7564,9 @@
           "witness_nodes": [
             "Bipartite radius-four Matching Cut [board]",
             "Bipartite radius-three Matching Cut [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7059,6 +7596,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 262,
       "target_node": 268,
@@ -7069,7 +7612,9 @@
           "witness_nodes": [
             "Positive NAE-3-SAT [board]",
             "Bipartite radius-three Perfect Matching Cut [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7099,6 +7644,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 269,
       "target_node": 270,
@@ -7109,7 +7660,9 @@
           "witness_nodes": [
             "Degree-four Matching Cut [board]",
             "Claw-free degree-six 2-Cut [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7139,6 +7692,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 275,
       "target_node": 276,
@@ -7149,7 +7708,9 @@
           "witness_nodes": [
             "Diameter-four Perfect Matching Cut [board]",
             "Diameter-three Perfect Matching Cut [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7179,6 +7740,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 279,
       "target_node": 280,
@@ -7189,7 +7756,9 @@
           "witness_nodes": [
             "Existential theory of the reals [board]",
             "Entrywise L1 low-rank approximation [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7219,6 +7788,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 281,
       "target_node": 282,
@@ -7229,7 +7804,9 @@
           "witness_nodes": [
             "Directed two-linkage [board]",
             "Cycle factor containing an even cycle [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7259,6 +7836,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 286,
       "target_node": 287,
@@ -7269,7 +7852,9 @@
           "witness_nodes": [
             "Partial Domination on hypercubes [board]",
             "Two-alternation hypercube routing [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7299,6 +7884,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 269,
       "target_node": 289,
@@ -7309,7 +7900,9 @@
           "witness_nodes": [
             "Degree-four Matching Cut [board]",
             "Line-graph 2-Cut [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7339,6 +7932,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 290,
       "target_node": 291,
@@ -7349,7 +7948,9 @@
           "witness_nodes": [
             "Unrooted Quartet Consistency [board]",
             "Mim-width at most one [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7379,6 +7980,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 292,
       "target_node": 293,
@@ -7389,7 +7996,9 @@
           "witness_nodes": [
             "Height-one poset interval dimension at most three [board]",
             "Non-crossing theta-host recognition [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7419,6 +8028,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 296,
       "target_node": 297,
@@ -7429,7 +8044,9 @@
           "witness_nodes": [
             "Sign-correlation membership [board]",
             "Normalized fourth-power decomposition [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7459,6 +8076,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 298,
       "target_node": 299,
@@ -7469,7 +8092,9 @@
           "witness_nodes": [
             "Positive 1-in-3-SAT [board]",
             "Normalized planar ReLU training with an error gap [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7499,6 +8124,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 300,
       "target_node": 301,
@@ -7509,7 +8140,9 @@
           "witness_nodes": [
             "Positive 1-in-3-SAT [board]",
             "P13-free Perfect Matching Cut [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7539,6 +8172,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 302,
       "target_node": 303,
@@ -7549,7 +8188,9 @@
           "witness_nodes": [
             "3P2-free 2-Cut [board]",
             "P6-free 2-Cut [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7579,6 +8220,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 304,
       "target_node": 305,
@@ -7589,7 +8236,9 @@
           "witness_nodes": [
             "3P3-free Minimum Matching Cut [board]",
             "P9-free Minimum Matching Cut [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7619,6 +8268,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 306,
       "target_node": 307,
@@ -7629,7 +8284,9 @@
           "witness_nodes": [
             "Planar subcubic Independent Set [board]",
             "Planar Multipacking [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7659,6 +8316,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 309,
       "target_node": 310,
@@ -7669,7 +8332,9 @@
           "witness_nodes": [
             "Edge-only plane cubic augmentation [board]",
             "Plane cubic augmentation allowing new vertices [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7699,6 +8364,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 311,
       "target_node": 312,
@@ -7709,7 +8380,9 @@
           "witness_nodes": [
             "Strongly consistent ordering with a given partition [board]",
             "Proper thinness with an input class budget [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7739,6 +8412,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 346 (board_to_graph)",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 313,
       "target_node": 314,
@@ -7749,7 +8428,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Rank-two nonnegative approximation [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7779,6 +8460,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 315,
       "target_node": 316,
@@ -7789,7 +8476,9 @@
           "witness_nodes": [
             "Bipartite List 3-Coloring [board]",
             "Seven connected coloring bundles [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7819,6 +8508,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 279,
       "target_node": 317,
@@ -7829,7 +8524,9 @@
           "witness_nodes": [
             "Existential theory of the reals [board]",
             "Geometric thickness of simple graphs [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7859,6 +8556,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 325,
       "target_node": 326,
@@ -7869,7 +8572,9 @@
           "witness_nodes": [
             "Balanced Partition [board]",
             "Three-type unrelated-machine scheduling [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7899,6 +8604,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 327,
       "target_node": 328,
@@ -7909,7 +8620,9 @@
           "witness_nodes": [
             "2-Visits scheduling [board]",
             "3-Visits scheduling [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7939,6 +8652,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 302,
       "target_node": 332,
@@ -7949,7 +8668,9 @@
           "witness_nodes": [
             "3P2-free 2-Cut [board]",
             "2P4-free 2-Cut [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -7979,6 +8700,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 333,
       "target_node": 334,
@@ -7989,7 +8716,9 @@
           "witness_nodes": [
             "1-queue recognition [board]",
             "2-queue recognition [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8019,6 +8748,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 337,
       "target_node": 338,
@@ -8029,7 +8764,9 @@
           "witness_nodes": [
             "3-Coloring [board]",
             "Interval k-graph recognition without a partition [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8059,6 +8796,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 343,
       "target_node": 344,
@@ -8069,7 +8812,9 @@
           "witness_nodes": [
             "Common stable matching with two changed agents on each side [board]",
             "2-SAT search [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8099,6 +8844,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 347 (board_to_graph)",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 345,
       "target_node": 346,
@@ -8109,7 +8860,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Minimum-cost time-feasible reconciliation with host switches of distance at most three [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8139,6 +8892,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (board_to_graph)",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 347,
       "target_node": 348,
@@ -8149,7 +8908,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Allowed-centers min-sum-radii on unweighted graph metrics [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8179,6 +8940,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 349,
       "target_node": 350,
@@ -8189,7 +8956,9 @@
           "witness_nodes": [
             "Planar 3-SAT [board]",
             "Plane oriented geometric spanner with bounded dilation [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8219,6 +8988,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 351,
       "target_node": 352,
@@ -8229,7 +9004,9 @@
           "witness_nodes": [
             "Interval-graph subcoloring with an input color budget [board]",
             "Minimum-cost flow [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8259,6 +9036,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 354,
       "target_node": 355,
@@ -8269,7 +9052,9 @@
           "witness_nodes": [
             "Planar 3-SAT [board]",
             "Two-subcoloring of height-one unit disk graphs [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8299,6 +9084,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 349 (board_to_graph)",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 356,
       "target_node": 357,
@@ -8309,7 +9100,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Reachability in priority-inhibited unimolecular reaction networks [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8339,6 +9132,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (board_to_graph)",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 347,
       "target_node": 358,
@@ -8349,7 +9148,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8379,6 +9180,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (board_to_graph)",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 347,
       "target_node": 359,
@@ -8389,7 +9196,9 @@
           "witness_nodes": [
             "3-SAT [board]",
             "Iterated weak-dominance solvability of two-action anonymous games [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8419,6 +9228,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 360,
       "target_node": 361,
@@ -8429,7 +9244,9 @@
           "witness_nodes": [
             "Three-terminal Multiway Cut [board]",
             "Undirected Network Diversion [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8459,6 +9276,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 362,
       "target_node": 363,
@@ -8469,7 +9292,9 @@
           "witness_nodes": [
             "Three-terminal Multiway Cut [board]",
             "Deadline-bounded Strict Temporal Edge Cut [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8499,6 +9324,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 364,
       "target_node": 365,
@@ -8509,7 +9340,9 @@
           "witness_nodes": [
             "2-Orientability [board]",
             "Two-Contention-Point Serializable Transaction Scheduling [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8539,6 +9372,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 366,
       "target_node": 367,
@@ -8549,7 +9388,9 @@
           "witness_nodes": [
             "Unary Bin Packing [board]",
             "Two-Slot-Flexible Unit-Job Energy Autarky [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8579,6 +9420,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 368,
       "target_node": 369,
@@ -8589,7 +9436,9 @@
           "witness_nodes": [
             "Exact Fair Correlation Clustering on a Path with Ratio 1:c [board]",
             "Integral Minimum-Cost Flow [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8619,6 +9468,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 370,
       "target_node": 371,
@@ -8629,7 +9484,9 @@
           "witness_nodes": [
             "EF1 + MMS + Pareto-Optimal Service Allocation on a Path [board]",
             "Integral Minimum-Cost Flow [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8659,6 +9516,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 372,
       "target_node": 373,
@@ -8669,7 +9532,9 @@
           "witness_nodes": [
             "3-Partition [board]",
             "Width-Two Two-Weight Fair Kidney Matching [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8699,6 +9564,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 374,
       "target_node": 375,
@@ -8709,7 +9580,9 @@
           "witness_nodes": [
             "Minimum-Weight Exact Red–Blue Bipartite Perfect Matching [board]",
             "Integral Minimum-Cost Flow [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8739,6 +9612,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 376,
       "target_node": 377,
@@ -8749,7 +9628,9 @@
           "witness_nodes": [
             "Unary Sum of Square Partition [board]",
             "Bidirected-Tree Periodic Waiting-Time Minimization [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
@@ -8779,6 +9660,12 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "D_half": 1.0,
+      "direct_count": 1,
+      "transitive_count": 0,
+      "hop_histogram": {
+        "1": 1
+      },
       "mapping_evidence": null,
       "source_node": 378,
       "target_node": 379,
@@ -8789,7 +9676,9 @@
           "witness_nodes": [
             "Nucleolus of a Permutation Game [board]",
             "Rational Linear Programming [board]"
-          ]
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
         }
       ],
       "witnesses": [
