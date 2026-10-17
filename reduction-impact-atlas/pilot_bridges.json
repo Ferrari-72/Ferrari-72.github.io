@@ -16,7 +16,7 @@
         "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
       },
       "algorithmic_consequence": "If the unverified BFS-tree-support to Horn-SAT rule is correct and has polynomial construction and recovery, the source has a polynomial-time search algorithm because Horn-SAT can produce a witness or certify unsatisfiability in polynomial time.",
-      "limitation": "The large topology count mostly follows the Horn-SAT to general-SAT inclusion and the graph's broad SAT descendants. It must not be interpreted as 95 independent research breakthroughs.",
+      "limitation": "The large topology count mostly follows the Horn-SAT to general-SAT inclusion and the graph's broad SAT descendants. It must not be interpreted as 94 independent research breakthroughs.",
       "background_url": "https://www.seas.upenn.edu/~cis5110/Dowling-Gallier-Horn-sat.pdf"
     },
     {
@@ -33,7 +33,7 @@
         "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
       },
       "algorithmic_consequence": "If the unverified common-stable-matching to 2-SAT-search rule is correct with polynomial construction and recovery, the restricted common-stable-matching source has a polynomial-time search algorithm.",
-      "limitation": "Most of the 95 new problem-family relations arise because the graph contains many descendants of two-literal SAT. This reachability does not itself measure how consequential solving the restricted stable-matching question would be.",
+      "limitation": "Most of the 94 new problem-family relations arise because the graph contains many descendants of two-literal SAT. This reachability does not itself measure how consequential solving the restricted stable-matching question would be.",
       "background_url": "https://www.sciencedirect.com/science/article/abs/pii/0020019079900024"
     }
   ]
