@@ -1,0 +1,15 @@
+{
+  "graph_sha256": "aea94690549b3d2199c92762e83b0d63f0950a9b7e77c1183a1183495952d2ab",
+  "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
+  "entries": [
+    {
+      "question_ids": ["Q010", "Q011", "Q013", "Q014", "Q018", "Q019", "Q021", "Q025", "Q033", "Q036", "Q039", "Q040", "Q043", "Q046", "Q047", "Q051", "Q052", "Q054", "Q058", "Q059", "Q064", "Q065", "Q066"],
+      "side": "source",
+      "label": "3-SAT",
+      "graph_node": 92,
+      "direction": "graph_to_board",
+      "evidence": "KSatisfiability<K3> has exactly three literals per clause. Each such formula is a legal instance of the listed board 3-SAT source definitions (three or at most three literals per clause). A satisfying assignment stays an assignment; for decision-output entries, test whether one exists. This is a restriction/inclusion bridge, not an assertion that all board source definitions equal the graph variant.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+    }
+  ]
+}

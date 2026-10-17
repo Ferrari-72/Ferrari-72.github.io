@@ -1,0 +1,804 @@
+{
+  "source": "https://github.com/GiggleLiu/autoresearch-gadgets/tree/main/registry",
+  "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
+  "questions": [
+    {
+      "id": "Q001",
+      "slug": "bfs-tree-support",
+      "source": "BFS tree support",
+      "target": "Horn satisfiability",
+      "source_definition": "The source gives an explicit nonempty list of permutations of the same n vertices, n≥1. Its output is a tree realizing all orders as FIFO breadth-first traversals, with arbitrary neighbor tie orders, or NO-SOLUTION.",
+      "target_definition": "An explicitly listed nonempty profile of permutations must be realized by FIFO breadth-first search on one tree, with arbitrary neighbor tie orders. The target is an explicit Horn formula; its outputs are satisfying assignments or NO-SOLUTION.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q002",
+      "slug": "binary-network-common-contraction",
+      "source": "Set Splitting",
+      "target": "Binary-network common contraction",
+      "source_definition": "The source gives a finite ground set and an explicit family of subsets. A valid output assigns two colors so that every subset meets both colors, or reports NO-SOLUTION.",
+      "target_definition": "The target gives two binary rooted acyclic networks on the same uniquely labelled leaves and a bound k. Find a common contraction with at least k internal vertices, using acyclicity-preserving internal-edge contractions, or report NO-SOLUTION. A witness supplies both contraction sequences and their labelled isomorphism.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q003",
+      "slug": "binary-two-root-proper-forest",
+      "source": "3-uniform Set Splitting",
+      "target": "Binary two-root proper forest",
+      "source_definition": "The source gives a finite ground set and an explicit family of three-element subsets. A valid output assigns two colors so that every subset meets both colors, or reports NO-SOLUTION.",
+      "target_definition": "The target is a weakly connected binary acyclic network with exactly two roots. Find a spanning forest rooted at those roots, with the original leaves, such that every excluded edge joins different components, or report NO-SOLUTION. Roots have indegree/outdegree (0,2), internal vertices (1,2) or (2,1), and leaves (1,0).",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q004",
+      "slug": "bipartite-diameter-five-perfect-matching-cut",
+      "source": "Positive NAE-3-SAT",
+      "target": "Bipartite diameter-five Perfect Matching Cut",
+      "source_definition": "A source instance is a conjunction of clauses of three distinct unnegated variables. A valid assignment gives both truth values to every clause; an infeasible instance returns NO-SOLUTION.",
+      "target_definition": "The target is a connected bipartite graph of diameter at most five. A witness is a nontrivial vertex bipartition in which every vertex has exactly one neighbor across the cut; otherwise the output is NO-SOLUTION.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q005",
+      "slug": "bipartite-radius-three-disconnected-perfect-matching",
+      "source": "Bipartite radius-four Disconnected Perfect Matching",
+      "target": "Bipartite radius-three Disconnected Perfect Matching",
+      "source_definition": "The source is a connected bipartite graph of radius at most four. Its outputs are perfect matchings whose deletion disconnects the graph, or NO-SOLUTION.",
+      "target_definition": "Both problems ask for a perfect matching whose deletion disconnects a connected bipartite graph, or NO-SOLUTION. The source radius is at most four and the target radius at most three.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q006",
+      "slug": "bipartite-radius-three-matching-cut",
+      "source": "Bipartite radius-four Matching Cut",
+      "target": "Bipartite radius-three Matching Cut",
+      "source_definition": "The source is a connected bipartite graph of radius at most four. Its outputs are nontrivial cuts with crossing degree at most one, or NO-SOLUTION.",
+      "target_definition": "Both problems ask for a nontrivial vertex bipartition with at most one opposite neighbor per vertex, or NO-SOLUTION. Inputs are connected bipartite graphs, with radius at most four in the source and at most three in the target.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q007",
+      "slug": "bipartite-radius-three-perfect-matching-cut",
+      "source": "Positive NAE-3-SAT",
+      "target": "Bipartite radius-three Perfect Matching Cut",
+      "source_definition": "A source instance is a conjunction of clauses of three distinct unnegated variables. A valid assignment gives both truth values to every clause; an infeasible instance returns NO-SOLUTION.",
+      "target_definition": "Source clauses contain three distinct unnegated variables and require both truth values in each clause. The target is a connected bipartite graph of radius at most three, with exactly one opposite neighbor at every vertex in a valid nontrivial cut.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q008",
+      "slug": "claw-free-two-cut",
+      "source": "Degree-four Matching Cut",
+      "target": "Claw-free degree-six 2-Cut",
+      "source_definition": "The source is a connected simple graph of maximum degree at most four. Its outputs are nontrivial vertex bipartitions with at most one opposite neighbor per vertex, or NO-SOLUTION.",
+      "target_definition": "The source is a connected simple graph of maximum degree four and asks for a nontrivial cut of crossing degree at most one. The target is connected, claw-free, of maximum degree six, and permits at most two opposite neighbors per vertex.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q009",
+      "slug": "common-delay-coupled-lateness",
+      "source": "Partition",
+      "target": "Common-delay coupled-task deadline feasibility",
+      "source_definition": "The source gives positive binary integer weights. A valid output is a subset whose sum is half the total, or NO-SOLUTION if no such subset exists.",
+      "target_definition": "On one machine, each job has a first operation of common length p, an exact delay p, a second operation of length b_i, and a deadline d_i. Binary integer start times must avoid overlap and meet every deadline; zero-length second operations are allowed.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q010",
+      "slug": "constant-free-orientation",
+      "source": "3-SAT",
+      "target": "Constant-free graph orientation",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "The target is a graph allowing parallel edges and loops. Degree-eight vertices require indegree in {1,4}; degree-two vertices require indegree in {0,2}. A solution orients every edge subject to these rules, without externally fixed ports.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q011",
+      "slug": "depth-three-unit-two-interval-recognition",
+      "source": "3-SAT",
+      "target": "Depth-three unit 2-interval recognition",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "Given a simple graph, represent each vertex by two disjoint unit intervals so that intersection is exactly adjacency and no point lies in more than three intervals, or report NO-SOLUTION. A finite endpoint encoding is required.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q012",
+      "slug": "diameter-three-perfect-matching-cut",
+      "source": "Diameter-four Perfect Matching Cut",
+      "target": "Diameter-three Perfect Matching Cut",
+      "source_definition": "The source is a connected graph of diameter at most four. Its outputs are nontrivial cuts having exactly one opposite neighbor at every vertex, or NO-SOLUTION.",
+      "target_definition": "Both problems ask for a nontrivial bipartition with exactly one opposite neighbor per vertex, or NO-SOLUTION. The connected source graph has diameter at most four; the connected target graph has diameter at most three.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q013",
+      "slug": "distinct-restricted-numerical-matching",
+      "source": "3-SAT",
+      "target": "Distinct Restricted Numerical 3-Dimensional Matching",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "The target gives n distinct positive binary integers a_i and a sum σ, with sum_i(a_i+2i)=nσ. Find permutations b and c of [n] such that a_i+b_i+c_i=σ for every i, or report NO-SOLUTION.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q014",
+      "slug": "elastic-degenerate-inequivalence",
+      "source": "3-SAT",
+      "target": "Elastic-degenerate string inequivalence",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "Each target string is a sequence of finite sets of explicit words; concatenation defines its finite language. Find a word in the symmetric difference of the two languages, or report that the languages are equal. Nested language expressions are not allowed.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q015",
+      "slug": "entrywise-l1-low-rank-approximation",
+      "source": "Existential theory of the reals",
+      "target": "Entrywise L1 low-rank approximation",
+      "source_definition": "The source asks whether a finite existential formula of polynomial equalities and inequalities over the reals is satisfiable, using binary integer coefficients. Recovery must respect the campaign’s finite algebraic witness representation; an unsatisfiable instance returns NO-SOLUTION.",
+      "target_definition": "The target asks whether a binary rational matrix has a rank-bounded approximation with unweighted entrywise L1 error strictly less than a rational ε. The strict inequality is part of the question; an accepted factor witness uses the specified finite rational encoding.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q016",
+      "slug": "exists-even-directed-cycle-factor",
+      "source": "Directed two-linkage",
+      "target": "Cycle factor containing an even cycle",
+      "source_definition": "The source gives a digraph and two designated terminal pairs. Its outputs are two vertex-disjoint directed paths joining the respective pairs, or NO-SOLUTION.",
+      "target_definition": "The source asks for two vertex-disjoint directed paths between prescribed terminal pairs. The target is a loopless digraph and asks for a spanning directed cycle factor containing at least one even cycle; directed two-cycles are allowed.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q017",
+      "slug": "fixed-order-three-machine-flexible-blocking",
+      "source": "Partition",
+      "target": "Fixed-order three-machine flexible blocking",
+      "source_definition": "The source gives positive binary integer weights. A valid output is a subset whose sum is half the total, or NO-SOLUTION if no such subset exists.",
+      "target_definition": "The target fixes the job order on three machines and permits varying operation patterns with positive integer processing times. Choose legal operation assignments meeting a makespan bound in the nonpreemptive blocking model, or report NO-SOLUTION.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q018",
+      "slug": "hadamard-decomposition",
+      "source": "3-SAT",
+      "target": "Exact Hadamard decomposition",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "Given a rational matrix M and separate integer widths p and q, find real factors U,V,W,Z with M=(UV)⊙(WZ), where UV has rank at most p and WZ rank at most q, or report NO-SOLUTION. Signs are unrestricted and witnesses use a common real algebraic primitive-element encoding.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q019",
+      "slug": "hadamard-total-budget",
+      "source": "3-SAT",
+      "target": "Total-budget Hadamard complexity",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "Given a nonempty rational matrix M and nonnegative integer budget b, find real A,B with M=A⊙B and rank(A)+rank(B)≤b, or report NO-SOLUTION. Witnesses encode both rank factorizations over one real algebraic primitive element; zero widths and either factor order are allowed.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q020",
+      "slug": "hypercube-two-alternation-routing",
+      "source": "Partial Domination on hypercubes",
+      "target": "Two-alternation hypercube routing",
+      "source_definition": "The source gives d≥1, an explicit binary activity array of length 2ᵈ defining T, and k≥0. Its outputs are subsets X⊆T of size at most k that dominate the cube graph induced by T, or NO-SOLUTION.",
+      "target_definition": "The target gives a hypercube dimension ℓ≥1 in unary, positive integer weighted ordered demands between distinct vertices, and a nonnegative integer K. A valid output is a partial matching whose demand-weighted shortest-route cost is at most K/2. Static edges cost 1, matching edges cost 1/2, and each route changes link medium at most twice. Every vertex has one switch port; there are no capacity or congestion constraints. Return NO-SOLUTION if no matching qualifies.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q021",
+      "slug": "lettericity",
+      "source": "3-SAT",
+      "target": "Variable-alphabet lettericity",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "Given a graph G and alphabet budget k, find a vertex order, a letter for every vertex, and a directed decoder on at most k letters such that each earlier/later vertex pair is adjacent exactly when its ordered letter pair is in the decoder.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q022",
+      "slug": "line-graph-two-cut",
+      "source": "Degree-four Matching Cut",
+      "target": "Line-graph 2-Cut",
+      "source_definition": "The source is a connected simple graph of maximum degree at most four. Its outputs are nontrivial vertex bipartitions with at most one opposite neighbor per vertex, or NO-SOLUTION.",
+      "target_definition": "The source is a connected simple graph of maximum degree four and seeks a nontrivial cut of crossing degree at most one. The target is a connected line graph and seeks a nontrivial cut of crossing degree at most two.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q023",
+      "slug": "mim-width-one",
+      "source": "Unrooted Quartet Consistency",
+      "target": "Mim-width at most one",
+      "source_definition": "The source is a finite collection of labelled quartet trees. Its outputs are unrooted trees displaying every prescribed quartet, or NO-SOLUTION.",
+      "target_definition": "The source asks for a tree displaying a collection of prescribed unrooted quartets. The target asks for a branch decomposition of a graph such that every cut has bipartite induced matching number at most one.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q024",
+      "slug": "noncrossing-theta-recognition",
+      "source": "Height-one poset interval dimension at most three",
+      "target": "Non-crossing theta-host recognition",
+      "source_definition": "The source is an explicitly encoded height-one poset. Its outputs are at most three interval orders whose intersection is that poset, or NO-SOLUTION.",
+      "target_definition": "The fixed host has one a–b edge, three parallel b–c edges, and one c–d edge. Represent the target graph by connected subgraphs of a subdivision of this host, with intersection exactly adjacency and each pairwise set difference connected or empty.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q025",
+      "slug": "nonnegative-integer-rank-two",
+      "source": "3-SAT",
+      "target": "Nonnegative integer rank two for 3×3 matrices",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "Given a 3×3 nonnegative integer matrix with binary-encoded entries of ordinary rank exactly two, find nonnegative integer U of size 3×2 and V of size 2×3 with M=UV, or report NO-SOLUTION.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q026",
+      "slug": "nonuniform-cost-unanimous-vote",
+      "source": "Partition",
+      "target": "Nonuniform-cost Unanimous Vote",
+      "source_definition": "The source gives positive binary integer weights. A valid output is a subset whose sum is half the total, or NO-SOLUTION if no such subset exists.",
+      "target_definition": "The target gives independent coins with rational probabilities strictly between zero and one, positive test costs, and a rational bound K. Choose a fixed testing order whose expected cost is at most K, stopping at the first two different outcomes or after all coins.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q027",
+      "slug": "normalized-fourth-power-decomposition",
+      "source": "Sign-correlation membership",
+      "target": "Normalized fourth-power decomposition",
+      "source_definition": "The source gives a rational symmetric matrix R with diagonal one. Its outputs are rational convex mixtures of sign vectors s∈{−1,+1}ⁿ realizing R as the weighted sum of ssᵀ, or NO-SOLUTION.",
+      "target_definition": "The target is a fully symmetric rational order-four tensor T of variable dimension with T[i,i,i,i]=T[i,i,j,j]=1 for every i,j. Ask for a representation as a sum of real fourth tensor powers, with no term-count bound. On this normalized domain the output encoding is a rational convex mixture of fourth powers of sign vectors, or NO-SOLUTION; equivalence of that certificate convention to real decomposability is part of the theorem.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q028",
+      "slug": "normalized-planar-relu-training-gap",
+      "source": "Positive 1-in-3-SAT",
+      "target": "Normalized planar ReLU training with an error gap",
+      "source_definition": "A source instance has clauses of three unnegated variables. A valid assignment makes exactly one variable true in each clause; an infeasible instance returns NO-SOLUTION.",
+      "target_definition": "The target has rational two-dimensional data in [-1,1], a hidden-unit budget, signed output weights in {−1,+1}, and a rational squared-error threshold 0<τ≤1. The theorem must separate satisfiable from unsatisfiable sources by the stated error gap and give finite encoded accepted parameters.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q029",
+      "slug": "p13-free-perfect-matching-cut",
+      "source": "Positive 1-in-3-SAT",
+      "target": "P13-free Perfect Matching Cut",
+      "source_definition": "The source is Positive 1-in-3-SAT with explicit clauses of three unnegated variables. Its valid output is the correct YES/NO answer.",
+      "target_definition": "The target is a graph with no induced path on thirteen vertices and asks for a nontrivial cut having exactly one opposite neighbor at every vertex. The archived fixed theorem requests decision outputs; it does not establish witness extraction. Its valid output for this fixed theorem is the correct YES/NO answer.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q030",
+      "slug": "p6-free-two-cut",
+      "source": "3P2-free 2-Cut",
+      "target": "P6-free 2-Cut",
+      "source_definition": "The source is a connected graph containing no induced disjoint union of three edges. Its outputs are nontrivial cuts with crossing degree at most two, or NO-SOLUTION.",
+      "target_definition": "Both endpoints are connected simple graphs and seek a nontrivial bipartition with at most two opposite neighbors per vertex. The source excludes three disjoint induced edges; the target excludes an induced six-vertex path.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q031",
+      "slug": "p9-free-minimum-matching-cut",
+      "source": "3P3-free Minimum Matching Cut",
+      "target": "P9-free Minimum Matching Cut",
+      "source_definition": "The source gives a connected graph with no induced disjoint union of three three-vertex paths, and a bound k. Its outputs are nonempty matching cuts of size at most k, or NO-SOLUTION.",
+      "target_definition": "Given a connected graph and integer k, ask for a nonempty matching cut of at most k edges, or NO-SOLUTION. The source excludes three disjoint induced three-vertex paths and the target excludes an induced nine-vertex path. This is a threshold problem, not an exact-optimum output contract.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q032",
+      "slug": "planar-multipacking",
+      "source": "Planar subcubic Independent Set",
+      "target": "Planar Multipacking",
+      "source_definition": "The source gives a planar graph of maximum degree three and a bound k. Its outputs are independent vertex sets of size at least k, or NO-SOLUTION.",
+      "target_definition": "Given a planar graph G and integer t, find at least t vertices M such that every radius-r ball contains at most r members of M for every vertex and every integer 1≤r≤the number of vertices, or report NO-SOLUTION.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q033",
+      "slug": "planar-poset-dimension",
+      "source": "3-SAT",
+      "target": "Dimension of a poset with a planar diagram",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "The target supplies a finite poset, an upward planar Hasse diagram with rational polyline coordinates, and a dimension bound d. Find at most d linear orders whose intersection is the poset, or report NO-SOLUTION.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q034",
+      "slug": "plane-three-connected-cubic-augmentation",
+      "source": "Edge-only plane cubic augmentation",
+      "target": "Plane cubic augmentation allowing new vertices",
+      "source_definition": "The source gives a fixed plane graph. Its outputs are three-connected cubic augmentations adding only edges while extending the embedding, or NO-SOLUTION.",
+      "target_definition": "The target is a fixed plane graph and asks for a three-connected cubic supergraph extending its embedding, allowing additional vertices and edges. The source version permits only additional edges. Valid augmentations require a finite combinatorial embedding encoding.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q035",
+      "slug": "proper-thinness",
+      "source": "Strongly consistent ordering with a given partition",
+      "target": "Proper thinness with an input class budget",
+      "source_definition": "The source gives a graph and a vertex partition. Its outputs are orders for which both the order and its reverse are consistent with the partition: if u<v<w, u and v share a class, and uw is an edge, then vw is an edge. Otherwise return NO-SOLUTION.",
+      "target_definition": "The source supplies a graph and vertex partition and asks for an order strongly consistent in both directions. The target supplies only a graph and a class budget, and asks for both a partition within that budget and such an order.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q036",
+      "slug": "rank-two-nonnegative-approximation",
+      "source": "3-SAT",
+      "target": "Rank-two nonnegative approximation",
+      "source_definition": "The starting point is 3-SAT: given a Boolean formula with at most three literals per clause, decide whether a satisfying assignment exists.",
+      "target_definition": "The target instance consists of an m × n nonnegative rational matrix X and a nonnegative rational threshold τ, both encoded in binary. It asks whether nonnegative real matrices W of size m × 2 and H of size 2 × n satisfy the error bound below. The factors may be asymmetric and need not have rational entries.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "lean_checked"
+      ]
+    },
+    {
+      "id": "Q037",
+      "slug": "seven-connected-bundle-coloring",
+      "source": "Bipartite List 3-Coloring",
+      "target": "Seven connected coloring bundles",
+      "source_definition": "The source gives a simple bipartite graph and, for every vertex, an explicit list contained in {1,2,3}. Its outputs are proper colorings respecting all lists, or NO-SOLUTION; empty lists are allowed.",
+      "target_definition": "The target gives a finite simple bipartite graph H with an ordered partition into seven nonempty connected vertex sets. The first six are singleton bundles of weights 4096, 1024, 256, 64, 16 and 4; the seventh has weight 1. A valid output is a proper coloring by positive integers for which the sum, over bundles, of weight times maximum color is at most 5823, or NO-SOLUTION.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q038",
+      "slug": "simple-graph-geometric-thickness",
+      "source": "Existential theory of the reals",
+      "target": "Geometric thickness of simple graphs",
+      "source_definition": "The source asks whether a finite existential formula of polynomial equalities and inequalities over the reals is satisfiable, using binary integer coefficients. Recovery must respect the campaign’s finite algebraic witness representation; an unsatisfiable instance returns NO-SOLUTION.",
+      "target_definition": "Given a simple graph and layer budget k, find a straight-line drawing and an edge partition into at most k crossing-free layers, or report NO-SOLUTION. Coordinates require a finite real-algebraic encoding.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q039",
+      "slug": "simple-polygon-visibility-recognition",
+      "source": "3-SAT",
+      "target": "Simple-polygon visibility graph recognition",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "The target is a graph alone, with no boundary order or holes supplied. A positive output must encode a simple polygon whose vertex visibility graph is exactly the input. The precise finite coordinate model remains to be fixed.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q040",
+      "slug": "split-proper-star-colouring",
+      "source": "3-SAT",
+      "target": "Proper star colouring on split graphs",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "The target gives a split graph and color budget k. Find a proper coloring with at most k colors in which no four-vertex path is bichromatic, or report NO-SOLUTION.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q041",
+      "slug": "ternary-symmetric-justified-envy",
+      "source": "Triangle Partition",
+      "target": "Ternary symmetric justified envy-free triples",
+      "source_definition": "The source gives a simple graph. Its outputs are partitions of its vertices into triples each inducing a triangle, or NO-SOLUTION.",
+      "target_definition": "The target has symmetric pair values in {0,1,2} and asks for a partition into triples with no justified envy. An agent envies replacing another when its utility improves and both remaining members strictly prefer the incoming agent.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q042",
+      "slug": "three-agent-additive-maximal-ef1",
+      "source": "Independent Set",
+      "target": "Three-agent additive maximal EF1 allocation",
+      "source_definition": "The source gives a simple graph and an integer threshold. Its outputs are independent sets of at least that size, or NO-SOLUTION.",
+      "target_definition": "The target gives goods with a conflict graph and identical nonnegative rational additive values for three agents. Find three disjoint independent bundles forming an EF1 partial allocation that is maximal under adding any single unallocated good to any bundle.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q043",
+      "slug": "three-machine-unit-precedence-scheduling",
+      "source": "3-SAT",
+      "target": "Three-machine unit-job precedence scheduling",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "The target gives a precedence DAG of unit-time jobs and an integer deadline T. Find an integer-slot schedule on three identical machines respecting precedences and finishing by T, or report NO-SOLUTION.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q044",
+      "slug": "three-type-unrelated-scheduling",
+      "source": "Balanced Partition",
+      "target": "Three-type unrelated-machine scheduling",
+      "source_definition": "The source gives an even number of positive binary integer weights. A valid subset contains exactly half the weights and has half their total sum; otherwise the output is NO-SOLUTION.",
+      "target_definition": "The source asks for half the input weights with half their total sum. The target has three job types in high-multiplicity encoding, positive integer processing times on unrelated machines, and a makespan bound. An output is an integer assignment-count matrix.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q045",
+      "slug": "three-visits-scheduling",
+      "source": "2-Visits scheduling",
+      "target": "3-Visits scheduling",
+      "source_definition": "The source gives task deadlines. Its outputs are finite schedules visiting each task exactly twice, meeting first-visit and successive-gap deadlines with no final-tail condition, or NO-SOLUTION.",
+      "target_definition": "A k-Visits solution is a finite word containing each task exactly k times, with its first visit and every successive same-task gap bounded by the task deadline. There is no final-tail constraint. The source has k=2 and the target k=3.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q046",
+      "slug": "threshold-two-fitting-hexasort",
+      "source": "3-SAT",
+      "target": "Threshold-two Fitting Hexasort",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "The target gives a graph and a sequence of colored stacks. Each move places the next stack on an empty vertex; if it has a same-color neighbor, the new stack and its same-color neighbors clear. The goal is to place every stack, not to clear the final board.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q047",
+      "slug": "tiles-without-teleport",
+      "source": "3-SAT",
+      "target": "Tiles without teleport moves",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "Tiles carry finite feature sets. Consecutive chosen tiles must share a currently present feature; moving deletes their common features. The goal is to remove all features, with no teleport or zero-effect moves.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q048",
+      "slug": "two-machine-flexible-blocking",
+      "source": "Partition",
+      "target": "Two-machine flexible blocking",
+      "source_definition": "The source gives positive binary integer weights. A valid output is a subset whose sum is half the total, or NO-SOLUTION if no such subset exists.",
+      "target_definition": "The target allows a variable job order. Each job has a mandatory first operation on machine one, flexible intermediate operations, and a final operation on machine two, with positive processing times, no buffer, and no overtaking. Seek an order and legal splits meeting the deadline.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q049",
+      "slug": "two-p4-free-two-cut",
+      "source": "3P2-free 2-Cut",
+      "target": "2P4-free 2-Cut",
+      "source_definition": "The source is a connected graph containing no induced disjoint union of three edges. Its outputs are nontrivial cuts with crossing degree at most two, or NO-SOLUTION.",
+      "target_definition": "Both problems seek a nontrivial cut with at most two opposite neighbors per vertex in a connected simple graph. The source is 3P2-free and the target has no induced disjoint union of two four-vertex paths.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q050",
+      "slug": "two-queue-recognition",
+      "source": "1-queue recognition",
+      "target": "2-queue recognition",
+      "source_definition": "The source gives a simple graph. Its outputs are vertex orders with no nested pair of independent edges, or NO-SOLUTION.",
+      "target_definition": "A queue layout consists of a vertex order and a partition of edges into queues, with no two independent edges nested within a queue. The source permits one queue and the target permits two; outputs include the order and queue assignment.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q051",
+      "slug": "two-tree-mixed-layout-recognition",
+      "source": "3-SAT",
+      "target": "Mixed-layout recognition of 2-trees",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "The target must be a 2-tree and asks for a vertex order with one stack and one queue. Independent stack edges may not alternate and independent queue edges may not nest. A 2-tree starts from an edge and repeatedly adds a vertex adjacent to both endpoints of an existing edge.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q052",
+      "slug": "unit-disk-three-subcoloring",
+      "source": "3-SAT",
+      "target": "Three-subcoloring of unit disk graphs",
+      "source_definition": "A source instance is an explicitly encoded Boolean formula with at most three literals per clause. Its outputs are satisfying Boolean assignments, or NO-SOLUTION when the formula is unsatisfiable.",
+      "target_definition": "The target supplies rational planar centers; vertices are adjacent exactly when their squared distance is at most one. Find three colors such that every monochromatic induced graph is a disjoint union of cliques, or report NO-SOLUTION.",
+      "category": "Complexity open",
+      "solution_statuses": [
+        "submitted"
+      ]
+    },
+    {
+      "id": "Q053",
+      "slug": "unspecified-interval-partition",
+      "source": "3-Coloring",
+      "target": "Interval k-graph recognition without a partition",
+      "source_definition": "The source gives a simple graph. Its outputs are proper vertex colorings with at most three colors, or NO-SOLUTION.",
+      "target_definition": "The target gives a graph and k. Find at most k vertex classes and one closed interval per vertex so that adjacency holds exactly for intersecting intervals in different classes, or report NO-SOLUTION. Endpoint weak-order ranks give a finite encoding.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q054",
+      "slug": "three-sat-rectilinear-picture-compression",
+      "source": "3-SAT",
+      "target": "Rectilinear picture compression",
+      "source_definition": "A Boolean CNF formula with three literals per clause is given explicitly. Return a satisfying truth assignment. Return NO-SOLUTION exactly when no such witness exists. Graphs, families and strings are explicit; numerical parameters use binary encodings.",
+      "target_definition": "Given a binary matrix and K, return at most K axis-aligned rectangles with integer row and column endpoints whose union is exactly the matrix's one entries. A valid output is a witness satisfying these conditions, or NO-SOLUTION exactly when none exists.",
+      "category": "Construction open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q055",
+      "slug": "vertex-cover-external-macro-compression",
+      "source": "Vertex Cover",
+      "target": "External macro data compression",
+      "source_definition": "Given a finite simple graph and k, return a vertex cover of size at most k, or NO-SOLUTION. All finite combinatorial structures are explicit and numerical data use binary encoding.",
+      "target_definition": "Given a finite string s, pointer cost h and budget B, return a dictionary D and compressed string C composed of literals and pointers to substrings of D. Recursive replacement must terminate and expand C to s. Count every literal as one unit and every pointer occurrence as h units across both D and C; require total cost at most B. Encode pointer destinations and substring endpoints explicitly.",
+      "category": "Construction open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q056",
+      "slug": "vertex-cover-set-basis",
+      "source": "Vertex Cover",
+      "target": "Set Basis",
+      "source_definition": "Given a finite simple undirected graph and a nonnegative integer k, return a vertex set of size at most k meeting every edge. Return NO-SOLUTION exactly when no such witness exists. Graphs, families and strings are explicit; numerical parameters use binary encodings.",
+      "target_definition": "Given an explicit family C of subsets of a finite universe and K, return at most K basis subsets such that every member of C is the union of some of the basis subsets. A valid output is a witness satisfying these conditions, or NO-SOLUTION exactly when none exists.",
+      "category": "Construction open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q057",
+      "slug": "common-stable-matching-two-sided-changes",
+      "source": "Common stable matching with two changed agents on each side",
+      "target": "2-SAT search",
+      "source_definition": "The input gives the same n workers and n firms with two complete strict preference profiles A and B; at most two workers and at most two firms change their lists between profiles. An output is a perfect matching stable in both profiles, or NO-SOLUTION exactly when none exists.",
+      "target_definition": "The input is an explicit 2-CNF formula. A valid output is a satisfying truth assignment, or NO-SOLUTION exactly when the formula is unsatisfiable.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q058",
+      "slug": "distance-three-time-feasible-reconciliation",
+      "source": "3-SAT",
+      "target": "Minimum-cost time-feasible reconciliation with host switches of distance at most three",
+      "source_definition": "An explicitly encoded Boolean 3-CNF formula is given. The valid output is YES if it has a satisfying assignment and NO otherwise.",
+      "target_definition": "The input contains two explicitly encoded rooted full binary host and parasite trees, a map from parasite leaves to host leaves, nonnegative binary-encoded event costs, and a binary-encoded cost bound K. The answer is YES exactly when a reconciliation mapping parasite vertices to host vertices respects the given leaves and the cospeciation, duplication and switch event rules of Antony, Martino and Sinaimeri, every host switch spans at most three host-tree edges, the temporal constraint digraph is acyclic, and total event cost is at most K; otherwise NO.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q059",
+      "slug": "unweighted-allowed-centers-min-sum-radii",
+      "source": "3-SAT",
+      "target": "Allowed-centers min-sum-radii on unweighted graph metrics",
+      "source_definition": "An explicit Boolean 3-CNF formula is given, with YES if satisfiable and NO otherwise.",
+      "target_definition": "An explicitly encoded connected simple unweighted graph G, a nonempty set A of allowed center vertices, integers k and D in binary are given. The answer is YES exactly when at most k pairs (center c in A, nonnegative integer radius r) cover every vertex within its graph distance from some chosen center and the sum of radii is at most D; otherwise NO. Zero-radius singleton clusters are allowed.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q060",
+      "slug": "plane-oriented-spanner-hardness",
+      "source": "Planar 3-SAT",
+      "target": "Plane oriented geometric spanner with bounded dilation",
+      "source_definition": "An explicit planar Boolean 3-CNF instance, including its planar variable-clause incidence embedding, is given. Output YES if satisfiable and NO otherwise.",
+      "target_definition": "The input is a finite set of pairwise distinct rational-coordinate plane points and a positive rational threshold t, all in binary. The output is YES exactly when some simple strongly connected orientation of a plane straight-line graph on these points has oriented dilation at most t: for each point pair, the shortest directed closed walk through both has length at most t times the shortest triangle through them in the complete Euclidean graph. Otherwise output NO.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q061",
+      "slug": "interval-subcoloring-variable-colors",
+      "source": "Interval-graph subcoloring with an input color budget",
+      "target": "Minimum-cost flow",
+      "source_definition": "An interval graph is given by an explicit list of rational closed intervals and a binary-encoded positive integer k. A valid output partitions the intervals into at most k classes such that the intersection graph induced by each class is a disjoint union of cliques, equivalently has no induced three-vertex path; output NO-SOLUTION exactly when no such partition exists.",
+      "target_definition": "An explicit directed network with integer capacities, integer costs and specified supplies and demands is given. A valid output is any minimum-cost integral feasible flow, or INFEASIBLE exactly when no feasible flow exists. All numbers are binary encoded.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q062",
+      "slug": "unary-profit-product-knapsack",
+      "source": "Subset Sum",
+      "target": "Product Knapsack with unary profits and binary weights",
+      "source_definition": "The input is a list of positive binary-encoded integers a_i and a binary target T. Output YES exactly when some subset sums to T, and NO otherwise.",
+      "target_definition": "The input is a list of items with positive integer weights written in binary and positive integer profits written in unary, plus binary-encoded capacity C and product threshold V. Output YES exactly when some subset has total weight at most C and product of its profits at least V; otherwise NO.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q063",
+      "slug": "height-one-unit-disk-two-subcoloring",
+      "source": "Planar 3-SAT",
+      "target": "Two-subcoloring of height-one unit disk graphs",
+      "source_definition": "An explicit planar Boolean 3-CNF formula with a planar variable-clause incidence embedding is given. Output YES if satisfiable and NO otherwise.",
+      "target_definition": "The input is the adjacency list of a simple graph promised to have a representation by diameter-one closed disks whose centers lie in a horizontal strip of height at most one. Output YES exactly when its vertices can be partitioned into two classes, each inducing a disjoint union of cliques, equivalently containing no induced three-vertex path; otherwise NO. The reduction must produce a rational-coordinate representation to establish the promise, although the target input is the graph.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q064",
+      "slug": "priority-unimolecular-reaction-reachability",
+      "source": "3-SAT",
+      "target": "Reachability in priority-inhibited unimolecular reaction networks",
+      "source_definition": "An explicit Boolean 3-CNF formula is given. Output YES exactly when it is satisfiable, and NO otherwise.",
+      "target_definition": "The input lists an ordered finite set of species, explicit reactions each converting exactly one molecule of one species to one of another species, an integer priority p between zero and the species count for each reaction, and binary-encoded start and target molecule-count vectors. A reaction with priority p is enabled only when its reactant is present and each of the first p species has count zero. Output YES exactly when a finite enabled reaction sequence reaches the target vector, and NO otherwise.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q065",
+      "slug": "two-machine-preemptive-intree-total-completion",
+      "source": "3-SAT",
+      "target": "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound",
+      "source_definition": "An explicit Boolean 3-CNF formula is given, with YES if satisfiable and NO otherwise.",
+      "target_definition": "The input is a finite set of unit-processing-time jobs, nonnegative integer release times, in-tree precedence arcs (each job has at most one successor), and an integer bound B, all explicitly or in binary as appropriate. Preemption is allowed on two identical processors, but a job cannot run on both simultaneously. Output YES exactly when some feasible schedule respects releases and precedence and has sum of completion times at most B; otherwise NO.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q066",
+      "slug": "two-action-anonymous-iterated-dominance",
+      "source": "3-SAT",
+      "target": "Iterated weak-dominance solvability of two-action anonymous games",
+      "source_definition": "An explicit Boolean 3-CNF formula is given, with YES if satisfiable and NO otherwise.",
+      "target_definition": "An explicit n-player anonymous game is given. Each player has two actions, and the input lists that player's integer payoff for each own action and each count from zero to n-1 of other players choosing action one. Output YES exactly when some sequence of deleting weakly dominated actions from the current reduced game leaves exactly one action for every player; otherwise NO. Weak dominance requires never lower payoff and a strict improvement for some remaining opponents' action profile. With two actions, dominance by a mixed strategy is equivalent to dominance by the other pure action.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q067",
+      "slug": "undirected-network-diversion-hardness",
+      "source": "Three-terminal Multiway Cut",
+      "target": "Undirected Network Diversion",
+      "source_definition": "Input is an explicitly listed undirected graph, three distinct terminals, and an integer budget k. The output is YES exactly when at most k edges disconnect every pair of terminals; otherwise NO. All integers use binary encoding.",
+      "target_definition": "Input is an explicitly listed undirected graph H, distinct s,t, a designated edge b, and a binary budget K. Output YES exactly when deleting at most K edges other than b leaves at least one s–t path and makes every remaining s–t path use b; otherwise NO. The surviving-path requirement excludes a vacuous cut.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q068",
+      "slug": "strict-temporal-cut-with-deadline-hardness",
+      "source": "Three-terminal Multiway Cut",
+      "target": "Deadline-bounded Strict Temporal Edge Cut",
+      "source_definition": "Input is an explicitly listed undirected graph, three distinct terminals, and a binary edge-deletion budget k. Output YES exactly if deleting at most k edges disconnects every terminal pair; otherwise NO.",
+      "target_definition": "Input is an explicitly listed undirected temporal graph with timestamped edge appearances, s,z, a deadline ℓ and edge-deletion budget K, all integers binary. Output YES exactly if deleting at most K temporal edge appearances eliminates every simple s–z path with strictly increasing timestamps and duration last-minus-first-plus-one at most ℓ; otherwise NO. ℓ is part of the input and may exceed two.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q069",
+      "slug": "two-contention-point-transaction-scheduling-hardness",
+      "source": "2-Orientability",
+      "target": "Two-Contention-Point Serializable Transaction Scheduling",
+      "source_definition": "Input is an explicitly listed undirected graph G. Output YES exactly if some total order of V(G) orients each edge forward so that every directed path in the resulting orientation has at most two edges; otherwise NO. This is the 2-Orientability problem in ICDT 2026, Proposition 11, equivalent to 3-colorability via Gallai–Roy–Vitaver. It is not the unrelated indegree-bounded orientation problem.",
+      "target_definition": "Input is a finite collection of read/write operation sequences on named objects and binary span bound K. Each operation has unit duration; per-transaction order is strict; conflicting operations on the same object cannot be simultaneous; the conflict-precedence graph must be acyclic. At most two objects are contention points. A schedule may be shifted so its first operation occurs at time zero, and its span is last occupied time plus one. Output YES if such a schedule has span at most K, otherwise NO.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q070",
+      "slug": "strong-energy-autarky-flexibility-two",
+      "source": "Unary Bin Packing",
+      "target": "Two-Slot-Flexible Unit-Job Energy Autarky",
+      "source_definition": "Input is a unary-encoded multiset of positive item sizes, unary bin capacity B, and a binary or unary bin count m. Output YES exactly if all items fit in at most m bins of capacity B; otherwise NO. Use the standard strong-hardness family with total instance size polynomial in the unary quantities.",
+      "target_definition": "Input is a finite horizon, unary-encoded nonnegative energy forecast F(t), and unit-length jobs with unary energy demand e_j and release/deadline windows permitting at most two consecutive start times. No battery and no external energy are allowed. Output YES if each job can be assigned a legal slot and total demand in each slot does not exceed F(t); otherwise NO. The horizon is explicitly represented.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q071",
+      "slug": "fair-correlation-clustering-path-variable-ratio",
+      "source": "Exact Fair Correlation Clustering on a Path with Ratio 1:c",
+      "target": "Integral Minimum-Cost Flow",
+      "source_definition": "Input is an explicitly listed path whose vertices are colored red or blue with |blue|=c|red| for an input integer c≥2. Positive pairs are path edges and all other pairs are negative. A valid output is any partition into clusters each containing red:blue in ratio 1:c that minimizes the number of positive pairs separated plus negative pairs kept together; if no fair partition exists, output NO-SOLUTION.",
+      "target_definition": "Input is a directed network with integral capacities and binary rational costs plus supplies and demands. Valid outputs are all integral feasible flows of minimum total cost, or NO-SOLUTION if infeasible.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q072",
+      "slug": "triple-fair-service-tasks-on-path",
+      "source": "EF1 + MMS + Pareto-Optimal Service Allocation on a Path",
+      "target": "Integral Minimum-Cost Flow",
+      "source_definition": "Input is an unweighted path with one hub, n identical agents, m−1≥n task vertices, and positive binary rational travel and service costs c_d,c_t. For a bundle S, cost is 2c_d(max(R(S),h)−min(L(S),h))+c_t|S|, with cost zero for empty S. Outputs are all complete allocations satisfying chores-EF1 (each nonempty own bundle can lose one task to cost no more than another bundle), cost at most the minimax-share threshold for every agent, and Pareto optimality; output NO-SOLUTION if none exists.",
+      "target_definition": "Input is a directed network with integral capacities, binary rational arc costs, and supplies/demands. Outputs are all integral feasible flows of minimum total cost, or NO-SOLUTION when infeasible.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q073",
+      "slug": "width-two-two-sparse-fair-kidney-matching",
+      "source": "3-Partition",
+      "target": "Width-Two Two-Weight Fair Kidney Matching",
+      "source_definition": "Input is a unary-encoded 3-Partition instance with 3m positive integers of total mB and each strictly between B/4 and B/2. Output YES exactly when they split into m triples of sum B; otherwise NO.",
+      "target_definition": "Input is an explicitly listed bidirected compatibility graph, positive binary rational arc weights such that each reciprocal pair has equal arc weights and the resulting undirected edge totals take at most two distinct values, a partition of vertices into countries of size at most two, a rational target utility vector x, and rational deviation bound D. Country utility is the sum of weights of incoming matched arcs at its vertices. Output YES exactly if some maximum-total-edge-weight matching has max-country absolute deviation from x at most D; otherwise NO.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q074",
+      "slug": "binary-weight-exact-red-blue-matching-to-flow",
+      "source": "Minimum-Weight Exact Red–Blue Bipartite Perfect Matching",
+      "target": "Integral Minimum-Cost Flow",
+      "source_definition": "Input is an explicitly listed bipartite graph with equal left and right vertex counts, red/blue edge colors, binary nonnegative integer edge weights, and binary k. Outputs are all perfect matchings containing exactly k red edges and having minimum total weight among those, or NO-SOLUTION if none exists.",
+      "target_definition": "Input is a directed network with integral capacities, binary rational costs and node balances. Outputs are all integral feasible flows of minimum total cost, or NO-SOLUTION if infeasible.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q075",
+      "slug": "bidirected-tree-periodic-waiting-hardness",
+      "source": "Unary Sum of Square Partition",
+      "target": "Bidirected-Tree Periodic Waiting-Time Minimization",
+      "source_definition": "Input is a unary-encoded multiset A of positive integers, an integer q, and threshold T. Output YES exactly if A can be partitioned into q parts with the sum of squared part sums at most T; otherwise NO.",
+      "target_definition": "Input is an explicitly listed bidirected tree, a positive integer period Δ, and a binary threshold K. Assign each directed arc independently one residue in {0,…,Δ−1}, repeated every Δ time units. For every ordered vertex pair, use its unique directed path and the fastest strictly increasing traversal; sum duration minus static path length. Output YES if some arc labeling gives total excess time at most K, otherwise NO.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    },
+    {
+      "id": "Q076",
+      "slug": "permutation-game-nucleolus-to-linear-programming",
+      "source": "Nucleolus of a Permutation Game",
+      "target": "Rational Linear Programming",
+      "source_definition": "Input is an n-by-n matrix of nonnegative binary rational utilities with zero diagonal. For coalition S, v(S) is the maximum total utility of a permutation of S, where fixed points represent zero-value dummy assignments. The output is the unique rational efficient and individually rational payoff vector that lexicographically minimizes the nonincreasing list of coalition excesses v(S)−x(S). There is no NO-SOLUTION case.",
+      "target_definition": "Input is an explicitly listed rational linear program with polynomially encoded coefficients. Valid outputs are all optimal rational solutions, or NO-SOLUTION when infeasible or unbounded. For this reduction every constructed instance must have an optimum.",
+      "category": "Complexity open",
+      "solution_statuses": []
+    }
+  ]
+}
