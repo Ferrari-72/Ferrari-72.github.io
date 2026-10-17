@@ -10,7 +10,7 @@
       "target_node": 272,
       "edge_index": 344,
       "direction": "graph_to_board",
-      "evidence": "KSatisfiability<K3> has exactly three literals per clause. Each such formula is a legal instance of the listed board 3-SAT source definitions (three or at most three literals per clause). A satisfying assignment stays an assignment; for decision-output entries, test whether one exists. This is a restriction/inclusion bridge, not an assertion that all board source definitions equal the graph variant.",
+      "evidence": "KSatisfiability<K3> has exactly three literals per clause and returns a satisfying assignment or no solution. Each such formula is a legal instance of these board 3-SAT source definitions, which also return an assignment or NO-SOLUTION. The graph output can be recovered from one board output. This inclusion bridge does not assert that every board source instance belongs to the graph variant.",
       "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf",
       "question_ids": [
         "Q010",
@@ -33,43 +33,43 @@
     },
     {
       "source_node": 92,
-      "target_node": 313,
+      "target_node": 339,
       "edge_index": 345,
       "direction": "graph_to_board",
-      "evidence": "KSatisfiability<K3> has exactly three literals per clause. Each such formula is a legal instance of the listed board 3-SAT source definitions (three or at most three literals per clause). A satisfying assignment stays an assignment; for decision-output entries, test whether one exists. This is a restriction/inclusion bridge, not an assertion that all board source definitions equal the graph variant.",
-      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf",
-      "question_ids": [
-        "Q036"
-      ]
-    },
-    {
-      "source_node": 92,
-      "target_node": 339,
-      "edge_index": 346,
-      "direction": "graph_to_board",
-      "evidence": "KSatisfiability<K3> has exactly three literals per clause. Each such formula is a legal instance of the listed board 3-SAT source definitions (three or at most three literals per clause). A satisfying assignment stays an assignment; for decision-output entries, test whether one exists. This is a restriction/inclusion bridge, not an assertion that all board source definitions equal the graph variant.",
+      "evidence": "KSatisfiability<K3> has exactly three literals per clause and returns a satisfying assignment or no solution. Each such formula is a legal instance of these board 3-SAT source definitions, which also return an assignment or NO-SOLUTION. The graph output can be recovered from one board output. This inclusion bridge does not assert that every board source instance belongs to the graph variant.",
       "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf",
       "question_ids": [
         "Q054"
       ]
     },
     {
-      "source_node": 92,
-      "target_node": 345,
+      "source_node": 313,
+      "target_node": 92,
+      "edge_index": 346,
+      "direction": "board_to_graph",
+      "evidence": "These board sources ask only YES/NO for a 3-CNF formula. A satisfying assignment from graph KSatisfiability<K3> gives YES and no solution gives NO. For an at-most-three clause, use the standard polynomial fresh-variable clause-splitting gadget to obtain exact-three CNF with the same satisfiability status. This is a one-call board-to-graph reduction. The reverse direction would incorrectly demand an assignment from a decision-only board output.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf",
+      "question_ids": [
+        "Q036"
+      ]
+    },
+    {
+      "source_node": 345,
+      "target_node": 92,
       "edge_index": 347,
-      "direction": "graph_to_board",
-      "evidence": "KSatisfiability<K3> has exactly three literals per clause. Each such formula is a legal instance of the listed board 3-SAT source definitions (three or at most three literals per clause). A satisfying assignment stays an assignment; for decision-output entries, test whether one exists. This is a restriction/inclusion bridge, not an assertion that all board source definitions equal the graph variant.",
+      "direction": "board_to_graph",
+      "evidence": "These board sources ask only YES/NO for a 3-CNF formula. A satisfying assignment from graph KSatisfiability<K3> gives YES and no solution gives NO. For an at-most-three clause, use the standard polynomial fresh-variable clause-splitting gadget to obtain exact-three CNF with the same satisfiability status. This is a one-call board-to-graph reduction. The reverse direction would incorrectly demand an assignment from a decision-only board output.",
       "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf",
       "question_ids": [
         "Q058"
       ]
     },
     {
-      "source_node": 92,
-      "target_node": 347,
+      "source_node": 347,
+      "target_node": 92,
       "edge_index": 348,
-      "direction": "graph_to_board",
-      "evidence": "KSatisfiability<K3> has exactly three literals per clause. Each such formula is a legal instance of the listed board 3-SAT source definitions (three or at most three literals per clause). A satisfying assignment stays an assignment; for decision-output entries, test whether one exists. This is a restriction/inclusion bridge, not an assertion that all board source definitions equal the graph variant.",
+      "direction": "board_to_graph",
+      "evidence": "These board sources ask only YES/NO for a 3-CNF formula. A satisfying assignment from graph KSatisfiability<K3> gives YES and no solution gives NO. For an at-most-three clause, use the standard polynomial fresh-variable clause-splitting gadget to obtain exact-three CNF with the same satisfiability status. This is a one-call board-to-graph reduction. The reverse direction would incorrectly demand an assignment from a decision-only board output.",
       "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf",
       "question_ids": [
         "Q059",
@@ -78,11 +78,11 @@
       ]
     },
     {
-      "source_node": 92,
-      "target_node": 356,
+      "source_node": 356,
+      "target_node": 92,
       "edge_index": 349,
-      "direction": "graph_to_board",
-      "evidence": "KSatisfiability<K3> has exactly three literals per clause. Each such formula is a legal instance of the listed board 3-SAT source definitions (three or at most three literals per clause). A satisfying assignment stays an assignment; for decision-output entries, test whether one exists. This is a restriction/inclusion bridge, not an assertion that all board source definitions equal the graph variant.",
+      "direction": "board_to_graph",
+      "evidence": "These board sources ask only YES/NO for a 3-CNF formula. A satisfying assignment from graph KSatisfiability<K3> gives YES and no solution gives NO. For an at-most-three clause, use the standard polynomial fresh-variable clause-splitting gadget to obtain exact-three CNF with the same satisfiability status. This is a one-call board-to-graph reduction. The reverse direction would incorrectly demand an assignment from a decision-only board output.",
       "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf",
       "question_ids": [
         "Q064"
@@ -120,14 +120,25 @@
       "question_ids": [
         "Q056"
       ]
+    },
+    {
+      "source_node": 199,
+      "target_node": 320,
+      "edge_index": 353,
+      "direction": "graph_to_board",
+      "evidence": "The graph PartitionIntoTriangles model asks for a partition of a simple graph's vertices into triples inducing triangles. The board Triangle Partition source has the same witness and NO-SOLUTION outputs and accepts every graph instance of the graph model, including its divisible-by-three input restriction. The identity instance map and identity witness recovery give a one-call graph-to-board bridge.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf",
+      "question_ids": [
+        "Q041"
+      ]
     }
   ],
   "question_count": 76,
   "scored_count": 76,
   "reviewed_count": 0,
   "N_distribution": {
-    "1": 44,
-    "4": 23,
+    "1": 50,
+    "4": 17,
     "6": 8,
     "12": 1
   },
@@ -143,7 +154,7 @@
       "status": "unsolved",
       "N": 12,
       "B": 0,
-      "V": 17,
+      "V": 21,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 350 (graph_to_board)",
       "mapping_evidence": null,
@@ -565,12 +576,96 @@
           ]
         },
         {
+          "source_node": 313,
+          "target_node": 323,
+          "path": [
+            "edge:346",
+            "edge:123",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            313,
+            92,
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
           "source_node": 322,
           "target_node": 323,
           "path": [
             "candidate:Q042"
           ],
           "node_path": [
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 323,
+          "path": [
+            "edge:347",
+            "edge:123",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            345,
+            92,
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 323,
+          "path": [
+            "edge:348",
+            "edge:123",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            347,
+            92,
+            93,
+            220,
+            37,
+            322,
+            323
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 323,
+          "path": [
+            "edge:349",
+            "edge:123",
+            "edge:134",
+            "edge:294",
+            "edge:350",
+            "candidate:Q042"
+          ],
+          "node_path": [
+            356,
+            92,
+            93,
+            220,
+            37,
             322,
             323
           ]
@@ -587,7 +682,7 @@
       "status": "unsolved",
       "N": 6,
       "B": 0,
-      "V": 9,
+      "V": 13,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 351 (graph_to_board)",
       "mapping_evidence": null,
@@ -801,12 +896,80 @@
           ]
         },
         {
+          "source_node": 313,
+          "target_node": 341,
+          "path": [
+            "edge:346",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            313,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
           "source_node": 340,
           "target_node": 341,
           "path": [
             "candidate:Q055"
           ],
           "node_path": [
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 341,
+          "path": [
+            "edge:347",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            345,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 341,
+          "path": [
+            "edge:348",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            347,
+            92,
+            44,
+            340,
+            341
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 341,
+          "path": [
+            "edge:349",
+            "edge:118",
+            "edge:351",
+            "candidate:Q055"
+          ],
+          "node_path": [
+            356,
+            92,
+            44,
             340,
             341
           ]
@@ -823,7 +986,7 @@
       "status": "unsolved",
       "N": 6,
       "B": 0,
-      "V": 9,
+      "V": 13,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 230; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 352 (graph_to_board)",
       "mapping_evidence": null,
@@ -1037,12 +1200,80 @@
           ]
         },
         {
+          "source_node": 313,
+          "target_node": 230,
+          "path": [
+            "edge:346",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            313,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
           "source_node": 342,
           "target_node": 230,
           "path": [
             "candidate:Q056"
           ],
           "node_path": [
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 230,
+          "path": [
+            "edge:347",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            345,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 230,
+          "path": [
+            "edge:348",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            347,
+            92,
+            44,
+            342,
+            230
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 230,
+          "path": [
+            "edge:349",
+            "edge:118",
+            "edge:352",
+            "candidate:Q056"
+          ],
+          "node_path": [
+            356,
+            92,
+            44,
             342,
             230
           ]
@@ -1059,7 +1290,7 @@
       "status": "submitted",
       "N": 6,
       "B": 0,
-      "V": 8,
+      "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 231; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -1258,6 +1489,90 @@
             231,
             259
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 259,
+          "path": [
+            "edge:346",
+            "edge:123",
+            "edge:134",
+            "edge:299",
+            "edge:244",
+            "candidate:Q002"
+          ],
+          "node_path": [
+            313,
+            92,
+            93,
+            220,
+            182,
+            231,
+            259
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 259,
+          "path": [
+            "edge:347",
+            "edge:123",
+            "edge:134",
+            "edge:299",
+            "edge:244",
+            "candidate:Q002"
+          ],
+          "node_path": [
+            345,
+            92,
+            93,
+            220,
+            182,
+            231,
+            259
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 259,
+          "path": [
+            "edge:348",
+            "edge:123",
+            "edge:134",
+            "edge:299",
+            "edge:244",
+            "candidate:Q002"
+          ],
+          "node_path": [
+            347,
+            92,
+            93,
+            220,
+            182,
+            231,
+            259
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 259,
+          "path": [
+            "edge:349",
+            "edge:123",
+            "edge:134",
+            "edge:299",
+            "edge:244",
+            "candidate:Q002"
+          ],
+          "node_path": [
+            356,
+            92,
+            93,
+            220,
+            182,
+            231,
+            259
+          ]
         }
       ],
       "rank": 4
@@ -1271,7 +1586,7 @@
       "status": "unsolved",
       "N": 6,
       "B": 0,
-      "V": 8,
+      "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -1478,6 +1793,74 @@
             194,
             271
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 271,
+          "path": [
+            "edge:346",
+            "edge:132",
+            "edge:330",
+            "candidate:Q009"
+          ],
+          "node_path": [
+            313,
+            92,
+            248,
+            194,
+            271
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 271,
+          "path": [
+            "edge:347",
+            "edge:132",
+            "edge:330",
+            "candidate:Q009"
+          ],
+          "node_path": [
+            345,
+            92,
+            248,
+            194,
+            271
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 271,
+          "path": [
+            "edge:348",
+            "edge:132",
+            "edge:330",
+            "candidate:Q009"
+          ],
+          "node_path": [
+            347,
+            92,
+            248,
+            194,
+            271
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 271,
+          "path": [
+            "edge:349",
+            "edge:132",
+            "edge:330",
+            "candidate:Q009"
+          ],
+          "node_path": [
+            356,
+            92,
+            248,
+            194,
+            271
+          ]
         }
       ],
       "rank": 4
@@ -1491,7 +1874,7 @@
       "status": "submitted",
       "N": 6,
       "B": 0,
-      "V": 8,
+      "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -1698,6 +2081,74 @@
             194,
             283
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 283,
+          "path": [
+            "edge:346",
+            "edge:132",
+            "edge:330",
+            "candidate:Q017"
+          ],
+          "node_path": [
+            313,
+            92,
+            248,
+            194,
+            283
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 283,
+          "path": [
+            "edge:347",
+            "edge:132",
+            "edge:330",
+            "candidate:Q017"
+          ],
+          "node_path": [
+            345,
+            92,
+            248,
+            194,
+            283
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 283,
+          "path": [
+            "edge:348",
+            "edge:132",
+            "edge:330",
+            "candidate:Q017"
+          ],
+          "node_path": [
+            347,
+            92,
+            248,
+            194,
+            283
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 283,
+          "path": [
+            "edge:349",
+            "edge:132",
+            "edge:330",
+            "candidate:Q017"
+          ],
+          "node_path": [
+            356,
+            92,
+            248,
+            194,
+            283
+          ]
         }
       ],
       "rank": 4
@@ -1711,7 +2162,7 @@
       "status": "unsolved",
       "N": 6,
       "B": 0,
-      "V": 8,
+      "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -1918,6 +2369,74 @@
             194,
             295
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 295,
+          "path": [
+            "edge:346",
+            "edge:132",
+            "edge:330",
+            "candidate:Q026"
+          ],
+          "node_path": [
+            313,
+            92,
+            248,
+            194,
+            295
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 295,
+          "path": [
+            "edge:347",
+            "edge:132",
+            "edge:330",
+            "candidate:Q026"
+          ],
+          "node_path": [
+            345,
+            92,
+            248,
+            194,
+            295
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 295,
+          "path": [
+            "edge:348",
+            "edge:132",
+            "edge:330",
+            "candidate:Q026"
+          ],
+          "node_path": [
+            347,
+            92,
+            248,
+            194,
+            295
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 295,
+          "path": [
+            "edge:349",
+            "edge:132",
+            "edge:330",
+            "candidate:Q026"
+          ],
+          "node_path": [
+            356,
+            92,
+            248,
+            194,
+            295
+          ]
         }
       ],
       "rank": 4
@@ -1931,7 +2450,7 @@
       "status": "unsolved",
       "N": 6,
       "B": 0,
-      "V": 8,
+      "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -2138,6 +2657,74 @@
             194,
             331
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 331,
+          "path": [
+            "edge:346",
+            "edge:132",
+            "edge:330",
+            "candidate:Q048"
+          ],
+          "node_path": [
+            313,
+            92,
+            248,
+            194,
+            331
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 331,
+          "path": [
+            "edge:347",
+            "edge:132",
+            "edge:330",
+            "candidate:Q048"
+          ],
+          "node_path": [
+            345,
+            92,
+            248,
+            194,
+            331
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 331,
+          "path": [
+            "edge:348",
+            "edge:132",
+            "edge:330",
+            "candidate:Q048"
+          ],
+          "node_path": [
+            347,
+            92,
+            248,
+            194,
+            331
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 331,
+          "path": [
+            "edge:349",
+            "edge:132",
+            "edge:330",
+            "candidate:Q048"
+          ],
+          "node_path": [
+            356,
+            92,
+            248,
+            194,
+            331
+          ]
         }
       ],
       "rank": 4
@@ -2151,7 +2738,7 @@
       "status": "unsolved",
       "N": 6,
       "B": 0,
-      "V": 8,
+      "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 248; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
       "mapping_evidence": null,
@@ -2342,6 +2929,66 @@
             248,
             353
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 353,
+          "path": [
+            "edge:346",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            313,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 353,
+          "path": [
+            "edge:347",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            345,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 353,
+          "path": [
+            "edge:348",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            347,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 353,
+          "path": [
+            "edge:349",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            356,
+            92,
+            248,
+            353
+          ]
         }
       ],
       "rank": 4
@@ -2355,9 +3002,9 @@
       "status": "unsolved",
       "N": 4,
       "B": 0.388888888889,
-      "V": 16,
+      "V": 20,
       "reason": null,
-      "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 214; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 346 (graph_to_board)",
+      "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 214; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 345 (graph_to_board)",
       "mapping_evidence": null,
       "source_node": 339,
       "target_node": 214,
@@ -2411,7 +3058,7 @@
           "path": [
             "edge:14",
             "edge:298",
-            "edge:346",
+            "edge:345",
             "candidate:Q054"
           ],
           "node_path": [
@@ -2429,7 +3076,7 @@
             "edge:69",
             "edge:14",
             "edge:298",
-            "edge:346",
+            "edge:345",
             "candidate:Q054"
           ],
           "node_path": [
@@ -2448,7 +3095,7 @@
             "edge:114",
             "edge:134",
             "edge:298",
-            "edge:346",
+            "edge:345",
             "candidate:Q054"
           ],
           "node_path": [
@@ -2464,7 +3111,7 @@
           "source_node": 92,
           "target_node": 214,
           "path": [
-            "edge:346",
+            "edge:345",
             "candidate:Q054"
           ],
           "node_path": [
@@ -2479,7 +3126,7 @@
           "path": [
             "edge:134",
             "edge:298",
-            "edge:346",
+            "edge:345",
             "candidate:Q054"
           ],
           "node_path": [
@@ -2495,11 +3142,26 @@
           "target_node": 214,
           "path": [
             "edge:298",
-            "edge:346",
+            "edge:345",
             "candidate:Q054"
           ],
           "node_path": [
             220,
+            92,
+            339,
+            214
+          ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 214,
+          "path": [
+            "edge:346",
+            "edge:345",
+            "candidate:Q054"
+          ],
+          "node_path": [
+            313,
             92,
             339,
             214
@@ -2662,6 +3324,51 @@
             208,
             237
           ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 214,
+          "path": [
+            "edge:347",
+            "edge:345",
+            "candidate:Q054"
+          ],
+          "node_path": [
+            345,
+            92,
+            339,
+            214
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 214,
+          "path": [
+            "edge:348",
+            "edge:345",
+            "candidate:Q054"
+          ],
+          "node_path": [
+            347,
+            92,
+            339,
+            214
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 214,
+          "path": [
+            "edge:349",
+            "edge:345",
+            "candidate:Q054"
+          ],
+          "node_path": [
+            356,
+            92,
+            339,
+            214
+          ]
         }
       ],
       "rank": 10
@@ -2675,7 +3382,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -2835,6 +3542,66 @@
             272,
             273
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 273,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q010"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            273
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 273,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q010"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            273
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 273,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q010"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            273
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 273,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q010"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            273
+          ]
         }
       ],
       "rank": 11
@@ -2848,7 +3615,7 @@
       "status": "submitted",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -3008,6 +3775,66 @@
             272,
             274
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 274,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q011"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            274
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 274,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q011"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            274
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 274,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q011"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            274
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 274,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q011"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            274
+          ]
         }
       ],
       "rank": 11
@@ -3021,7 +3848,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -3181,6 +4008,66 @@
             272,
             277
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 277,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q013"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            277
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 277,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q013"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            277
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 277,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q013"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            277
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 277,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q013"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            277
+          ]
         }
       ],
       "rank": 11
@@ -3194,7 +4081,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -3354,6 +4241,66 @@
             272,
             278
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 278,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q014"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            278
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 278,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q014"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            278
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 278,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q014"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            278
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 278,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q014"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            278
+          ]
         }
       ],
       "rank": 11
@@ -3367,7 +4314,7 @@
       "status": "submitted",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -3527,6 +4474,66 @@
             272,
             284
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 284,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q018"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            284
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 284,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q018"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            284
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 284,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q018"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            284
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 284,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q018"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            284
+          ]
         }
       ],
       "rank": 11
@@ -3540,7 +4547,7 @@
       "status": "submitted",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -3700,6 +4707,66 @@
             272,
             285
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 285,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q019"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            285
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 285,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q019"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            285
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 285,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q019"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            285
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 285,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q019"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            285
+          ]
         }
       ],
       "rank": 11
@@ -3713,7 +4780,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -3873,6 +4940,66 @@
             272,
             288
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 288,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q021"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            288
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 288,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q021"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            288
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 288,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q021"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            288
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 288,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q021"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            288
+          ]
         }
       ],
       "rank": 11
@@ -3886,7 +5013,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -4046,6 +5173,66 @@
             272,
             294
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 294,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q025"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            294
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 294,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q025"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            294
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 294,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q025"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            294
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 294,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q025"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            294
+          ]
         }
       ],
       "rank": 11
@@ -4059,7 +5246,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -4219,178 +5406,65 @@
             272,
             308
           ]
-        }
-      ],
-      "rank": 11
-    },
-    {
-      "id": "Q036",
-      "slug": "rank-two-nonnegative-approximation",
-      "source": "3-SAT",
-      "target": "Rank-two nonnegative approximation",
-      "category": "Complexity open",
-      "status": "lean_checked",
-      "N": 4,
-      "B": 0,
-      "V": 7,
-      "reason": null,
-      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 345 (graph_to_board)",
-      "mapping_evidence": null,
-      "source_node": 313,
-      "target_node": 314,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Rank-two nonnegative approximation",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Rank-two nonnegative approximation [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Rank-two nonnegative approximation",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Rank-two nonnegative approximation [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Rank-two nonnegative approximation",
-          "witness_nodes": [
-            "3-SAT [board]",
-            "Rank-two nonnegative approximation [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Rank-two nonnegative approximation",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Rank-two nonnegative approximation [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 314,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:345",
-            "candidate:Q036"
-          ],
-          "node_path": [
-            15,
-            220,
-            92,
-            313,
-            314
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 314,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:345",
-            "candidate:Q036"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            313,
-            314
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 314,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:345",
-            "candidate:Q036"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            313,
-            314
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 314,
-          "path": [
-            "edge:345",
-            "candidate:Q036"
-          ],
-          "node_path": [
-            92,
-            313,
-            314
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 314,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:345",
-            "candidate:Q036"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            313,
-            314
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 314,
-          "path": [
-            "edge:298",
-            "edge:345",
-            "candidate:Q036"
-          ],
-          "node_path": [
-            220,
-            92,
-            313,
-            314
-          ]
         },
         {
           "source_node": 313,
-          "target_node": 314,
+          "target_node": 308,
           "path": [
-            "candidate:Q036"
+            "edge:346",
+            "edge:344",
+            "candidate:Q033"
           ],
           "node_path": [
             313,
-            314
+            92,
+            272,
+            308
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 308,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q033"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            308
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 308,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q033"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            308
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 308,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q033"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            308
           ]
         }
       ],
@@ -4405,7 +5479,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -4565,6 +5639,66 @@
             272,
             318
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 318,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q039"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            318
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 318,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q039"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            318
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 318,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q039"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            318
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 318,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q039"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            318
+          ]
         }
       ],
       "rank": 11
@@ -4578,7 +5712,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -4738,6 +5872,66 @@
             272,
             319
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 319,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q040"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            319
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 319,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q040"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            319
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 319,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q040"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            319
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 319,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q040"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            319
+          ]
         }
       ],
       "rank": 11
@@ -4751,7 +5945,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -4911,6 +6105,66 @@
             272,
             324
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 324,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q043"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            324
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 324,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q043"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            324
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 324,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q043"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            324
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 324,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q043"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            324
+          ]
         }
       ],
       "rank": 11
@@ -4924,7 +6178,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -5084,6 +6338,66 @@
             272,
             329
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 329,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q046"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            329
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 329,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q046"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            329
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 329,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q046"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            329
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 329,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q046"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            329
+          ]
         }
       ],
       "rank": 11
@@ -5097,7 +6411,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -5257,6 +6571,66 @@
             272,
             330
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 330,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q047"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            330
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 330,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q047"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            330
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 330,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q047"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            330
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 330,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q047"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            330
+          ]
         }
       ],
       "rank": 11
@@ -5270,7 +6644,7 @@
       "status": "unsolved",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -5430,6 +6804,66 @@
             272,
             335
           ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 335,
+          "path": [
+            "edge:346",
+            "edge:344",
+            "candidate:Q051"
+          ],
+          "node_path": [
+            313,
+            92,
+            272,
+            335
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 335,
+          "path": [
+            "edge:347",
+            "edge:344",
+            "candidate:Q051"
+          ],
+          "node_path": [
+            345,
+            92,
+            272,
+            335
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 335,
+          "path": [
+            "edge:348",
+            "edge:344",
+            "candidate:Q051"
+          ],
+          "node_path": [
+            347,
+            92,
+            272,
+            335
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 335,
+          "path": [
+            "edge:349",
+            "edge:344",
+            "candidate:Q051"
+          ],
+          "node_path": [
+            356,
+            92,
+            272,
+            335
+          ]
         }
       ],
       "rank": 11
@@ -5443,7 +6877,7 @@
       "status": "submitted",
       "N": 4,
       "B": 0,
-      "V": 7,
+      "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
       "mapping_evidence": null,
@@ -5603,874 +7037,122 @@
             272,
             336
           ]
-        }
-      ],
-      "rank": 11
-    },
-    {
-      "id": "Q058",
-      "slug": "distance-three-time-feasible-reconciliation",
-      "source": "3-SAT",
-      "target": "Minimum-cost time-feasible reconciliation with host switches of distance at most three",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "N": 4,
-      "B": 0,
-      "V": 7,
-      "reason": null,
-      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 347 (graph_to_board)",
-      "mapping_evidence": null,
-      "source_node": 345,
-      "target_node": 346,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Minimum-cost time-feasible reconciliation with host switches of distance at most three",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Minimum-cost time-feasible reconciliation with host switches of distance at most three [board]"
-          ]
         },
         {
-          "source": "Factoring",
-          "target": "Minimum-cost time-feasible reconciliation with host switches of distance at most three",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Minimum-cost time-feasible reconciliation with host switches of distance at most three [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Minimum-cost time-feasible reconciliation with host switches of distance at most three",
-          "witness_nodes": [
-            "3-SAT [board]",
-            "Minimum-cost time-feasible reconciliation with host switches of distance at most three [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Minimum-cost time-feasible reconciliation with host switches of distance at most three",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Minimum-cost time-feasible reconciliation with host switches of distance at most three [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 346,
+          "source_node": 313,
+          "target_node": 336,
           "path": [
-            "edge:14",
-            "edge:298",
-            "edge:347",
-            "candidate:Q058"
+            "edge:346",
+            "edge:344",
+            "candidate:Q052"
           ],
           "node_path": [
-            15,
-            220,
+            313,
             92,
-            345,
-            346
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 346,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:347",
-            "candidate:Q058"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            345,
-            346
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 346,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:347",
-            "candidate:Q058"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            345,
-            346
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 346,
-          "path": [
-            "edge:347",
-            "candidate:Q058"
-          ],
-          "node_path": [
-            92,
-            345,
-            346
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 346,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:347",
-            "candidate:Q058"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            345,
-            346
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 346,
-          "path": [
-            "edge:298",
-            "edge:347",
-            "candidate:Q058"
-          ],
-          "node_path": [
-            220,
-            92,
-            345,
-            346
+            272,
+            336
           ]
         },
         {
           "source_node": 345,
-          "target_node": 346,
+          "target_node": 336,
           "path": [
-            "candidate:Q058"
+            "edge:347",
+            "edge:344",
+            "candidate:Q052"
           ],
           "node_path": [
             345,
-            346
-          ]
-        }
-      ],
-      "rank": 11
-    },
-    {
-      "id": "Q059",
-      "slug": "unweighted-allowed-centers-min-sum-radii",
-      "source": "3-SAT",
-      "target": "Allowed-centers min-sum-radii on unweighted graph metrics",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "N": 4,
-      "B": 0,
-      "V": 7,
-      "reason": null,
-      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (graph_to_board)",
-      "mapping_evidence": null,
-      "source_node": 347,
-      "target_node": 348,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Allowed-centers min-sum-radii on unweighted graph metrics",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Allowed-centers min-sum-radii on unweighted graph metrics [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Allowed-centers min-sum-radii on unweighted graph metrics",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Allowed-centers min-sum-radii on unweighted graph metrics [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Allowed-centers min-sum-radii on unweighted graph metrics",
-          "witness_nodes": [
-            "3-SAT [board]",
-            "Allowed-centers min-sum-radii on unweighted graph metrics [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Allowed-centers min-sum-radii on unweighted graph metrics",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Allowed-centers min-sum-radii on unweighted graph metrics [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 348,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:348",
-            "candidate:Q059"
-          ],
-          "node_path": [
-            15,
-            220,
             92,
-            347,
-            348
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 348,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:348",
-            "candidate:Q059"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            347,
-            348
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 348,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:348",
-            "candidate:Q059"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            347,
-            348
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 348,
-          "path": [
-            "edge:348",
-            "candidate:Q059"
-          ],
-          "node_path": [
-            92,
-            347,
-            348
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 348,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:348",
-            "candidate:Q059"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            347,
-            348
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 348,
-          "path": [
-            "edge:298",
-            "edge:348",
-            "candidate:Q059"
-          ],
-          "node_path": [
-            220,
-            92,
-            347,
-            348
+            272,
+            336
           ]
         },
         {
           "source_node": 347,
-          "target_node": 348,
+          "target_node": 336,
           "path": [
-            "candidate:Q059"
+            "edge:348",
+            "edge:344",
+            "candidate:Q052"
           ],
           "node_path": [
             347,
-            348
-          ]
-        }
-      ],
-      "rank": 11
-    },
-    {
-      "id": "Q064",
-      "slug": "priority-unimolecular-reaction-reachability",
-      "source": "3-SAT",
-      "target": "Reachability in priority-inhibited unimolecular reaction networks",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "N": 4,
-      "B": 0,
-      "V": 7,
-      "reason": null,
-      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 349 (graph_to_board)",
-      "mapping_evidence": null,
-      "source_node": 356,
-      "target_node": 357,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Reachability in priority-inhibited unimolecular reaction networks",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Reachability in priority-inhibited unimolecular reaction networks [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Reachability in priority-inhibited unimolecular reaction networks",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Reachability in priority-inhibited unimolecular reaction networks [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Reachability in priority-inhibited unimolecular reaction networks",
-          "witness_nodes": [
-            "3-SAT [board]",
-            "Reachability in priority-inhibited unimolecular reaction networks [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Reachability in priority-inhibited unimolecular reaction networks",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Reachability in priority-inhibited unimolecular reaction networks [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 357,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:349",
-            "candidate:Q064"
-          ],
-          "node_path": [
-            15,
-            220,
             92,
-            356,
-            357
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 357,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:349",
-            "candidate:Q064"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            356,
-            357
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 357,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:349",
-            "candidate:Q064"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            356,
-            357
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 357,
-          "path": [
-            "edge:349",
-            "candidate:Q064"
-          ],
-          "node_path": [
-            92,
-            356,
-            357
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 357,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:349",
-            "candidate:Q064"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            356,
-            357
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 357,
-          "path": [
-            "edge:298",
-            "edge:349",
-            "candidate:Q064"
-          ],
-          "node_path": [
-            220,
-            92,
-            356,
-            357
+            272,
+            336
           ]
         },
         {
           "source_node": 356,
-          "target_node": 357,
+          "target_node": 336,
           "path": [
-            "candidate:Q064"
+            "edge:349",
+            "edge:344",
+            "candidate:Q052"
           ],
           "node_path": [
             356,
-            357
+            92,
+            272,
+            336
           ]
         }
       ],
       "rank": 11
     },
     {
-      "id": "Q065",
-      "slug": "two-machine-preemptive-intree-total-completion",
-      "source": "3-SAT",
-      "target": "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound",
+      "id": "Q041",
+      "slug": "ternary-symmetric-justified-envy",
+      "source": "Triangle Partition",
+      "target": "Ternary symmetric justified envy-free triples",
       "category": "Complexity open",
       "status": "unsolved",
-      "N": 4,
+      "N": 1,
       "B": 0,
-      "V": 7,
-      "reason": null,
-      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (graph_to_board)",
+      "V": 2,
+      "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
+      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 353 (graph_to_board)",
       "mapping_evidence": null,
-      "source_node": 347,
-      "target_node": 358,
+      "source_node": 320,
+      "target_node": 321,
       "new_problem_pairs": [
         {
-          "source": "CircuitSAT",
-          "target": "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound",
+          "source": "PartitionIntoTriangles",
+          "target": "Ternary symmetric justified envy-free triples",
           "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound",
-          "witness_nodes": [
-            "3-SAT [board]",
-            "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound [board]"
+            "Triangle Partition [board]",
+            "Ternary symmetric justified envy-free triples [board]"
           ]
         }
       ],
       "witnesses": [
         {
-          "source_node": 15,
-          "target_node": 358,
+          "source_node": 199,
+          "target_node": 321,
           "path": [
-            "edge:14",
-            "edge:298",
-            "edge:348",
-            "candidate:Q065"
+            "edge:353",
+            "candidate:Q041"
           ],
           "node_path": [
-            15,
-            220,
-            92,
-            347,
-            358
+            199,
+            320,
+            321
           ]
         },
         {
-          "source_node": 64,
-          "target_node": 358,
+          "source_node": 320,
+          "target_node": 321,
           "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:348",
-            "candidate:Q065"
+            "candidate:Q041"
           ],
           "node_path": [
-            64,
-            15,
-            220,
-            92,
-            347,
-            358
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 358,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:348",
-            "candidate:Q065"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            347,
-            358
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 358,
-          "path": [
-            "edge:348",
-            "candidate:Q065"
-          ],
-          "node_path": [
-            92,
-            347,
-            358
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 358,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:348",
-            "candidate:Q065"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            347,
-            358
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 358,
-          "path": [
-            "edge:298",
-            "edge:348",
-            "candidate:Q065"
-          ],
-          "node_path": [
-            220,
-            92,
-            347,
-            358
-          ]
-        },
-        {
-          "source_node": 347,
-          "target_node": 358,
-          "path": [
-            "candidate:Q065"
-          ],
-          "node_path": [
-            347,
-            358
+            320,
+            321
           ]
         }
       ],
-      "rank": 11
-    },
-    {
-      "id": "Q066",
-      "slug": "two-action-anonymous-iterated-dominance",
-      "source": "3-SAT",
-      "target": "Iterated weak-dominance solvability of two-action anonymous games",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "N": 4,
-      "B": 0,
-      "V": 7,
-      "reason": null,
-      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (graph_to_board)",
-      "mapping_evidence": null,
-      "source_node": 347,
-      "target_node": 359,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Iterated weak-dominance solvability of two-action anonymous games",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Iterated weak-dominance solvability of two-action anonymous games [board]"
-          ]
-        },
-        {
-          "source": "Factoring",
-          "target": "Iterated weak-dominance solvability of two-action anonymous games",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Iterated weak-dominance solvability of two-action anonymous games [board]"
-          ]
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Iterated weak-dominance solvability of two-action anonymous games",
-          "witness_nodes": [
-            "3-SAT [board]",
-            "Iterated weak-dominance solvability of two-action anonymous games [board]"
-          ]
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Iterated weak-dominance solvability of two-action anonymous games",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "3-SAT [board]",
-            "Iterated weak-dominance solvability of two-action anonymous games [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 359,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:348",
-            "candidate:Q066"
-          ],
-          "node_path": [
-            15,
-            220,
-            92,
-            347,
-            359
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 359,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:348",
-            "candidate:Q066"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            347,
-            359
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 359,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:348",
-            "candidate:Q066"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            347,
-            359
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 359,
-          "path": [
-            "edge:348",
-            "candidate:Q066"
-          ],
-          "node_path": [
-            92,
-            347,
-            359
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 359,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:348",
-            "candidate:Q066"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            347,
-            359
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 359,
-          "path": [
-            "edge:298",
-            "edge:348",
-            "candidate:Q066"
-          ],
-          "node_path": [
-            220,
-            92,
-            347,
-            359
-          ]
-        },
-        {
-          "source_node": 347,
-          "target_node": 359,
-          "path": [
-            "candidate:Q066"
-          ],
-          "node_path": [
-            347,
-            359
-          ]
-        }
-      ],
-      "rank": 11
+      "rank": 27
     },
     {
       "id": "Q001",
@@ -6510,7 +7192,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q003",
@@ -6550,7 +7232,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q004",
@@ -6590,7 +7272,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q005",
@@ -6630,7 +7312,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q006",
@@ -6670,7 +7352,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q007",
@@ -6710,7 +7392,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q008",
@@ -6750,7 +7432,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q012",
@@ -6790,7 +7472,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q015",
@@ -6830,7 +7512,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q016",
@@ -6870,7 +7552,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q020",
@@ -6910,7 +7592,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q022",
@@ -6950,7 +7632,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q023",
@@ -6990,7 +7672,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q024",
@@ -7030,7 +7712,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q027",
@@ -7070,7 +7752,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q028",
@@ -7110,7 +7792,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q029",
@@ -7150,7 +7832,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q030",
@@ -7190,7 +7872,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q031",
@@ -7230,7 +7912,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q032",
@@ -7270,7 +7952,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q034",
@@ -7310,7 +7992,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q035",
@@ -7350,7 +8032,47 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
+    },
+    {
+      "id": "Q036",
+      "slug": "rank-two-nonnegative-approximation",
+      "source": "3-SAT",
+      "target": "Rank-two nonnegative approximation",
+      "category": "Complexity open",
+      "status": "lean_checked",
+      "N": 1,
+      "B": 0,
+      "V": 1,
+      "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
+      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 346 (board_to_graph)",
+      "mapping_evidence": null,
+      "source_node": 313,
+      "target_node": 314,
+      "new_problem_pairs": [
+        {
+          "source": "KSatisfiability",
+          "target": "Rank-two nonnegative approximation",
+          "witness_nodes": [
+            "3-SAT [board]",
+            "Rank-two nonnegative approximation [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 313,
+          "target_node": 314,
+          "path": [
+            "candidate:Q036"
+          ],
+          "node_path": [
+            313,
+            314
+          ]
+        }
+      ],
+      "rank": 28
     },
     {
       "id": "Q037",
@@ -7390,7 +8112,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q038",
@@ -7430,47 +8152,7 @@
           ]
         }
       ],
-      "rank": 33
-    },
-    {
-      "id": "Q041",
-      "slug": "ternary-symmetric-justified-envy",
-      "source": "Triangle Partition",
-      "target": "Ternary symmetric justified envy-free triples",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "N": 1,
-      "B": 0,
-      "V": 1,
-      "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
-      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
-      "mapping_evidence": null,
-      "source_node": 320,
-      "target_node": 321,
-      "new_problem_pairs": [
-        {
-          "source": "Triangle Partition",
-          "target": "Ternary symmetric justified envy-free triples",
-          "witness_nodes": [
-            "Triangle Partition [board]",
-            "Ternary symmetric justified envy-free triples [board]"
-          ]
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 320,
-          "target_node": 321,
-          "path": [
-            "candidate:Q041"
-          ],
-          "node_path": [
-            320,
-            321
-          ]
-        }
-      ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q044",
@@ -7510,7 +8192,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q045",
@@ -7550,7 +8232,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q049",
@@ -7590,7 +8272,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q050",
@@ -7630,7 +8312,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q053",
@@ -7670,7 +8352,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q057",
@@ -7710,7 +8392,87 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
+    },
+    {
+      "id": "Q058",
+      "slug": "distance-three-time-feasible-reconciliation",
+      "source": "3-SAT",
+      "target": "Minimum-cost time-feasible reconciliation with host switches of distance at most three",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "N": 1,
+      "B": 0,
+      "V": 1,
+      "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
+      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 347 (board_to_graph)",
+      "mapping_evidence": null,
+      "source_node": 345,
+      "target_node": 346,
+      "new_problem_pairs": [
+        {
+          "source": "KSatisfiability",
+          "target": "Minimum-cost time-feasible reconciliation with host switches of distance at most three",
+          "witness_nodes": [
+            "3-SAT [board]",
+            "Minimum-cost time-feasible reconciliation with host switches of distance at most three [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 345,
+          "target_node": 346,
+          "path": [
+            "candidate:Q058"
+          ],
+          "node_path": [
+            345,
+            346
+          ]
+        }
+      ],
+      "rank": 28
+    },
+    {
+      "id": "Q059",
+      "slug": "unweighted-allowed-centers-min-sum-radii",
+      "source": "3-SAT",
+      "target": "Allowed-centers min-sum-radii on unweighted graph metrics",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "N": 1,
+      "B": 0,
+      "V": 1,
+      "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
+      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (board_to_graph)",
+      "mapping_evidence": null,
+      "source_node": 347,
+      "target_node": 348,
+      "new_problem_pairs": [
+        {
+          "source": "KSatisfiability",
+          "target": "Allowed-centers min-sum-radii on unweighted graph metrics",
+          "witness_nodes": [
+            "3-SAT [board]",
+            "Allowed-centers min-sum-radii on unweighted graph metrics [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 347,
+          "target_node": 348,
+          "path": [
+            "candidate:Q059"
+          ],
+          "node_path": [
+            347,
+            348
+          ]
+        }
+      ],
+      "rank": 28
     },
     {
       "id": "Q060",
@@ -7750,7 +8512,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q061",
@@ -7790,7 +8552,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q063",
@@ -7830,7 +8592,127 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
+    },
+    {
+      "id": "Q064",
+      "slug": "priority-unimolecular-reaction-reachability",
+      "source": "3-SAT",
+      "target": "Reachability in priority-inhibited unimolecular reaction networks",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "N": 1,
+      "B": 0,
+      "V": 1,
+      "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
+      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 349 (board_to_graph)",
+      "mapping_evidence": null,
+      "source_node": 356,
+      "target_node": 357,
+      "new_problem_pairs": [
+        {
+          "source": "KSatisfiability",
+          "target": "Reachability in priority-inhibited unimolecular reaction networks",
+          "witness_nodes": [
+            "3-SAT [board]",
+            "Reachability in priority-inhibited unimolecular reaction networks [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 356,
+          "target_node": 357,
+          "path": [
+            "candidate:Q064"
+          ],
+          "node_path": [
+            356,
+            357
+          ]
+        }
+      ],
+      "rank": 28
+    },
+    {
+      "id": "Q065",
+      "slug": "two-machine-preemptive-intree-total-completion",
+      "source": "3-SAT",
+      "target": "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "N": 1,
+      "B": 0,
+      "V": 1,
+      "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
+      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (board_to_graph)",
+      "mapping_evidence": null,
+      "source_node": 347,
+      "target_node": 358,
+      "new_problem_pairs": [
+        {
+          "source": "KSatisfiability",
+          "target": "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound",
+          "witness_nodes": [
+            "3-SAT [board]",
+            "Two-machine preemptive unit-job in-tree scheduling with release dates and total completion bound [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 347,
+          "target_node": 358,
+          "path": [
+            "candidate:Q065"
+          ],
+          "node_path": [
+            347,
+            358
+          ]
+        }
+      ],
+      "rank": 28
+    },
+    {
+      "id": "Q066",
+      "slug": "two-action-anonymous-iterated-dominance",
+      "source": "3-SAT",
+      "target": "Iterated weak-dominance solvability of two-action anonymous games",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "N": 1,
+      "B": 0,
+      "V": 1,
+      "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
+      "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (board_to_graph)",
+      "mapping_evidence": null,
+      "source_node": 347,
+      "target_node": 359,
+      "new_problem_pairs": [
+        {
+          "source": "KSatisfiability",
+          "target": "Iterated weak-dominance solvability of two-action anonymous games",
+          "witness_nodes": [
+            "3-SAT [board]",
+            "Iterated weak-dominance solvability of two-action anonymous games [board]"
+          ]
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 347,
+          "target_node": 359,
+          "path": [
+            "candidate:Q066"
+          ],
+          "node_path": [
+            347,
+            359
+          ]
+        }
+      ],
+      "rank": 28
     },
     {
       "id": "Q067",
@@ -7870,7 +8752,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q068",
@@ -7910,7 +8792,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q069",
@@ -7950,7 +8832,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q070",
@@ -7990,7 +8872,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q071",
@@ -8030,7 +8912,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q072",
@@ -8070,7 +8952,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q073",
@@ -8110,7 +8992,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q074",
@@ -8150,7 +9032,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q075",
@@ -8190,7 +9072,7 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     },
     {
       "id": "Q076",
@@ -8230,10 +9112,10 @@
           ]
         }
       ],
-      "rank": 33
+      "rank": 28
     }
   ],
   "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
-  "bridges_sha256": "b5d404aa49b40388d1c23d578b755153518c2cc7386e0c2efd36b62bbd77accb",
+  "bridges_sha256": "5b407b620325a079e6723a37e7ca620c2609cbba2a6dea4fe919bd31ccb71c81",
   "mappings_sha256": "5df1c05be1623851d4250016c92866494ad785620fe083ee32ef35861c4af532"
 }
