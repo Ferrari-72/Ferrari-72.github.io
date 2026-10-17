@@ -29,12 +29,27 @@
         "N": 1,
         "B": 0,
         "V": 1,
+        "D_half": 1.0,
+        "direct_count": 1,
+        "transitive_count": 0,
         "rank": 28
       },
       "scenario": {
         "N": 94,
         "B": 0,
         "V": 118,
+        "D_half": 8.8671875,
+        "direct_count": 1,
+        "transitive_count": 93,
+        "hop_histogram": {
+          "1": 1,
+          "3": 9,
+          "4": 29,
+          "5": 16,
+          "6": 25,
+          "7": 13,
+          "8": 1
+        },
         "rank": 1,
         "new_problem_pairs": [
           {
@@ -46,7 +61,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "AcyclicPartition (weight=i64)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -58,7 +75,9 @@
               "KSatisfiability (k=K3)",
               "BicliqueCover",
               "BMF"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -70,7 +89,9 @@
               "KSatisfiability (k=K3)",
               "KClique (graph=SimpleGraph)",
               "BalancedCompleteBipartiteSubgraph"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -82,7 +103,9 @@
               "NAESatisfiability",
               "SetSplitting",
               "Betweenness"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -93,7 +116,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "BicliqueCover"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -106,7 +131,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "BiconnectivityAugmentation (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -119,7 +146,9 @@
               "SubsetSum",
               "Partition",
               "BinPacking (weight=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -132,7 +161,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "BottleneckTravelingSalesman"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -142,7 +173,9 @@
               "Horn satisfiability [board]",
               "Satisfiability",
               "CircuitSAT"
-            ]
+            ],
+            "hops": 3,
+            "discount_weight": 0.25
           },
           {
             "source": "BFS tree support",
@@ -155,7 +188,9 @@
               "SubsetSum",
               "DecisionClosestVectorProblem (coefficient=i64)",
               "ClosestVectorProblem (coefficient=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -166,7 +201,9 @@
               "Satisfiability",
               "KColoring (graph=SimpleGraph, k=K3)",
               "Clustering"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -178,7 +215,9 @@
               "KSatisfiability (k=K3)",
               "KClique (graph=SimpleGraph)",
               "ConjunctiveBooleanQuery"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -191,7 +230,9 @@
               "SubsetSum",
               "Partition",
               "CosineProductIntegration"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -202,7 +243,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "CyclicOrdering"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -214,7 +257,9 @@
               "KSatisfiability (k=K3)",
               "SubsetSum",
               "DecisionClosestVectorProblem (coefficient=i64)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -227,7 +272,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionLongestCircuit (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -238,7 +285,9 @@
               "Satisfiability",
               "NAESatisfiability",
               "DecisionMaxCut (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -248,7 +297,9 @@
               "Horn satisfiability [board]",
               "Satisfiability",
               "DecisionMaximum2Satisfiability"
-            ]
+            ],
+            "hops": 3,
+            "discount_weight": 0.25
           },
           {
             "source": "BFS tree support",
@@ -258,7 +309,9 @@
               "Horn satisfiability [board]",
               "Satisfiability",
               "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)"
-            ]
+            ],
+            "hops": 3,
+            "discount_weight": 0.25
           },
           {
             "source": "BFS tree support",
@@ -271,7 +324,9 @@
               "KColoring (graph=SimpleGraph, k=KN)",
               "PartitionIntoCliques (graph=SimpleGraph)",
               "DecisionMinimumCoveringByCliques (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -281,7 +336,9 @@
               "Horn satisfiability [board]",
               "Satisfiability",
               "DecisionMinimumDominatingSet (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 3,
+            "discount_weight": 0.25
           },
           {
             "source": "BFS tree support",
@@ -292,7 +349,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -305,7 +364,9 @@
               "SubsetSum",
               "Partition",
               "DecisionOpenShopScheduling"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -316,7 +377,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "DecisionQUBO (weight=i64)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -329,7 +392,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionQuadraticAssignment"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -342,7 +407,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionRuralPostman (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -355,7 +422,9 @@
               "SubsetSum",
               "Partition",
               "DecisionSequencingToMinimizeTardyTaskWeight"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -366,7 +435,9 @@
               "Satisfiability",
               "CircuitSAT",
               "DecisionSpinGlass (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -379,7 +450,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionStackerCrane"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -393,7 +466,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "HamiltonianPath (graph=SimpleGraph)",
               "DegreeConstrainedSpanningTree (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -404,7 +479,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "DirectedTwoCommodityIntegralFlow"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -417,7 +494,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "MinimumVertexCover (graph=SimpleGraph, weight=One)",
               "EnsembleComputation"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -428,7 +507,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "FeasibleRegisterAssignment"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -440,7 +521,9 @@
               "KSatisfiability (k=K3)",
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -453,7 +536,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "HamiltonianPath (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -464,7 +549,9 @@
               "Satisfiability",
               "IntegralFlowHomologousArcs",
               "ILP (bounds=bounded, coefficient=i64, variable=i64)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -476,7 +563,9 @@
               "KSatisfiability (k=K3)",
               "SubsetSum",
               "IntegerExpressionMembership"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -487,7 +576,9 @@
               "Satisfiability",
               "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "IntegralFlowBundles"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -497,7 +588,9 @@
               "Horn satisfiability [board]",
               "Satisfiability",
               "IntegralFlowHomologousArcs"
-            ]
+            ],
+            "hops": 3,
+            "discount_weight": 0.25
           },
           {
             "source": "BFS tree support",
@@ -510,7 +603,9 @@
               "SubsetSum",
               "Partition",
               "IntegralFlowWithMultipliers"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -524,7 +619,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "HamiltonianPath (graph=SimpleGraph)",
               "IsomorphicSpanningTree (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -535,7 +632,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "KClique (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -545,7 +644,9 @@
               "Horn satisfiability [board]",
               "Satisfiability",
               "KColoring (graph=SimpleGraph, k=K3)"
-            ]
+            ],
+            "hops": 3,
+            "discount_weight": 0.25
           },
           {
             "source": "BFS tree support",
@@ -555,7 +656,9 @@
               "Horn satisfiability [board]",
               "Satisfiability",
               "KSatisfiability (k=K3)"
-            ]
+            ],
+            "hops": 3,
+            "discount_weight": 0.25
           },
           {
             "source": "BFS tree support",
@@ -566,7 +669,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "Kernel"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -579,7 +684,9 @@
               "SubsetSum",
               "Partition",
               "Knapsack"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -593,7 +700,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionLongestCircuit (graph=SimpleGraph, weight=i64)",
               "LongestCircuit (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -606,7 +715,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "MinimumVertexCover (graph=SimpleGraph, weight=One)",
               "LongestCommonSubsequence"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -618,7 +729,9 @@
               "DecisionMaximum2Satisfiability",
               "Maximum2Satisfiability",
               "MaxCut (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -629,7 +742,9 @@
               "Satisfiability",
               "DecisionMaximum2Satisfiability",
               "Maximum2Satisfiability"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -641,7 +756,9 @@
               "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "MaximumClique (graph=SimpleGraph, weight=One)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -652,7 +769,9 @@
               "Satisfiability",
               "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "MaximumIndependentSet (graph=SimpleGraph, weight=One)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -664,7 +783,9 @@
               "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "MaximumSetPacking (weight=One)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -678,7 +799,9 @@
               "PartitionIntoCliques (graph=SimpleGraph)",
               "DecisionMinimumCoveringByCliques (graph=SimpleGraph)",
               "MinimumCoveringByCliques (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -691,7 +814,9 @@
               "Maximum2Satisfiability",
               "MaxCut (graph=SimpleGraph, weight=i64)",
               "MinimumCutIntoBoundedSets (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -702,7 +827,9 @@
               "Satisfiability",
               "DecisionMinimumDominatingSet (graph=SimpleGraph, weight=i64)",
               "MinimumDominatingSet (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -716,7 +843,9 @@
               "MaximumIndependentSet (graph=SimpleGraph, weight=i64)",
               "MinimumVertexCover (graph=SimpleGraph, weight=i64)",
               "MinimumFeedbackArcSet (weight=i64)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -730,7 +859,9 @@
               "MaximumIndependentSet (graph=SimpleGraph, weight=i64)",
               "MinimumVertexCover (graph=SimpleGraph, weight=i64)",
               "MinimumFeedbackVertexSet (weight=i64)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -743,7 +874,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "MinimumVertexCover (graph=SimpleGraph, weight=One)",
               "MinimumHittingSet"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -758,7 +891,9 @@
               "DecisionMinimumCoveringByCliques (graph=SimpleGraph)",
               "MinimumCoveringByCliques (graph=SimpleGraph)",
               "MinimumIntersectionGraphBasis (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "BFS tree support",
@@ -771,7 +906,9 @@
               "Maximum2Satisfiability",
               "MaxCut (graph=SimpleGraph, weight=i64)",
               "MinimumMatrixCover"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -785,7 +922,9 @@
               "MaximumIndependentSet (graph=SimpleGraph, weight=i64)",
               "MinimumVertexCover (graph=SimpleGraph, weight=i64)",
               "MinimumSetCovering (weight=i64)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -797,7 +936,9 @@
               "KSatisfiability (k=K3)",
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "MinimumVertexCover (graph=SimpleGraph, weight=One)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -811,7 +952,9 @@
               "MaximumIndependentSet (graph=SimpleGraph, weight=i64)",
               "MinimumVertexCover (graph=SimpleGraph, weight=i64)",
               "MinimumWeightAndOrGraph"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -822,7 +965,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "MonochromaticTriangle (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -835,7 +980,9 @@
               "SubsetSum",
               "Partition",
               "MultiprocessorScheduling"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -845,7 +992,9 @@
               "Horn satisfiability [board]",
               "Satisfiability",
               "NAESatisfiability"
-            ]
+            ],
+            "hops": 3,
+            "discount_weight": 0.25
           },
           {
             "source": "BFS tree support",
@@ -855,7 +1004,9 @@
               "Horn satisfiability [board]",
               "Satisfiability",
               "NonTautology"
-            ]
+            ],
+            "hops": 3,
+            "discount_weight": 0.25
           },
           {
             "source": "BFS tree support",
@@ -866,7 +1017,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "OneInThreeSatisfiability"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -880,7 +1033,9 @@
               "Partition",
               "DecisionOpenShopScheduling",
               "OpenShopScheduling"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -892,7 +1047,9 @@
               "KSatisfiability (k=K3)",
               "SubsetSum",
               "Partition"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -904,7 +1061,9 @@
               "KColoring (graph=SimpleGraph, k=K3)",
               "KColoring (graph=SimpleGraph, k=KN)",
               "PartitionIntoCliques (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -915,7 +1074,9 @@
               "Satisfiability",
               "NAESatisfiability",
               "PartitionIntoPerfectMatchings (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -926,7 +1087,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "PreemptiveScheduling"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -939,7 +1102,9 @@
               "SubsetSum",
               "Partition",
               "ProductionPlanning"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -951,7 +1116,9 @@
               "CircuitSAT",
               "ILP (bounds=general, coefficient=i64, variable=bool)",
               "QUBO (weight=i64)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -965,7 +1132,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionQuadraticAssignment",
               "QuadraticAssignment"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -976,7 +1145,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "QuadraticCongruences"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -987,7 +1158,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "QuadraticDiophantineEquations"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -998,7 +1171,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "RegisterSufficiency"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -1012,7 +1187,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionRuralPostman (graph=SimpleGraph, weight=i64)",
               "RuralPostman (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -1020,7 +1197,9 @@
             "witness_nodes": [
               "BFS tree support [board]",
               "Horn satisfiability [board]"
-            ]
+            ],
+            "hops": 1,
+            "discount_weight": 1.0
           },
           {
             "source": "BFS tree support",
@@ -1034,7 +1213,9 @@
               "Partition",
               "DecisionSequencingToMinimizeTardyTaskWeight",
               "SequencingToMinimizeTardyTaskWeight"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -1045,7 +1226,9 @@
               "Satisfiability",
               "NAESatisfiability",
               "SetSplitting"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -1056,7 +1239,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "SimultaneousIncongruences"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -1068,7 +1253,9 @@
               "CircuitSAT",
               "DecisionSpinGlass (graph=SimpleGraph, weight=i64)",
               "SpinGlass (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -1082,7 +1269,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionStackerCrane",
               "StackerCrane"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "BFS tree support",
@@ -1095,7 +1284,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "StrongConnectivityAugmentation (weight=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -1107,7 +1298,9 @@
               "KSatisfiability (k=K3)",
               "KClique (graph=SimpleGraph)",
               "SubgraphIsomorphism"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "BFS tree support",
@@ -1118,7 +1311,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "SubsetSum"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -1131,7 +1326,9 @@
               "SubsetSum",
               "Partition",
               "SumOfSquaresPartition"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -1142,7 +1339,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "TimetableDesign"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "BFS tree support",
@@ -1155,7 +1354,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "TravelingSalesman (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "BFS tree support",
@@ -1166,7 +1367,9 @@
               "Satisfiability",
               "KColoring (graph=SimpleGraph, k=K3)",
               "TwoDimensionalConsecutiveSets"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           }
         ],
         "witnesses": [
@@ -3478,12 +3681,29 @@
         "N": 1,
         "B": 0,
         "V": 1,
+        "D_half": 1.0,
+        "direct_count": 1,
+        "transitive_count": 0,
         "rank": 28
       },
       "scenario": {
         "N": 94,
         "B": 0,
         "V": 119,
+        "D_half": 3.404296875,
+        "direct_count": 1,
+        "transitive_count": 93,
+        "hop_histogram": {
+          "1": 1,
+          "3": 1,
+          "4": 2,
+          "5": 9,
+          "6": 28,
+          "7": 14,
+          "8": 25,
+          "9": 13,
+          "10": 1
+        },
         "rank": 1,
         "new_problem_pairs": [
           {
@@ -3497,7 +3717,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "AcyclicPartition (weight=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3511,7 +3733,9 @@
               "KSatisfiability (k=K3)",
               "BicliqueCover",
               "BMF"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3525,7 +3749,9 @@
               "KSatisfiability (k=K3)",
               "KClique (graph=SimpleGraph)",
               "BalancedCompleteBipartiteSubgraph"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3539,7 +3765,9 @@
               "NAESatisfiability",
               "SetSplitting",
               "Betweenness"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3552,7 +3780,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "BicliqueCover"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3567,7 +3797,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "BiconnectivityAugmentation (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3582,7 +3814,9 @@
               "SubsetSum",
               "Partition",
               "BinPacking (weight=i64)"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3597,7 +3831,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "BottleneckTravelingSalesman"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3609,7 +3845,9 @@
               "KSatisfiability (k=KN)",
               "Satisfiability",
               "CircuitSAT"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3624,7 +3862,9 @@
               "SubsetSum",
               "DecisionClosestVectorProblem (coefficient=i64)",
               "ClosestVectorProblem (coefficient=i64)"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3637,7 +3877,9 @@
               "Satisfiability",
               "KColoring (graph=SimpleGraph, k=K3)",
               "Clustering"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3651,7 +3893,9 @@
               "KSatisfiability (k=K3)",
               "KClique (graph=SimpleGraph)",
               "ConjunctiveBooleanQuery"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3666,7 +3910,9 @@
               "SubsetSum",
               "Partition",
               "CosineProductIntegration"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3679,7 +3925,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "CyclicOrdering"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3693,7 +3941,9 @@
               "KSatisfiability (k=K3)",
               "SubsetSum",
               "DecisionClosestVectorProblem (coefficient=i64)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3708,7 +3958,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionLongestCircuit (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3721,7 +3973,9 @@
               "Satisfiability",
               "NAESatisfiability",
               "DecisionMaxCut (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3733,7 +3987,9 @@
               "KSatisfiability (k=KN)",
               "Satisfiability",
               "DecisionMaximum2Satisfiability"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3745,7 +4001,9 @@
               "KSatisfiability (k=KN)",
               "Satisfiability",
               "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3760,7 +4018,9 @@
               "KColoring (graph=SimpleGraph, k=KN)",
               "PartitionIntoCliques (graph=SimpleGraph)",
               "DecisionMinimumCoveringByCliques (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3772,7 +4032,9 @@
               "KSatisfiability (k=KN)",
               "Satisfiability",
               "DecisionMinimumDominatingSet (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3785,7 +4047,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3800,7 +4064,9 @@
               "SubsetSum",
               "Partition",
               "DecisionOpenShopScheduling"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3810,7 +4076,9 @@
               "2-SAT search [board]",
               "KSatisfiability (k=K2)",
               "DecisionQUBO (weight=i64)"
-            ]
+            ],
+            "hops": 3,
+            "discount_weight": 0.25
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3825,7 +4093,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionQuadraticAssignment"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3840,7 +4110,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionRuralPostman (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3855,7 +4127,9 @@
               "SubsetSum",
               "Partition",
               "DecisionSequencingToMinimizeTardyTaskWeight"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3868,7 +4142,9 @@
               "Satisfiability",
               "CircuitSAT",
               "DecisionSpinGlass (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3883,7 +4159,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionStackerCrane"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3899,7 +4177,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "HamiltonianPath (graph=SimpleGraph)",
               "DegreeConstrainedSpanningTree (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3912,7 +4192,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "DirectedTwoCommodityIntegralFlow"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3927,7 +4209,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "MinimumVertexCover (graph=SimpleGraph, weight=One)",
               "EnsembleComputation"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3940,7 +4224,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "FeasibleRegisterAssignment"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3954,7 +4240,9 @@
               "KSatisfiability (k=K3)",
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3969,7 +4257,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "HamiltonianPath (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3981,7 +4271,9 @@
               "DecisionQUBO (weight=i64)",
               "QUBO (weight=i64)",
               "ILP (bounds=general, coefficient=i64, variable=bool)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -3995,7 +4287,9 @@
               "KSatisfiability (k=K3)",
               "SubsetSum",
               "IntegerExpressionMembership"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4008,7 +4302,9 @@
               "Satisfiability",
               "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "IntegralFlowBundles"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4020,7 +4316,9 @@
               "KSatisfiability (k=KN)",
               "Satisfiability",
               "IntegralFlowHomologousArcs"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4035,7 +4333,9 @@
               "SubsetSum",
               "Partition",
               "IntegralFlowWithMultipliers"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4051,7 +4351,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "HamiltonianPath (graph=SimpleGraph)",
               "IsomorphicSpanningTree (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4064,7 +4366,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "KClique (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4076,7 +4380,9 @@
               "KSatisfiability (k=KN)",
               "Satisfiability",
               "KColoring (graph=SimpleGraph, k=K3)"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4084,7 +4390,9 @@
             "witness_nodes": [
               "Common stable matching with two changed agents on each side [board]",
               "2-SAT search [board]"
-            ]
+            ],
+            "hops": 1,
+            "discount_weight": 1.0
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4097,7 +4405,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "Kernel"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4112,7 +4422,9 @@
               "SubsetSum",
               "Partition",
               "Knapsack"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4128,7 +4440,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionLongestCircuit (graph=SimpleGraph, weight=i64)",
               "LongestCircuit (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4143,7 +4457,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "MinimumVertexCover (graph=SimpleGraph, weight=One)",
               "LongestCommonSubsequence"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4157,7 +4473,9 @@
               "DecisionMaximum2Satisfiability",
               "Maximum2Satisfiability",
               "MaxCut (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4170,7 +4488,9 @@
               "Satisfiability",
               "DecisionMaximum2Satisfiability",
               "Maximum2Satisfiability"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4184,7 +4504,9 @@
               "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "MaximumClique (graph=SimpleGraph, weight=One)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4197,7 +4519,9 @@
               "Satisfiability",
               "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "MaximumIndependentSet (graph=SimpleGraph, weight=One)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4211,7 +4535,9 @@
               "DecisionMaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "MaximumIndependentSet (graph=SimpleGraph, weight=One)",
               "MaximumSetPacking (weight=One)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4227,7 +4553,9 @@
               "PartitionIntoCliques (graph=SimpleGraph)",
               "DecisionMinimumCoveringByCliques (graph=SimpleGraph)",
               "MinimumCoveringByCliques (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4242,7 +4570,9 @@
               "Maximum2Satisfiability",
               "MaxCut (graph=SimpleGraph, weight=i64)",
               "MinimumCutIntoBoundedSets (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4255,7 +4585,9 @@
               "Satisfiability",
               "DecisionMinimumDominatingSet (graph=SimpleGraph, weight=i64)",
               "MinimumDominatingSet (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4271,7 +4603,9 @@
               "MaximumIndependentSet (graph=SimpleGraph, weight=i64)",
               "MinimumVertexCover (graph=SimpleGraph, weight=i64)",
               "MinimumFeedbackArcSet (weight=i64)"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4287,7 +4621,9 @@
               "MaximumIndependentSet (graph=SimpleGraph, weight=i64)",
               "MinimumVertexCover (graph=SimpleGraph, weight=i64)",
               "MinimumFeedbackVertexSet (weight=i64)"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4302,7 +4638,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "MinimumVertexCover (graph=SimpleGraph, weight=One)",
               "MinimumHittingSet"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4319,7 +4657,9 @@
               "DecisionMinimumCoveringByCliques (graph=SimpleGraph)",
               "MinimumCoveringByCliques (graph=SimpleGraph)",
               "MinimumIntersectionGraphBasis (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 10,
+            "discount_weight": 0.001953125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4334,7 +4674,9 @@
               "Maximum2Satisfiability",
               "MaxCut (graph=SimpleGraph, weight=i64)",
               "MinimumMatrixCover"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4350,7 +4692,9 @@
               "MaximumIndependentSet (graph=SimpleGraph, weight=i64)",
               "MinimumVertexCover (graph=SimpleGraph, weight=i64)",
               "MinimumSetCovering (weight=i64)"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4364,7 +4708,9 @@
               "KSatisfiability (k=K3)",
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "MinimumVertexCover (graph=SimpleGraph, weight=One)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4380,7 +4726,9 @@
               "MaximumIndependentSet (graph=SimpleGraph, weight=i64)",
               "MinimumVertexCover (graph=SimpleGraph, weight=i64)",
               "MinimumWeightAndOrGraph"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4393,7 +4741,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "MonochromaticTriangle (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4408,7 +4758,9 @@
               "SubsetSum",
               "Partition",
               "MultiprocessorScheduling"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4420,7 +4772,9 @@
               "KSatisfiability (k=KN)",
               "Satisfiability",
               "NAESatisfiability"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4432,7 +4786,9 @@
               "KSatisfiability (k=KN)",
               "Satisfiability",
               "NonTautology"
-            ]
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4445,7 +4801,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "OneInThreeSatisfiability"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4461,7 +4819,9 @@
               "Partition",
               "DecisionOpenShopScheduling",
               "OpenShopScheduling"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4475,7 +4835,9 @@
               "KSatisfiability (k=K3)",
               "SubsetSum",
               "Partition"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4489,7 +4851,9 @@
               "KColoring (graph=SimpleGraph, k=K3)",
               "KColoring (graph=SimpleGraph, k=KN)",
               "PartitionIntoCliques (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4502,7 +4866,9 @@
               "Satisfiability",
               "NAESatisfiability",
               "PartitionIntoPerfectMatchings (graph=SimpleGraph)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4515,7 +4881,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "PreemptiveScheduling"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4530,7 +4898,9 @@
               "SubsetSum",
               "Partition",
               "ProductionPlanning"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4541,7 +4911,9 @@
               "KSatisfiability (k=K2)",
               "DecisionQUBO (weight=i64)",
               "QUBO (weight=i64)"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4557,7 +4929,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionQuadraticAssignment",
               "QuadraticAssignment"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4570,7 +4944,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "QuadraticCongruences"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4583,7 +4959,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "QuadraticDiophantineEquations"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4596,7 +4974,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "RegisterSufficiency"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4612,7 +4992,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionRuralPostman (graph=SimpleGraph, weight=i64)",
               "RuralPostman (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4623,7 +5005,9 @@
               "KSatisfiability (k=K2)",
               "KSatisfiability (k=KN)",
               "Satisfiability"
-            ]
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4639,7 +5023,9 @@
               "Partition",
               "DecisionSequencingToMinimizeTardyTaskWeight",
               "SequencingToMinimizeTardyTaskWeight"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4652,7 +5038,9 @@
               "Satisfiability",
               "NAESatisfiability",
               "SetSplitting"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4665,7 +5053,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "SimultaneousIncongruences"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4678,7 +5068,9 @@
               "QUBO (weight=i64)",
               "QUBO (weight=f64)",
               "SpinGlass (graph=SimpleGraph, weight=f64)"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4694,7 +5086,9 @@
               "HamiltonianCircuit (graph=SimpleGraph)",
               "DecisionStackerCrane",
               "StackerCrane"
-            ]
+            ],
+            "hops": 9,
+            "discount_weight": 0.00390625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4709,7 +5103,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "StrongConnectivityAugmentation (weight=i64)"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4723,7 +5119,9 @@
               "KSatisfiability (k=K3)",
               "KClique (graph=SimpleGraph)",
               "SubgraphIsomorphism"
-            ]
+            ],
+            "hops": 7,
+            "discount_weight": 0.015625
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4736,7 +5134,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "SubsetSum"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4751,7 +5151,9 @@
               "SubsetSum",
               "Partition",
               "SumOfSquaresPartition"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4764,7 +5166,9 @@
               "Satisfiability",
               "KSatisfiability (k=K3)",
               "TimetableDesign"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4779,7 +5183,9 @@
               "DecisionMinimumVertexCover (graph=SimpleGraph, weight=One)",
               "HamiltonianCircuit (graph=SimpleGraph)",
               "TravelingSalesman (graph=SimpleGraph, weight=i64)"
-            ]
+            ],
+            "hops": 8,
+            "discount_weight": 0.0078125
           },
           {
             "source": "Common stable matching with two changed agents on each side",
@@ -4792,7 +5198,9 @@
               "Satisfiability",
               "KColoring (graph=SimpleGraph, k=K3)",
               "TwoDimensionalConsecutiveSets"
-            ]
+            ],
+            "hops": 6,
+            "discount_weight": 0.03125
           }
         ],
         "witnesses": [
