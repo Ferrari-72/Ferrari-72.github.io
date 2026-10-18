@@ -1,0 +1,57 @@
+{
+  "graph_sha256": "aea94690549b3d2199c92762e83b0d63f0950a9b7e77c1183a1183495952d2ab",
+  "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
+  "cases": [
+    {
+      "id": "Q054",
+      "review_state": "AI-proposed semantic bridge; independent review pending",
+      "bridge": {
+        "question_ids": ["Q054"],
+        "side": "source",
+        "label": "3-SAT",
+        "graph_node": 92,
+        "problem_family": "KSatisfiability",
+        "direction": "board_to_graph",
+        "evidence": "The board source takes an explicit three-literal CNF formula and returns a satisfying assignment or NO-SOLUTION. Graph KSatisfiability<K3> uses the corresponding three-literal search variant. For exact-three clauses, use the identity map and identity witness recovery. If shorter clauses are also admitted by the board wording, use standard fresh-variable gadgets and restrict the returned assignment to the original variables. The exact clause and output conventions still require independent review.",
+        "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+      },
+      "algorithmic_consequence": "If the hypothetical 3-SAT to rectilinear-picture-compression rule is proved with polynomial construction and witness recovery, it provides a search-preserving hardness route for the stated picture-compression variant. The added bridge only aligns the board 3-SAT source with the graph's exact-three variant; it is not the open reduction itself.",
+      "limitation": "The proposed reverse bridge makes some variant pairs reachable in the baseline before the candidate is added. The candidate's marginal B and V therefore decrease; this does not mean that adding a valid graph edge destroys reachability. The bridge's exact semantic compatibility remains unreviewed.",
+      "background_url": "https://github.com/GiggleLiu/autoresearch-gadgets/blob/main/registry/three-sat-rectilinear-picture-compression.json"
+    },
+    {
+      "id": "Q001",
+      "review_state": "AI-proposed semantic bridge; independent review pending",
+      "bridge": {
+        "question_ids": ["Q001"],
+        "side": "target",
+        "label": "Horn satisfiability",
+        "graph_node": 220,
+        "problem_family": "Satisfiability",
+        "direction": "board_to_graph",
+        "evidence": "The board target returns a satisfying assignment or NO-SOLUTION for an explicit Horn CNF formula. Every Horn CNF formula is a CNF formula. A solution of graph Satisfiability on the identical formula is therefore a legal board output, and NO-SOLUTION is preserved. The reverse direction is invalid because arbitrary CNF is not Horn.",
+        "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+      },
+      "algorithmic_consequence": "If the unverified BFS-tree-support to Horn-SAT rule is correct and has polynomial construction and recovery, the source has a polynomial-time search algorithm because Horn-SAT can produce a witness or certify unsatisfiability in polynomial time.",
+      "limitation": "The large topology count mostly follows the Horn-SAT to general-SAT inclusion and the graph's broad SAT descendants. It must not be interpreted as 94 independent research breakthroughs.",
+      "background_url": "https://www.seas.upenn.edu/~cis5110/Dowling-Gallier-Horn-sat.pdf"
+    },
+    {
+      "id": "Q057",
+      "review_state": "AI-proposed semantic bridge; independent review pending",
+      "bridge": {
+        "question_ids": ["Q057"],
+        "side": "target",
+        "label": "2-SAT search",
+        "graph_node": 91,
+        "problem_family": "KSatisfiability",
+        "direction": "board_to_graph",
+        "evidence": "The board target returns a satisfying assignment or NO-SOLUTION for explicit 2-CNF. Graph KSatisfiability<K2> is the two-literal search variant. Convert any shorter clauses to equivalent exact-two clauses with fresh variables, then restrict a graph solution to the original variables. An empty clause is handled by a fixed unsatisfiable two-clause instance. This preserves both witness and NO-SOLUTION outputs in one call.",
+        "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+      },
+      "algorithmic_consequence": "If the unverified common-stable-matching to 2-SAT-search rule is correct with polynomial construction and recovery, the restricted common-stable-matching source has a polynomial-time search algorithm.",
+      "limitation": "Most of the 94 new problem-family relations arise because the graph contains many descendants of two-literal SAT. This reachability does not itself measure how consequential solving the restricted stable-matching question would be.",
+      "background_url": "https://www.sciencedirect.com/science/article/abs/pii/0020019079900024"
+    }
+  ]
+}
