@@ -6,7 +6,9 @@
       "id": "Q054",
       "review_state": "AI-proposed semantic bridge; independent review pending",
       "bridge": {
-        "question_ids": ["Q054"],
+        "question_ids": [
+          "Q054"
+        ],
         "side": "source",
         "label": "3-SAT",
         "graph_node": 92,
@@ -23,7 +25,9 @@
       "id": "Q001",
       "review_state": "AI-proposed semantic bridge; independent review pending",
       "bridge": {
-        "question_ids": ["Q001"],
+        "question_ids": [
+          "Q001"
+        ],
         "side": "target",
         "label": "Horn satisfiability",
         "graph_node": 220,
@@ -40,7 +44,9 @@
       "id": "Q057",
       "review_state": "AI-proposed semantic bridge; independent review pending",
       "bridge": {
-        "question_ids": ["Q057"],
+        "question_ids": [
+          "Q057"
+        ],
         "side": "target",
         "label": "2-SAT search",
         "graph_node": 91,
@@ -52,6 +58,44 @@
       "algorithmic_consequence": "If the unverified common-stable-matching to 2-SAT-search rule is correct with polynomial construction and recovery, the restricted common-stable-matching source has a polynomial-time search algorithm.",
       "limitation": "Most of the 94 new problem-family relations arise because the graph contains many descendants of two-literal SAT. This reachability does not itself measure how consequential solving the restricted stable-matching question would be.",
       "background_url": "https://www.sciencedirect.com/science/article/abs/pii/0020019079900024"
+    },
+    {
+      "id": "Q004",
+      "review_state": "AI-proposed semantic bridge; independent review pending",
+      "bridge": {
+        "question_ids": [
+          "Q004"
+        ],
+        "side": "source",
+        "label": "Positive NAE-3-SAT",
+        "graph_node": 182,
+        "problem_family": "NAESatisfiability",
+        "direction": "board_to_graph",
+        "evidence": "The board source is an explicit positive three-literal NAE formula and returns an assignment or NO-SOLUTION. Proposed identity map to graph NAESatisfiability, conditional on its clause and search-output conventions. The board restriction to positive clauses is retained. Exact semantic compatibility requires independent review.",
+        "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+      },
+      "algorithmic_consequence": "If the hypothetical matching-cut rule is proved, this bridge gives a conditional NAE-SAT hardness route to its restricted target.",
+      "limitation": "This is a proposed semantic alignment, not a proof of the open reduction. The graph count measures reachable problem families and can amplify hubs; it does not measure proof difficulty.",
+      "background_url": "https://github.com/GiggleLiu/autoresearch-gadgets/tree/main/registry"
+    },
+    {
+      "id": "Q053",
+      "review_state": "AI-proposed semantic bridge; independent review pending",
+      "bridge": {
+        "question_ids": [
+          "Q053"
+        ],
+        "side": "source",
+        "label": "3-Coloring",
+        "graph_node": 89,
+        "problem_family": "KColoring",
+        "direction": "board_to_graph",
+        "evidence": "Map the board simple graph to graph KColoring<K3> unchanged. Proper three-color assignments correspond to at-most-three-color board outputs. Graph encoding and witness conventions need independent review.",
+        "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+      },
+      "algorithmic_consequence": "If the hypothetical recognition rule is proved, this supplies a conditional three-coloring hardness route to the target recognition problem.",
+      "limitation": "This is a proposed semantic alignment, not a proof of the open reduction. The graph count measures reachable problem families and can amplify hubs; it does not measure proof difficulty.",
+      "background_url": "https://github.com/GiggleLiu/autoresearch-gadgets/tree/main/registry"
     }
   ]
 }

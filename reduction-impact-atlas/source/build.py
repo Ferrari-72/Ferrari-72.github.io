@@ -5,7 +5,7 @@ from pathlib import Path
 from shutil import copyfile
 
 from estimate import build_estimate_report
-from pilot import build_pilot, render_pilot_section
+from pilot import build_pilot
 from ranker import render_page, sha256_file
 
 
@@ -34,9 +34,10 @@ def build(graph_path=ROOT / "data/reduction_graph.json",
     copyfile(bridges_path, output / "bridges.json")
     copyfile(mappings_path, output / "mappings.json")
     copyfile(ROOT / "assets/lab-mark.svg", output / "lab-mark.svg")
+    copyfile(ROOT / "assets/calculation.pdf", output / "calculation.pdf")
     pilot_report = build_pilot(output)
     (output / "index.html").write_text(
-        render_page(report, render_pilot_section(pilot_report, report)), encoding="utf-8")
+        render_page(report), encoding="utf-8")
     return report
 
 
