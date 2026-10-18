@@ -17,12 +17,14 @@ a {color:var(--cyan);text-decoration:none} a:hover {text-decoration:underline}
 .brand {display:flex;align-items:center;gap:12px;color:var(--ink);font-weight:700;letter-spacing:.02em}
 .brand:hover {text-decoration:none}.brand-mark {width:42px;height:42px;display:block;filter:drop-shadow(0 0 10px #6acbff50)}
 nav {display:flex;gap:26px;font-size:.92rem}nav a {color:#bfd1e3}
-.hero {min-height:310px;display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:42px;padding-bottom:44px}
+.hero {min-height:310px;display:flex;align-items:center;position:relative;isolation:isolate;overflow:hidden;padding-top:54px;padding-bottom:60px}
+.hero::before {content:"";position:absolute;z-index:-1;pointer-events:none;width:580px;height:580px;right:-190px;top:-310px;border:1px solid #77c9ff1f;border-radius:50%;box-shadow:0 0 0 90px #77c9ff08,0 0 0 180px #77c9ff05}
+.hero::after {content:"";position:absolute;left:24px;right:24px;bottom:30px;height:1px;background:linear-gradient(90deg,#70cbff85,#70cbff19 58%,transparent)}
 .eyebrow {color:var(--cyan);font-weight:700;letter-spacing:.18em;font-size:.72rem;text-transform:uppercase}
-h1 {font-size:clamp(2.25rem,5vw,4rem);line-height:1.04;letter-spacing:-.045em;max-width:680px;margin:14px 0 18px}
-.hero p:not(.eyebrow) {color:var(--muted);max-width:600px;line-height:1.55;margin:0}
-.hero-links {display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-size:.91rem}
-.hero-graph {width:min(37vw,390px);min-width:240px;filter:drop-shadow(0 0 20px #32b6ff36)}
+h1 {font-size:clamp(2.8rem,5.6vw,5rem);line-height:1.02;letter-spacing:-.055em;max-width:900px;margin:16px 0 20px;text-wrap:balance}
+.hero p:not(.eyebrow) {color:#b9cee1;max-width:700px;line-height:1.55;margin:0;font-size:1.06rem}
+.hero-links {display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:28px;font-size:.91rem}
+.hero-links a:first-child {color:#e7f7ff;border:1px solid #6ebff57c;background:#3e9fe51a;border-radius:8px;padding:10px 14px;margin:-10px 0}
 main {padding-top:30px;padding-bottom:80px}p {line-height:1.55}
 .summary {background:linear-gradient(135deg,#102c49,#0b2037);border:1px solid var(--line);padding:22px 25px;border-radius:16px;box-shadow:0 18px 40px #00000030}
 .summary strong {color:#fff}.summary code {overflow-wrap:anywhere;color:#9ec8ff;font-size:.77rem}
@@ -51,12 +53,12 @@ td b {font-weight:650}.meta,.detail {display:block;margin-top:6px;color:var(--mu
 .relations ol {margin:9px 0;padding-left:22px}.relations li {margin:7px 0}.relations small {display:block;color:#8fb4d0;margin:2px 0 0;white-space:normal}
 .muted {color:var(--muted)}td:nth-child(4) strong {font-size:1.25rem;color:#fff}td:nth-child(4) small {display:block;color:#9fbdd4}
 [hidden] {display:none!important}
-@media(max-width:760px) {.topbar,.hero,main {padding-left:16px;padding-right:16px}nav {gap:13px;font-size:.8rem}.hero {min-height:260px}.hero-graph {width:180px;min-width:180px}th,td {padding:12px}}
-@media(max-width:560px) {.topbar {height:64px}.brand {font-size:.9rem}nav a:nth-child(1) {display:none}.hero {display:block;min-height:0;padding-top:32px;padding-bottom:36px}.hero-graph {display:none}.summary {padding:18px}input {max-width:100%}}
+@media(max-width:760px) {.topbar,.hero,main {padding-left:16px;padding-right:16px}nav {gap:13px;font-size:.8rem}.hero {min-height:260px}.hero::after {left:16px;right:16px}th,td {padding:12px}}
+@media(max-width:560px) {.topbar {height:64px}.brand {font-size:.9rem}nav a:nth-child(1) {display:none}.hero {min-height:0;padding-top:38px;padding-bottom:58px}.hero::before {right:-410px}.hero-links {gap:20px}.hero-links a:first-child {margin:0}.summary {padding:18px}input {max-width:100%}}
 
 </style></head><body><header class="site-header"><div class="topbar"><a class="brand" href="#top"><img class="brand-mark" src="lab-mark.svg" alt="Problem-Reductions lab mark"><span>Reduction Impact Atlas</span></a><nav aria-label="Primary"><a href="#ranking" aria-current="page">Full ranking</a><a href="pilot.html">AI examples</a><a href="calculation.pdf">Calculation PDF</a></nav></div>
 <div class="hero" id="top"><div><p class="eyebrow">Evidence-backed graph analysis</p><h1>See what a new reduction connects.</h1><p>Conditional structural gain for open reduction questions. Inspect each new relation and the path behind it.</p><div class="hero-links"><a href="calculation.pdf">How are these scores calculated? PDF ↗</a><a href="pilot.html">View 5 AI bridge examples →</a><a href="https://codingthrust.github.io/problem-reductions/" target="_blank" rel="noopener noreferrer">Problem Reductions source site ↗</a></div></div>
-<svg class="hero-graph" viewBox="0 0 390 270" role="img" aria-label="Stylized blue reduction network"><defs><pattern id="grid" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#38658a"/></pattern></defs><rect width="390" height="270" fill="url(#grid)" opacity=".5"/><g stroke="#53a5db" opacity=".26" stroke-width="1"><path d="M45 163L120 71 177 148 250 60 331 124 287 213 177 148 66 232 45 163M120 71L250 60M120 71L287 213M45 163L177 148M177 148L331 124M66 232L287 213M250 60L287 213"/></g><g fill="#76d9ff"><circle cx="45" cy="163" r="5"/><circle cx="120" cy="71" r="7"/><circle cx="177" cy="148" r="11"/><circle cx="250" cy="60" r="5"/><circle cx="331" cy="124" r="7"/><circle cx="287" cy="213" r="6"/><circle cx="66" cy="232" r="4"/></g><g fill="#cdeeff" font-size="11" font-family="system-ui"><text x="130" y="59">SAT</text><text x="191" y="142">new rule</text><text x="298" y="232">target</text></g></svg></div></header>
+</div></header>
 <main><div class="summary" id="method"><p><strong>76 questions shown · 76 estimated · 10 definition bridges · 0 exact-variant mappings.</strong></p>
 <p>Scores estimate graph reachability if each unverified rule were added. Unknown endpoints start as new nodes; documented baseline bridges connect some of them to graph variants in a stated direction. A unique name match remains provisional. N and B do not measure proof difficulty or overall importance.</p>
 <p>50 questions currently have N=1. D½ is an exploratory path-discount value: each additional edge in the shortest witness chain halves that relation's weight. It does not change the official N/B/V ranking. Equal N, B, and V share a rank; IDs only set their display order. Expand a row to see exactly which problem relations become reachable.</p>
