@@ -1,0 +1,56 @@
+{
+  "graph_sha256": "aea94690549b3d2199c92762e83b0d63f0950a9b7e77c1183a1183495952d2ab",
+  "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
+  "entries": [
+    {
+      "question_ids": ["Q010", "Q011", "Q013", "Q014", "Q018", "Q019", "Q021", "Q025", "Q033", "Q039", "Q040", "Q043", "Q046", "Q047", "Q051", "Q052", "Q054"],
+      "side": "source",
+      "label": "3-SAT",
+      "graph_node": 92,
+      "problem_family": "KSatisfiability",
+      "direction": "graph_to_board",
+      "evidence": "KSatisfiability<K3> has exactly three literals per clause and returns a satisfying assignment or no solution. Each such formula is a legal instance of these board 3-SAT source definitions, which also return an assignment or NO-SOLUTION. The graph output can be recovered from one board output. This inclusion bridge does not assert that every board source instance belongs to the graph variant.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+    },
+    {
+      "question_ids": ["Q036", "Q058", "Q059", "Q064", "Q065", "Q066"],
+      "side": "source",
+      "label": "3-SAT",
+      "graph_node": 92,
+      "problem_family": "KSatisfiability",
+      "direction": "board_to_graph",
+      "evidence": "These board sources ask only YES/NO for a 3-CNF formula. A satisfying assignment from graph KSatisfiability<K3> gives YES and no solution gives NO. For an at-most-three clause, use the standard polynomial fresh-variable clause-splitting gadget to obtain exact-three CNF with the same satisfiability status. This is a one-call board-to-graph reduction. The reverse direction would incorrectly demand an assignment from a decision-only board output.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+    },
+    {
+      "question_ids": ["Q042"],
+      "side": "source",
+      "label": "Independent Set",
+      "graph_node": 37,
+      "problem_family": "DecisionMaximumIndependentSet",
+      "direction": "graph_to_board",
+      "evidence": "The graph DecisionMaximumIndependentSet<SimpleGraph,One> asks whether an unweighted simple graph has an independent set of at least the input threshold. The board source takes the same graph and threshold and returns a witness or NO-SOLUTION. Its output decides the graph problem by checking whether a witness exists. This is a one-call graph-to-board reduction.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+    },
+    {
+      "question_ids": ["Q055", "Q056"],
+      "side": "source",
+      "label": "Vertex Cover",
+      "graph_node": 44,
+      "problem_family": "DecisionMinimumVertexCover",
+      "direction": "graph_to_board",
+      "evidence": "The graph DecisionMinimumVertexCover<SimpleGraph,One> asks whether an unweighted simple graph has a vertex cover of size at most the input threshold. The board source takes the same graph and threshold and returns a witness or NO-SOLUTION. Its output decides the graph problem by checking whether a witness exists. This is a one-call graph-to-board reduction.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+    },
+    {
+      "question_ids": ["Q041"],
+      "side": "source",
+      "label": "Triangle Partition",
+      "graph_node": 199,
+      "problem_family": "PartitionIntoTriangles",
+      "direction": "graph_to_board",
+      "evidence": "The graph PartitionIntoTriangles model asks for a partition of a simple graph's vertices into triples inducing triangles. The board Triangle Partition source has the same witness and NO-SOLUTION outputs and accepts every graph instance of the graph model, including its divisible-by-three input restriction. The identity instance map and identity witness recovery give a one-call graph-to-board bridge.",
+      "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+    }
+  ]
+}
