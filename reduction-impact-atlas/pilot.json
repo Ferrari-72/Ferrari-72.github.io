@@ -2,9 +2,328 @@
   "graph_sha256": "aea94690549b3d2199c92762e83b0d63f0950a9b7e77c1183a1183495952d2ab",
   "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
   "baseline_bridges_sha256": "5b407b620325a079e6723a37e7ca620c2609cbba2a6dea4fe919bd31ccb71c81",
-  "pilot_bridges_sha256": "4d502768694b3147faa694e6b96b02b9a7fd60324104014c35adc710b979d721",
+  "pilot_bridges_sha256": "3e83e5ad6019d8add680ee092274a208bf7359db1f70be69481fa624830db69b",
   "interpretation": "Each case compares graphs with and without its own AI-proposed semantic bridge under a fixed problem-family projection. Candidate question rules remain hypothetical. Neither scenario changes the official ranking.",
   "cases": [
+    {
+      "id": "Q054",
+      "source": "3-SAT",
+      "target": "Rectilinear picture compression",
+      "board_importance": "The task reconstructs a usable hardness rule for lossless rectangle-based representation of binary images.",
+      "literature_checked": "2026-09-18",
+      "review_state": "AI-proposed semantic bridge; independent review pending",
+      "bridge": {
+        "question_ids": [
+          "Q054"
+        ],
+        "side": "source",
+        "label": "3-SAT",
+        "graph_node": 92,
+        "problem_family": "KSatisfiability",
+        "direction": "board_to_graph",
+        "evidence": "The board source takes an explicit three-literal CNF formula and returns a satisfying assignment or NO-SOLUTION. Graph KSatisfiability<K3> uses the corresponding three-literal search variant. For exact-three clauses, use the identity map and identity witness recovery. If shorter clauses are also admitted by the board wording, use standard fresh-variable gadgets and restrict the returned assignment to the original variables. The exact clause and output conventions still require independent review.",
+        "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+      },
+      "fixed_projection": {
+        "Q054": {
+          "source": "KSatisfiability"
+        }
+      },
+      "background_url": "https://github.com/GiggleLiu/autoresearch-gadgets/blob/main/registry/three-sat-rectilinear-picture-compression.json",
+      "algorithmic_consequence": "If the hypothetical 3-SAT to rectilinear-picture-compression rule is proved with polynomial construction and witness recovery, it provides a search-preserving hardness route for the stated picture-compression variant. The added bridge only aligns the board 3-SAT source with the graph's exact-three variant; it is not the open reduction itself.",
+      "limitation": "The proposed reverse bridge makes some variant pairs reachable in the baseline before the candidate is added. The candidate's marginal B and V therefore decrease; this does not mean that adding a valid graph edge destroys reachability. The bridge's exact semantic compatibility remains unreviewed.",
+      "baseline": {
+        "N": 4,
+        "B": 0.277777777778,
+        "V": 19,
+        "D_half": 1.4375,
+        "direct_count": 1,
+        "transitive_count": 3,
+        "rank": 10
+      },
+      "fixed_projection_baseline": {
+        "N": 4,
+        "B": 0.277777777778,
+        "V": 19,
+        "D_half": 1.4375,
+        "direct_count": 1,
+        "transitive_count": 3,
+        "rank": 10
+      },
+      "scenario": {
+        "N": 4,
+        "B": 0,
+        "V": 11,
+        "D_half": 1.4375,
+        "direct_count": 1,
+        "transitive_count": 3,
+        "hop_histogram": {
+          "1": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1
+        },
+        "variant_gain_breakdown": {
+          "direct": 1,
+          "upstream": 10,
+          "downstream": 0,
+          "both_sides": 0
+        },
+        "rank": 26,
+        "new_problem_pairs": [
+          {
+            "source": "CircuitSAT",
+            "target": "RectilinearPictureCompression",
+            "witness_nodes": [
+              "CircuitSAT",
+              "Satisfiability",
+              "KSatisfiability (k=K3)",
+              "3-SAT [board]",
+              "RectilinearPictureCompression"
+            ],
+            "hops": 4,
+            "discount_weight": 0.125
+          },
+          {
+            "source": "Factoring",
+            "target": "RectilinearPictureCompression",
+            "witness_nodes": [
+              "Factoring",
+              "CircuitSAT",
+              "Satisfiability",
+              "KSatisfiability (k=K3)",
+              "3-SAT [board]",
+              "RectilinearPictureCompression"
+            ],
+            "hops": 5,
+            "discount_weight": 0.0625
+          },
+          {
+            "source": "KSatisfiability",
+            "target": "RectilinearPictureCompression",
+            "witness_nodes": [
+              "3-SAT [board]",
+              "RectilinearPictureCompression"
+            ],
+            "hops": 1,
+            "discount_weight": 1.0
+          },
+          {
+            "source": "Satisfiability",
+            "target": "RectilinearPictureCompression",
+            "witness_nodes": [
+              "Satisfiability",
+              "KSatisfiability (k=K3)",
+              "3-SAT [board]",
+              "RectilinearPictureCompression"
+            ],
+            "hops": 3,
+            "discount_weight": 0.25
+          }
+        ],
+        "witnesses": [
+          {
+            "source_node": 15,
+            "target_node": 214,
+            "path": [
+              "edge:14",
+              "edge:298",
+              "edge:345",
+              "candidate:Q054"
+            ],
+            "node_path": [
+              15,
+              220,
+              92,
+              339,
+              214
+            ]
+          },
+          {
+            "source_node": 64,
+            "target_node": 214,
+            "path": [
+              "edge:69",
+              "edge:14",
+              "edge:298",
+              "edge:345",
+              "candidate:Q054"
+            ],
+            "node_path": [
+              64,
+              15,
+              220,
+              92,
+              339,
+              214
+            ]
+          },
+          {
+            "source_node": 91,
+            "target_node": 214,
+            "path": [
+              "edge:114",
+              "edge:134",
+              "edge:298",
+              "edge:345",
+              "candidate:Q054"
+            ],
+            "node_path": [
+              91,
+              93,
+              220,
+              92,
+              339,
+              214
+            ]
+          },
+          {
+            "source_node": 92,
+            "target_node": 214,
+            "path": [
+              "edge:345",
+              "candidate:Q054"
+            ],
+            "node_path": [
+              92,
+              339,
+              214
+            ]
+          },
+          {
+            "source_node": 93,
+            "target_node": 214,
+            "path": [
+              "edge:134",
+              "edge:298",
+              "edge:345",
+              "candidate:Q054"
+            ],
+            "node_path": [
+              93,
+              220,
+              92,
+              339,
+              214
+            ]
+          },
+          {
+            "source_node": 220,
+            "target_node": 214,
+            "path": [
+              "edge:298",
+              "edge:345",
+              "candidate:Q054"
+            ],
+            "node_path": [
+              220,
+              92,
+              339,
+              214
+            ]
+          },
+          {
+            "source_node": 313,
+            "target_node": 214,
+            "path": [
+              "edge:346",
+              "edge:345",
+              "candidate:Q054"
+            ],
+            "node_path": [
+              313,
+              92,
+              339,
+              214
+            ]
+          },
+          {
+            "source_node": 339,
+            "target_node": 214,
+            "path": [
+              "candidate:Q054"
+            ],
+            "node_path": [
+              339,
+              214
+            ]
+          },
+          {
+            "source_node": 345,
+            "target_node": 214,
+            "path": [
+              "edge:347",
+              "edge:345",
+              "candidate:Q054"
+            ],
+            "node_path": [
+              345,
+              92,
+              339,
+              214
+            ]
+          },
+          {
+            "source_node": 347,
+            "target_node": 214,
+            "path": [
+              "edge:348",
+              "edge:345",
+              "candidate:Q054"
+            ],
+            "node_path": [
+              347,
+              92,
+              339,
+              214
+            ]
+          },
+          {
+            "source_node": 356,
+            "target_node": 214,
+            "path": [
+              "edge:349",
+              "edge:345",
+              "candidate:Q054"
+            ],
+            "node_path": [
+              356,
+              92,
+              339,
+              214
+            ]
+          }
+        ]
+      },
+      "affected_question_ids": [
+        "Q002",
+        "Q009",
+        "Q010",
+        "Q011",
+        "Q013",
+        "Q014",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q021",
+        "Q025",
+        "Q026",
+        "Q033",
+        "Q039",
+        "Q040",
+        "Q042",
+        "Q043",
+        "Q046",
+        "Q047",
+        "Q048",
+        "Q051",
+        "Q052",
+        "Q054",
+        "Q055",
+        "Q056",
+        "Q062"
+      ]
+    },
     {
       "id": "Q001",
       "source": "BFS tree support",
