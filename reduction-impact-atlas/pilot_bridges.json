@@ -3,6 +3,23 @@
   "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
   "cases": [
     {
+      "id": "Q054",
+      "review_state": "AI-proposed semantic bridge; independent review pending",
+      "bridge": {
+        "question_ids": ["Q054"],
+        "side": "source",
+        "label": "3-SAT",
+        "graph_node": 92,
+        "problem_family": "KSatisfiability",
+        "direction": "board_to_graph",
+        "evidence": "The board source takes an explicit three-literal CNF formula and returns a satisfying assignment or NO-SOLUTION. Graph KSatisfiability<K3> uses the corresponding three-literal search variant. For exact-three clauses, use the identity map and identity witness recovery. If shorter clauses are also admitted by the board wording, use standard fresh-variable gadgets and restrict the returned assignment to the original variables. The exact clause and output conventions still require independent review.",
+        "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+      },
+      "algorithmic_consequence": "If the hypothetical 3-SAT to rectilinear-picture-compression rule is proved with polynomial construction and witness recovery, it provides a search-preserving hardness route for the stated picture-compression variant. The added bridge only aligns the board 3-SAT source with the graph's exact-three variant; it is not the open reduction itself.",
+      "limitation": "The proposed reverse bridge makes some variant pairs reachable in the baseline before the candidate is added. The candidate's marginal B and V therefore decrease; this does not mean that adding a valid graph edge destroys reachability. The bridge's exact semantic compatibility remains unreviewed.",
+      "background_url": "https://github.com/GiggleLiu/autoresearch-gadgets/blob/main/registry/three-sat-rectilinear-picture-compression.json"
+    },
+    {
       "id": "Q001",
       "review_state": "AI-proposed semantic bridge; independent review pending",
       "bridge": {
