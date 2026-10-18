@@ -3,7 +3,7 @@
   "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
   "baseline_bridges_sha256": "5b407b620325a079e6723a37e7ca620c2609cbba2a6dea4fe919bd31ccb71c81",
   "pilot_bridges_sha256": "4d502768694b3147faa694e6b96b02b9a7fd60324104014c35adc710b979d721",
-  "interpretation": "Each case adds only its own AI-proposed semantic bridge to the frozen baseline. Candidate question rules remain hypothetical. Neither scenario changes the official ranking.",
+  "interpretation": "Each case compares graphs with and without its own AI-proposed semantic bridge under a fixed problem-family projection. Candidate question rules remain hypothetical. Neither scenario changes the official ranking.",
   "cases": [
     {
       "id": "Q001",
@@ -24,10 +24,24 @@
         "evidence": "The board target returns a satisfying assignment or NO-SOLUTION for an explicit Horn CNF formula. Every Horn CNF formula is a CNF formula. A solution of graph Satisfiability on the identical formula is therefore a legal board output, and NO-SOLUTION is preserved. The reverse direction is invalid because arbitrary CNF is not Horn.",
         "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
       },
+      "fixed_projection": {
+        "Q001": {
+          "target": "Satisfiability"
+        }
+      },
       "background_url": "https://www.seas.upenn.edu/~cis5110/Dowling-Gallier-Horn-sat.pdf",
       "algorithmic_consequence": "If the unverified BFS-tree-support to Horn-SAT rule is correct and has polynomial construction and recovery, the source has a polynomial-time search algorithm because Horn-SAT can produce a witness or certify unsatisfiability in polynomial time.",
       "limitation": "The large topology count mostly follows the Horn-SAT to general-SAT inclusion and the graph's broad SAT descendants. It must not be interpreted as 94 independent research breakthroughs.",
       "baseline": {
+        "N": 1,
+        "B": 0,
+        "V": 1,
+        "D_half": 1.0,
+        "direct_count": 1,
+        "transitive_count": 0,
+        "rank": 28
+      },
+      "fixed_projection_baseline": {
         "N": 1,
         "B": 0,
         "V": 1,
@@ -3684,10 +3698,24 @@
         "evidence": "The board target returns a satisfying assignment or NO-SOLUTION for explicit 2-CNF. Graph KSatisfiability<K2> is the two-literal search variant. Convert any shorter clauses to equivalent exact-two clauses with fresh variables, then restrict a graph solution to the original variables. An empty clause is handled by a fixed unsatisfiable two-clause instance. This preserves both witness and NO-SOLUTION outputs in one call.",
         "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
       },
+      "fixed_projection": {
+        "Q057": {
+          "target": "KSatisfiability"
+        }
+      },
       "background_url": "https://www.sciencedirect.com/science/article/abs/pii/0020019079900024",
       "algorithmic_consequence": "If the unverified common-stable-matching to 2-SAT-search rule is correct with polynomial construction and recovery, the restricted common-stable-matching source has a polynomial-time search algorithm.",
       "limitation": "Most of the 94 new problem-family relations arise because the graph contains many descendants of two-literal SAT. This reachability does not itself measure how consequential solving the restricted stable-matching question would be.",
       "baseline": {
+        "N": 1,
+        "B": 0,
+        "V": 1,
+        "D_half": 1.0,
+        "direct_count": 1,
+        "transitive_count": 0,
+        "rank": 28
+      },
+      "fixed_projection_baseline": {
         "N": 1,
         "B": 0,
         "V": 1,
