@@ -141,6 +141,7 @@ class RankingTests(unittest.TestCase):
                 shutil.copyfile(ROOT / "data" / name, isolated / "data" / name)
             (isolated / "assets").mkdir()
             shutil.copyfile(ROOT / "assets/lab-mark.svg", isolated / "assets/lab-mark.svg")
+            shutil.copyfile(ROOT / "assets/calculation.pdf", isolated / "assets/calculation.pdf")
             result = subprocess.run([sys.executable, "-E", str(isolated / "build.py")],
                                     cwd=isolated, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
@@ -287,7 +288,7 @@ class RankingTests(unittest.TestCase):
             self.assertEqual(sha256_file(output / "ranking.json"), baseline_hash)
             self.assertEqual(sha256_file(output / "bridges.json"), bridges_hash)
             cases = {case["id"]: case for case in report["cases"]}
-            self.assertEqual(set(cases), {"Q001", "Q054", "Q057"})
+            self.assertEqual(set(cases), {"Q001", "Q004", "Q053", "Q054", "Q057"})
             self.assertEqual((cases["Q054"]["baseline"]["N"], cases["Q054"]["baseline"]["B"],
                               cases["Q054"]["baseline"]["V"]), (4, 0.277777777778, 19))
             self.assertEqual((cases["Q054"]["scenario"]["N"], cases["Q054"]["scenario"]["B"],
@@ -312,18 +313,21 @@ class RankingTests(unittest.TestCase):
                 self.assertEqual({k: case["baseline"][k] for k in ("N", "B", "V")},
                                  {k: case["fixed_projection_baseline"][k] for k in ("N", "B", "V")})
             main = (output / "index.html").read_text(encoding="utf-8")
-            self.assertIn("These three bridge scenarios are isolated experiments, not the official ranking", main)
+            pilot_page = (output / "pilot.html").read_text(encoding="utf-8")
             self.assertIn('id="calculation"', main)
-            self.assertIn('N(r) = |Rp(G+r) ∖ Rp(G)|', main)
-            self.assertIn('B(r) = Σ(P,Q)∈Rp(G)', main)
-            self.assertIn('D½(r) = Σ(P,Q)∈ΔRp(r)', main)
-            self.assertIn('without either upstream repository checkout', main)
-            self.assertIn('Q054 · AI-proposed scenario', main)
-            self.assertEqual(main.count('class="summary ai-pilot"'), 3)
+            self.assertIn('href="calculation.pdf"', main)
+            self.assertIn('href="pilot.html"', main)
+            self.assertNotIn('N(r) =', main)
+            self.assertNotIn('class="summary ai-pilot"', main)
+            self.assertIn('These 5 bridge scenarios are isolated experiments', pilot_page)
+            self.assertIn('Q054 · AI-proposed scenario', pilot_page)
+            self.assertEqual(pilot_page.count('class="summary ai-pilot"'), 5)
+            self.assertIn('href="index.html"', pilot_page)
+            self.assertIn('href="calculation.pdf"', pilot_page)
+            self.assertTrue((output / "calculation.pdf").read_bytes().startswith(b"%PDF"))
             self.assertIsNone(re.search(r'[\u4e00-\u9fff]', main))
-            self.assertLess(main.index('id="pilots"'), main.index('id="ranking"'))
+            self.assertIsNone(re.search(r'[\u4e00-\u9fff]', pilot_page))
             self.assertIn('href="https://codingthrust.github.io/problem-reductions/"', main)
-            self.assertIn('href="./index.html#pilots"', (output / "pilot.html").read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

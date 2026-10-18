@@ -1,4 +1,149 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta http-equiv="refresh" content="0;url=./index.html#pilots"><link rel="canonical" href="./index.html#pilots">
-<title>Pilots moved · Reduction Impact Atlas</title></head><body>
-<p>The pilot cases are now on the <a href="./index.html#pilots">main page</a>.</p></body></html>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI bridge examples · Reduction Impact Atlas</title><style>
+:root {font-family: Inter, "Segoe UI", system-ui, sans-serif; color:#e6f2ff; background:#061321;
+  --bg:#061321; --surface:#0b2139; --surface-2:#102a47; --line:#234766;
+  --ink:#e6f2ff; --muted:#a6bdd4; --blue:#65caff; --cyan:#7ee3f4}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {margin:0;background:radial-gradient(circle at 82% 1%,#123c69 0,transparent 24rem),var(--bg)}
+a {color:var(--cyan);text-decoration:none} a:hover {text-decoration:underline}
+:focus-visible {outline:2px solid var(--cyan);outline-offset:3px}
+.site-header {border-bottom:1px solid var(--line);background:linear-gradient(120deg,#071a2d,#082645 70%,#0a3157)}
+.topbar,.hero,main {max-width:1180px;margin:auto;padding-left:24px;padding-right:24px}
+.topbar {height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff1c}
+.brand {display:flex;align-items:center;gap:12px;color:var(--ink);font-weight:700;letter-spacing:.02em}
+.brand:hover {text-decoration:none}.brand-mark {width:42px;height:42px;display:block;filter:drop-shadow(0 0 10px #6acbff50)}
+nav {display:flex;gap:26px;font-size:.92rem}nav a {color:#bfd1e3}
+.hero {min-height:310px;display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:42px;padding-bottom:44px}
+.eyebrow {color:var(--cyan);font-weight:700;letter-spacing:.18em;font-size:.72rem;text-transform:uppercase}
+h1 {font-size:clamp(2.25rem,5vw,4rem);line-height:1.04;letter-spacing:-.045em;max-width:680px;margin:14px 0 18px}
+.hero p:not(.eyebrow) {color:var(--muted);max-width:600px;line-height:1.55;margin:0}
+.hero-links {display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-size:.91rem}
+.hero-graph {width:min(37vw,390px);min-width:240px;filter:drop-shadow(0 0 20px #32b6ff36)}
+main {padding-top:30px;padding-bottom:80px}p {line-height:1.55}
+.summary {background:linear-gradient(135deg,#102c49,#0b2037);border:1px solid var(--line);padding:22px 25px;border-radius:16px;box-shadow:0 18px 40px #00000030}
+.summary strong {color:#fff}.summary code {overflow-wrap:anywhere;color:#9ec8ff;font-size:.77rem}
+.summary p {margin:10px 0;color:#c4d5e7}.summary p:first-child {margin-top:0}.summary p:last-child {margin-bottom:0}
+.method-note {margin-top:18px;padding:16px 20px;border:1px solid var(--line);border-radius:12px;background:#091d32;color:#bfd2e4}
+.method-note summary {cursor:pointer;color:var(--cyan);font-weight:700}.method-note p {margin:10px 0 0;font-size:.9rem}
+#calculation,#pilots {scroll-margin-top:20px}
+#calculation h3 {font-size:1.02rem;color:#d7eaff;margin:22px 0 7px}
+#calculation code {overflow-wrap:anywhere;color:#9ed8ff}
+#calculation ol {padding-left:23px;line-height:1.6}
+#pilots {margin-top:38px;margin-bottom:38px}#pilots>h2 {font-size:clamp(1.6rem,3vw,2.2rem);margin:10px 0}
+#pilots article h2 {font-size:clamp(1.3rem,3vw,2rem);line-height:1.2}#pilots ol {line-height:1.65}
+.controls {display:flex;gap:16px;flex-wrap:wrap;margin:28px 0 16px}
+label {display:grid;gap:7px;color:#bed1e7;font-size:.88rem;font-weight:600}
+input,select {font:inherit;color:var(--ink);background:var(--surface);padding:10px 12px;border:1px solid #3a617f;border-radius:9px;min-height:43px}
+input::placeholder {color:#89a4be}input:focus,select:focus {border-color:var(--cyan)}
+#count {color:var(--muted);font-size:.88rem;margin:18px 0}
+.table-wrap {overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table {width:100%;border-collapse:collapse;min-width:710px}
+th,td {padding:17px 16px;text-align:left;border-bottom:1px solid #23415b;vertical-align:top}
+th {color:#adcae1;font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;background:#10304e}
+tr:last-child td {border-bottom:0}tbody tr:hover {background:#102d4a}
+td:nth-child(1),td:nth-child(4) {white-space:nowrap}td:nth-child(1) {color:var(--cyan);font-weight:700}
+td b {font-weight:650}.meta,.detail {display:block;margin-top:6px;color:var(--muted);font-size:.87rem;line-height:1.45}
+.relations {margin-top:10px;color:#b8d5ea;font-size:.86rem}.relations summary {cursor:pointer;color:var(--cyan)}
+.relations ol {margin:9px 0;padding-left:22px}.relations li {margin:7px 0}.relations small {display:block;color:#8fb4d0;margin:2px 0 0;white-space:normal}
+.muted {color:var(--muted)}td:nth-child(4) strong {font-size:1.25rem;color:#fff}td:nth-child(4) small {display:block;color:#9fbdd4}
+[hidden] {display:none!important}
+@media(max-width:760px) {.topbar,.hero,main {padding-left:16px;padding-right:16px}nav {gap:13px;font-size:.8rem}.hero {min-height:260px}.hero-graph {width:180px;min-width:180px}th,td {padding:12px}}
+@media(max-width:560px) {.topbar {height:64px}.brand {font-size:.9rem}nav a:nth-child(1) {display:none}.hero {display:block;min-height:0;padding-top:32px;padding-bottom:36px}.hero-graph {display:none}.summary {padding:18px}input {max-width:100%}}
+</style></head>
+<body><header class="site-header"><div class="topbar">
+<a class="brand" href="index.html"><img class="brand-mark" src="lab-mark.svg" alt="Problem-Reductions lab mark"><span>Reduction Impact Atlas</span></a>
+<nav aria-label="Primary"><a href="index.html">Full ranking</a><a href="pilot.html" aria-current="page">AI examples</a><a href="calculation.pdf">Calculation PDF</a></nav></div></header>
+<main><section id="pilots" aria-labelledby="pilots-heading"><p class="eyebrow">Worked examples</p>
+<h2 id="pilots-heading">5 AI bridge examples</h2>
+<p>These are five selected, isolated semantic bridge proposals across different problem families. Every candidate rule remains hypothetical.</p>
+<div class="summary" style="margin-top:20px"><p><strong>These 5 bridge scenarios are isolated experiments, not the official ranking.</strong>
+The proposed bridges await independent review. A larger or smaller marginal topology count is not a measure of research value. Compare each case's conditional consequence with its raw count.</p>
+<p>Graph SHA-256: <code>aea94690549b3d2199c92762e83b0d63f0950a9b7e77c1183a1183495952d2ab</code>. <a href="pilot_bridges.json">Bridge proposals</a> · <a href="pilot.json">All new relations and witnesses</a>.</p></div>
+<article class="summary ai-pilot" style="margin-top:20px">
+<p class="eyebrow">Q054 · AI-proposed scenario</p>
+<h2>3-SAT → Rectilinear picture compression</h2>
+<p><strong>Official baseline under the same problem-family projection:</strong> N 4 · B 0.277778 · V 19.
+<strong>With this bridge only:</strong> N 4 · B 0 · V 11. The projection stays fixed in this comparison; it does not add a graph edge.</p>
+<p>Of the 4 new problem relations, 1 is direct and 3 follow through older edges. Exploratory D½ = 1.438, with every extra witness-chain edge weighted by 0.5. The official ranking does not use D½.</p>
+<p>The 11 concrete variant relations split into 1 candidate pair, 10 old-upstream relations, 0 old-downstream relations, and 0 relations spanning both sides.</p>
+<p>The new bridge also changes the computed scores of 25 other board questions, because they share the same baseline graph. Rankings from the two baselines are not directly comparable.</p>
+<p><strong>Proposed baseline bridge:</strong> 3-SAT
+→
+graph node 92. The board source takes an explicit three-literal CNF formula and returns a satisfying assignment or NO-SOLUTION. Graph KSatisfiability&lt;K3&gt; uses the corresponding three-literal search variant. For exact-three clauses, use the identity map and identity witness recovery. If shorter clauses are also admitted by the board wording, use standard fresh-variable gadgets and restrict the returned assignment to the original variables. The exact clause and output conventions still require independent review.</p>
+<p><strong>Algorithmic consequence if the question rule is proved:</strong> If the hypothetical 3-SAT to rectilinear-picture-compression rule is proved with polynomial construction and witness recovery, it provides a search-preserving hardness route for the stated picture-compression variant. The added bridge only aligns the board 3-SAT source with the graph&#x27;s exact-three variant; it is not the open reduction itself.</p>
+<p><strong>Board-stated importance (not independently checked):</strong> The task reconstructs a usable hardness rule for lossless rectangle-based representation of binary images.</p>
+<p><strong>Why the count needs caution:</strong> The proposed reverse bridge makes some variant pairs reachable in the baseline before the candidate is added. The candidate&#x27;s marginal B and V therefore decrease; this does not mean that adding a valid graph edge destroys reachability. The bridge&#x27;s exact semantic compatibility remains unreviewed.</p>
+<details class="method-note"><summary>First 4 of 4 new problem relations</summary>
+<ol><li>CircuitSAT → RectilinearPictureCompression</li><li>Factoring → RectilinearPictureCompression</li><li>KSatisfiability → RectilinearPictureCompression</li><li>Satisfiability → RectilinearPictureCompression</li></ol></details>
+<p><a href="https://codingthrust.github.io/problem-reductions/reductions.pdf">Graph model evidence ↗</a> ·
+<a href="https://github.com/GiggleLiu/autoresearch-gadgets/blob/main/registry/three-sat-rectilinear-picture-compression.json">Algorithm background ↗</a></p></article><article class="summary ai-pilot" style="margin-top:20px">
+<p class="eyebrow">Q001 · AI-proposed scenario</p>
+<h2>BFS tree support → Horn satisfiability</h2>
+<p><strong>Official baseline under the same problem-family projection:</strong> N 1 · B 0 · V 1.
+<strong>With this bridge only:</strong> N 94 · B 0 · V 118. The projection stays fixed in this comparison; it does not add a graph edge.</p>
+<p>Of the 94 new problem relations, 1 is direct and 93 follow through older edges. Exploratory D½ = 8.867, with every extra witness-chain edge weighted by 0.5. The official ranking does not use D½.</p>
+<p>The 118 concrete variant relations split into 1 candidate pair, 0 old-upstream relations, 117 old-downstream relations, and 0 relations spanning both sides.</p>
+<p>The new bridge also changes the computed scores of 26 other board questions, because they share the same baseline graph. Rankings from the two baselines are not directly comparable.</p>
+<p><strong>Proposed baseline bridge:</strong> Horn satisfiability
+→
+graph node 220. The board target returns a satisfying assignment or NO-SOLUTION for an explicit Horn CNF formula. Every Horn CNF formula is a CNF formula. A solution of graph Satisfiability on the identical formula is therefore a legal board output, and NO-SOLUTION is preserved. The reverse direction is invalid because arbitrary CNF is not Horn.</p>
+<p><strong>Algorithmic consequence if the question rule is proved:</strong> If the unverified BFS-tree-support to Horn-SAT rule is correct and has polynomial construction and recovery, the source has a polynomial-time search algorithm because Horn-SAT can produce a witness or certify unsatisfiability in polynomial time.</p>
+<p><strong>Board-stated importance (not independently checked):</strong> A polynomial reduction would give both recognition and tree construction for the remaining traversal-support case.</p>
+<p><strong>Why the count needs caution:</strong> The large topology count mostly follows the Horn-SAT to general-SAT inclusion and the graph&#x27;s broad SAT descendants. It must not be interpreted as 94 independent research breakthroughs.</p>
+<details class="method-note"><summary>First 8 of 94 new problem relations</summary>
+<ol><li>BFS tree support → AcyclicPartition</li><li>BFS tree support → BMF</li><li>BFS tree support → BalancedCompleteBipartiteSubgraph</li><li>BFS tree support → Betweenness</li><li>BFS tree support → BicliqueCover</li><li>BFS tree support → BiconnectivityAugmentation</li><li>BFS tree support → BinPacking</li><li>BFS tree support → BottleneckTravelingSalesman</li></ol></details>
+<p><a href="https://codingthrust.github.io/problem-reductions/reductions.pdf">Graph model evidence ↗</a> ·
+<a href="https://www.seas.upenn.edu/~cis5110/Dowling-Gallier-Horn-sat.pdf">Algorithm background ↗</a></p></article><article class="summary ai-pilot" style="margin-top:20px">
+<p class="eyebrow">Q057 · AI-proposed scenario</p>
+<h2>Common stable matching with two changed agents on each side → 2-SAT search</h2>
+<p><strong>Official baseline under the same problem-family projection:</strong> N 1 · B 0 · V 1.
+<strong>With this bridge only:</strong> N 94 · B 0 · V 119. The projection stays fixed in this comparison; it does not add a graph edge.</p>
+<p>Of the 94 new problem relations, 1 is direct and 93 follow through older edges. Exploratory D½ = 3.404, with every extra witness-chain edge weighted by 0.5. The official ranking does not use D½.</p>
+<p>The 119 concrete variant relations split into 1 candidate pair, 0 old-upstream relations, 118 old-downstream relations, and 0 relations spanning both sides.</p>
+<p>The new bridge also changes the computed scores of 26 other board questions, because they share the same baseline graph. Rankings from the two baselines are not directly comparable.</p>
+<p><strong>Proposed baseline bridge:</strong> 2-SAT search
+→
+graph node 91. The board target returns a satisfying assignment or NO-SOLUTION for explicit 2-CNF. Graph KSatisfiability&lt;K2&gt; is the two-literal search variant. Convert any shorter clauses to equivalent exact-two clauses with fresh variables, then restrict a graph solution to the original variables. An empty clause is handled by a fixed unsatisfiable two-clause instance. This preserves both witness and NO-SOLUTION outputs in one call.</p>
+<p><strong>Algorithmic consequence if the question rule is proved:</strong> If the unverified common-stable-matching to 2-SAT-search rule is correct with polynomial construction and recovery, the restricted common-stable-matching source has a polynomial-time search algorithm.</p>
+<p><strong>Board-stated importance (not independently checked):</strong> Moderate: a successful structured encoding would settle the first unresolved case after one-sided preference changes and could support robust market design when a few participants revise rankings. It would not classify arbitrary numbers of changed agents.</p>
+<p><strong>Why the count needs caution:</strong> Most of the 94 new problem-family relations arise because the graph contains many descendants of two-literal SAT. This reachability does not itself measure how consequential solving the restricted stable-matching question would be.</p>
+<details class="method-note"><summary>First 8 of 94 new problem relations</summary>
+<ol><li>Common stable matching with two changed agents on each side → AcyclicPartition</li><li>Common stable matching with two changed agents on each side → BMF</li><li>Common stable matching with two changed agents on each side → BalancedCompleteBipartiteSubgraph</li><li>Common stable matching with two changed agents on each side → Betweenness</li><li>Common stable matching with two changed agents on each side → BicliqueCover</li><li>Common stable matching with two changed agents on each side → BiconnectivityAugmentation</li><li>Common stable matching with two changed agents on each side → BinPacking</li><li>Common stable matching with two changed agents on each side → BottleneckTravelingSalesman</li></ol></details>
+<p><a href="https://codingthrust.github.io/problem-reductions/reductions.pdf">Graph model evidence ↗</a> ·
+<a href="https://www.sciencedirect.com/science/article/abs/pii/0020019079900024">Algorithm background ↗</a></p></article><article class="summary ai-pilot" style="margin-top:20px">
+<p class="eyebrow">Q004 · AI-proposed scenario</p>
+<h2>Positive NAE-3-SAT → Bipartite diameter-five Perfect Matching Cut</h2>
+<p><strong>Official baseline under the same problem-family projection:</strong> N 1 · B 0 · V 1.
+<strong>With this bridge only:</strong> N 1 · B 0 · V 1. The projection stays fixed in this comparison; it does not add a graph edge.</p>
+<p>Of the 1 new problem relations, 1 is direct and 0 follow through older edges. Exploratory D½ = 1.000, with every extra witness-chain edge weighted by 0.5. The official ranking does not use D½.</p>
+<p>The 1 concrete variant relations split into 1 candidate pair, 0 old-upstream relations, 0 old-downstream relations, and 0 relations spanning both sides.</p>
+<p>The new bridge also changes the computed scores of 0 other board questions, because they share the same baseline graph. Rankings from the two baselines are not directly comparable.</p>
+<p><strong>Proposed baseline bridge:</strong> Positive NAE-3-SAT
+→
+graph node 182. The board source is an explicit positive three-literal NAE formula and returns an assignment or NO-SOLUTION. Proposed identity map to graph NAESatisfiability, conditional on its clause and search-output conventions. The board restriction to positive clauses is retained. Exact semantic compatibility requires independent review.</p>
+<p><strong>Algorithmic consequence if the question rule is proved:</strong> If the hypothetical matching-cut rule is proved, this bridge gives a conditional NAE-SAT hardness route to its restricted target.</p>
+<p><strong>Board-stated importance (not independently checked):</strong> The diameter restriction targets a missing boundary in the structural complexity of perfect matching cuts.</p>
+<p><strong>Why the count needs caution:</strong> This is a proposed semantic alignment, not a proof of the open reduction. The graph count measures reachable problem families and can amplify hubs; it does not measure proof difficulty.</p>
+<details class="method-note"><summary>First 1 of 1 new problem relations</summary>
+<ol><li>NAESatisfiability → Bipartite diameter-five Perfect Matching Cut</li></ol></details>
+<p><a href="https://codingthrust.github.io/problem-reductions/reductions.pdf">Graph model evidence ↗</a> ·
+<a href="https://github.com/GiggleLiu/autoresearch-gadgets/tree/main/registry">Algorithm background ↗</a></p></article><article class="summary ai-pilot" style="margin-top:20px">
+<p class="eyebrow">Q053 · AI-proposed scenario</p>
+<h2>3-Coloring → Interval k-graph recognition without a partition</h2>
+<p><strong>Official baseline under the same problem-family projection:</strong> N 1 · B 0 · V 1.
+<strong>With this bridge only:</strong> N 1 · B 0 · V 1. The projection stays fixed in this comparison; it does not add a graph edge.</p>
+<p>Of the 1 new problem relations, 1 is direct and 0 follow through older edges. Exploratory D½ = 1.000, with every extra witness-chain edge weighted by 0.5. The official ranking does not use D½.</p>
+<p>The 1 concrete variant relations split into 1 candidate pair, 0 old-upstream relations, 0 old-downstream relations, and 0 relations spanning both sides.</p>
+<p>The new bridge also changes the computed scores of -1 other board questions, because they share the same baseline graph. Rankings from the two baselines are not directly comparable.</p>
+<p><strong>Proposed baseline bridge:</strong> 3-Coloring
+→
+graph node 89. Map the board simple graph to graph KColoring&lt;K3&gt; unchanged. Proper three-color assignments correspond to at-most-three-color board outputs. Graph encoding and witness conventions need independent review.</p>
+<p><strong>Algorithmic consequence if the question rule is proved:</strong> If the hypothetical recognition rule is proved, this supplies a conditional three-coloring hardness route to the target recognition problem.</p>
+<p><strong>Board-stated importance (not independently checked):</strong> This isolates the difference between recognizing a representation with supplied classes and discovering the classes.</p>
+<p><strong>Why the count needs caution:</strong> This is a proposed semantic alignment, not a proof of the open reduction. The graph count measures reachable problem families and can amplify hubs; it does not measure proof difficulty.</p>
+<details class="method-note"><summary>First 1 of 1 new problem relations</summary>
+<ol><li>KColoring → Interval k-graph recognition without a partition</li></ol></details>
+<p><a href="https://codingthrust.github.io/problem-reductions/reductions.pdf">Graph model evidence ↗</a> ·
+<a href="https://github.com/GiggleLiu/autoresearch-gadgets/tree/main/registry">Algorithm background ↗</a></p></article></section><p><a href="index.html">← Return to all 76 questions</a> · <a href="calculation.pdf">Calculation PDF</a></p></main></body></html>

@@ -1,4 +1,4 @@
-"""Build two isolated, AI-proposed bridge scenarios without changing the main ranking."""
+"""Build isolated, AI-proposed bridge scenarios without changing the main ranking."""
 
 import argparse
 import html
@@ -74,16 +74,13 @@ def build_pilot(output=ROOT / "dist"):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     (output / "pilot.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    (output / "pilot.html").write_text(render_pilot_redirect(), encoding="utf-8")
+    (output / "pilot.html").write_text(render_pilot_page(report), encoding="utf-8")
     (output / "pilot_bridges.json").write_bytes((data / "pilot_bridges.json").read_bytes())
     return report
 
 
-def render_pilot_section(report, official_report):
+def render_pilot_section(report):
     escape = lambda value: html.escape(str(value), quote=True)
-    official = next(row for row in official_report["questions"] if row["id"] == "Q054")
-    if official["B"] <= 0 or len(report["cases"]) != 3:
-        raise ValueError("three examples require Q054's fractional official baseline")
     cards = []
     for case in report["cases"]:
         before, after = case["fixed_projection_baseline"], case["scenario"]
@@ -109,19 +106,23 @@ graph node {bridge["graph_node"]}. {escape(bridge["evidence"])}</p>
 <p><a href="{escape(bridge["source_url"])}">Graph model evidence ↗</a> ·
 <a href="{escape(case["background_url"])}">Algorithm background ↗</a></p></article>''')
     return f'''<section id="pilots" aria-labelledby="pilots-heading"><p class="eyebrow">Worked examples</p>
-<h2 id="pilots-heading">Three calculation examples</h2>
-<p>Q054 is the only official row with fractional B. Its proposed reverse bridge changes the candidate's marginal B and V; Q001 and Q057 show SAT-hub expansion. All three candidate rules remain hypothetical.</p>
-<div class="summary" style="margin-top:20px"><p><strong>These three bridge scenarios are isolated experiments, not the official ranking.</strong>
+<h2 id="pilots-heading">{len(report["cases"])} AI bridge examples</h2>
+<p>These are five selected, isolated semantic bridge proposals across different problem families. Every candidate rule remains hypothetical.</p>
+<div class="summary" style="margin-top:20px"><p><strong>These {len(report["cases"])} bridge scenarios are isolated experiments, not the official ranking.</strong>
 The proposed bridges await independent review. A larger or smaller marginal topology count is not a measure of research value. Compare each case's conditional consequence with its raw count.</p>
 <p>Graph SHA-256: <code>{escape(report["graph_sha256"])}</code>. <a href="pilot_bridges.json">Bridge proposals</a> · <a href="pilot.json">All new relations and witnesses</a>.</p></div>
 {''.join(cards)}</section>'''
 
 
-def render_pilot_redirect():
-    return '''<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta http-equiv="refresh" content="0;url=./index.html#pilots"><link rel="canonical" href="./index.html#pilots">
-<title>Pilots moved · Reduction Impact Atlas</title></head><body>
-<p>The pilot cases are now on the <a href="./index.html#pilots">main page</a>.</p></body></html>'''
+def render_pilot_page(report):
+    from ranker import STYLE_CSS
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI bridge examples · Reduction Impact Atlas</title><style>{STYLE_CSS}</style></head>
+<body><header class="site-header"><div class="topbar">
+<a class="brand" href="index.html"><img class="brand-mark" src="lab-mark.svg" alt="Problem-Reductions lab mark"><span>Reduction Impact Atlas</span></a>
+<nav aria-label="Primary"><a href="index.html">Full ranking</a><a href="pilot.html" aria-current="page">AI examples</a><a href="calculation.pdf">Calculation PDF</a></nav></div></header>
+<main>{render_pilot_section(report)}<p><a href="index.html">← Return to all 76 questions</a> · <a href="calculation.pdf">Calculation PDF</a></p></main></body></html>'''
 
 
 if __name__ == "__main__":

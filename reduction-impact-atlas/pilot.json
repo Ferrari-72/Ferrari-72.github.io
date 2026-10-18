@@ -2,7 +2,7 @@
   "graph_sha256": "aea94690549b3d2199c92762e83b0d63f0950a9b7e77c1183a1183495952d2ab",
   "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
   "baseline_bridges_sha256": "5b407b620325a079e6723a37e7ca620c2609cbba2a6dea4fe919bd31ccb71c81",
-  "pilot_bridges_sha256": "3e83e5ad6019d8add680ee092274a208bf7359db1f70be69481fa624830db69b",
+  "pilot_bridges_sha256": "fe0522466d25c92c75a04a277aee3588e4cfc1978b7c9c18e7ba3386217908fd",
   "interpretation": "Each case compares graphs with and without its own AI-proposed semantic bridge under a fixed problem-family projection. Candidate question rules remain hypothetical. Neither scenario changes the official ranking.",
   "cases": [
     {
@@ -8299,6 +8299,188 @@
         "Q057",
         "Q062"
       ]
+    },
+    {
+      "id": "Q004",
+      "source": "Positive NAE-3-SAT",
+      "target": "Bipartite diameter-five Perfect Matching Cut",
+      "board_importance": "The diameter restriction targets a missing boundary in the structural complexity of perfect matching cuts.",
+      "literature_checked": "2026-09-15",
+      "review_state": "AI-proposed semantic bridge; independent review pending",
+      "bridge": {
+        "question_ids": [
+          "Q004"
+        ],
+        "side": "source",
+        "label": "Positive NAE-3-SAT",
+        "graph_node": 182,
+        "problem_family": "NAESatisfiability",
+        "direction": "board_to_graph",
+        "evidence": "The board source is an explicit positive three-literal NAE formula and returns an assignment or NO-SOLUTION. Proposed identity map to graph NAESatisfiability, conditional on its clause and search-output conventions. The board restriction to positive clauses is retained. Exact semantic compatibility requires independent review.",
+        "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+      },
+      "fixed_projection": {
+        "Q004": {
+          "source": "NAESatisfiability"
+        }
+      },
+      "background_url": "https://github.com/GiggleLiu/autoresearch-gadgets/tree/main/registry",
+      "algorithmic_consequence": "If the hypothetical matching-cut rule is proved, this bridge gives a conditional NAE-SAT hardness route to its restricted target.",
+      "limitation": "This is a proposed semantic alignment, not a proof of the open reduction. The graph count measures reachable problem families and can amplify hubs; it does not measure proof difficulty.",
+      "baseline": {
+        "N": 1,
+        "B": 0,
+        "V": 1,
+        "D_half": 1.0,
+        "direct_count": 1,
+        "transitive_count": 0,
+        "rank": 28
+      },
+      "fixed_projection_baseline": {
+        "N": 1,
+        "B": 0,
+        "V": 1,
+        "D_half": 1.0,
+        "direct_count": 1,
+        "transitive_count": 0,
+        "rank": 28
+      },
+      "scenario": {
+        "N": 1,
+        "B": 0,
+        "V": 1,
+        "D_half": 1.0,
+        "direct_count": 1,
+        "transitive_count": 0,
+        "hop_histogram": {
+          "1": 1
+        },
+        "variant_gain_breakdown": {
+          "direct": 1,
+          "upstream": 0,
+          "downstream": 0,
+          "both_sides": 0
+        },
+        "rank": 28,
+        "new_problem_pairs": [
+          {
+            "source": "NAESatisfiability",
+            "target": "Bipartite diameter-five Perfect Matching Cut",
+            "witness_nodes": [
+              "Positive NAE-3-SAT [board]",
+              "Bipartite diameter-five Perfect Matching Cut [board]"
+            ],
+            "hops": 1,
+            "discount_weight": 1.0
+          }
+        ],
+        "witnesses": [
+          {
+            "source_node": 262,
+            "target_node": 263,
+            "path": [
+              "candidate:Q004"
+            ],
+            "node_path": [
+              262,
+              263
+            ]
+          }
+        ]
+      },
+      "affected_question_ids": [
+        "Q002"
+      ]
+    },
+    {
+      "id": "Q053",
+      "source": "3-Coloring",
+      "target": "Interval k-graph recognition without a partition",
+      "board_importance": "This isolates the difference between recognizing a representation with supplied classes and discovering the classes.",
+      "literature_checked": "2026-09-16",
+      "review_state": "AI-proposed semantic bridge; independent review pending",
+      "bridge": {
+        "question_ids": [
+          "Q053"
+        ],
+        "side": "source",
+        "label": "3-Coloring",
+        "graph_node": 89,
+        "problem_family": "KColoring",
+        "direction": "board_to_graph",
+        "evidence": "Map the board simple graph to graph KColoring<K3> unchanged. Proper three-color assignments correspond to at-most-three-color board outputs. Graph encoding and witness conventions need independent review.",
+        "source_url": "https://codingthrust.github.io/problem-reductions/reductions.pdf"
+      },
+      "fixed_projection": {
+        "Q053": {
+          "source": "KColoring"
+        }
+      },
+      "background_url": "https://github.com/GiggleLiu/autoresearch-gadgets/tree/main/registry",
+      "algorithmic_consequence": "If the hypothetical recognition rule is proved, this supplies a conditional three-coloring hardness route to the target recognition problem.",
+      "limitation": "This is a proposed semantic alignment, not a proof of the open reduction. The graph count measures reachable problem families and can amplify hubs; it does not measure proof difficulty.",
+      "baseline": {
+        "N": 1,
+        "B": 0,
+        "V": 1,
+        "D_half": 1.0,
+        "direct_count": 1,
+        "transitive_count": 0,
+        "rank": 28
+      },
+      "fixed_projection_baseline": {
+        "N": 1,
+        "B": 0,
+        "V": 1,
+        "D_half": 1.0,
+        "direct_count": 1,
+        "transitive_count": 0,
+        "rank": 28
+      },
+      "scenario": {
+        "N": 1,
+        "B": 0,
+        "V": 1,
+        "D_half": 1.0,
+        "direct_count": 1,
+        "transitive_count": 0,
+        "hop_histogram": {
+          "1": 1
+        },
+        "variant_gain_breakdown": {
+          "direct": 1,
+          "upstream": 0,
+          "downstream": 0,
+          "both_sides": 0
+        },
+        "rank": 28,
+        "new_problem_pairs": [
+          {
+            "source": "KColoring",
+            "target": "Interval k-graph recognition without a partition",
+            "witness_nodes": [
+              "3-Coloring [board]",
+              "Interval k-graph recognition without a partition [board]"
+            ],
+            "hops": 1,
+            "discount_weight": 1.0
+          }
+        ],
+        "witnesses": [
+          {
+            "source_node": 337,
+            "target_node": 338,
+            "path": [
+              "candidate:Q053"
+            ],
+            "node_path": [
+              337,
+              338
+            ]
+          }
+        ]
+      },
+      "affected_question_ids": []
     }
   ]
 }

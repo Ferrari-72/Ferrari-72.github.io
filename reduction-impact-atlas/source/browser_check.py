@@ -19,16 +19,10 @@ with sync_playwright() as p:
     expect(page.locator(".question-row[data-scored='true']")).to_have_count(report["scored_count"])
     expect(page.locator(".question-row[data-scored='false']")).to_have_count(report["question_count"] - report["scored_count"])
     pilot = json.loads((ROOT / "dist/pilot.json").read_text(encoding="utf-8"))
-    expect(page.locator("#pilots article.summary")).to_have_count(len(pilot["cases"]))
-    expect(page.locator("#pilots .ai-pilot").first).to_contain_text("B 0.277778")
-    expect(page.locator("#pilots .ai-pilot").first).to_contain_text("B 0 · V 11")
-    expect(page.locator("#pilots .ai-pilot")).to_have_count(len(pilot["cases"]))
-    assert page.locator("#pilots").evaluate("el => el.compareDocumentPosition(document.querySelector('#ranking')) & Node.DOCUMENT_POSITION_FOLLOWING")
     expect(page.locator("#calculation")).to_be_visible()
-    assert page.locator("a[href='#calculation']").count() >= 1
+    assert page.locator("a[href='calculation.pdf']").count() >= 1
+    assert page.locator("a[href='pilot.html']").count() >= 1
     assert page.locator("a[href='https://codingthrust.github.io/problem-reductions/']").count() == 1
-    page.locator("#pilots .ai-pilot").nth(1).locator("details summary").click()
-    expect(page.locator("#pilots .ai-pilot").nth(1).locator("details li")).to_have_count(8)
     first = page.locator(".question-row").first
     first.locator(".relations summary").click()
     expect(first.locator(".relations li")).to_have_count(report["questions"][0]["N"])
@@ -48,8 +42,17 @@ with sync_playwright() as p:
         page.evaluate("window.scrollTo(0, 0)")
         page.screenshot(path=str(ROOT / f"dist/check-{width}.png"), full_page=False)
     page.goto((ROOT / "dist/pilot.html").resolve().as_uri())
-    expect(page).to_have_url((ROOT / "dist/index.html").resolve().as_uri() + "#pilots")
-    expect(page.locator("#pilots article.summary")).to_have_count(len(pilot["cases"]))
+    expect(page.locator("#pilots .ai-pilot")).to_have_count(5)
+    expect(page.locator("#pilots .ai-pilot").first).to_contain_text("B 0.277778")
+    expect(page.locator("#pilots .ai-pilot").first).to_contain_text("B 0 · V 11")
+    page.locator("#pilots .ai-pilot").nth(1).locator("details summary").click()
+    expect(page.locator("#pilots .ai-pilot").nth(1).locator("details li")).to_have_count(8)
+    page.locator("nav a[href='index.html']").click()
+    expect(page.locator(".question-row")).to_have_count(report["question_count"])
+    page.goto((ROOT / "dist/pilot.html").resolve().as_uri())
+    for width in (1280, 375):
+        page.set_viewport_size({"width": width, "height": 900})
+        assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), width
     assert not errors, errors
     browser.close()
 print("Browser checks passed")
