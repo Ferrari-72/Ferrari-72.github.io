@@ -12,14 +12,23 @@ from ranker import sha256_file
 ROOT = Path(__file__).parent
 
 
-def build_pilot(output=ROOT / "dist"):
-    data = ROOT / "data"
-    graph_path = data / "reduction_graph.json"
+def build_pilot(output=ROOT / "dist", *,
+                graph_path=ROOT / "data/reduction_graph.json",
+                questions_path=ROOT / "data/questions.json",
+                mappings_path=ROOT / "data/mappings.json",
+                bridges_path=ROOT / "data/bridges.json",
+                pilot_bridges_path=ROOT / "data/pilot_bridges.json"):
+    """Evaluate proposals against the same frozen inputs as the official build."""
+    graph_path = Path(graph_path)
+    questions_path = Path(questions_path)
+    mappings_path = Path(mappings_path)
+    bridges_path = Path(bridges_path)
+    pilot_bridges_path = Path(pilot_bridges_path)
     graph = json.loads(graph_path.read_text(encoding="utf-8"))
-    board = json.loads((data / "questions.json").read_text(encoding="utf-8"))
-    mappings = json.loads((data / "mappings.json").read_text(encoding="utf-8"))
-    baseline_bridges = json.loads((data / "bridges.json").read_text(encoding="utf-8"))
-    pilots = json.loads((data / "pilot_bridges.json").read_text(encoding="utf-8"))
+    board = json.loads(questions_path.read_text(encoding="utf-8"))
+    mappings = json.loads(mappings_path.read_text(encoding="utf-8"))
+    baseline_bridges = json.loads(bridges_path.read_text(encoding="utf-8"))
+    pilots = json.loads(pilot_bridges_path.read_text(encoding="utf-8"))
     graph_hash = sha256_file(graph_path)
     registry_hash = board["registry_sha256"]
     if pilots["graph_sha256"] != graph_hash or pilots["registry_sha256"] != registry_hash:
@@ -67,15 +76,16 @@ def build_pilot(output=ROOT / "dist"):
                                                                       "new_problem_pairs", "witnesses")},
                         "affected_question_ids": sorted(changed)})
     report = {"graph_sha256": graph_hash, "registry_sha256": registry_hash,
-              "baseline_bridges_sha256": sha256_file(data / "bridges.json"),
-              "pilot_bridges_sha256": sha256_file(data / "pilot_bridges.json"),
+              "question_count": len(board["questions"]),
+              "baseline_bridges_sha256": sha256_file(bridges_path),
+              "pilot_bridges_sha256": sha256_file(pilot_bridges_path),
               "interpretation": "Each case compares graphs with and without its own AI-proposed semantic bridge under a fixed problem-family projection. Candidate question rules remain hypothetical. Neither scenario changes the official ranking.",
               "cases": results}
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     (output / "pilot.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (output / "pilot.html").write_text(render_pilot_page(report), encoding="utf-8")
-    (output / "pilot_bridges.json").write_bytes((data / "pilot_bridges.json").read_bytes())
+    (output / "pilot_bridges.json").write_bytes(pilot_bridges_path.read_bytes())
     return report
 
 
@@ -107,7 +117,7 @@ graph node {bridge["graph_node"]}. {escape(bridge["evidence"])}</p>
 <a href="{escape(case["background_url"])}">Algorithm background ↗</a></p></article>''')
     return f'''<section id="pilots" aria-labelledby="pilots-heading"><p class="eyebrow">Worked examples</p>
 <h2 id="pilots-heading">{len(report["cases"])} AI bridge examples</h2>
-<p>These are five selected, isolated semantic bridge proposals across different problem families. Every candidate rule remains hypothetical.</p>
+<p>These are {len(report["cases"])} selected, isolated semantic bridge proposals. Every candidate rule remains hypothetical.</p>
 <div class="summary" style="margin-top:20px"><p><strong>These {len(report["cases"])} bridge scenarios are isolated experiments, not the official ranking.</strong>
 The proposed bridges await independent review. A larger or smaller marginal topology count is not a measure of research value. Compare each case's conditional consequence with its raw count.</p>
 <p>Graph SHA-256: <code>{escape(report["graph_sha256"])}</code>. <a href="pilot_bridges.json">Bridge proposals</a> · <a href="pilot.json">All new relations and witnesses</a>.</p></div>
@@ -122,7 +132,7 @@ def render_pilot_page(report):
 <body><header class="site-header"><div class="topbar">
 <a class="brand" href="index.html"><img class="brand-mark" src="lab-mark.svg" alt="Problem-Reductions lab mark"><span>Reduction Impact Atlas</span></a>
 <nav aria-label="Primary"><a href="index.html">Full ranking</a><a href="pilot.html" aria-current="page">AI examples</a><a href="calculation.pdf">Calculation PDF</a></nav></div></header>
-<main>{render_pilot_section(report)}<p><a href="index.html">← Return to all 76 questions</a> · <a href="calculation.pdf">Calculation PDF</a></p></main></body></html>'''
+<main>{render_pilot_section(report)}<p><a href="index.html">← Return to all {report["question_count"]} questions</a> · <a href="calculation.pdf">Calculation PDF</a></p></main></body></html>'''
 
 
 if __name__ == "__main__":

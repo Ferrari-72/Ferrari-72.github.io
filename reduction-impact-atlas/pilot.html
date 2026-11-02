@@ -15,12 +15,14 @@ a {color:var(--cyan);text-decoration:none} a:hover {text-decoration:underline}
 .brand {display:flex;align-items:center;gap:12px;color:var(--ink);font-weight:700;letter-spacing:.02em}
 .brand:hover {text-decoration:none}.brand-mark {width:42px;height:42px;display:block;filter:drop-shadow(0 0 10px #6acbff50)}
 nav {display:flex;gap:26px;font-size:.92rem}nav a {color:#bfd1e3}
-.hero {min-height:310px;display:flex;align-items:center;justify-content:space-between;gap:32px;padding-top:42px;padding-bottom:44px}
+.hero {min-height:310px;display:flex;align-items:center;position:relative;isolation:isolate;overflow:hidden;padding-top:54px;padding-bottom:60px}
+.hero::before {content:"";position:absolute;z-index:-1;pointer-events:none;width:580px;height:580px;right:-190px;top:-310px;border:1px solid #77c9ff1f;border-radius:50%;box-shadow:0 0 0 90px #77c9ff08,0 0 0 180px #77c9ff05}
+.hero::after {content:"";position:absolute;left:24px;right:24px;bottom:30px;height:1px;background:linear-gradient(90deg,#70cbff85,#70cbff19 58%,transparent)}
 .eyebrow {color:var(--cyan);font-weight:700;letter-spacing:.18em;font-size:.72rem;text-transform:uppercase}
-h1 {font-size:clamp(2.25rem,5vw,4rem);line-height:1.04;letter-spacing:-.045em;max-width:680px;margin:14px 0 18px}
-.hero p:not(.eyebrow) {color:var(--muted);max-width:600px;line-height:1.55;margin:0}
-.hero-links {display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-size:.91rem}
-.hero-graph {width:min(37vw,390px);min-width:240px;filter:drop-shadow(0 0 20px #32b6ff36)}
+h1 {font-size:clamp(2.8rem,5.6vw,5rem);line-height:1.02;letter-spacing:-.055em;max-width:900px;margin:16px 0 20px;text-wrap:balance}
+.hero p:not(.eyebrow) {color:#b9cee1;max-width:700px;line-height:1.55;margin:0;font-size:1.06rem}
+.hero-links {display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:28px;font-size:.91rem}
+.hero-links a:first-child {color:#e7f7ff;border:1px solid #6ebff57c;background:#3e9fe51a;border-radius:8px;padding:10px 14px;margin:-10px 0}
 main {padding-top:30px;padding-bottom:80px}p {line-height:1.55}
 .summary {background:linear-gradient(135deg,#102c49,#0b2037);border:1px solid var(--line);padding:22px 25px;border-radius:16px;box-shadow:0 18px 40px #00000030}
 .summary strong {color:#fff}.summary code {overflow-wrap:anywhere;color:#9ec8ff;font-size:.77rem}
@@ -49,15 +51,15 @@ td b {font-weight:650}.meta,.detail {display:block;margin-top:6px;color:var(--mu
 .relations ol {margin:9px 0;padding-left:22px}.relations li {margin:7px 0}.relations small {display:block;color:#8fb4d0;margin:2px 0 0;white-space:normal}
 .muted {color:var(--muted)}td:nth-child(4) strong {font-size:1.25rem;color:#fff}td:nth-child(4) small {display:block;color:#9fbdd4}
 [hidden] {display:none!important}
-@media(max-width:760px) {.topbar,.hero,main {padding-left:16px;padding-right:16px}nav {gap:13px;font-size:.8rem}.hero {min-height:260px}.hero-graph {width:180px;min-width:180px}th,td {padding:12px}}
-@media(max-width:560px) {.topbar {height:64px}.brand {font-size:.9rem}nav a:nth-child(1) {display:none}.hero {display:block;min-height:0;padding-top:32px;padding-bottom:36px}.hero-graph {display:none}.summary {padding:18px}input {max-width:100%}}
+@media(max-width:760px) {.topbar,.hero,main {padding-left:16px;padding-right:16px}nav {gap:13px;font-size:.8rem}.hero {min-height:260px}.hero::after {left:16px;right:16px}th,td {padding:12px}}
+@media(max-width:560px) {.topbar {height:64px}.brand {font-size:.9rem}nav a:nth-child(1) {display:none}.hero {min-height:0;padding-top:38px;padding-bottom:58px}.hero::before {right:-410px}.hero-links {gap:20px}.hero-links a:first-child {margin:0}.summary {padding:18px}input {max-width:100%}}
 </style></head>
 <body><header class="site-header"><div class="topbar">
 <a class="brand" href="index.html"><img class="brand-mark" src="lab-mark.svg" alt="Problem-Reductions lab mark"><span>Reduction Impact Atlas</span></a>
 <nav aria-label="Primary"><a href="index.html">Full ranking</a><a href="pilot.html" aria-current="page">AI examples</a><a href="calculation.pdf">Calculation PDF</a></nav></div></header>
 <main><section id="pilots" aria-labelledby="pilots-heading"><p class="eyebrow">Worked examples</p>
 <h2 id="pilots-heading">5 AI bridge examples</h2>
-<p>These are five selected, isolated semantic bridge proposals across different problem families. Every candidate rule remains hypothetical.</p>
+<p>These are 5 selected, isolated semantic bridge proposals. Every candidate rule remains hypothetical.</p>
 <div class="summary" style="margin-top:20px"><p><strong>These 5 bridge scenarios are isolated experiments, not the official ranking.</strong>
 The proposed bridges await independent review. A larger or smaller marginal topology count is not a measure of research value. Compare each case's conditional consequence with its raw count.</p>
 <p>Graph SHA-256: <code>aea94690549b3d2199c92762e83b0d63f0950a9b7e77c1183a1183495952d2ab</code>. <a href="pilot_bridges.json">Bridge proposals</a> · <a href="pilot.json">All new relations and witnesses</a>.</p></div>

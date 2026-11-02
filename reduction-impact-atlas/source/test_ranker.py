@@ -15,6 +15,7 @@ from snapshot_board import make_snapshot
 from build import build
 from estimate import build_estimate_report
 from pilot import build_pilot
+from package_release import SITE_FILES, package_release
 
 
 ROOT = Path(__file__).parent
@@ -148,6 +149,41 @@ class RankingTests(unittest.TestCase):
             report = json.loads((isolated / "dist" / "ranking.json").read_text(encoding="utf-8"))
             self.assertIn("76 scored", result.stdout)
             self.assertEqual((report["question_count"], report["scored_count"]), (76, 76))
+
+    def test_custom_pilot_input_is_used_without_changing_official_ranking(self):
+        with TemporaryDirectory(dir=ROOT) as directory:
+            directory = Path(directory)
+            proposals = json.loads((ROOT / "data/pilot_bridges.json").read_text(encoding="utf-8"))
+            proposals["cases"] = proposals["cases"][:2]
+            custom = directory / "two-pilots.json"
+            custom.write_text(json.dumps(proposals), encoding="utf-8")
+            build(output=directory / "official")
+            report = build(pilot_bridges_path=custom, output=directory / "dist")
+            pilot = json.loads((directory / "dist/pilot.json").read_text(encoding="utf-8"))
+            self.assertEqual(len(pilot["cases"]), 2)
+            self.assertEqual(pilot["pilot_bridges_sha256"], sha256_file(custom))
+            self.assertIn("View 2 AI bridge examples",
+                          (directory / "dist/index.html").read_text(encoding="utf-8"))
+            self.assertIn("2 AI bridge examples",
+                          (directory / "dist/pilot.html").read_text(encoding="utf-8"))
+            self.assertEqual(report["question_count"], 76)
+            self.assertEqual(sha256_file(directory / "dist/ranking.json"),
+                             sha256_file(directory / "official/ranking.json"))
+
+    def test_release_package_rebuilds_from_its_source_snapshot(self):
+        with TemporaryDirectory(dir=ROOT) as directory:
+            directory = Path(directory)
+            site = package_release(output=directory / "release",
+                                   build_output=directory / "build")
+            source = site / "source"
+            subprocess.run([sys.executable, "-E", str(source / "build.py"),
+                            "--output", str(directory / "rebuilt")],
+                           cwd=source, check=True, capture_output=True, text=True)
+            for name in SITE_FILES:
+                self.assertEqual(sha256_file(site / name),
+                                 sha256_file(directory / "rebuilt" / name), name)
+            self.assertTrue((source / "ARCHITECTURE.md").exists())
+            self.assertTrue((source / "RESEARCH_WORKFLOW.md").exists())
 
     def test_page_escapes_question_text(self):
         q = [question("Q001", "<script>alert(1)</script>", "B")]
