@@ -16,6 +16,7 @@ def build(graph_path=ROOT / "data/reduction_graph.json",
           questions_path=ROOT / "data/questions.json",
           mappings_path=ROOT / "data/mappings.json",
           bridges_path=ROOT / "data/bridges.json",
+          pilot_bridges_path=ROOT / "data/pilot_bridges.json",
           output=ROOT / "dist"):
     graph = json.loads(Path(graph_path).read_text(encoding="utf-8"))
     board = json.loads(Path(questions_path).read_text(encoding="utf-8"))
@@ -35,9 +36,11 @@ def build(graph_path=ROOT / "data/reduction_graph.json",
     copyfile(mappings_path, output / "mappings.json")
     copyfile(ROOT / "assets/lab-mark.svg", output / "lab-mark.svg")
     copyfile(ROOT / "assets/calculation.pdf", output / "calculation.pdf")
-    pilot_report = build_pilot(output)
+    pilot_report = build_pilot(output, graph_path=graph_path, questions_path=questions_path,
+                               mappings_path=mappings_path, bridges_path=bridges_path,
+                               pilot_bridges_path=pilot_bridges_path)
     (output / "index.html").write_text(
-        render_page(report), encoding="utf-8")
+        render_page(report, pilot_count=len(pilot_report["cases"])), encoding="utf-8")
     return report
 
 
@@ -47,9 +50,11 @@ def main():
     parser.add_argument("--questions", type=Path, default=ROOT / "data/questions.json")
     parser.add_argument("--mappings", type=Path, default=ROOT / "data/mappings.json")
     parser.add_argument("--bridges", type=Path, default=ROOT / "data/bridges.json")
+    parser.add_argument("--pilot-bridges", type=Path, default=ROOT / "data/pilot_bridges.json")
     parser.add_argument("--output", type=Path, default=ROOT / "dist")
     args = parser.parse_args()
-    report = build(args.graph, args.questions, args.mappings, args.bridges, args.output)
+    report = build(args.graph, args.questions, args.mappings, args.bridges,
+                   args.pilot_bridges, args.output)
     print(f"Built {report['question_count']} questions; {report['scored_count']} scored; output: {args.output}")
 
 

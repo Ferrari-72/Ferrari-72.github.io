@@ -1,6 +1,7 @@
 {
   "graph_sha256": "aea94690549b3d2199c92762e83b0d63f0950a9b7e77c1183a1183495952d2ab",
   "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
+  "question_count": 76,
   "baseline_bridges_sha256": "5b407b620325a079e6723a37e7ca620c2609cbba2a6dea4fe919bd31ccb71c81",
   "pilot_bridges_sha256": "fe0522466d25c92c75a04a277aee3588e4cfc1978b7c9c18e7ba3386217908fd",
   "interpretation": "Each case compares graphs with and without its own AI-proposed semantic bridge under a fixed problem-family projection. Candidate question rules remain hypothetical. Neither scenario changes the official ranking.",
