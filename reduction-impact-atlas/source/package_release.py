@@ -13,18 +13,21 @@ SITE_FILES = (
     "reduction_graph.json", "questions.json", "bridges.json",
     "mappings.json", "pilot_bridges.json", "lab-mark.svg",
     "calculation.pdf",
+    "research.html", "research.json", "research_candidates.json", "research-method.pdf",
 )
 SOURCE_FILES = (
     "README.md", "ARCHITECTURE.md", "RESEARCH_WORKFLOW.md",
     "build.py", "estimate.py", "ranker.py", "pilot.py",
     "snapshot_board.py", "make_pdf.py", "package_release.py",
     "test_ranker.py", "browser_check.py", "pyproject.toml", "uv.lock",
+    "research.py", "make_research_pdf.py",
 )
 DATA_FILES = (
     "reduction_graph.json", "questions.json", "bridges.json",
     "mappings.json", "pilot_bridges.json",
+    "research_candidates.json",
 )
-ASSET_FILES = ("lab-mark.svg", "calculation.pdf")
+ASSET_FILES = ("lab-mark.svg", "calculation.pdf", "research-method.pdf")
 
 
 def package_release(output=ROOT / "release", build_output=ROOT / "dist"):

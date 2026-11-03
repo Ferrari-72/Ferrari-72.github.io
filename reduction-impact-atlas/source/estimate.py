@@ -9,8 +9,9 @@ from fractions import Fraction
 from ranker import GRAPH_URL, _name_key, _paths, _score, _validate_graph
 
 
-def build_estimate_report(graph, graph_hash, questions, mappings, bridges=None, registry_hash=None,
-                          family_overrides=None):
+def prepare_baseline(graph, graph_hash, questions, mappings, bridges=None, registry_hash=None,
+                     family_overrides=None):
+    """Prepare copied endpoints and definition bridges without adding candidate rules."""
     graph_nodes, graph_edges = _validate_graph(graph)
     if mappings.get("graph_sha256") != graph_hash:
         raise ValueError("mapping graph hash does not match the frozen snapshot")
@@ -121,6 +122,13 @@ def build_estimate_report(graph, graph_hash, questions, mappings, bridges=None, 
                 record["question_ids"].append(qid)
                 a, b, assumptions, review = endpoint_map[qid]
                 endpoint_map[qid] = (a, b, assumptions + f"; baseline bridge edge {record['edge_index']} ({direction})", review)
+    return nodes, edges, endpoint_map, bridge_records, graph_nodes, graph_edges
+
+
+def build_estimate_report(graph, graph_hash, questions, mappings, bridges=None, registry_hash=None,
+                          family_overrides=None):
+    nodes, edges, endpoint_map, bridge_records, graph_nodes, graph_edges = prepare_baseline(
+        graph, graph_hash, questions, mappings, bridges, registry_hash, family_overrides)
     paths = _paths(nodes, edges)
     problems = [node.get("problem_key", node["name"]) for node in nodes]
     labels = {}

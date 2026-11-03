@@ -2,6 +2,8 @@
 
 This repository builds a static, conditional topology estimate for 76 frozen reduction questions. It is independent of both upstream checkouts. The live [ranking](https://ferrari-72.github.io/reduction-impact-atlas/) and [five AI bridge examples](https://ferrari-72.github.io/reduction-impact-atlas/pilot.html) link to the [calculation PDF](https://ferrari-72.github.io/reduction-impact-atlas/calculation.pdf).
 
+The separate [research-route page](https://ferrari-72.github.io/reduction-impact-atlas/research.html) contains ten new direct-route questions and ten speculative downstream proposals, with a dedicated calculation PDF. The twenty routes share ten task definitions and remain unproved.
+
 **Start here:** [architecture and data boundaries](ARCHITECTURE.md) · [research workflow for new direct reductions](RESEARCH_WORKFLOW.md).
 
 ## Reproduce
@@ -37,7 +39,7 @@ Browser checks cover navigation, filtering, JavaScript errors, and 375px width. 
 3. Run `python package_release.py --output PATH_TO_NEW_EMPTY_DIRECTORY`. It creates a complete `reduction-impact-atlas/` subtree with a matching `source/` snapshot.
 4. Commit only that subtree to the Pages repository. Do not copy `dist/` and source files separately.
 
-The package command refuses to overwrite an existing target. It never edits either upstream checkout or the portfolio root. The five AI bridge proposals remain separate from the official ranking.
+The package command refuses to overwrite an existing target. It never edits either upstream checkout or the Pages repository root. The five AI bridge proposals remain separate from the official ranking.
 
 ## Interpretation
 

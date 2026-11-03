@@ -21,4 +21,12 @@ Record one proposed direct reduction per entry:
 - Review state: `proposed`, `literature-checked`, `semantically-reviewed`, or `proved`. A status change requires evidence.
 - Scenario input hashes, separately reported conditional score, and witness paths.
 
-The current code **does not yet implement arbitrary new downstream candidate edges or compound-assumption scenarios**. `pilot_bridges.json` supports one endpoint-alignment bridge for an existing board question, not a new direct `B -> C` research question. Extend the scenario layer and add hand-checkable tests before publishing downstream scores. Keep the existing `ranking.json` unchanged until a new scoring scope is agreed and documented.
+## Implemented scenario layer
+
+`research.py` reads `data/research_candidates.json` separately from the official board and bridge files. `estimate.prepare_baseline` creates a copied baseline, and the research evaluator adds only named assumption edges. It recomputes both closures for each comparison and records every assumption used by each shortest family-pair witness.
+
+The initial catalogue has ten new direct-route questions and ten speculative downstream pairings over ten new task definitions. They are not twenty independent complexity classifications. The primary references support the task's unresolved status; they do not prove the proposed edge. Every route remains explicitly unreviewed. Some target tasks have quasipolynomial algorithms, making a hardness chain incompatible with ETH; the catalogue flags this obstacle.
+
+New-direct records compare G to G+r. Downstream records reference a parent board ID and compare G+p to G+p+s for marginal scores, and G to G+p+s for combined scores. The two groups have separate tied rankings. Input hashes must match. Task nodes exist in both comparison graphs, with a fixed family projection. The temporary baseline includes ten documented polynomial-verifier-to-SAT support routes; the catalogue supplies a finite-certificate verifier argument for each task. They are known upper bounds, not additional new open questions. Nine proposed 2-SAT algorithms consequently have N=0, B=1/9, V=1. A scenario never changes `ranking.json`.
+
+Build all outputs with `python build.py`. The dedicated English page is `research.html`, its evidence is in `research.json`, and its calculation appendix is `research-method.pdf`. Regenerate the appendix with `python make_research_pdf.py` using the locked docs dependency group. `package_release.py` includes these files and their source inputs.
