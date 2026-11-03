@@ -1,37 +1,37 @@
-"""Regenerate the research-scenario methodology PDF; requires ReportLab."""
+"""Build the methodology PDF for surveyed existing reductions."""
 from pathlib import Path
-from reportlab.platypus import SimpleDocTemplate, Paragraph, PageBreak
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.platypus import SimpleDocTemplate,Paragraph,PageBreak
+from reportlab.lib.styles import getSampleStyleSheet,ParagraphStyle
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 ROOT=Path(__file__).parent
-styles=getSampleStyleSheet()
-styles.add(ParagraphStyle(name='T',fontName='Helvetica-Bold',fontSize=21,leading=26,textColor=colors.HexColor('#123B67'),spaceAfter=18))
-styles.add(ParagraphStyle(name='H',fontName='Helvetica-Bold',fontSize=12,leading=17,textColor=colors.HexColor('#123B67'),spaceBefore=15,spaceAfter=8))
-styles.add(ParagraphStyle(name='B',fontName='Helvetica',fontSize=10,leading=15,spaceAfter=10))
+s=getSampleStyleSheet()
+for name,size,leading in [('T',20,25),('H',12,17),('B',10,15)]:
+ s.add(ParagraphStyle(name=name,fontName='Helvetica-Bold' if name!='B' else 'Helvetica',fontSize=size,leading=leading,spaceBefore=12 if name=='H' else 0,spaceAfter=10,textColor=colors.HexColor('#123B67') if name!='B' else colors.black))
 story=[]
-def add(kind,text):story.append(Paragraph(text,styles[kind]))
-add('T','Research routes: calculation and review scope')
-add('B','Reduction Impact Atlas | Research snapshot 2026-11-02. This appendix is project-authored. It supplements the original calculation PDF and does not claim endorsement by the source graph project.')
-add('H','1. What the twenty entries mean')
-add('B','There are ten new direct-route questions and ten downstream-route proposals. They share ten newly specified tasks; this is not twenty independent unresolved complexity classifications. Primary references establish an unresolved classification or remaining algorithmic gap. The ordered reduction routes are our proposals and have no construction or independent semantic review yet.')
-add('B','Most new direct routes ask whether a promised search task admits a polynomial one-call reduction to 2-SAT, including witness recovery and preservation of NO-SOLUTION. The planar two-bend CPG entry instead asks for a search-preserving 3-SAT hardness route. Neither a general SAT encoding nor an unresolved classification proves either proposed route.')
-add('H','2. Frozen graph and projections')
-add('B','The baseline is the same frozen graph and documented board bridges used by the official ranking. It is copied, never edited. Turing and non-witness-preserving edges are excluded. Board endpoint matches retain their provisional status. All new task nodes exist in every comparison graph. Ten documented polynomial-verifier-to-SAT support routes prevent treating these NP search tasks as isolated. Their graph adapters await review. These support routes belong only to the temporary research baseline. Variant counts and the family projection stay fixed.')
-add('H','3. Single-edge and two-assumption scenarios')
-add('B','For a new direct route r, compare G with G+r. For a downstream route s: B -> C, first assume its board parent p: A -> B. Report the marginal gain from G+p to G+p+s and separately the combined gain from G to G+p+s. The parent is an unproved assumption, not a baseline fact. Each output witness lists every assumption it uses.')
-add('B','Do not add marginal and combined counts. They have different reference graphs. Do not compare a one-assumption rank with a two-assumption rank as if they measured the same evidence. The website therefore ranks the two groups separately.')
+def p(kind,text):story.append(Paragraph(text,s[kind]))
+p('T','Existing reductions: survey and calculation')
+p('B','Reduction Impact Atlas | Corrected scope, 2026-11-02. This project-authored appendix replaces the earlier algorithm-goal scenario appendix.')
+p('H','1. Survey existing relations')
+p('B','The catalogue contains ten existing direct relations from newly recorded task variants, and ten existing downstream relations from frozen board targets. These are promise embeddings and applications of the polynomial-verifier-to-SAT construction. They are not twenty separate new theorems. The earlier invented efficient-algorithm routes and speculative downstream pairings are withdrawn.')
+p('B','A restriction embedding submits the same instance to a general problem and recovers the returned witness unchanged. A verifier encoding constructs a CNF formula for a bounded certificate and its polynomial-time verifier. A satisfying assignment supplies the original certificate; unsatisfiability preserves NO-SOLUTION. The target is unrestricted SAT, with no claim of an efficient source algorithm.')
+p('H','2. Known relationship versus reviewed adapter')
+p('B','Each record supplies a source definition, certificate bound, verifier or embedding argument, recovery rule and references. The theoretical inclusion may be known while its precise graph-model adapter still awaits independent review. Do not infer an edge merely from similar names. A binary budget does not by itself bound certificate length; the records explain caps using the explicit instance size.')
+p('H','3. Keep the original graph frozen')
+p('B','Calculations use copied graph nodes, board endpoints and documented baseline bridges. Turing and non-witness-preserving edges remain excluded. A surveyed known edge is inserted only in the temporary comparison graph. Other surveyed edges are not accumulated into the baseline. Unrelated research records therefore cannot create extra paths for the current row. Endpoint and family projection remain fixed in each comparison.')
+p('H','4. Two different outputs')
+p('B','For a direct known relation k, report coverage gain between G and G+k. For a downstream relation k: B to C and an open board parent p: A to B, first form G+k, then evaluate the parent by comparing G+k with G+k+p. Only p is hypothetical. Also report the parent impact in G and the coverage gain of k alone. The two groups are ranked separately because their score meanings differ.')
 story.append(PageBreak())
-add('H','4. Measures and ordering')
-add('B','Let Rv(H) be directed reachable variant pairs in H, excluding identical endpoints. Let Rp(H) be their fixed projection to distinct problem families. Given before and after graphs H0 and H1, N = |Rp(H1) minus Rp(H0)| and V = |Rv(H1) minus Rv(H0)|.')
-add('B','For each family pair already reachable in H0, take its newly reachable concrete variant-pair count divided by the fixed product of source and target family sizes. Sum these fractions to obtain B. A new family pair is counted in N, not again in B. Exact rational B is included in JSON.')
-add('B','Within each group, order by descending marginal (N,B,V). Equal triples share a rank. D_half sums 0.5^(h-1) over new family pairs, where h is the shortest complete witness-chain length including every assumption edge. It is diagnostic only and depends on graph representation.')
-add('H','5. Literature and plausibility limits')
-add('B','The catalogue records primary sources, section locators, search queries, check date and excluded solved cases. No later resolution found in a scoped search is not proof that a problem is still open. The circle-coloring, P8-free coloring and P7-free independence families have quasipolynomial algorithms in cited work; a hardness chain to them can imply quasipolynomial SAT and conflict with ETH. Such a conflict is a research obstacle, not evidence for the proposed edge.')
-add('B','Downstream pairings are speculative structural analogies. A precise construction, restrictions, resource bound, output recovery and impossibility checks remain necessary. Large counts can arise from 2-SAT/SAT hubs. Ties can arise from isolated nodes. Neither is a validated research-priority judgement. After including verifier-to-SAT routes, nine proposed polynomial algorithms have N=0, B=1/9 and V=1. This is a limitation of the structure metric, not absence of algorithmic value.')
-add('H','6. Reproduction and evidence')
-add('B','Run python build.py and python -m unittest -v test_ranker.py from the published source. research_candidates.json records task definitions, proposed edges and primary references. research.json records frozen-input hashes, exact assumptions, marginal and combined scores, and all new family-pair witnesses. The original ranking.json is unchanged by research proposals.')
-add('B','<link href="https://ferrari-72.github.io/reduction-impact-atlas/research.html" color="#1764a3">Research page</link> | <link href="https://ferrari-72.github.io/reduction-impact-atlas/research_candidates.json" color="#1764a3">Research records</link> | <link href="https://github.com/Ferrari-72/Ferrari-72.github.io/tree/main/reduction-impact-atlas/source" color="#1764a3">Source and tests</link>')
+p('H','5. Measures and paths')
+p('B','For the stated before/after graphs H0 and H1, let Rv be reachable ordered variant pairs excluding identical endpoints, and Rp their fixed projection to distinct problem families. N counts Rp(H1) minus Rp(H0). V counts Rv(H1) minus Rv(H0).')
+p('B','B sums new variant coverage only for family pairs already reachable in H0. For each such pair, divide its new concrete variant pairs by the fixed product of source and target family sizes. B is a sum of coverage fractions, not a probability or a research-value scale. JSON includes exact fractions.')
+p('B','Each group sorts by descending N, then B, then V; equal triples share a rank. D_half sums 0.5^(h-1) over new family pairs, where h is the shortest witness length. It is diagnostic only. Every witness identifies known edges separately from assumption-prefixed parent edges.')
+p('H','6. Attribution example')
+p('B','Suppose G has X to A, the literature supplies B to C, and A to B is the open candidate. Adding the known downstream relation alone creates B to C. Assuming the candidate afterward creates A to B, X to B, A to C and X to C: parent impact N=4. Without the known downstream relation its impact is N=2. The combined gain relative to G is N=5. These values are reported separately and must not be added.')
+p('H','7. Review and reproduction')
+p('B','Known does not imply new to the literature. A missing graph edge is a coverage gap, not evidence of an open mathematical problem. Generic SAT encodings can create large hub-based counts; inclusion edges can be routine. Neither is a research-priority score. The original 76-question ranking is unchanged.')
+p('B','Run python build.py and python -m unittest -v test_ranker.py from the published source. research_candidates.json contains relation arguments and references. research.json contains hashes, known-edge records, parent assumptions and paths. The tests check isolation, witness continuity, fractional coverage and source-package rebuilds.')
+p('B','<link href="https://doi.org/10.1145/800157.805047" color="#1764a3">Cook: polynomial computation encoding</link> | <link href="https://ferrari-72.github.io/reduction-impact-atlas/research.html" color="#1764a3">Corrected survey page</link> | <link href="https://ferrari-72.github.io/reduction-impact-atlas/research_candidates.json" color="#1764a3">Evidence records</link>')
 def footer(c,d):
- c.saveState();c.setStrokeColor(colors.HexColor('#BBD1E3'));c.line(42,42,553,42);c.setFont('Helvetica',8);c.drawString(42,29,'Reduction Impact Atlas | Research methodology');c.drawRightString(553,29,str(d.page));c.restoreState()
-SimpleDocTemplate(str(ROOT/'assets/research-method.pdf'),pagesize=A4,leftMargin=42,rightMargin=42,topMargin=44,bottomMargin=60).build(story,onFirstPage=footer,onLaterPages=footer)
+ c.saveState();c.setStrokeColor(colors.HexColor('#BBD1E3'));c.line(42,42,553,42);c.setFont('Helvetica',8);c.drawString(42,29,'Reduction Impact Atlas | Existing relations');c.drawRightString(553,29,str(d.page));c.restoreState()
+SimpleDocTemplate(str(ROOT/'assets/research-method.pdf'),pagesize=A4,leftMargin=42,rightMargin=42,topMargin=44,bottomMargin=58).build(story,onFirstPage=footer,onLaterPages=footer)

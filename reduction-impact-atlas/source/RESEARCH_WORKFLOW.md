@@ -1,32 +1,23 @@
-# Researching new direct reductions
+# Surveying known relations around open rules
 
-The next research step is to investigate possible **outgoing** reductions from a board target problem. If an open board rule is `A -> B`, the present frozen graph may count paths from known predecessors of `A` to `B`, while missing possible `B -> C` relations. `C` need not already occur in the graph. The senior review explicitly allows conditional counting without inserting an unproved relation into the established graph.
+The task is to find existing reductions that the frozen graph has not recorded, and use them to complete the upstream or downstream context of an open board rule. It is not a search for efficient algorithms or invented pairings.
 
-## Keep three states separate
+For an open parent p: A -> B, investigate a known downstream relation k: B -> C. The literature or an explicit definition/verifier argument must establish k under compatible input, output and resource conventions. C need not already occur in the graph. Add k only to a temporary graph copy, then evaluate p in that context.
 
-1. **Established baseline:** a documented, directionally compatible reduction or definition bridge. Only reviewed records belong in `data/bridges.json` or the frozen graph.
-2. **Research candidate:** a proposed direct `B -> C` open question. Record it outside the baseline with its precise source and target variants, output convention, restrictions, literature search, and unresolved proof obligation.
-3. **Conditional scenario:** add the board rule and one or more explicit research candidates to a *copy* of the graph. Report the added reachable pairs, witness paths, and the exact unproved assumptions on which each result depends. Never describe this as known reachability.
+## Evidence record
 
-For example, if the known graph contains `X -> A`, a hypothetical board rule `A -> B` gives conditional `X -> B`. If research proposes `B -> C`, then `A -> C` and `X -> C` may also be counted in the **two-assumption scenario**. Without a specific `B -> C` candidate, there is no numerical downstream gain to calculate.
+Each known relation records exact endpoints, a source definition, a bounded-certificate or embedding argument, references, output recovery, and remaining graph-adapter review. A theorem-backed relation and an independently reviewed exact graph adapter are different states. Never infer a relation merely from names.
 
-## Candidate record for review
+The present catalogue includes four restriction embeddings into general three-coloring and sixteen polynomial-verifier-to-SAT applications. These are existing inclusions and upper bounds, not twenty independent new theorems. Certificate length caps are supplied for binary budgets. Generic SAT encoding does not imply an efficient source algorithm.
 
-Record one proposed direct reduction per entry:
+## Calculation
 
-- Stable candidate ID; source and target question IDs or new problem names.
-- Exact input and output definitions, variant restrictions, direction, and intended reduction type.
-- Sources searched, dates, nearby known results, and why the status is still open or uncertain.
-- Proposed construction or semantic link, witness recovery, and resource conditions.
-- Review state: `proposed`, `literature-checked`, `semantically-reviewed`, or `proved`. A status change requires evidence.
-- Scenario input hashes, separately reported conditional score, and witness paths.
+- Direct group: compare G with G+k to report coverage gained from the known relation.
+- Downstream group: compare G+k with G+k+p to measure the open parent's impact after its known downstream relation is available. Only p is hypothetical.
+- Also report the parent impact in G, the gain of k alone, and the combined gain relative to G. Do not add these counts.
 
-## Implemented scenario layer
+Every relation is evaluated separately. Other surveyed edges are not accumulated into its baseline. Task nodes and family projections remain fixed in each comparison. All witnesses distinguish known edges from assumption-prefixed parent edges. The original graph and ranking.json remain unchanged.
 
-`research.py` reads `data/research_candidates.json` separately from the official board and bridge files. `estimate.prepare_baseline` creates a copied baseline, and the research evaluator adds only named assumption edges. It recomputes both closures for each comparison and records every assumption used by each shortest family-pair witness.
+## Reproduction
 
-The initial catalogue has ten new direct-route questions and ten speculative downstream pairings over ten new task definitions. They are not twenty independent complexity classifications. The primary references support the task's unresolved status; they do not prove the proposed edge. Every route remains explicitly unreviewed. Some target tasks have quasipolynomial algorithms, making a hardness chain incompatible with ETH; the catalogue flags this obstacle.
-
-New-direct records compare G to G+r. Downstream records reference a parent board ID and compare G+p to G+p+s for marginal scores, and G to G+p+s for combined scores. The two groups have separate tied rankings. Input hashes must match. Task nodes exist in both comparison graphs, with a fixed family projection. The temporary baseline includes ten documented polynomial-verifier-to-SAT support routes; the catalogue supplies a finite-certificate verifier argument for each task. They are known upper bounds, not additional new open questions. Nine proposed 2-SAT algorithms consequently have N=0, B=1/9, V=1. A scenario never changes `ranking.json`.
-
-Build all outputs with `python build.py`. The dedicated English page is `research.html`, its evidence is in `research.json`, and its calculation appendix is `research-method.pdf`. Regenerate the appendix with `python make_research_pdf.py` using the locked docs dependency group. `package_release.py` includes these files and their source inputs.
+Run python build.py and python -m unittest -v test_ranker.py. The research.html page links to research-method.pdf, research_candidates.json and research.json. The release packager includes all source and evidence files. The earlier algorithm-goal scenarios and unsupported downstream pairings have been replaced, including their methodology PDF.

@@ -7,7 +7,7 @@
 | Frozen inputs | `data/reduction_graph.json`, `data/questions.json` | Graph variants and edges; board question definitions and status |
 | Reviewed or proposed connections | `data/mappings.json`, `data/bridges.json`, `data/pilot_bridges.json` | Exact mappings, baseline definition bridges, isolated AI proposals |
 | Calculation | `ranker.py`, `estimate.py` | Validate graph, calculate variant reachability, project to families, record witnesses |
-| Scenarios | `pilot.py`, `research.py` | Isolated definition bridges and explicit one-/two-assumption research scenarios |
+| Scenarios | `pilot.py`, `research.py` | Isolated definition bridges and existing-relation surveys with one hypothetical parent rule |
 | Outputs | `build.py`, `make_pdf.py`, `package_release.py` | Build static files, regenerate methodology PDF, package site plus matching source |
 | Checks | `test_ranker.py`, `browser_check.py` | Numerical invariants, frozen-input failure modes, site behavior |
 

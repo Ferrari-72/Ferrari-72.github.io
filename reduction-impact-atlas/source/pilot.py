@@ -131,7 +131,7 @@ def render_pilot_page(report):
 <title>AI bridge examples · Reduction Impact Atlas</title><style>{STYLE_CSS}</style></head>
 <body><header class="site-header"><div class="topbar">
 <a class="brand" href="index.html"><img class="brand-mark" src="lab-mark.svg" alt="Problem-Reductions lab mark"><span>Reduction Impact Atlas</span></a>
-<nav aria-label="Primary"><a href="index.html">Full ranking</a><a href="pilot.html" aria-current="page">AI examples</a><a href="research.html">Research routes</a><a href="calculation.pdf">Calculation PDF</a></nav></div></header>
+<nav aria-label="Primary"><a href="index.html">Full ranking</a><a href="pilot.html" aria-current="page">AI examples</a><a href="research.html">Known relations</a><a href="calculation.pdf">Calculation PDF</a></nav></div></header>
 <main>{render_pilot_section(report)}<p><a href="index.html">← Return to all {report["question_count"]} questions</a> · <a href="calculation.pdf">Calculation PDF</a></p></main></body></html>'''
 
 
