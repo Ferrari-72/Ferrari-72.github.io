@@ -2,7 +2,7 @@
 
 This repository builds a static, conditional topology estimate for 76 frozen reduction questions. It is independent of both upstream checkouts. The live [ranking](https://ferrari-72.github.io/reduction-impact-atlas/) and [five AI bridge examples](https://ferrari-72.github.io/reduction-impact-atlas/pilot.html) link to the [calculation PDF](https://ferrari-72.github.io/reduction-impact-atlas/calculation.pdf).
 
-The separate [research-route page](https://ferrari-72.github.io/reduction-impact-atlas/research.html) contains ten new direct-route questions and ten speculative downstream proposals, with a dedicated calculation PDF. The twenty routes share ten task definitions and remain unproved.
+The separate [known-relation survey](https://ferrari-72.github.io/reduction-impact-atlas/research.html) contains ten existing direct relations and ten existing downstream relations. It evaluates an open parent rule after known downstream context is included. The earlier efficient-algorithm proposals and speculative downstream pairings have been withdrawn.
 
 **Start here:** [architecture and data boundaries](ARCHITECTURE.md) · [research workflow for new direct reductions](RESEARCH_WORKFLOW.md).
 

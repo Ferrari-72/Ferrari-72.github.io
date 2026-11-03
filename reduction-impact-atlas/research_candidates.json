@@ -3,7 +3,7 @@
   "checked_on": "2026-11-02",
   "graph_sha256": "aea94690549b3d2199c92762e83b0d63f0950a9b7e77c1183a1183495952d2ab",
   "registry_sha256": "cda06bb045c99e70897465fda9266757de34994d1f8987fb59022af7d1245194",
-  "scope": "Twenty ordered reduction-route questions: ten new direct routes and ten downstream proposals; they share ten new task definitions, so this is not twenty independent complexity classifications. None is a proved new reduction.",
+  "scope": "Twenty surveyed known relationships: ten direct relations from newly catalogued task variants and ten known downstream relations for existing board targets. Only the existing parent board rules are hypothetical. Known does not mean the graph-specific adapter has passed independent review.",
   "sources": {
     "circle": {
       "title": "A Quasi-Polynomial Time Algorithm for 3-Coloring Circle Graphs",
@@ -81,8 +81,7 @@
         "circle",
         "circle2024"
       ],
-      "status": "Open in cited sources; no resolution found in scoped search; independent status review pending",
-      "obstacle": "The quasipolynomial algorithm is not a polynomial reduction to 2-SAT; its branching and global color consistency must be compressed."
+      "status": "Source task definition used to investigate an existing reduction; no new algorithm or hardness claim."
     },
     {
       "id": "T02",
@@ -92,8 +91,7 @@
         "circle",
         "circle2024"
       ],
-      "status": "Open in cited sources; no resolution found in scoped search; independent status review pending",
-      "obstacle": "List restrictions must survive the proposed encoding and a satisfying 2-CNF assignment must decode to a complete coloring."
+      "status": "Source task definition used to investigate an existing reduction; no new algorithm or hardness claim."
     },
     {
       "id": "T03",
@@ -103,8 +101,7 @@
         "pt",
         "2p4"
       ],
-      "status": "Open in cited sources; no resolution found in scoped search; independent status review pending",
-      "obstacle": "A polynomial-size global encoding is missing; the P7-free algorithm does not directly cover P8-free graphs."
+      "status": "Source task definition used to investigate an existing reduction; no new algorithm or hardness claim."
     },
     {
       "id": "T04",
@@ -113,8 +110,7 @@
       "source_ids": [
         "pt"
       ],
-      "status": "Open in cited sources; no resolution found in scoped search; independent status review pending",
-      "obstacle": "The unrestricted P8-free case must be handled without assuming bounded clique number, extra forbidden cycles, or small lists."
+      "status": "Source task definition used to investigate an existing reduction; no new algorithm or hardness claim."
     },
     {
       "id": "T05",
@@ -123,8 +119,7 @@
       "source_ids": [
         "2p4"
       ],
-      "status": "Open in cited sources; no resolution found in scoped search; independent status review pending",
-      "obstacle": "The extra C5-free assumption in the known algorithm cannot be silently added."
+      "status": "Source task definition used to investigate an existing reduction; no new algorithm or hardness claim."
     },
     {
       "id": "T06",
@@ -135,8 +130,7 @@
         "diameter2021",
         "diameter2025"
       ],
-      "status": "Open in cited sources; no resolution found in scoped search; independent status review pending",
-      "obstacle": "Existing seed-based branching does not establish a polynomial-size 2-CNF encoding for all diameter-two graphs."
+      "status": "Source task definition used to investigate an existing reduction; no new algorithm or hardness claim."
     },
     {
       "id": "T07",
@@ -145,8 +139,7 @@
       "source_ids": [
         "p7"
       ],
-      "status": "Open in cited sources; no resolution found in scoped search; independent status review pending",
-      "obstacle": "Do not impose bounded clique number; the known result under that additional promise is insufficient."
+      "status": "Source task definition used to investigate an existing reduction; no new algorithm or hardness claim."
     },
     {
       "id": "T08",
@@ -155,8 +148,7 @@
       "source_ids": [
         "box"
       ],
-      "status": "Open in cited sources; no resolution found in scoped search; independent status review pending",
-      "obstacle": "A two-dimensional representation has interacting interval-order constraints; no polynomial reduction to 2-SAT is supplied by the source."
+      "status": "Source task definition used to investigate an existing reduction; no new algorithm or hardness claim."
     },
     {
       "id": "T09",
@@ -165,8 +157,7 @@
       "source_ids": [
         "box"
       ],
-      "status": "Open in cited sources; no resolution found in scoped search; independent status review pending",
-      "obstacle": "Optimization on complements is solved in the cited paper, but cannot be reused for line graphs by reversing complementation."
+      "status": "Source task definition used to investigate an existing reduction; no new algorithm or hardness claim."
     },
     {
       "id": "T10",
@@ -175,8 +166,7 @@
       "source_ids": [
         "cpg"
       ],
-      "status": "Open in cited sources; no resolution found in scoped search; independent status review pending",
-      "obstacle": "The endpoint-forcing gadget suggested in the source is not constructed; witness recovery from the hardness gadget remains a separate obligation."
+      "status": "Source task definition used to investigate an existing reduction; no new algorithm or hardness claim."
     }
   ],
   "candidates": [
@@ -188,19 +178,17 @@
         "task_id": "T01"
       },
       "target": {
-        "graph_node": 91
+        "graph_node": 89
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction be constructed for this ordered pair?",
-      "route_kind": "Proposed polynomial algorithm via 2-SAT",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The cited classification remains unresolved. A uniform polynomial reduction to 2-SAT with witness recovery would give a polynomial search algorithm; this particular route is our proposal, not a theorem in the source.",
-      "proof_obligation": "The quasipolynomial algorithm is not a polynomial reduction to 2-SAT; its branching and global color consistency must be compressed. The 2024 counterexamples to the earlier auxiliary-coloring approach must be avoided; satisfiable local constraints are insufficient.",
-      "consequence": "If proved, this gives a polynomial-time algorithm for this exact promised search task. This is stronger than merely encoding it in unrestricted SAT.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"circle graph\" \"3-coloring\" \"2-SAT\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known promise embedding",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "circle",
+        "circle2024"
+      ],
+      "evidence": "Discard only the promise certificate or graph-class restriction; submit the identical simple graph to general three-coloring. Any proper three-coloring returned is valid for the original graph. Infeasibility is preserved. No conversion in the opposite direction is claimed.",
+      "recovery": "Read the returned coloring unchanged.",
+      "limitation": "This is an existing upper-bound or inclusion relation, not a new open question and not a polynomial-time algorithm for the source. The general target remains computationally hard."
     },
     {
       "id": "R002",
@@ -210,19 +198,18 @@
         "task_id": "T02"
       },
       "target": {
-        "graph_node": 91
+        "graph_node": 220
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction be constructed for this ordered pair?",
-      "route_kind": "Proposed polynomial algorithm via 2-SAT",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The cited classification remains unresolved. A uniform polynomial reduction to 2-SAT with witness recovery would give a polynomial search algorithm; this particular route is our proposal, not a theorem in the source.",
-      "proof_obligation": "List restrictions must survive the proposed encoding and a satisfying 2-CNF assignment must decode to a complete coloring. The 2024 counterexamples to the earlier auxiliary-coloring approach must be avoided; satisfiable local constraints are insufficient.",
-      "consequence": "If proved, this gives a polynomial-time algorithm for this exact promised search task. This is stronger than merely encoding it in unrestricted SAT.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"circle\" \"list 3-coloring\" \"2-SAT\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "circle",
+        "circle2024",
+        "cook"
+      ],
+      "evidence": "Guess at most n color labels and verify every edge; also verify all input lists when present. Promised graph-class membership need not be guessed. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
+      "recovery": "Read the guessed certificate from the satisfying computation tableau; reject exactly when the formula is unsatisfiable.",
+      "limitation": "This is an existing upper-bound or inclusion relation, not a new open question and not a polynomial-time algorithm for the source. The general target remains computationally hard."
     },
     {
       "id": "R003",
@@ -232,19 +219,17 @@
         "task_id": "T03"
       },
       "target": {
-        "graph_node": 91
+        "graph_node": 89
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction be constructed for this ordered pair?",
-      "route_kind": "Proposed polynomial algorithm via 2-SAT",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The cited classification remains unresolved. A uniform polynomial reduction to 2-SAT with witness recovery would give a polynomial search algorithm; this particular route is our proposal, not a theorem in the source.",
-      "proof_obligation": "A polynomial-size global encoding is missing; the P7-free algorithm does not directly cover P8-free graphs.",
-      "consequence": "If proved, this gives a polynomial-time algorithm for this exact promised search task. This is stronger than merely encoding it in unrestricted SAT.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"P8-free\" \"3-coloring\" \"2-SAT\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known promise embedding",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "pt",
+        "2p4"
+      ],
+      "evidence": "Discard only the promise certificate or graph-class restriction; submit the identical simple graph to general three-coloring. Any proper three-coloring returned is valid for the original graph. Infeasibility is preserved. No conversion in the opposite direction is claimed.",
+      "recovery": "Read the returned coloring unchanged.",
+      "limitation": "This is an existing upper-bound or inclusion relation, not a new open question and not a polynomial-time algorithm for the source. The general target remains computationally hard."
     },
     {
       "id": "R004",
@@ -254,19 +239,17 @@
         "task_id": "T04"
       },
       "target": {
-        "graph_node": 91
+        "graph_node": 220
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction be constructed for this ordered pair?",
-      "route_kind": "Proposed polynomial algorithm via 2-SAT",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The cited classification remains unresolved. A uniform polynomial reduction to 2-SAT with witness recovery would give a polynomial search algorithm; this particular route is our proposal, not a theorem in the source.",
-      "proof_obligation": "The unrestricted P8-free case must be handled without assuming bounded clique number, extra forbidden cycles, or small lists.",
-      "consequence": "If proved, this gives a polynomial-time algorithm for this exact promised search task. This is stronger than merely encoding it in unrestricted SAT.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"P8-free\" \"list\" \"2-SAT\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "pt",
+        "cook"
+      ],
+      "evidence": "Guess at most n color labels and verify every edge; also verify all input lists when present. Promised graph-class membership need not be guessed. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
+      "recovery": "Read the guessed certificate from the satisfying computation tableau; reject exactly when the formula is unsatisfiable.",
+      "limitation": "This is an existing upper-bound or inclusion relation, not a new open question and not a polynomial-time algorithm for the source. The general target remains computationally hard."
     },
     {
       "id": "R005",
@@ -276,19 +259,16 @@
         "task_id": "T05"
       },
       "target": {
-        "graph_node": 91
+        "graph_node": 89
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction be constructed for this ordered pair?",
-      "route_kind": "Proposed polynomial algorithm via 2-SAT",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The cited additional-C5-free algorithm uses structural branching and 2-SAT instances. The proposed question removes the C5-free promise and asks for a uniform polynomial reduction with recovery.",
-      "proof_obligation": "The extra C5-free assumption in the known algorithm cannot be silently added.",
-      "consequence": "If proved, this gives a polynomial-time algorithm for this exact promised search task. This is stronger than merely encoding it in unrestricted SAT.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"2P4-free\" \"3-coloring\" \"2-SAT\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known promise embedding",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "2p4"
+      ],
+      "evidence": "Discard only the promise certificate or graph-class restriction; submit the identical simple graph to general three-coloring. Any proper three-coloring returned is valid for the original graph. Infeasibility is preserved. No conversion in the opposite direction is claimed.",
+      "recovery": "Read the returned coloring unchanged.",
+      "limitation": "This is an existing upper-bound or inclusion relation, not a new open question and not a polynomial-time algorithm for the source. The general target remains computationally hard."
     },
     {
       "id": "R006",
@@ -298,19 +278,18 @@
         "task_id": "T06"
       },
       "target": {
-        "graph_node": 91
+        "graph_node": 89
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction be constructed for this ordered pair?",
-      "route_kind": "Proposed polynomial algorithm via 2-SAT",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The ESA algorithm already uses 2-SAT after subexponential branching. The new route would need to remove that non-polynomial branching cost, not merely reuse the final 2-SAT solver.",
-      "proof_obligation": "Existing seed-based branching does not establish a polynomial-size 2-CNF encoding for all diameter-two graphs.",
-      "consequence": "If proved, this gives a polynomial-time algorithm for this exact promised search task. This is stronger than merely encoding it in unrestricted SAT.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"diameter 2\" \"3-coloring\" \"2-SAT\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known promise embedding",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "diameter",
+        "diameter2021",
+        "diameter2025"
+      ],
+      "evidence": "Discard only the promise certificate or graph-class restriction; submit the identical simple graph to general three-coloring. Any proper three-coloring returned is valid for the original graph. Infeasibility is preserved. No conversion in the opposite direction is claimed.",
+      "recovery": "Read the returned coloring unchanged.",
+      "limitation": "This is an existing upper-bound or inclusion relation, not a new open question and not a polynomial-time algorithm for the source. The general target remains computationally hard."
     },
     {
       "id": "R007",
@@ -320,19 +299,17 @@
         "task_id": "T07"
       },
       "target": {
-        "graph_node": 91
+        "graph_node": 220
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction be constructed for this ordered pair?",
-      "route_kind": "Proposed polynomial algorithm via 2-SAT",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The cited classification remains unresolved. A uniform polynomial reduction to 2-SAT with witness recovery would give a polynomial search algorithm; this particular route is our proposal, not a theorem in the source.",
-      "proof_obligation": "Do not impose bounded clique number; the known result under that additional promise is insufficient.",
-      "consequence": "If proved, this gives a polynomial-time algorithm for this exact promised search task. This is stronger than merely encoding it in unrestricted SAT.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"P7-free\" \"independent set\" \"2-SAT\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "p7",
+        "cook"
+      ],
+      "evidence": "Guess a vertex subset, check pairwise nonadjacency and cardinality at least k; reject k greater than n. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
+      "recovery": "Read the guessed certificate from the satisfying computation tableau; reject exactly when the formula is unsatisfiable.",
+      "limitation": "This is an existing upper-bound or inclusion relation, not a new open question and not a polynomial-time algorithm for the source. The general target remains computationally hard."
     },
     {
       "id": "R008",
@@ -342,19 +319,17 @@
         "task_id": "T08"
       },
       "target": {
-        "graph_node": 91
+        "graph_node": 220
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction be constructed for this ordered pair?",
-      "route_kind": "Proposed polynomial algorithm via 2-SAT",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The cited classification remains unresolved. A uniform polynomial reduction to 2-SAT with witness recovery would give a polynomial search algorithm; this particular route is our proposal, not a theorem in the source.",
-      "proof_obligation": "A two-dimensional representation has interacting interval-order constraints; no polynomial reduction to 2-SAT is supplied by the source.",
-      "consequence": "If proved, this gives a polynomial-time algorithm for this exact promised search task. This is stronger than merely encoding it in unrestricted SAT.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"line graph\" \"boxicity\" \"2-SAT\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "box",
+        "cook"
+      ],
+      "evidence": "Guess four ranked interval endpoints per vertex; check all pairwise intersections in two dimensions against the input adjacency matrix. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
+      "recovery": "Read the guessed certificate from the satisfying computation tableau; reject exactly when the formula is unsatisfiable.",
+      "limitation": "This is an existing upper-bound or inclusion relation, not a new open question and not a polynomial-time algorithm for the source. The general target remains computationally hard."
     },
     {
       "id": "R009",
@@ -364,431 +339,258 @@
         "task_id": "T09"
       },
       "target": {
-        "graph_node": 91
+        "graph_node": 220
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction be constructed for this ordered pair?",
-      "route_kind": "Proposed polynomial algorithm via 2-SAT",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The cited classification remains unresolved. A uniform polynomial reduction to 2-SAT with witness recovery would give a polynomial search algorithm; this particular route is our proposal, not a theorem in the source.",
-      "proof_obligation": "Optimization on complements is solved in the cited paper, but cannot be reused for line graphs by reversing complementation.",
-      "consequence": "If proved, this gives a polynomial-time algorithm for this exact promised search task. This is stronger than merely encoding it in unrestricted SAT.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"line graphs\" \"interval completion\" \"2-SAT\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "box",
+        "cook"
+      ],
+      "evidence": "Guess at most n(n-1)/2 added edges and a ranked interval representation; verify edge count, supergraph containment and all interval intersections. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
+      "recovery": "Read the guessed certificate from the satisfying computation tableau; reject exactly when the formula is unsatisfiable.",
+      "limitation": "This is an existing upper-bound or inclusion relation, not a new open question and not a polynomial-time algorithm for the source. The general target remains computationally hard."
     },
     {
       "id": "R010",
       "group": "new-direct",
       "task_id": "T10",
       "source": {
-        "graph_node": 92
-      },
-      "target": {
         "task_id": "T10"
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction be constructed for this ordered pair?",
-      "route_kind": "Proposed hardness route",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The source paper explicitly proposes a gadget-based hardness extension for two bends.",
-      "proof_obligation": "The endpoint-forcing gadget suggested in the source is not constructed; witness recovery from the hardness gadget remains a separate obligation.",
-      "consequence": "If proved, this is a search-preserving 3-SAT hardness route for the two-bend planar problem.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"planar\" \"B2-CPG\" \"3-SAT\"",
-        "outcome": "The 2026 primary source identifies a conditional endpoint-gadget extension from Planar Exactly 3-Bounded 3-SAT. The required gadget and full witness-preserving construction are not established."
-      }
+      "target": {
+        "graph_node": 220
+      },
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "cpg",
+        "cook"
+      ],
+      "evidence": "Guess at most two bends per path with rank-compressed coordinates; verify interior disjointness and exact contacts in polynomial time, as in Lemma 2.1. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
+      "recovery": "Read the guessed certificate from the satisfying computation tableau; reject exactly when the formula is unsatisfiable.",
+      "limitation": "This is an existing upper-bound or inclusion relation, not a new open question and not a polynomial-time algorithm for the source. The general target remains computationally hard."
     },
     {
       "id": "D001",
       "group": "downstream",
-      "task_id": "T08",
-      "parent_question_id": "Q053",
+      "parent_question_id": "Q010",
       "source": {
-        "board_question": "Q053",
+        "board_question": "Q010",
         "side": "target"
       },
       "target": {
-        "task_id": "T08"
+        "graph_node": 220
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction from this existing board target to the new task be constructed?",
-      "route_kind": "Speculative downstream route",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "Both tasks ask for interval-based representations. A construction must force a line-graph target and exactly two dimensions while preserving the unknown partition.",
-      "proof_obligation": "Both tasks ask for interval-based representations. A construction must force a line-graph target and exactly two dimensions while preserving the unknown partition.",
-      "consequence": "The parent board rule and this downstream rule are two separate unproved assumptions. A hardness parent combined with a quasipolynomial target algorithm may imply quasipolynomial SAT, conflicting with ETH; topology does not establish plausibility.",
-      "risk": "High: no direct construction found. The cited source supports the target open classification, not this proposed edge.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"interval k-graph\" \"boxicity\" reduction",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "cook"
+      ],
+      "evidence": "Guess one orientation bit per edge. Count indegrees, including the stated loop convention, and check every allowed-degree condition. Encode this finite polynomial verifier as a CNF computation tableau and recover its guessed certificate from a satisfying assignment. Preserve NO-SOLUTION in one call.",
+      "recovery": "Read the guessed certificate from the SAT assignment and verify it against the original instance; return NO-SOLUTION exactly when the encoding is unsatisfiable.",
+      "limitation": "The downstream relation is known from the verifier or inclusion argument. Only the parent board reduction is assumed for candidate-impact calculation. This supplies no proof of that parent."
     },
     {
       "id": "D002",
       "group": "downstream",
-      "task_id": "T10",
-      "parent_question_id": "Q011",
+      "parent_question_id": "Q013",
       "source": {
-        "board_question": "Q011",
+        "board_question": "Q013",
         "side": "target"
       },
       "target": {
-        "task_id": "T10"
+        "graph_node": 220
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction from this existing board target to the new task be constructed?",
-      "route_kind": "Speculative downstream route",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "Both tasks ask for constrained geometric representations. A gadget translation must preserve unit-length, depth-three and two-bend contact requirements; intersection is not contact.",
-      "proof_obligation": "Both tasks ask for constrained geometric representations. A gadget translation must preserve unit-length, depth-three and two-bend contact requirements; intersection is not contact.",
-      "consequence": "The parent board rule and this downstream rule are two separate unproved assumptions. A hardness parent combined with a quasipolynomial target algorithm may imply quasipolynomial SAT, conflicting with ETH; topology does not establish plausibility.",
-      "risk": "High: no direct construction found. The cited source supports the target open classification, not this proposed edge.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"unit 2-interval\" \"CPG\" reduction",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "cook"
+      ],
+      "evidence": "Guess two permutations of [n], check uniqueness and every binary integer sum. The certificate and arithmetic are polynomial in the explicit input size. Encode this finite polynomial verifier as a CNF computation tableau and recover its guessed certificate from a satisfying assignment. Preserve NO-SOLUTION in one call.",
+      "recovery": "Read the guessed certificate from the SAT assignment and verify it against the original instance; return NO-SOLUTION exactly when the encoding is unsatisfiable.",
+      "limitation": "The downstream relation is known from the verifier or inclusion argument. Only the parent board reduction is assumed for candidate-impact calculation. This supplies no proof of that parent."
     },
     {
       "id": "D003",
       "group": "downstream",
-      "task_id": "T09",
-      "parent_question_id": "Q054",
-      "source": {
-        "board_question": "Q054",
-        "side": "target"
-      },
-      "target": {
-        "task_id": "T09"
-      },
-      "question": "Can a polynomial one-call, witness-preserving reduction from this existing board target to the new task be constructed?",
-      "route_kind": "Speculative downstream route",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "Both tasks encode geometric coverage. A reduction must connect rectangle-cover count with interval fill-edge budget without adding spurious solutions.",
-      "proof_obligation": "Both tasks encode geometric coverage. A reduction must connect rectangle-cover count with interval fill-edge budget without adding spurious solutions.",
-      "consequence": "The parent board rule and this downstream rule are two separate unproved assumptions. A hardness parent combined with a quasipolynomial target algorithm may imply quasipolynomial SAT, conflicting with ETH; topology does not establish plausibility.",
-      "risk": "High: no direct construction found. The cited source supports the target open classification, not this proposed edge.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"rectangle\" \"compression\" \"interval completion\" reduction",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
-    },
-    {
-      "id": "D004",
-      "group": "downstream",
-      "task_id": "T01",
-      "parent_question_id": "Q051",
-      "source": {
-        "board_question": "Q051",
-        "side": "target"
-      },
-      "target": {
-        "task_id": "T01"
-      },
-      "question": "Can a polynomial one-call, witness-preserving reduction from this existing board target to the new task be constructed?",
-      "route_kind": "Speculative downstream route",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The ordered layout and circle-coloring connection suggests a route, but the board source has no fixed vertex order. A fixed-order book equivalence does not settle it.",
-      "proof_obligation": "The ordered layout and circle-coloring connection suggests a route, but the board source has no fixed vertex order. A fixed-order book equivalence does not settle it.",
-      "consequence": "The parent board rule and this downstream rule are two separate unproved assumptions. A hardness parent combined with a quasipolynomial target algorithm may imply quasipolynomial SAT, conflicting with ETH; topology does not establish plausibility.",
-      "risk": "High: no direct construction found. The cited source supports the target open classification, not this proposed edge.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"mixed layout\" \"2-trees\" \"circle\" coloring",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
-    },
-    {
-      "id": "D005",
-      "group": "downstream",
-      "task_id": "T05",
-      "parent_question_id": "Q052",
-      "source": {
-        "board_question": "Q052",
-        "side": "target"
-      },
-      "target": {
-        "task_id": "T05"
-      },
-      "question": "Can a polynomial one-call, witness-preserving reduction from this existing board target to the new task be constructed?",
-      "route_kind": "Speculative downstream route",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "A translation of monochromatic clique classes to proper colors must preserve the absence of two disjoint induced P4s. No such gadget is supplied.",
-      "proof_obligation": "A translation of monochromatic clique classes to proper colors must preserve the absence of two disjoint induced P4s. No such gadget is supplied.",
-      "consequence": "The parent board rule and this downstream rule are two separate unproved assumptions. A hardness parent combined with a quasipolynomial target algorithm may imply quasipolynomial SAT, conflicting with ETH; topology does not establish plausibility.",
-      "risk": "High: no direct construction found. The cited source supports the target open classification, not this proposed edge.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"unit disk\" \"subcoloring\" \"2P4\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
-    },
-    {
-      "id": "D006",
-      "group": "downstream",
-      "task_id": "T06",
-      "parent_question_id": "Q040",
-      "source": {
-        "board_question": "Q040",
-        "side": "target"
-      },
-      "target": {
-        "task_id": "T06"
-      },
-      "question": "Can a polynomial one-call, witness-preserving reduction from this existing board target to the new task be constructed?",
-      "route_kind": "Speculative downstream route",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "Both tasks impose coloring constraints. Star coloring on split graphs cannot be replaced by ordinary coloring; a diameter-two gadget and recovery are missing.",
-      "proof_obligation": "Both tasks impose coloring constraints. Star coloring on split graphs cannot be replaced by ordinary coloring; a diameter-two gadget and recovery are missing.",
-      "consequence": "The parent board rule and this downstream rule are two separate unproved assumptions. A hardness parent combined with a quasipolynomial target algorithm may imply quasipolynomial SAT, conflicting with ETH; topology does not establish plausibility.",
-      "risk": "High: no direct construction found. The cited source supports the target open classification, not this proposed edge.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"star coloring\" \"split\" \"diameter\" \"3-coloring\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
-    },
-    {
-      "id": "D007",
-      "group": "downstream",
-      "task_id": "T07",
-      "parent_question_id": "Q032",
-      "source": {
-        "board_question": "Q032",
-        "side": "target"
-      },
-      "target": {
-        "task_id": "T07"
-      },
-      "question": "Can a polynomial one-call, witness-preserving reduction from this existing board target to the new task be constructed?",
-      "route_kind": "Speculative downstream route",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "Packing can suggest independence in a graph power, but the multipacking ball constraints and the P7-free promise must both be preserved.",
-      "proof_obligation": "Packing can suggest independence in a graph power, but the multipacking ball constraints and the P7-free promise must both be preserved.",
-      "consequence": "The parent board rule and this downstream rule are two separate unproved assumptions. A hardness parent combined with a quasipolynomial target algorithm may imply quasipolynomial SAT, conflicting with ETH; topology does not establish plausibility.",
-      "risk": "High: no direct construction found. The cited source supports the target open classification, not this proposed edge.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"multipacking\" \"P7-free\" reduction",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
-    },
-    {
-      "id": "D008",
-      "group": "downstream",
-      "task_id": "T02",
       "parent_question_id": "Q021",
       "source": {
         "board_question": "Q021",
         "side": "target"
       },
       "target": {
-        "task_id": "T02"
+        "graph_node": 220
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction from this existing board target to the new task be constructed?",
-      "route_kind": "Speculative downstream route",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "The source has an unknown vertex order, letters and decoder. Turning these into a circle graph with lists needs a global, polynomial construction.",
-      "proof_obligation": "The source has an unknown vertex order, letters and decoder. Turning these into a circle graph with lists needs a global, polynomial construction.",
-      "consequence": "The parent board rule and this downstream rule are two separate unproved assumptions. A hardness parent combined with a quasipolynomial target algorithm may imply quasipolynomial SAT, conflicting with ETH; topology does not establish plausibility.",
-      "risk": "High: no direct construction found. The cited source supports the target open classification, not this proposed edge.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"lettericity\" \"circle graphs\" \"list\"",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "cook"
+      ],
+      "evidence": "Guess an order, at most n letters and a decoder with at most n squared entries. Check the adjacency rule for every ordered vertex pair; a budget above n can be capped at n. Encode this finite polynomial verifier as a CNF computation tableau and recover its guessed certificate from a satisfying assignment. Preserve NO-SOLUTION in one call.",
+      "recovery": "Read the guessed certificate from the SAT assignment and verify it against the original instance; return NO-SOLUTION exactly when the encoding is unsatisfiable.",
+      "limitation": "The downstream relation is known from the verifier or inclusion argument. Only the parent board reduction is assumed for candidate-impact calculation. This supplies no proof of that parent."
+    },
+    {
+      "id": "D004",
+      "group": "downstream",
+      "parent_question_id": "Q032",
+      "source": {
+        "board_question": "Q032",
+        "side": "target"
+      },
+      "target": {
+        "graph_node": 220
+      },
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "cook"
+      ],
+      "evidence": "Guess a vertex subset. Compute graph distances and check every ball for each integer radius from 1 to n, as well as the requested size. This is a polynomial verifier. Encode this finite polynomial verifier as a CNF computation tableau and recover its guessed certificate from a satisfying assignment. Preserve NO-SOLUTION in one call.",
+      "recovery": "Read the guessed certificate from the SAT assignment and verify it against the original instance; return NO-SOLUTION exactly when the encoding is unsatisfiable.",
+      "limitation": "The downstream relation is known from the verifier or inclusion argument. Only the parent board reduction is assumed for candidate-impact calculation. This supplies no proof of that parent."
+    },
+    {
+      "id": "D005",
+      "group": "downstream",
+      "parent_question_id": "Q040",
+      "source": {
+        "board_question": "Q040",
+        "side": "target"
+      },
+      "target": {
+        "graph_node": 220
+      },
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "cook"
+      ],
+      "evidence": "Guess at most n color labels. Check properness and every ordered four-vertex path for a bichromatic violation. The color budget can be capped at n. Encode this finite polynomial verifier as a CNF computation tableau and recover its guessed certificate from a satisfying assignment. Preserve NO-SOLUTION in one call.",
+      "recovery": "Read the guessed certificate from the SAT assignment and verify it against the original instance; return NO-SOLUTION exactly when the encoding is unsatisfiable.",
+      "limitation": "The downstream relation is known from the verifier or inclusion argument. Only the parent board reduction is assumed for candidate-impact calculation. This supplies no proof of that parent."
+    },
+    {
+      "id": "D006",
+      "group": "downstream",
+      "parent_question_id": "Q043",
+      "source": {
+        "board_question": "Q043",
+        "side": "target"
+      },
+      "target": {
+        "graph_node": 220
+      },
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "cook"
+      ],
+      "evidence": "Guess integer start slots for all unit jobs, check precedences, machine loads and deadline. If the deadline exceeds n, a sequential schedule suffices; otherwise all times are bounded by n. Encode this finite polynomial verifier as a CNF computation tableau and recover its guessed certificate from a satisfying assignment. Preserve NO-SOLUTION in one call.",
+      "recovery": "Read the guessed certificate from the SAT assignment and verify it against the original instance; return NO-SOLUTION exactly when the encoding is unsatisfiable.",
+      "limitation": "The downstream relation is known from the verifier or inclusion argument. Only the parent board reduction is assumed for candidate-impact calculation. This supplies no proof of that parent."
+    },
+    {
+      "id": "D007",
+      "group": "downstream",
+      "parent_question_id": "Q053",
+      "source": {
+        "board_question": "Q053",
+        "side": "target"
+      },
+      "target": {
+        "graph_node": 220
+      },
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "cook"
+      ],
+      "evidence": "Guess at most n classes and two ranked interval endpoints per vertex. Check the cross-class adjacency equivalence for every pair. Weak endpoint orders preserve all closed-interval intersections. Encode this finite polynomial verifier as a CNF computation tableau and recover its guessed certificate from a satisfying assignment. Preserve NO-SOLUTION in one call.",
+      "recovery": "Read the guessed certificate from the SAT assignment and verify it against the original instance; return NO-SOLUTION exactly when the encoding is unsatisfiable.",
+      "limitation": "The downstream relation is known from the verifier or inclusion argument. Only the parent board reduction is assumed for candidate-impact calculation. This supplies no proof of that parent."
+    },
+    {
+      "id": "D008",
+      "group": "downstream",
+      "parent_question_id": "Q054",
+      "source": {
+        "board_question": "Q054",
+        "side": "target"
+      },
+      "target": {
+        "graph_node": 220
+      },
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "cook"
+      ],
+      "evidence": "Guess at most min(K,number of one entries) rectangles with endpoints in the explicit matrix grid. Check that no zero is covered and every one is covered. Singleton rectangles supply the polynomial bound. Encode this finite polynomial verifier as a CNF computation tableau and recover its guessed certificate from a satisfying assignment. Preserve NO-SOLUTION in one call.",
+      "recovery": "Read the guessed certificate from the SAT assignment and verify it against the original instance; return NO-SOLUTION exactly when the encoding is unsatisfiable.",
+      "limitation": "The downstream relation is known from the verifier or inclusion argument. Only the parent board reduction is assumed for candidate-impact calculation. This supplies no proof of that parent."
     },
     {
       "id": "D009",
       "group": "downstream",
-      "task_id": "T04",
-      "parent_question_id": "Q035",
+      "parent_question_id": "Q056",
       "source": {
-        "board_question": "Q035",
+        "board_question": "Q056",
         "side": "target"
       },
       "target": {
-        "task_id": "T04"
+        "graph_node": 220
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction from this existing board target to the new task be constructed?",
-      "route_kind": "Speculative downstream route",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "Ordered class constraints motivate list-color gadgets, but no transformation preserving the P8-free promise and class budget is known here.",
-      "proof_obligation": "Ordered class constraints motivate list-color gadgets, but no transformation preserving the P8-free promise and class budget is known here.",
-      "consequence": "The parent board rule and this downstream rule are two separate unproved assumptions. A hardness parent combined with a quasipolynomial target algorithm may imply quasipolynomial SAT, conflicting with ETH; topology does not establish plausibility.",
-      "risk": "High: no direct construction found. The cited source supports the target open classification, not this proposed edge.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"proper thinness\" \"P8-free\" coloring",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "cook"
+      ],
+      "evidence": "Guess at most min(K,number of explicitly listed sets) basis subsets and union-selector bits. Check every reconstructed set. Using the original family as a basis supplies the polynomial witness bound. Encode this finite polynomial verifier as a CNF computation tableau and recover its guessed certificate from a satisfying assignment. Preserve NO-SOLUTION in one call.",
+      "recovery": "Read the guessed certificate from the SAT assignment and verify it against the original instance; return NO-SOLUTION exactly when the encoding is unsatisfiable.",
+      "limitation": "The downstream relation is known from the verifier or inclusion argument. Only the parent board reduction is assumed for candidate-impact calculation. This supplies no proof of that parent."
     },
     {
       "id": "D010",
       "group": "downstream",
-      "task_id": "T03",
-      "parent_question_id": "Q039",
+      "parent_question_id": "Q041",
       "source": {
-        "board_question": "Q039",
+        "board_question": "Q041",
         "side": "target"
       },
       "target": {
-        "task_id": "T03"
+        "graph_node": 220
       },
-      "question": "Can a polynomial one-call, witness-preserving reduction from this existing board target to the new task be constructed?",
-      "route_kind": "Speculative downstream route",
-      "review_state": "AI-proposed route; no reduction construction; semantic review pending",
-      "rationale": "Visibility and forbidden-path graph constraints are both structural, but this is the weakest analogy: no concrete gadget or witness translation has been found.",
-      "proof_obligation": "Visibility and forbidden-path graph constraints are both structural, but this is the weakest analogy: no concrete gadget or witness translation has been found.",
-      "consequence": "The parent board rule and this downstream rule are two separate unproved assumptions. A hardness parent combined with a quasipolynomial target algorithm may imply quasipolynomial SAT, conflicting with ETH; topology does not establish plausibility.",
-      "risk": "High: no direct construction found. The cited source supports the target open classification, not this proposed edge.",
-      "route_search": {
-        "checked_on": "2026-11-02",
-        "query": "\"polygon visibility\" \"P8-free\" coloring",
-        "outcome": "No construction for this exact ordered search reduction was found in the scoped query. This is not proof of novelty or absence in the literature."
-      }
+      "relation_kind": "Known verifier-to-SAT reduction",
+      "review_state": "Known theoretical relation; exact graph adapter pending independent review",
+      "source_ids": [
+        "cook"
+      ],
+      "evidence": "Guess a partition of the agents into triples. Check each agent occurs once, then every possible ordered replacement for justified envy using the explicit symmetric pair utilities. This is polynomial in the explicit number of agents. Encode the verifier as a CNF computation tableau, recover the guessed partition, and preserve NO-SOLUTION.",
+      "recovery": "Read the guessed certificate from the SAT assignment and verify it against the original instance; return NO-SOLUTION exactly when the encoding is unsatisfiable.",
+      "limitation": "The downstream relation is known from the verifier or inclusion argument. Only the parent board reduction is assumed for candidate-impact calculation. This supplies no proof of that parent."
     }
   ],
   "search_log": [
     {
-      "queries": [
-        "3-coloring diameter 2 2025 open",
-        "4-Coloring P6-free open 2026",
-        "3-coloring circle graphs open 2025",
-        "P7-free Independent Set 2025",
-        "2P4-free 3-coloring 2026 polynomial",
-        "line graphs boxicity 2026 complexity",
-        "interval completion line graphs NP-hard",
-        "P8-free 3-coloring 2026 polynomial"
-      ],
-      "outcome": "Read primary sources listed above and checked for later resolutions. Search absence is not proof of openness."
+      "date": "2026-11-02",
+      "scope": "Existing relations from restriction inclusions or polynomial-verifier SAT encodings. Primary references document task models and the general encoding theorem. No new polynomial algorithm or new hardness theorem is claimed.",
+      "source_urls": [
+        "https://arxiv.org/html/2511.09707v1",
+        "https://arxiv.org/html/2610.41620v1",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9148298/",
+        "https://link.springer.com/article/10.1007/s00453-014-9949-6",
+        "https://www.sas.rochester.edu/mth/undergraduate/honorspaperspdfs/dylanmckellips2025.pdf",
+        "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ISAAC.2025.20",
+        "https://arxiv.org/html/2501.05049v1",
+        "https://arxiv.org/html/2610.05838v1",
+        "https://doi.org/10.1145/800157.805047",
+        "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESA.2021.37",
+        "https://jgaa.info/index.php/jgaa/article/view/2991"
+      ]
     }
   ],
-  "excluded": [
-    {
-      "task": "4-coloring P6-free graphs",
-      "reason": "Polynomial algorithms already exist; do not reuse an old open-problem table.",
-      "source_url": "https://collaborate.princeton.edu/en/publications/four-coloring-p6-free-graphs-ii-finding-an-excellent-precoloring/"
-    },
-    {
-      "task": "Planar zero- and one-bend CPG recognition",
-      "reason": "The 2026-10 paper proves NP-completeness; only two bends remains open.",
-      "source_url": "https://arxiv.org/html/2610.05838v1"
-    }
-  ],
-  "support_edges": [
-    {
-      "id": "support:T01:SAT",
-      "task_id": "T01",
-      "graph_node": 220,
-      "direction": "task_to_graph",
-      "source_ids": [
-        "cook"
-      ],
-      "evidence": "Guess at most n color labels and verify every edge; also verify all input lists when present. Promised graph-class membership need not be guessed. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
-      "review_state": "Theorem-backed verifier argument; graph adapter awaits independent review"
-    },
-    {
-      "id": "support:T02:SAT",
-      "task_id": "T02",
-      "graph_node": 220,
-      "direction": "task_to_graph",
-      "source_ids": [
-        "cook"
-      ],
-      "evidence": "Guess at most n color labels and verify every edge; also verify all input lists when present. Promised graph-class membership need not be guessed. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
-      "review_state": "Theorem-backed verifier argument; graph adapter awaits independent review"
-    },
-    {
-      "id": "support:T03:SAT",
-      "task_id": "T03",
-      "graph_node": 220,
-      "direction": "task_to_graph",
-      "source_ids": [
-        "cook"
-      ],
-      "evidence": "Guess at most n color labels and verify every edge; also verify all input lists when present. Promised graph-class membership need not be guessed. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
-      "review_state": "Theorem-backed verifier argument; graph adapter awaits independent review"
-    },
-    {
-      "id": "support:T04:SAT",
-      "task_id": "T04",
-      "graph_node": 220,
-      "direction": "task_to_graph",
-      "source_ids": [
-        "cook"
-      ],
-      "evidence": "Guess at most n color labels and verify every edge; also verify all input lists when present. Promised graph-class membership need not be guessed. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
-      "review_state": "Theorem-backed verifier argument; graph adapter awaits independent review"
-    },
-    {
-      "id": "support:T05:SAT",
-      "task_id": "T05",
-      "graph_node": 220,
-      "direction": "task_to_graph",
-      "source_ids": [
-        "cook"
-      ],
-      "evidence": "Guess at most n color labels and verify every edge; also verify all input lists when present. Promised graph-class membership need not be guessed. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
-      "review_state": "Theorem-backed verifier argument; graph adapter awaits independent review"
-    },
-    {
-      "id": "support:T06:SAT",
-      "task_id": "T06",
-      "graph_node": 220,
-      "direction": "task_to_graph",
-      "source_ids": [
-        "cook"
-      ],
-      "evidence": "Guess at most n color labels and verify every edge; also verify all input lists when present. Promised graph-class membership need not be guessed. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
-      "review_state": "Theorem-backed verifier argument; graph adapter awaits independent review"
-    },
-    {
-      "id": "support:T07:SAT",
-      "task_id": "T07",
-      "graph_node": 220,
-      "direction": "task_to_graph",
-      "source_ids": [
-        "cook"
-      ],
-      "evidence": "Guess a vertex subset, check pairwise nonadjacency and cardinality at least k; reject k greater than n. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
-      "review_state": "Theorem-backed verifier argument; graph adapter awaits independent review"
-    },
-    {
-      "id": "support:T08:SAT",
-      "task_id": "T08",
-      "graph_node": 220,
-      "direction": "task_to_graph",
-      "source_ids": [
-        "cook"
-      ],
-      "evidence": "Guess four ranked interval endpoints per vertex; check all pairwise intersections in two dimensions against the input adjacency matrix. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
-      "review_state": "Theorem-backed verifier argument; graph adapter awaits independent review"
-    },
-    {
-      "id": "support:T09:SAT",
-      "task_id": "T09",
-      "graph_node": 220,
-      "direction": "task_to_graph",
-      "source_ids": [
-        "cook"
-      ],
-      "evidence": "Guess at most n(n-1)/2 added edges and a ranked interval representation; verify edge count, supergraph containment and all interval intersections. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
-      "review_state": "Theorem-backed verifier argument; graph adapter awaits independent review"
-    },
-    {
-      "id": "support:T10:SAT",
-      "task_id": "T10",
-      "graph_node": 220,
-      "direction": "task_to_graph",
-      "source_ids": [
-        "cook",
-        "cpg"
-      ],
-      "evidence": "Guess at most two bends per path with rank-compressed coordinates; verify interior disjointness and exact contacts in polynomial time, as in Lemma 2.1. Encode this verifier by a polynomial computation tableau and recover its guessed certificate from a SAT assignment. NO-SOLUTION is preserved. This is a general known upper bound, not one of the twenty proposed routes.",
-      "review_state": "Theorem-backed verifier argument; graph adapter awaits independent review"
-    }
-  ]
+  "excluded": [],
+  "support_edges": []
 }

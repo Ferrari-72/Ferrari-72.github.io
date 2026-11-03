@@ -369,18 +369,17 @@ class RankingTests(unittest.TestCase):
 
 
 class ResearchTests(unittest.TestCase):
-    def test_parent_and_downstream_counts_use_distinct_reference_graphs(self):
-        nodes = [{"name": x} for x in ("X", "A", "B", "C")]
-        base = [{"source": 0, "target": 1, "id": "known:X-A"}]
-        parent = {"source": 1, "target": 2, "id": "assumption:parent"}
-        candidate = {"source": 2, "target": 3, "id": "assumption:candidate"}
-        marginal = compare_graphs(nodes, base+[parent], base+[parent,candidate])
-        combined = compare_graphs(nodes, base, base+[parent,candidate])
-        self.assertEqual((marginal["N"], marginal["V"], combined["N"]), (3,3,5))
-        path = next(p for p in marginal["new_problem_pairs"] if p["source"]=="X")
-        self.assertEqual(path["assumptions"], ["assumption:parent", "assumption:candidate"])
-        self.assertEqual(path["nodes"], ["X","A","B","C"])
-        self.assertEqual(marginal["D_half"], 1.75)
+    def test_known_downstream_and_hypothetical_parent_have_distinct_roles(self):
+        nodes=[{"name":x} for x in ("X","A","B","C")]
+        base=[{"source":0,"target":1,"id":"known:X-A"}]
+        known={"source":2,"target":3,"id":"known:downstream"}
+        parent={"source":1,"target":2,"id":"assumption:parent"}
+        marginal=compare_graphs(nodes,base+[known],base+[known,parent])
+        combined=compare_graphs(nodes,base,base+[known,parent])
+        self.assertEqual((marginal["N"],combined["N"]),(4,5))
+        path=next(p for p in marginal['new_problem_pairs'] if p['source']=='X' and p['target']=='C')
+        self.assertEqual(path['assumptions'],['assumption:parent'])
+        self.assertIn('known:downstream',path['steps'])
 
     def test_research_coverage_and_official_ranking_isolation(self):
         with TemporaryDirectory(dir=ROOT) as directory:
@@ -392,17 +391,18 @@ class ResearchTests(unittest.TestCase):
             counts = Counter(r["group"] for r in report["questions"])
             self.assertEqual(counts, {"new-direct":10,"downstream":10})
             self.assertEqual(len({r["id"] for r in report["questions"]}),20)
-            self.assertEqual(len(report["support_edges"]),10)
-            algorithm=next(r for r in report['questions'] if r['id']=='R001')
-            self.assertEqual((algorithm['marginal']['N'],algorithm['marginal']['B_fraction'],algorithm['marginal']['V']),(0,'1/9',1))
             for row in report["questions"]:
-                self.assertEqual(len(row["assumptions"]), 2 if row["group"]=="downstream" else 1)
+                self.assertEqual(len(row["assumptions"]), 1 if row["group"]=="downstream" else 0)
                 for path in row["marginal"]["variant_witnesses"]:
-                    self.assertIn("assumption:"+row["id"]+":candidate", path["assumptions"])
+                    if row['group']=='downstream':
+                        self.assertEqual(path['assumptions'],[row['assumptions'][0]['id']])
+                    else:
+                        self.assertEqual(path['assumptions'],[])
+                        self.assertIn('known:'+row['id'],path['steps'])
             compact=json.loads((output/"research.json").read_text(encoding="utf-8"))
             base_edges={edge['id']:(edge['source'],edge['target']) for edge in compact['baseline_edges']}
             for row in compact['questions']:
-                lookup={**base_edges, **{a['id']:(a['source_node'],a['target_node']) for a in row['assumptions']}}
+                lookup={**base_edges,row['known_edge']['id']:(row['known_edge']['source'],row['known_edge']['target']), **{a['id']:(a['source_node'],a['target_node']) for a in row['assumptions']}}
                 for measure in ('marginal','combined'):
                     self.assertEqual(len(row[measure]['new_problem_pairs']),row[measure]['N'])
                     self.assertEqual(len(row[measure]['variant_witnesses']),row[measure]['V'])
