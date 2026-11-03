@@ -7,7 +7,7 @@
 | Frozen inputs | `data/reduction_graph.json`, `data/questions.json` | Graph variants and edges; board question definitions and status |
 | Reviewed or proposed connections | `data/mappings.json`, `data/bridges.json`, `data/pilot_bridges.json` | Exact mappings, baseline definition bridges, isolated AI proposals |
 | Calculation | `ranker.py`, `estimate.py` | Validate graph, calculate variant reachability, project to families, record witnesses |
-| Scenarios | `pilot.py` | Recalculate one proposed definition bridge at a time; never modify the official report |
+| Scenarios | `pilot.py`, `research.py` | Isolated definition bridges and explicit one-/two-assumption research scenarios |
 | Outputs | `build.py`, `make_pdf.py`, `package_release.py` | Build static files, regenerate methodology PDF, package site plus matching source |
 | Checks | `test_ranker.py`, `browser_check.py` | Numerical invariants, frozen-input failure modes, site behavior |
 
@@ -28,7 +28,7 @@
 - **New graph snapshot:** replace `data/reduction_graph.json`, record its source and SHA-256, recheck node indices, variants, edge types, mappings, and every bridge. A hash update alone is not semantic review.
 - **New exact mapping:** add the question ID, node indices, exact labels, and definition evidence to `data/mappings.json`. A unique name match is only provisional.
 - **New baseline bridge:** use `data/bridges.json` only after independently checking instance direction, restrictions, output recovery, and resource bounds.
-- **New AI proposal:** use `data/pilot_bridges.json` for an isolated, explicitly unreviewed definition-alignment scenario. This is not a general registry for newly researched downstream reductions; see [RESEARCH_WORKFLOW.md](RESEARCH_WORKFLOW.md).
+- **New AI proposal:** use `data/pilot_bridges.json` for an isolated, explicitly unreviewed definition-alignment scenario. New direct and downstream routes belong in `data/research_candidates.json`; see [RESEARCH_WORKFLOW.md](RESEARCH_WORKFLOW.md).
 - **Method or presentation:** update the relevant Python source, regenerate `assets/calculation.pdf` when formulas or caveats change, then rebuild and package.
 
 The frozen graph has 257 variants and 344 directed source edges. The 76-question board snapshot and graph were frozen on 2026-10-16. The graph export does not claim a specific source-repository commit. Twenty-two Turing or non-witness-preserving edges are excluded from candidate path composition. Ten directional definition bridges enter the official baseline; no exact-variant mapping has passed review.

@@ -16,6 +16,7 @@ from build import build
 from estimate import build_estimate_report
 from pilot import build_pilot
 from package_release import SITE_FILES, package_release
+from research import build_research, compare_graphs
 
 
 ROOT = Path(__file__).parent
@@ -135,14 +136,15 @@ class RankingTests(unittest.TestCase):
     def test_build_runs_with_only_standalone_files(self):
         with TemporaryDirectory(dir=ROOT) as directory:
             isolated = Path(directory)
-            for name in ("build.py", "estimate.py", "ranker.py", "pilot.py"):
+            for name in ("build.py", "estimate.py", "ranker.py", "pilot.py", "research.py"):
                 shutil.copyfile(ROOT / name, isolated / name)
             (isolated / "data").mkdir()
-            for name in ("reduction_graph.json", "questions.json", "mappings.json", "bridges.json", "pilot_bridges.json"):
+            for name in ("reduction_graph.json", "questions.json", "mappings.json", "bridges.json", "pilot_bridges.json", "research_candidates.json"):
                 shutil.copyfile(ROOT / "data" / name, isolated / "data" / name)
             (isolated / "assets").mkdir()
             shutil.copyfile(ROOT / "assets/lab-mark.svg", isolated / "assets/lab-mark.svg")
             shutil.copyfile(ROOT / "assets/calculation.pdf", isolated / "assets/calculation.pdf")
+            shutil.copyfile(ROOT / "assets/research-method.pdf", isolated / "assets/research-method.pdf")
             result = subprocess.run([sys.executable, "-E", str(isolated / "build.py")],
                                     cwd=isolated, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
@@ -364,6 +366,71 @@ class RankingTests(unittest.TestCase):
             self.assertIsNone(re.search(r'[\u4e00-\u9fff]', main))
             self.assertIsNone(re.search(r'[\u4e00-\u9fff]', pilot_page))
             self.assertIn('href="https://codingthrust.github.io/problem-reductions/"', main)
+
+
+class ResearchTests(unittest.TestCase):
+    def test_parent_and_downstream_counts_use_distinct_reference_graphs(self):
+        nodes = [{"name": x} for x in ("X", "A", "B", "C")]
+        base = [{"source": 0, "target": 1, "id": "known:X-A"}]
+        parent = {"source": 1, "target": 2, "id": "assumption:parent"}
+        candidate = {"source": 2, "target": 3, "id": "assumption:candidate"}
+        marginal = compare_graphs(nodes, base+[parent], base+[parent,candidate])
+        combined = compare_graphs(nodes, base, base+[parent,candidate])
+        self.assertEqual((marginal["N"], marginal["V"], combined["N"]), (3,3,5))
+        path = next(p for p in marginal["new_problem_pairs"] if p["source"]=="X")
+        self.assertEqual(path["assumptions"], ["assumption:parent", "assumption:candidate"])
+        self.assertEqual(path["nodes"], ["X","A","B","C"])
+        self.assertEqual(marginal["D_half"], 1.75)
+
+    def test_research_coverage_and_official_ranking_isolation(self):
+        with TemporaryDirectory(dir=ROOT) as directory:
+            output = Path(directory)
+            build(output=output)
+            original = sha256_file(output/"ranking.json")
+            report = build_research(output=output)
+            self.assertEqual(original, sha256_file(output/"ranking.json"))
+            counts = Counter(r["group"] for r in report["questions"])
+            self.assertEqual(counts, {"new-direct":10,"downstream":10})
+            self.assertEqual(len({r["id"] for r in report["questions"]}),20)
+            self.assertEqual(len(report["support_edges"]),10)
+            algorithm=next(r for r in report['questions'] if r['id']=='R001')
+            self.assertEqual((algorithm['marginal']['N'],algorithm['marginal']['B_fraction'],algorithm['marginal']['V']),(0,'1/9',1))
+            for row in report["questions"]:
+                self.assertEqual(len(row["assumptions"]), 2 if row["group"]=="downstream" else 1)
+                for path in row["marginal"]["variant_witnesses"]:
+                    self.assertIn("assumption:"+row["id"]+":candidate", path["assumptions"])
+            compact=json.loads((output/"research.json").read_text(encoding="utf-8"))
+            base_edges={edge['id']:(edge['source'],edge['target']) for edge in compact['baseline_edges']}
+            for row in compact['questions']:
+                lookup={**base_edges, **{a['id']:(a['source_node'],a['target_node']) for a in row['assumptions']}}
+                for measure in ('marginal','combined'):
+                    self.assertEqual(len(row[measure]['new_problem_pairs']),row[measure]['N'])
+                    self.assertEqual(len(row[measure]['variant_witnesses']),row[measure]['V'])
+                    for witness in row[measure]['variant_witnesses']:
+                        self.assertEqual(len(witness['node_ids']),len(witness['steps'])+1)
+                        for i,step in enumerate(witness['steps']):
+                            self.assertEqual(lookup[step],tuple(witness['node_ids'][i:i+2]))
+            page=(output/"research.html").read_text(encoding="utf-8")
+            self.assertEqual(page.count('class="summary research-card"'),20)
+            self.assertIsNone(re.search(r'[\u4e00-\u9fff]',page))
+            self.assertIn('research-method.pdf',page)
+
+    def test_research_fractional_coverage_counts_existing_family_only(self):
+        nodes=[{"name":"A0","problem_key":"A"},{"name":"A1","problem_key":"A"},{"name":"B"}]
+        before=[{"source":0,"target":2}]
+        after=before+[{"source":1,"target":2,"id":"assumption:test"}]
+        result=compare_graphs(nodes,before,after)
+        self.assertEqual((result["N"],result["B"],result["V"]),(0,0.5,1))
+        self.assertEqual(result["B_fraction"],"1/2")
+
+    def test_stale_research_hash_fails(self):
+        with TemporaryDirectory(dir=ROOT) as directory:
+            path=Path(directory)/"stale.json"
+            data=json.loads((ROOT/"data/research_candidates.json").read_text(encoding="utf-8"))
+            data["graph_sha256"]="stale"
+            path.write_text(json.dumps(data),encoding="utf-8")
+            with self.assertRaisesRegex(ValueError,"snapshot hash mismatch"):
+                build_research(output=Path(directory)/"dist",research_path=path)
 
 
 if __name__ == "__main__":

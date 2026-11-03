@@ -6,6 +6,7 @@ from shutil import copyfile
 
 from estimate import build_estimate_report
 from pilot import build_pilot
+from research import build_research
 from ranker import render_page, sha256_file
 
 
@@ -17,7 +18,8 @@ def build(graph_path=ROOT / "data/reduction_graph.json",
           mappings_path=ROOT / "data/mappings.json",
           bridges_path=ROOT / "data/bridges.json",
           pilot_bridges_path=ROOT / "data/pilot_bridges.json",
-          output=ROOT / "dist"):
+          output=ROOT / "dist", *,
+          research_path=ROOT / "data/research_candidates.json"):
     graph = json.loads(Path(graph_path).read_text(encoding="utf-8"))
     board = json.loads(Path(questions_path).read_text(encoding="utf-8"))
     mappings = json.loads(Path(mappings_path).read_text(encoding="utf-8"))
@@ -41,6 +43,9 @@ def build(graph_path=ROOT / "data/reduction_graph.json",
                                pilot_bridges_path=pilot_bridges_path)
     (output / "index.html").write_text(
         render_page(report, pilot_count=len(pilot_report["cases"])), encoding="utf-8")
+    build_research(output, graph_path=graph_path, questions_path=questions_path,
+                   mappings_path=mappings_path, bridges_path=bridges_path,
+                   research_path=research_path)
     return report
 
 
@@ -52,9 +57,10 @@ def main():
     parser.add_argument("--bridges", type=Path, default=ROOT / "data/bridges.json")
     parser.add_argument("--pilot-bridges", type=Path, default=ROOT / "data/pilot_bridges.json")
     parser.add_argument("--output", type=Path, default=ROOT / "dist")
+    parser.add_argument("--research-candidates", type=Path, default=ROOT / "data/research_candidates.json")
     args = parser.parse_args()
     report = build(args.graph, args.questions, args.mappings, args.bridges,
-                   args.pilot_bridges, args.output)
+                   args.pilot_bridges, args.output, research_path=args.research_candidates)
     print(f"Built {report['question_count']} questions; {report['scored_count']} scored; output: {args.output}")
 
 
