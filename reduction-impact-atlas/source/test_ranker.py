@@ -164,7 +164,7 @@ class RankingTests(unittest.TestCase):
             pilot = json.loads((directory / "dist/pilot.json").read_text(encoding="utf-8"))
             self.assertEqual(len(pilot["cases"]), 2)
             self.assertEqual(pilot["pilot_bridges_sha256"], sha256_file(custom))
-            self.assertIn("View 2 AI bridge examples",
+            self.assertIn("2 exploratory AI examples",
                           (directory / "dist/index.html").read_text(encoding="utf-8"))
             self.assertIn("2 AI bridge examples",
                           (directory / "dist/pilot.html").read_text(encoding="utf-8"))
@@ -411,7 +411,7 @@ class ResearchTests(unittest.TestCase):
                         for i,step in enumerate(witness['steps']):
                             self.assertEqual(lookup[step],tuple(witness['node_ids'][i:i+2]))
             page=(output/"research.html").read_text(encoding="utf-8")
-            self.assertEqual(page.count('class="summary research-card"'),20)
+            self.assertEqual(page.count('class="research-card"'),20)
             self.assertIsNone(re.search(r'[\u4e00-\u9fff]',page))
             self.assertIn('research-method.pdf',page)
 

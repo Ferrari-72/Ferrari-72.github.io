@@ -16,7 +16,7 @@ SITE_FILES = (
     "research.html", "research.json", "research_candidates.json", "research-method.pdf",
 )
 SOURCE_FILES = (
-    "README.md", "ARCHITECTURE.md", "RESEARCH_WORKFLOW.md",
+    "README.md", "ARCHITECTURE.md", "RESEARCH_WORKFLOW.md", "SCORE_AUDIT.md",
     "build.py", "estimate.py", "ranker.py", "pilot.py",
     "snapshot_board.py", "make_pdf.py", "package_release.py",
     "test_ranker.py", "browser_check.py", "pyproject.toml", "uv.lock",

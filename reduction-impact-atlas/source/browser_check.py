@@ -15,7 +15,7 @@ with sync_playwright() as p:
     page.goto((ROOT / "dist/index.html").resolve().as_uri())
     assert page.locator(".brand-mark").evaluate("image => image.complete && image.naturalWidth > 0")
     expect(page.locator(".question-row")).to_have_count(report["question_count"])
-    expect(page.get_by_text(f"{report['question_count']} questions shown", exact=False)).to_be_visible()
+    expect(page.get_by_text(f"{report['question_count']} open rules", exact=False)).to_be_visible()
     expect(page.locator(".question-row[data-scored='true']")).to_have_count(report["scored_count"])
     expect(page.locator(".question-row[data-scored='false']")).to_have_count(report["question_count"] - report["scored_count"])
     pilot = json.loads((ROOT / "dist/pilot.json").read_text(encoding="utf-8"))
@@ -56,6 +56,8 @@ with sync_playwright() as p:
     page.goto((ROOT / "dist/research.html").resolve().as_uri())
     expect(page.locator(".research-card")).to_have_count(20)
     assert page.locator("a[href='research-method.pdf']").count() >= 1
+    expect(page.locator("table")).to_have_count(1)
+    expect(page.locator(".research-card details[open]")).to_have_count(0)
     page.locator(".research-card").first.locator("details summary").first.click()
     assert page.locator(".research-card").first.locator("details li").count() > 0
     for width in (1280, 375):
