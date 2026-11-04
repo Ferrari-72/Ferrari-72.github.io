@@ -415,6 +415,32 @@ class ResearchTests(unittest.TestCase):
             self.assertIsNone(re.search(r'[\u4e00-\u9fff]',page))
             self.assertIn('research-method.pdf',page)
 
+    def test_s_weights_paths_independently_of_n_and_deduplicates_context(self):
+        from ranker import context_counts
+        nodes=[{'name':x} for x in ('X','A','B','C')]
+        before=[{'source':0,'target':1},{'source':2,'target':3}]
+        after=before+[{'source':1,'target':2,'id':'assumption:parent'}]
+        m=compare_graphs(nodes,before,after)
+        self.assertEqual((m['N'],m['S'],m['S_fraction']),(4,2.25,'9/4'))
+        self.assertEqual(m['S_by_decay'],{'0.25':1.5625,'0.5':2.25,'0.75':3.0625})
+        self.assertEqual(context_counts(nodes,_paths(nodes,before),1,2),{'upstream_families':1,'downstream_families':1})
+        a=compare_graphs(nodes,[],[{'source':0,'target':1},{'source':2,'target':3}])
+        b=compare_graphs(nodes,[{'source':0,'target':1}],[{'source':0,'target':1},{'source':1,'target':2}])
+        self.assertEqual((a['N'],b['N']),(2,2))
+        self.assertEqual((a['S'],b['S']),(2,1.5))
+        variants=[{'name':'X0','problem_key':'X'},{'name':'X1','problem_key':'X'},{'name':'A'},{'name':'B'}]
+        edges=[{'source':0,'target':2},{'source':1,'target':2}]
+        self.assertEqual(context_counts(variants,_paths(variants,edges),2,3)['upstream_families'],1)
+
+    def test_s_is_primary_in_frozen_ranking(self):
+        with TemporaryDirectory(dir=ROOT) as directory:
+            report=build(output=Path(directory))
+        rows={r['id']:r for r in report['questions']}
+        self.assertEqual(rows['Q062']['N'],rows['Q002']['N'])
+        self.assertGreater(rows['Q062']['S'],rows['Q002']['S'])
+        self.assertLess(rows['Q062']['rank'],rows['Q002']['rank'])
+        self.assertEqual(report['questions'],sorted(report['questions'],key=lambda r:(-r['S'],-r['N'],-r['B'],-r['V'],r['id'])))
+
     def test_research_fractional_coverage_counts_existing_family_only(self):
         nodes=[{"name":"A0","problem_key":"A"},{"name":"A1","problem_key":"A"},{"name":"B"}]
         before=[{"source":0,"target":2}]

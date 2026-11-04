@@ -7,7 +7,7 @@ from pathlib import Path
 from shutil import copyfile
 
 from estimate import prepare_baseline
-from ranker import _paths, sha256_file, STYLE_CSS
+from ranker import _paths, sha256_file, STYLE_CSS, context_counts
 
 ROOT = Path(__file__).parent
 
@@ -39,7 +39,8 @@ def compare_graphs(nodes, before_edges, after_edges):
         if pair in gained_families and (pair not in best or len(path)<len(best[pair]['steps'])):
             best[pair]=witness
     witnesses=sorted(best.values(),key=lambda x:(x['source'],x['target']))
-    return {'N':len(gained_families),'B':float(coverage),'B_fraction':str(coverage),'V':len(new),'D_half':sum(0.5**(x['hops']-1) for x in witnesses),'new_problem_pairs':witnesses,'variant_witnesses':variant_witnesses}
+    weighted=sum((Fraction(1,2**(x['hops']-1)) for x in witnesses),Fraction())
+    return {'S':float(weighted),'S_fraction':str(weighted),'S_by_decay':{str(rate):sum(rate**(x['hops']-1) for x in witnesses) for rate in (0.25,0.5,0.75)},'N':len(gained_families),'B':float(coverage),'B_fraction':str(coverage),'V':len(new),'D_half':sum(0.5**(x['hops']-1) for x in witnesses),'new_problem_pairs':witnesses,'variant_witnesses':variant_witnesses}
 
 
 def build_research(output=ROOT/'dist', *, graph_path=ROOT/'data/reduction_graph.json', questions_path=ROOT/'data/questions.json', mappings_path=ROOT/'data/mappings.json', bridges_path=ROOT/'data/bridges.json', research_path=ROOT/'data/research_candidates.json'):
@@ -86,13 +87,15 @@ def build_research(output=ROOT/'dist', *, graph_path=ROOT/'data/reduction_graph.
             parent_before=compare_graphs(nodes,edges,edges+[parent])
         else:
             after=known_context;marginal=known_gain
+        measured=parent if parent_record else known
+        marginal.update(context_counts(nodes,_paths(nodes,known_context if parent_record else edges),measured['source'],measured['target']))
         combined=compare_graphs(nodes,edges,after)
         results.append({**case,'source_label':label(a),'target_label':label(b),'task':tasks.get(case.get('task_id')),'parent_record':parent_record,'known_edge':known,'assumptions':assumptions,'known_gain':known_gain,'parent_before':parent_before,'marginal':marginal,'combined':combined})
     for group in ('new-direct','downstream'):
-        rows=sorted((r for r in results if r['group']==group),key=lambda r:(-r['marginal']['N'],-r['marginal']['B'],-r['marginal']['V'],r['id']))
+        rows=sorted((r for r in results if r['group']==group),key=lambda r:(-r['marginal']['S'],-r['marginal']['N'],-r['marginal']['B'],-r['marginal']['V'],r['id']))
         last=None
         for position,row in enumerate(rows,1):
-            key=tuple(row['marginal'][k] for k in ('N','B','V'))
+            key=tuple(row['marginal'][k] for k in ('S','N','B','V'))
             if key!=last:rank=position;last=key
             row['rank']=rank
     results.sort(key=lambda r:(r['group'],r['rank'],r['id']))
@@ -116,15 +119,15 @@ def render_research(report):
     e=lambda x:html.escape(str(x),quote=True)
     rows=[]
     # One catalogue, but never imply that two different comparisons share a rank.
-    for r in sorted(report['questions'], key=lambda r:r['id']):
+    for r in sorted(report['questions'], key=lambda r:(r['group'],r['rank'],r['id'])):
         m=r['marginal'];parent=r['parent_record']
         basis='Open-rule impact' if parent else 'Known-edge coverage'
         context=(f"Assume {parent['id']}: {parent['source']} → {parent['target']}. N before / after known context: {r['parent_before']['N']} / {m['N']}." if parent else 'Coverage added by this known relation; no open rule is assumed.')
         links=' · '.join(f'<a href="{e(report["sources"][sid]["url"])}">{e(report["sources"][sid]["title"])} ↗</a>' for sid in r['source_ids'])
         paths=m['new_problem_pairs'] or m['variant_witnesses']
         witnesses=''.join(f'<li>{e(" → ".join(w["nodes"]))}</li>' for w in paths[:5])
-        detail=f'<p>{e(context)}</p><p><strong>Known relation:</strong> {e(r["evidence"])}</p><p><strong>Recovery:</strong> {e(r["recovery"])}</p><p>{e(r["review_state"])}. {e(r["limitation"])}</p><p>B {m["B"]:.6g} · V {m["V"]} · D½ {m["D_half"]:.3f}. Rank within the same comparison: {r["rank"]}.</p><ol>{witnesses}</ol><p>{links}</p>'
-        rows.append(f'<tr class="research-card"><td>{r["id"]}</td><td><details id="{r["id"]}"><summary>{e(r["source_label"])} → {e(r["target_label"])}</summary>{detail}</details></td><td>{basis}</td><td><strong>{m["N"]}</strong></td></tr>')
+        detail=f'<p><strong>{basis}.</strong> {e(context)}</p><p><strong>Known relation:</strong> {e(r["evidence"])}</p><p><strong>Recovery:</strong> {e(r["recovery"])}</p><p>{e(r["review_state"])}. {e(r["limitation"])}</p><p>B {m["B"]:.6g} · V {m["V"]}. S at decay 0.25 / 0.5 / 0.75: {m["S_by_decay"]["0.25"]:.3f} / {m["S"]:.3f} / {m["S_by_decay"]["0.75"]:.3f}. Rank within the same comparison: {r["rank"]}.</p><ol>{witnesses}</ol><p>{links}</p>'
+        rows.append(f'<tr class="research-card"><td>{r["id"]}</td><td><details id="{r["id"]}"><summary>{e(r["source_label"])} → {e(r["target_label"])}</summary>{detail}</details></td><td>{basis}</td><td><strong>{m["S"]:.3f}</strong><small style="display:block;font-size:.75rem">N {m["N"]} · U {m["upstream_families"]} · D {m["downstream_families"]}</small></td></tr>')
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Surveyed relations · Reduction Impact Atlas</title><style>{STYLE_CSS}
-.hero{{min-height:210px;padding-top:35px;padding-bottom:45px}}.catalogue-intro{{color:#b9cee1;line-height:1.65;margin:0 0 26px;max-width:850px}}td{{vertical-align:top}}td:first-child{{white-space:nowrap}}details>summary{{cursor:pointer;color:#c7e8ff;line-height:1.6}}details p,details li{{font-size:.88rem;line-height:1.65;overflow-wrap:anywhere}}.research-card td:nth-child(3){{font-size:.8rem;color:#9fbdd4}}.research-card td:last-child{{font-size:1.15rem}}.resources{{display:flex;gap:20px;flex-wrap:wrap;margin:26px 0;font-size:.85rem}}@media(max-width:560px){{th,td{{padding:10px 7px}}.research-card td:nth-child(3){{max-width:78px}}}}
-</style></head><body><header class="site-header"><div class="topbar"><a class="brand" href="index.html"><img class="brand-mark" src="lab-mark.svg" alt="Lab mark"><span>Reduction Impact Atlas</span></a><nav aria-label="Primary"><a href="index.html">Open rules</a><a href="research.html" aria-current="page">Surveyed relations</a></nav></div><div class="hero"><div><p class="eyebrow">Newly surveyed · 20 records</p><h1>Surveyed relations</h1><p>Known connections missing from the frozen graph.</p></div></div></header><main><p class="catalogue-intro">One catalogue of direct and downstream connections. <strong>N</strong> counts newly reachable problem-family pairs. The comparison column identifies whether N measures a known edge or an open rule in its known downstream context; these are not a shared ranking. Select a relation for evidence and paths.</p><div class="table-wrap"><table><thead><tr><th>ID</th><th>Known relation · select to inspect</th><th>Comparison</th><th>N</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div><p class="catalogue-intro" style="margin-top:24px">Why similar scores? Sixteen entries reuse a general SAT encoding, and four are restriction embeddings. Shared targets inherit the same reachable families. Equal coverage is expected here; it does not imply equal research value. Exact graph adapters remain pending review.</p><footer class="resources"><a href="research-method.pdf">Calculation PDF ↗</a><a href="research_candidates.json">Evidence</a><a href="research.json">Scores and paths</a><a href="pilot.html">5 exploratory AI examples</a></footer></main></body></html>'''
+.hero{{min-height:210px;padding-top:35px;padding-bottom:45px}}.catalogue-intro{{color:#b9cee1;line-height:1.65;margin:0 0 26px;max-width:850px}}td{{vertical-align:top}}td:first-child{{white-space:nowrap}}details>summary{{cursor:pointer;color:#c7e8ff;line-height:1.6}}details p,details li{{font-size:.88rem;line-height:1.65;overflow-wrap:anywhere}}.research-card td:nth-child(3){{font-size:.8rem;color:#9fbdd4}}.research-card td:last-child{{font-size:1.15rem}}.resources{{display:flex;gap:20px;flex-wrap:wrap;margin:26px 0;font-size:.85rem}}@media(max-width:560px){{th,td{{padding:10px 7px}}.research-card td:nth-child(3),th:nth-child(3){{display:none}}table{{min-width:0;table-layout:fixed}}th:first-child,td:first-child{{width:48px}}th:last-child,td:last-child{{width:94px;white-space:normal}}td:nth-child(2){{overflow-wrap:anywhere}}details>summary{{font-size:.85rem}}.research-card td:last-child{{font-size:1rem}}}}
+</style></head><body><header class="site-header"><div class="topbar"><a class="brand" href="index.html"><img class="brand-mark" src="lab-mark.svg" alt="Lab mark"><span>Reduction Impact Atlas</span></a><nav aria-label="Primary"><a href="index.html">Open rules</a><a href="research.html" aria-current="page">Surveyed relations</a></nav></div><div class="hero"><div><p class="eyebrow">Newly surveyed · 20 records</p><h1>Surveyed relations</h1><p>Known connections missing from the frozen graph.</p></div></div></header><main><p class="catalogue-intro">One catalogue of direct and downstream connections. <strong>S</strong> sums shortest-path gains with a 0.5 decay per extra edge; <strong>N</strong> counts new family pairs without decay. U / D count upstream / downstream families before the evaluated rule. The comparison column identifies whether N measures a known edge or an open rule in its known downstream context; each comparison type sorts by S, then N, B, V; they do not share a rank. Select a relation for evidence and paths.</p><div class="table-wrap"><table><thead><tr><th>ID</th><th>Known relation · select to inspect</th><th>Comparison</th><th>S / N / U / D</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div><p class="catalogue-intro" style="margin-top:24px">Why similar scores? Sixteen entries reuse a general SAT encoding, and four are restriction embeddings. Shared targets inherit the same reachable families. Equal coverage is expected here; it does not imply equal research value. Exact graph adapters remain pending review.</p><footer class="resources"><a href="research-method.pdf">Calculation PDF ↗</a><a href="research_candidates.json">Evidence</a><a href="research.json">Scores and paths</a><a href="pilot.html">5 exploratory AI examples</a></footer></main></body></html>'''

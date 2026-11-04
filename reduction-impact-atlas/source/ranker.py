@@ -19,6 +19,14 @@ def sha256_file(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def context_counts(nodes, paths, source, target):
+    """Distinct reachable families before the evaluated edge, excluding own family."""
+    families=[n.get('problem_key',n['name']) for n in nodes]
+    upstream={families[u] for u,reached in enumerate(paths) if source in reached and families[u]!=families[source]}
+    downstream={families[v] for v in paths[target] if families[v]!=families[target]}
+    return {'upstream_families':len(upstream),'downstream_families':len(downstream)}
+
+
 def _name_key(value):
     return re.sub(r"[^a-z0-9]", "", value.lower())
 
@@ -227,6 +235,7 @@ td b {font-weight:650}.meta,.detail {display:block;margin-top:6px;color:var(--mu
 .relations ol {margin:9px 0;padding-left:22px}.relations li {margin:7px 0}.relations small {display:block;color:#8fb4d0;margin:2px 0 0;white-space:normal}
 .muted {color:var(--muted)}td:nth-child(4) strong {font-size:1.25rem;color:#fff}td:nth-child(4) small {display:block;color:#9fbdd4}
 [hidden] {display:none!important}
+@media(max-width:560px) {#ranking table {min-width:0;table-layout:fixed}#ranking th:first-child,#ranking td:first-child {width:38px}#ranking th:nth-child(2),#ranking td:nth-child(2) {width:47px}#ranking th:last-child,#ranking td:last-child {width:92px;white-space:normal}#ranking th,#ranking td {padding:10px 6px}#ranking td:nth-child(3) {overflow-wrap:anywhere;font-size:.82rem}#ranking td:nth-child(4) strong {font-size:1rem}}
 @media(max-width:760px) {.topbar,.hero,main {padding-left:16px;padding-right:16px}nav {gap:13px;font-size:.8rem}.hero {min-height:260px}.hero::after {left:16px;right:16px}th,td {padding:12px}}
 @media(max-width:560px) {.topbar {height:auto;min-height:64px;flex-wrap:wrap;gap:12px;padding-top:14px;padding-bottom:14px}nav {width:100%;justify-content:space-between;flex-wrap:wrap}.brand {font-size:.9rem}nav a:nth-child(1) {display:block}.hero {min-height:0;padding-top:38px;padding-bottom:58px}.hero::before {right:-410px}.hero-links {gap:20px}.hero-links a:first-child {margin:0}.summary {padding:18px}input {max-width:100%}}
 """
@@ -235,8 +244,7 @@ def render_page(report, pilot_count=5):
     escape = lambda value: html.escape(str(value), quote=True)
     rows = []
     for row in report["questions"]:
-        discount = (f'D½ {row["D_half"]:.3f} · ' if "D_half" in row else "")
-        score = (f'<strong>{row["N"]}</strong> <small>{discount}B {row["B"]:g} · V {row.get("V", len(row["witnesses"]))} · {"Reviewed" if row.get("mapping_evidence") else "Provisional"}</small>'
+        score = (f'<strong>S {row.get("S", row.get("D_half", row["N"])):.3f}</strong> <small>N {row["N"]} · U {row.get("upstream_families", "—")} · D {row.get("downstream_families", "—")}</small>'
                  if row["N"] is not None else '<span class="muted">Not scored</span>')
         detail = (f'{len(row["new_problem_pairs"])} new problem pairs. '
                   + (f'{row["direct_count"]} direct, {row["transitive_count"]} transitive. '
@@ -283,9 +291,9 @@ def render_page(report, pilot_count=5):
 <div class="hero" id="top"><div><p class="eyebrow">Evidence-backed graph analysis</p><h1>See what a new reduction connects.</h1><p>Conditional structural gain for open reduction questions. Inspect each new relation and the path behind it.</p><div class="hero-links"><a href="calculation.pdf">How are these scores calculated? PDF ↗</a><a href="research.html">Surveyed relations →</a><a href="https://codingthrust.github.io/problem-reductions/" target="_blank" rel="noopener noreferrer">Problem Reductions source site ↗</a></div></div>
 </div></header>
 <main><p id="method">{report["question_count"]} open rules · {report["scored_count"]} scored. Scores measure conditional graph coverage, not proof difficulty.</p>
-<details class="method-note" id="calculation"><summary>Method, evidence, and examples</summary><p><a href="calculation.pdf">Calculation PDF ↗</a> · <a href="pilot.html">{pilot_count} exploratory AI examples</a> · <a href="ranking.json">Scores and paths</a></p><p>{report.get("N_distribution", {}).get("1", 0)} questions have N=1. Equal N/B/V values share a rank. Unknown endpoints remain provisional; D½ discounts longer paths without changing the ranking.</p><p><a href="reduction_graph.json">Frozen graph</a> · <a href="questions.json">Question records</a> · <a href="bridges.json">Bridge evidence</a> · <a href="mappings.json">Mappings</a></p></details>
+<details class="method-note" id="calculation"><summary>Method, evidence, and examples</summary><p><a href="calculation.pdf">Calculation PDF ↗</a> · <a href="pilot.html">{pilot_count} exploratory AI examples</a> · <a href="ranking.json">Scores and paths</a></p><p>{report.get("N_distribution", {}).get("1", 0)} questions have N=1. S sums path-discounted gains; N counts new family pairs. U and D count upstream and downstream families before the candidate. Sort: S, then N, B, V; equal tuples share a rank. Unknown endpoints remain provisional.</p><p><a href="reduction_graph.json">Frozen graph</a> · <a href="questions.json">Question records</a> · <a href="bridges.json">Bridge evidence</a> · <a href="mappings.json">Mappings</a></p></details>
 <div class="controls"><label>Search questions<input id="search" type="search" placeholder="ID, source, or target"></label><label>Status<select id="status"><option value="all">All statuses</option><option value="unsolved">Unsolved</option><option value="submitted">Solution submitted</option><option value="lean_checked">Lean checked</option><option value="integrated">Integrated</option></select></label><label>Score availability<select id="availability"><option value="all">All questions</option><option value="true">Scored</option><option value="false">Not scored</option></select></label></div>
-<p id="count" role="status"></p><div class="table-wrap" id="ranking"><table><thead><tr><th>Rank</th><th>ID</th><th>Question and reason</th><th>N / D½ / B / V</th></tr></thead><tbody>{table}</tbody></table></div></main>
+<p id="count" role="status"></p><div class="table-wrap" id="ranking"><table><thead><tr><th>Rank</th><th>ID</th><th>Question and reason</th><th>S / N / U / D</th></tr></thead><tbody>{table}</tbody></table></div></main>
 <script>
 const rows=[...document.querySelectorAll('.question-row')];const search=document.querySelector('#search'),status=document.querySelector('#status'),availability=document.querySelector('#availability');
 function filter(){{let shown=0;for(const row of rows){{const match=row.textContent.toLowerCase().includes(search.value.trim().toLowerCase())&&(status.value==='all'||row.dataset.status===status.value)&&(availability.value==='all'||row.dataset.scored===availability.value);row.hidden=!match;if(match)shown++}}document.querySelector('#count').textContent=shown+' questions visible'}}

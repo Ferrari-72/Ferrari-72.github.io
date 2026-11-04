@@ -18,7 +18,7 @@
 1. `build.py` reads the five frozen JSON files. Mapping and bridge records pin the graph hash; bridge and pilot files also pin the board registry hash. A mismatch fails the build.
 2. `estimate.build_estimate_report` attaches board endpoints to exact mapped variants, provisional unique-name matches, or new isolated nodes. Definition bridges have a stated direction and evidence.
 3. Reachability is computed on concrete variants first. It is projected to problem families only afterward. Turing or non-witness-preserving edges do not enter the one-call path model.
-4. Each hypothetical board rule is added separately. The official report sorts by `N`, `B`, `V`, with equal triples tied. Witness chains and the exploratory `D_half` are reported separately.
+4. Each hypothetical board rule is added separately. The official report sorts by `S`, `N`, `B`, `V`, with equal tuples tied. S is shortest-path-discounted gain; N is unweighted coverage. U/D explain before-graph context, excluding endpoint families.
 5. `pilot.py` holds the family projection fixed within each before/after comparison. Each AI-proposed bridge gets its own baseline; its result is not an official-rank update.
 6. `package_release.py` copies only named deliverables and source files. Its output can be rebuilt without either upstream repository.
 
