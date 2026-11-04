@@ -264,14 +264,14 @@ def render_page(report, pilot_count=5):
                           f'{breakdown["both_sides"]} across both sides.</p>'
                           if breakdown else "")
         relations = (f'<details class="relations"><summary>Changed reachability: {len(changed)} problem pairs</summary>'
-                     f'{variant_detail}<ol>{relation_items}</ol>{more}</details>' if changed else "")
+                     f'<p>{escape(detail)}</p>{importance}{variant_detail}<ol>{relation_items}</ol>{more}</details>' if changed else "")
         rows.append(
             f'<tr class="question-row" data-status="{escape(row["status"])}" '
             f'data-scored="{str(row["N"] is not None).lower()}">'
             f'<td>{escape(row.get("rank", "—"))}</td>'
             f'<td><a href="{BOARD_URL}{escape(row["slug"])}.json">{escape(row["id"])}</a></td>'
             f'<td><b>{escape(row["source"])} → {escape(row["target"])}</b><span class="meta">{escape(row["category"])} · {escape(row["status"])}' 
-            f'</span><span class="detail">{escape(detail)}</span>{importance}{relations}</td>'
+            f'</span>{relations}</td>'
             f'<td>{score}</td></tr>')
     table = "\n".join(rows)
     return f'''<!doctype html>
@@ -279,14 +279,11 @@ def render_page(report, pilot_count=5):
 <title>Reduction question ranking</title>
 <style>
 {STYLE_CSS}
-</style></head><body><header class="site-header"><div class="topbar"><a class="brand" href="#top"><img class="brand-mark" src="lab-mark.svg" alt="Problem-Reductions lab mark"><span>Reduction Impact Atlas</span></a><nav aria-label="Primary"><a href="#ranking" aria-current="page">Full ranking</a><a href="pilot.html">AI examples</a><a href="research.html">Known relations</a><a href="calculation.pdf">Calculation PDF</a></nav></div>
-<div class="hero" id="top"><div><p class="eyebrow">Evidence-backed graph analysis</p><h1>See what a new reduction connects.</h1><p>Conditional structural gain for open reduction questions. Inspect each new relation and the path behind it.</p><div class="hero-links"><a href="calculation.pdf">How are these scores calculated? PDF ↗</a><a href="pilot.html">View {pilot_count} AI bridge examples →</a><a href="research.html">Explore 20 known relations →</a><a href="https://codingthrust.github.io/problem-reductions/" target="_blank" rel="noopener noreferrer">Problem Reductions source site ↗</a></div></div>
+</style></head><body><header class="site-header"><div class="topbar"><a class="brand" href="#top"><img class="brand-mark" src="lab-mark.svg" alt="Problem-Reductions lab mark"><span>Reduction Impact Atlas</span></a><nav aria-label="Primary"><a href="#ranking" aria-current="page">Open rules</a><a href="research.html">Surveyed relations</a></nav></div>
+<div class="hero" id="top"><div><p class="eyebrow">Evidence-backed graph analysis</p><h1>See what a new reduction connects.</h1><p>Conditional structural gain for open reduction questions. Inspect each new relation and the path behind it.</p><div class="hero-links"><a href="calculation.pdf">How are these scores calculated? PDF ↗</a><a href="research.html">Surveyed relations →</a><a href="https://codingthrust.github.io/problem-reductions/" target="_blank" rel="noopener noreferrer">Problem Reductions source site ↗</a></div></div>
 </div></header>
-<main><div class="summary" id="method"><p><strong>{report["question_count"]} questions shown · {report["scored_count"]} estimated · {len(report.get("baseline_bridge_edges", []))} definition bridges · {report.get("reviewed_count", 0)} exact-variant mappings.</strong></p>
-<p>Scores estimate graph reachability if each unverified rule were added. Unknown endpoints start as new nodes; documented baseline bridges connect some of them to graph variants in a stated direction. A unique name match remains provisional. N and B do not measure proof difficulty or overall importance.</p>
-<p>{escape(report.get("N_distribution", {}).get("1", 0))} questions currently have N=1. D½ is an exploratory path-discount value: each additional edge in the shortest witness chain halves that relation's weight. It does not change the official N/B/V ranking. Equal N, B, and V share a rank; IDs only set their display order. Expand a row to see exactly which problem relations become reachable.</p>
-<p>Baseline: {report["graph_nodes"]} variants, {report["graph_edges"]} source edges. The calculation excludes {report.get("excluded_turing_edges", 0)} Turing or non-witness-preserving edges because a candidate requires one-call recovery. SHA-256: <code>{escape(report["graph_sha256"])}</code>. <a href="ranking.json">Results and witnesses</a> · <a href="reduction_graph.json">Graph snapshot</a> · <a href="questions.json">Question snapshot</a> · <a href="bridges.json">Bridge evidence</a> · <a href="mappings.json">Reviewed mappings</a>.</p></div>
-<div class="method-note" id="calculation"><p><strong>Calculation method:</strong> the formulas, assumptions, frozen inputs, and reproduction steps are in the <a href="calculation.pdf">project methodology PDF</a>. The <a href="pilot.html">{pilot_count} AI bridge examples</a> use separate hypothetical baselines and do not change this ranking.</p></div>
+<main><p id="method">{report["question_count"]} open rules · {report["scored_count"]} scored. Scores measure conditional graph coverage, not proof difficulty.</p>
+<details class="method-note" id="calculation"><summary>Method, evidence, and examples</summary><p><a href="calculation.pdf">Calculation PDF ↗</a> · <a href="pilot.html">{pilot_count} exploratory AI examples</a> · <a href="ranking.json">Scores and paths</a></p><p>{report.get("N_distribution", {}).get("1", 0)} questions have N=1. Equal N/B/V values share a rank. Unknown endpoints remain provisional; D½ discounts longer paths without changing the ranking.</p><p><a href="reduction_graph.json">Frozen graph</a> · <a href="questions.json">Question records</a> · <a href="bridges.json">Bridge evidence</a> · <a href="mappings.json">Mappings</a></p></details>
 <div class="controls"><label>Search questions<input id="search" type="search" placeholder="ID, source, or target"></label><label>Status<select id="status"><option value="all">All statuses</option><option value="unsolved">Unsolved</option><option value="submitted">Solution submitted</option><option value="lean_checked">Lean checked</option><option value="integrated">Integrated</option></select></label><label>Score availability<select id="availability"><option value="all">All questions</option><option value="true">Scored</option><option value="false">Not scored</option></select></label></div>
 <p id="count" role="status"></p><div class="table-wrap" id="ranking"><table><thead><tr><th>Rank</th><th>ID</th><th>Question and reason</th><th>N / D½ / B / V</th></tr></thead><tbody>{table}</tbody></table></div></main>
 <script>

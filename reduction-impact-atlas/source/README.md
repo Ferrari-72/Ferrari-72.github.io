@@ -15,7 +15,7 @@ python -m unittest -v test_ranker.py
 python build.py
 ```
 
-`dist/` contains the two pages, JSON evidence, frozen inputs, logo and methodology PDF. To regenerate the PDF, install the declared documentation dependency and run:
+`dist/` contains the three pages, JSON evidence, frozen inputs, logo and methodology PDF. To regenerate the PDF, install the declared documentation dependency and run:
 
 ```powershell
 uv sync --locked --group docs
@@ -44,3 +44,7 @@ The package command refuses to overwrite an existing target. It never edits eith
 ## Interpretation
 
 The official sort key is descending `(N, B, V)`: newly reachable ordered problem-family pairs, fractional new concrete-variant coverage for already reachable family pairs, then all new concrete-variant pairs. `D_half` is a path-length diagnostic, not a sort key. Every question rule is hypothetical. The baseline includes ten documented directional definition bridges; exact-variant mappings have not passed review. Forty-nine questions tie at `(1,0,1)`, mostly because graph coverage is sparse. A topology rank is not a research-priority or proof-difficulty rank.
+
+## Score audit
+
+See [SCORE_AUDIT.md](SCORE_AUDIT.md) for the checked causes of repeated scores. The survey uses one catalogue with an explicit comparison column; different comparison types do not share a global rank.
