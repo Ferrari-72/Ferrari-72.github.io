@@ -6,7 +6,7 @@ used provisionally; an explicitly reviewed mapping takes precedence.
 from collections import Counter
 from fractions import Fraction
 
-from ranker import GRAPH_URL, _name_key, _paths, _score, _validate_graph
+from ranker import GRAPH_URL, _name_key, _paths, _score, _validate_graph, context_counts
 
 
 def prepare_baseline(graph, graph_hash, questions, mappings, bridges=None, registry_hash=None,
@@ -210,6 +210,9 @@ def build_estimate_report(graph, graph_hash, questions, mappings, bridges=None, 
                      "board_importance": q.get("board_importance", ""),
                      "literature_checked": q.get("literature_checked"),
                      "N": N, "B": B, "V": len(witnesses), "reason": reason, "assumptions": assumptions,
+                     "S": float(weighted), "S_fraction": str(weighted),
+                     "S_by_decay": {str(rate):sum(rate ** (int(h)-1)*count for h,count in hop_histogram.items()) for rate in (0.25,0.5,0.75)},
+                     **context_counts(nodes, paths, a, b),
                      "D_half": round(float(weighted), 9), "direct_count": direct_count,
                      "transitive_count": N - direct_count,
                      "variant_gain_breakdown": variant_gain_breakdown,
@@ -217,10 +220,10 @@ def build_estimate_report(graph, graph_hash, questions, mappings, bridges=None, 
                      "mapping_evidence": evidence, "source_node": a, "target_node": b,
                      "new_problem_pairs": pair_rows,
                      "witnesses": witnesses})
-    rows.sort(key=lambda row: (-row["N"], -row["B"], -row["V"], row["id"]))
+    rows.sort(key=lambda row: (-row["S"], -row["N"], -row["B"], -row["V"], row["id"]))
     previous_score = None
     for position, row in enumerate(rows, 1):
-        score = (row["N"], row["B"], row["V"])
+        score = (row["S"], row["N"], row["B"], row["V"])
         if score != previous_score:
             rank = position
             previous_score = score
@@ -235,7 +238,7 @@ def build_estimate_report(graph, graph_hash, questions, mappings, bridges=None, 
             "reviewed_count": sum(row["mapping_evidence"] is not None for row in rows),
             "N_distribution": {str(score): count for score, count in sorted(distribution.items())},
             "distance_discount": {"lambda": 0.5, "unit": "shortest witness-chain edge",
-                                  "role": "diagnostic only; not the official ranking key"},
-            "ranking_rule": "Provisional N descending, then B descending, then V (new variant pairs) descending; ID only sets display order within ties",
+                                  "role": "primary S score; D_half retained as compatibility alias"},
+            "ranking_rule": "Provisional S descending, then N, B, V descending; ID only sets display order within ties",
             "interpretation": "Hypothetical topology estimate under stated endpoint assumptions; not proof validity, literature openness, resource compatibility, or total research value.",
             "questions": rows}

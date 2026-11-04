@@ -27,3 +27,7 @@ Path discounting does not resolve identical neighbourhoods: equal path profiles 
 ## Reproduction
 
 Run `python build.py` then inspect `dist/ranking.json` and `dist/research.json`. Count official (N,B,V) tuples; for tied source and target indices, count incoming and outgoing baseline edges from the survey's exported baseline. Count survey `known_edge.target`, and compare N/V/D_half by group. All results above use the same frozen graph and bridge inputs as the site.
+
+## 2026-11-04 metric update
+
+S = sum(0.5 ** (shortest_path_hops - 1)) over newly reachable family pairs is now primary. N remains an unweighted count. Default order is S, N, B, V within each comparison type. D_half remains a compatibility alias. U/D are distinct before-graph upstream/downstream family counts, excluding the endpoint family; they are not added to S. The historical tuple counts above still describe the frozen coverage calculation, not the current display order. Equal path profiles still tie. JSON includes sensitivity at decay 0.25 and 0.75.

@@ -43,7 +43,7 @@ The package command refuses to overwrite an existing target. It never edits eith
 
 ## Interpretation
 
-The official sort key is descending `(N, B, V)`: newly reachable ordered problem-family pairs, fractional new concrete-variant coverage for already reachable family pairs, then all new concrete-variant pairs. `D_half` is a path-length diagnostic, not a sort key. Every question rule is hypothetical. The baseline includes ten documented directional definition bridges; exact-variant mappings have not passed review. Forty-nine questions tie at `(1,0,1)`, mostly because graph coverage is sparse. A topology rank is not a research-priority or proof-difficulty rank.
+The official sort key is descending `(S, N, B, V)`: newly reachable ordered problem-family pairs, fractional new concrete-variant coverage for already reachable family pairs, then all new concrete-variant pairs. S sums 0.5^(h-1) for newly reachable family pairs; N counts these pairs without weights. `D_half` is a compatibility alias. U/D count distinct before-graph upstream/downstream families. Sensitivity values at decay 0.25 and 0.75 are exported. Every question rule is hypothetical. The baseline includes ten documented directional definition bridges; exact-variant mappings have not passed review. Forty-nine questions tie at `(1,0,1)`, mostly because graph coverage is sparse. A topology rank is not a research-priority or proof-difficulty rank.
 
 ## Score audit
 

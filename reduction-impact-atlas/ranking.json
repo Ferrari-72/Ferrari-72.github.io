@@ -146,11 +146,314 @@
   "distance_discount": {
     "lambda": 0.5,
     "unit": "shortest witness-chain edge",
-    "role": "diagnostic only; not the official ranking key"
+    "role": "primary S score; D_half retained as compatibility alias"
   },
-  "ranking_rule": "Provisional N descending, then B descending, then V (new variant pairs) descending; ID only sets display order within ties",
+  "ranking_rule": "Provisional S descending, then N, B, V descending; ID only sets display order within ties",
   "interpretation": "Hypothetical topology estimate under stated endpoint assumptions; not proof validity, literature openness, resource compatibility, or total research value.",
   "questions": [
+    {
+      "id": "Q062",
+      "slug": "unary-profit-product-knapsack",
+      "source": "Subset Sum",
+      "target": "Product Knapsack with unary profits and binary weights",
+      "category": "Complexity open",
+      "status": "unsolved",
+      "board_importance": "Moderate: hardness would settle a natural encoding boundary in multiplicative knapsack and could transfer to tournament-bribery models through the published Product Knapsack connection, provided their probability restrictions match. It would not alone prove every such bribery variant hard.",
+      "literature_checked": "2026-09-26",
+      "N": 6,
+      "B": 0,
+      "V": 12,
+      "reason": null,
+      "assumptions": "source: name-only match to graph node 248; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 2.4375,
+      "S_fraction": "39/16",
+      "S_by_decay": {
+        "0.25": 1.58203125,
+        "0.5": 2.4375,
+        "0.75": 3.80078125
+      },
+      "upstream_families": 5,
+      "downstream_families": 0,
+      "D_half": 2.4375,
+      "direct_count": 1,
+      "transitive_count": 5,
+      "variant_gain_breakdown": {
+        "direct": 1,
+        "upstream": 11,
+        "downstream": 0,
+        "both_sides": 0
+      },
+      "hop_histogram": {
+        "1": 1,
+        "2": 2,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      },
+      "mapping_evidence": null,
+      "source_node": 248,
+      "target_node": 353,
+      "new_problem_pairs": [
+        {
+          "source": "CircuitSAT",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ],
+          "hops": 4,
+          "discount_weight": 0.125
+        },
+        {
+          "source": "Factoring",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "Factoring",
+            "CircuitSAT",
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ],
+          "hops": 5,
+          "discount_weight": 0.0625
+        },
+        {
+          "source": "KSatisfiability",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ],
+          "hops": 2,
+          "discount_weight": 0.5
+        },
+        {
+          "source": "Partition",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "Partition",
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ],
+          "hops": 2,
+          "discount_weight": 0.5
+        },
+        {
+          "source": "Satisfiability",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "Satisfiability",
+            "KSatisfiability (k=K3)",
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ],
+          "hops": 3,
+          "discount_weight": 0.25
+        },
+        {
+          "source": "SubsetSum",
+          "target": "Product Knapsack with unary profits and binary weights",
+          "witness_nodes": [
+            "SubsetSum",
+            "Product Knapsack with unary profits and binary weights [board]"
+          ],
+          "hops": 1,
+          "discount_weight": 1.0
+        }
+      ],
+      "witnesses": [
+        {
+          "source_node": 15,
+          "target_node": 353,
+          "path": [
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            15,
+            220,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 64,
+          "target_node": 353,
+          "path": [
+            "edge:69",
+            "edge:14",
+            "edge:298",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            64,
+            15,
+            220,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 91,
+          "target_node": 353,
+          "path": [
+            "edge:114",
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            91,
+            93,
+            220,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 92,
+          "target_node": 353,
+          "path": [
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 93,
+          "target_node": 353,
+          "path": [
+            "edge:134",
+            "edge:298",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            93,
+            220,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 194,
+          "target_node": 353,
+          "path": [
+            "edge:265",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            194,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 220,
+          "target_node": 353,
+          "path": [
+            "edge:298",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            220,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 248,
+          "target_node": 353,
+          "path": [
+            "candidate:Q062"
+          ],
+          "node_path": [
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 313,
+          "target_node": 353,
+          "path": [
+            "edge:346",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            313,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 345,
+          "target_node": 353,
+          "path": [
+            "edge:347",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            345,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 347,
+          "target_node": 353,
+          "path": [
+            "edge:348",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            347,
+            92,
+            248,
+            353
+          ]
+        },
+        {
+          "source_node": 356,
+          "target_node": 353,
+          "path": [
+            "edge:349",
+            "edge:132",
+            "candidate:Q062"
+          ],
+          "node_path": [
+            356,
+            92,
+            248,
+            353
+          ]
+        }
+      ],
+      "rank": 1
+    },
     {
       "id": "Q002",
       "slug": "binary-network-common-contraction",
@@ -165,6 +468,15 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 231; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 2.0625,
+      "S_fraction": "33/16",
+      "S_by_decay": {
+        "0.25": 1.34765625,
+        "0.5": 2.0625,
+        "0.75": 3.47265625
+      },
+      "upstream_families": 5,
+      "downstream_families": 0,
       "D_half": 2.0625,
       "direct_count": 1,
       "transitive_count": 5,
@@ -475,7 +787,7 @@
           ]
         }
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "id": "Q009",
@@ -491,6 +803,15 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.96875,
+      "S_fraction": "63/32",
+      "S_by_decay": {
+        "0.25": 1.3330078125,
+        "0.5": 1.96875,
+        "0.75": 3.2880859375
+      },
+      "upstream_families": 5,
+      "downstream_families": 0,
       "D_half": 1.96875,
       "direct_count": 1,
       "transitive_count": 5,
@@ -794,7 +1115,7 @@
           ]
         }
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "id": "Q017",
@@ -810,6 +1131,15 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.96875,
+      "S_fraction": "63/32",
+      "S_by_decay": {
+        "0.25": 1.3330078125,
+        "0.5": 1.96875,
+        "0.75": 3.2880859375
+      },
+      "upstream_families": 5,
+      "downstream_families": 0,
       "D_half": 1.96875,
       "direct_count": 1,
       "transitive_count": 5,
@@ -1113,7 +1443,7 @@
           ]
         }
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "id": "Q026",
@@ -1129,6 +1459,15 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.96875,
+      "S_fraction": "63/32",
+      "S_by_decay": {
+        "0.25": 1.3330078125,
+        "0.5": 1.96875,
+        "0.75": 3.2880859375
+      },
+      "upstream_families": 5,
+      "downstream_families": 0,
       "D_half": 1.96875,
       "direct_count": 1,
       "transitive_count": 5,
@@ -1432,7 +1771,7 @@
           ]
         }
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "id": "Q048",
@@ -1448,6 +1787,15 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: name-only match to graph node 194; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.96875,
+      "S_fraction": "63/32",
+      "S_by_decay": {
+        "0.25": 1.3330078125,
+        "0.5": 1.96875,
+        "0.75": 3.2880859375
+      },
+      "upstream_families": 5,
+      "downstream_families": 0,
       "D_half": 1.96875,
       "direct_count": 1,
       "transitive_count": 5,
@@ -1751,301 +2099,7 @@
           ]
         }
       ],
-      "rank": 1
-    },
-    {
-      "id": "Q062",
-      "slug": "unary-profit-product-knapsack",
-      "source": "Subset Sum",
-      "target": "Product Knapsack with unary profits and binary weights",
-      "category": "Complexity open",
-      "status": "unsolved",
-      "board_importance": "Moderate: hardness would settle a natural encoding boundary in multiplicative knapsack and could transfer to tournament-bribery models through the published Product Knapsack connection, provided their probability restrictions match. It would not alone prove every such bribery variant hard.",
-      "literature_checked": "2026-09-26",
-      "N": 6,
-      "B": 0,
-      "V": 12,
-      "reason": null,
-      "assumptions": "source: name-only match to graph node 248; exact definitions still need review; target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
-      "D_half": 2.4375,
-      "direct_count": 1,
-      "transitive_count": 5,
-      "variant_gain_breakdown": {
-        "direct": 1,
-        "upstream": 11,
-        "downstream": 0,
-        "both_sides": 0
-      },
-      "hop_histogram": {
-        "1": 1,
-        "2": 2,
-        "3": 1,
-        "4": 1,
-        "5": 1
-      },
-      "mapping_evidence": null,
-      "source_node": 248,
-      "target_node": 353,
-      "new_problem_pairs": [
-        {
-          "source": "CircuitSAT",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ],
-          "hops": 4,
-          "discount_weight": 0.125
-        },
-        {
-          "source": "Factoring",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "Factoring",
-            "CircuitSAT",
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ],
-          "hops": 5,
-          "discount_weight": 0.0625
-        },
-        {
-          "source": "KSatisfiability",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ],
-          "hops": 2,
-          "discount_weight": 0.5
-        },
-        {
-          "source": "Partition",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "Partition",
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ],
-          "hops": 2,
-          "discount_weight": 0.5
-        },
-        {
-          "source": "Satisfiability",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "Satisfiability",
-            "KSatisfiability (k=K3)",
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ],
-          "hops": 3,
-          "discount_weight": 0.25
-        },
-        {
-          "source": "SubsetSum",
-          "target": "Product Knapsack with unary profits and binary weights",
-          "witness_nodes": [
-            "SubsetSum",
-            "Product Knapsack with unary profits and binary weights [board]"
-          ],
-          "hops": 1,
-          "discount_weight": 1.0
-        }
-      ],
-      "witnesses": [
-        {
-          "source_node": 15,
-          "target_node": 353,
-          "path": [
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            15,
-            220,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 64,
-          "target_node": 353,
-          "path": [
-            "edge:69",
-            "edge:14",
-            "edge:298",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            64,
-            15,
-            220,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 91,
-          "target_node": 353,
-          "path": [
-            "edge:114",
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            91,
-            93,
-            220,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 92,
-          "target_node": 353,
-          "path": [
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 93,
-          "target_node": 353,
-          "path": [
-            "edge:134",
-            "edge:298",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            93,
-            220,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 194,
-          "target_node": 353,
-          "path": [
-            "edge:265",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            194,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 220,
-          "target_node": 353,
-          "path": [
-            "edge:298",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            220,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 248,
-          "target_node": 353,
-          "path": [
-            "candidate:Q062"
-          ],
-          "node_path": [
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 313,
-          "target_node": 353,
-          "path": [
-            "edge:346",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            313,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 345,
-          "target_node": 353,
-          "path": [
-            "edge:347",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            345,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 347,
-          "target_node": 353,
-          "path": [
-            "edge:348",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            347,
-            92,
-            248,
-            353
-          ]
-        },
-        {
-          "source_node": 356,
-          "target_node": 353,
-          "path": [
-            "edge:349",
-            "edge:132",
-            "candidate:Q062"
-          ],
-          "node_path": [
-            356,
-            92,
-            248,
-            353
-          ]
-        }
-      ],
-      "rank": 1
+      "rank": 3
     },
     {
       "id": "Q042",
@@ -2061,6 +2115,15 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 350 (graph_to_board)",
+      "S": 1.5625,
+      "S_fraction": "25/16",
+      "S_by_decay": {
+        "0.25": 1.09765625,
+        "0.5": 1.5625,
+        "0.75": 2.72265625
+      },
+      "upstream_families": 4,
+      "downstream_families": 0,
       "D_half": 1.5625,
       "direct_count": 1,
       "transitive_count": 4,
@@ -2375,6 +2438,15 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 351 (graph_to_board)",
+      "S": 1.46875,
+      "S_fraction": "47/32",
+      "S_by_decay": {
+        "0.25": 1.0830078125,
+        "0.5": 1.46875,
+        "0.75": 2.5380859375
+      },
+      "upstream_families": 4,
+      "downstream_families": 0,
       "D_half": 1.46875,
       "direct_count": 1,
       "transitive_count": 4,
@@ -2666,7 +2738,7 @@
           ]
         }
       ],
-      "rank": 7
+      "rank": 8
     },
     {
       "id": "Q056",
@@ -2682,6 +2754,15 @@
       "V": 12,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 230; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 352 (graph_to_board)",
+      "S": 1.46875,
+      "S_fraction": "47/32",
+      "S_by_decay": {
+        "0.25": 1.0830078125,
+        "0.5": 1.46875,
+        "0.75": 2.5380859375
+      },
+      "upstream_families": 4,
+      "downstream_families": 0,
       "D_half": 1.46875,
       "direct_count": 1,
       "transitive_count": 4,
@@ -2973,7 +3054,7 @@
           ]
         }
       ],
-      "rank": 7
+      "rank": 8
     },
     {
       "id": "Q054",
@@ -2989,6 +3070,15 @@
       "V": 19,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: name-only match to graph node 214; exact definitions still need review; hypothetical rule and path composition unverified; baseline bridge edge 345 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 3,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -3377,6 +3467,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -3635,6 +3734,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -3893,6 +4001,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -4151,6 +4268,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -4409,6 +4535,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -4667,6 +4802,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -4925,6 +5069,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -5183,6 +5336,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -5441,6 +5603,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -5699,6 +5870,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -5957,6 +6137,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -6215,6 +6404,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -6473,6 +6671,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -6731,6 +6938,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -6989,6 +7205,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -7247,6 +7472,15 @@
       "V": 11,
       "reason": null,
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 344 (graph_to_board)",
+      "S": 1.4375,
+      "S_fraction": "23/16",
+      "S_by_decay": {
+        "0.25": 1.08203125,
+        "0.5": 1.4375,
+        "0.75": 2.30078125
+      },
+      "upstream_families": 3,
+      "downstream_families": 0,
       "D_half": 1.4375,
       "direct_count": 1,
       "transitive_count": 3,
@@ -7505,6 +7739,15 @@
       "V": 2,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 353 (graph_to_board)",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -7574,6 +7817,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -7630,6 +7882,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -7686,6 +7947,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -7742,6 +8012,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -7798,6 +8077,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -7854,6 +8142,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -7910,6 +8207,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -7966,6 +8272,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8022,6 +8337,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8078,6 +8402,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8134,6 +8467,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8190,6 +8532,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8246,6 +8597,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8302,6 +8662,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8358,6 +8727,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8414,6 +8792,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8470,6 +8857,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8526,6 +8922,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8582,6 +8987,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8638,6 +9052,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8694,6 +9117,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8750,6 +9182,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8806,6 +9247,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 346 (board_to_graph)",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8862,6 +9312,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8918,6 +9377,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -8974,6 +9442,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9030,6 +9507,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9086,6 +9572,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9142,6 +9637,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9198,6 +9702,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9254,6 +9767,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9310,6 +9832,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 347 (board_to_graph)",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9366,6 +9897,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (board_to_graph)",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9422,6 +9962,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9478,6 +10027,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9534,6 +10092,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9590,6 +10157,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 349 (board_to_graph)",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9646,6 +10222,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (board_to_graph)",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9702,6 +10287,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified; baseline bridge edge 348 (board_to_graph)",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9758,6 +10352,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9814,6 +10417,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9870,6 +10482,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9926,6 +10547,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -9982,6 +10612,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -10038,6 +10677,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -10094,6 +10742,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -10150,6 +10807,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -10206,6 +10872,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,
@@ -10262,6 +10937,15 @@
       "V": 1,
       "reason": "Only one new problem relation appears under these sparse, provisional connections; this tie does not imply equal research value.",
       "assumptions": "source: new isolated node (absent from graph names); target: new isolated node (absent from graph names); hypothetical rule and path composition unverified",
+      "S": 1.0,
+      "S_fraction": "1",
+      "S_by_decay": {
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0
+      },
+      "upstream_families": 0,
+      "downstream_families": 0,
       "D_half": 1.0,
       "direct_count": 1,
       "transitive_count": 0,

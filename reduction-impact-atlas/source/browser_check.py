@@ -55,6 +55,7 @@ with sync_playwright() as p:
         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), width
     page.goto((ROOT / "dist/research.html").resolve().as_uri())
     expect(page.locator(".research-card")).to_have_count(20)
+    expect(page.locator("thead")).to_contain_text("S / N / U / D")
     assert page.locator("a[href='research-method.pdf']").count() >= 1
     expect(page.locator("table")).to_have_count(1)
     expect(page.locator(".research-card details[open]")).to_have_count(0)
@@ -63,6 +64,9 @@ with sync_playwright() as p:
     for width in (1280, 375):
         page.set_viewport_size({"width": width, "height": 900})
         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), width
+        page.locator(".research-card details").first.evaluate("el => el.open = false")
+        last=page.locator(".research-card td").nth(3).bounding_box()
+        assert last["x"]+last["width"] <= width, "research scores must fit viewport"
         page.evaluate("window.scrollTo(0, 0)")
         page.screenshot(path=str(ROOT / f"dist/research-{width}.png"), full_page=False)
     assert not errors, errors
