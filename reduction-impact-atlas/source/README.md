@@ -48,3 +48,7 @@ The official sort key is descending `(S, N, B, V)`: newly reachable ordered prob
 ## Score audit
 
 See [SCORE_AUDIT.md](SCORE_AUDIT.md) for the checked causes of repeated scores. The survey uses one catalogue with an explicit comparison column; all records now share a descending numerical S/N/B/V order, with comparison types labelled.
+
+## Visual analysis
+
+The survey includes an optional visual analysis panel: S/N bar comparison, exact hop-count contributions to S, and a before/after witness chain. The view uses only embedded report data; it does not infer edges or alter scores. Select a bar or use the record menu. Baseline, known surveyed and hypothetical parent edges are distinguished. See `assets/analysis.js`; the source package includes this view asset.
