@@ -13,7 +13,7 @@ SITE_FILES = (
     "reduction_graph.json", "questions.json", "bridges.json",
     "mappings.json", "pilot_bridges.json", "lab-mark.svg",
     "calculation.pdf",
-    "research.html", "research.json", "research_candidates.json", "research-method.pdf",
+    "analysis.js", "research.html", "research.json", "research_candidates.json", "research-method.pdf",
 )
 SOURCE_FILES = (
     "README.md", "ARCHITECTURE.md", "RESEARCH_WORKFLOW.md", "SCORE_AUDIT.md",
@@ -27,7 +27,7 @@ DATA_FILES = (
     "mappings.json", "pilot_bridges.json",
     "research_candidates.json",
 )
-ASSET_FILES = ("lab-mark.svg", "calculation.pdf", "research-method.pdf")
+ASSET_FILES = ("analysis.js", "lab-mark.svg", "calculation.pdf", "research-method.pdf")
 
 
 def package_release(output=ROOT / "release", build_output=ROOT / "dist"):

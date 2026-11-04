@@ -143,6 +143,7 @@ class RankingTests(unittest.TestCase):
                 shutil.copyfile(ROOT / "data" / name, isolated / "data" / name)
             (isolated / "assets").mkdir()
             shutil.copyfile(ROOT / "assets/lab-mark.svg", isolated / "assets/lab-mark.svg")
+            shutil.copyfile(ROOT / "assets/analysis.js", isolated / "assets/analysis.js")
             shutil.copyfile(ROOT / "assets/calculation.pdf", isolated / "assets/calculation.pdf")
             shutil.copyfile(ROOT / "assets/research-method.pdf", isolated / "assets/research-method.pdf")
             result = subprocess.run([sys.executable, "-E", str(isolated / "build.py")],
@@ -415,6 +416,14 @@ class ResearchTests(unittest.TestCase):
             self.assertEqual(page.count('class="research-card"'),20)
             self.assertIsNone(re.search(r'[\u4e00-\u9fff]',page))
             self.assertIn('research-method.pdf',page)
+            payload=json.loads(re.search(r'<script type="application/json" id="analysis-data">(.*?)</script>',page).group(1))
+            self.assertEqual([r['id'] for r in payload],[r['id'] for r in report['questions']])
+            for r in payload:
+                self.assertEqual(sum(r['hops'].values()),r['N'])
+                self.assertAlmostEqual(sum(0.5**(int(h)-1)*count for h,count in r['hops'].items()),r['S'])
+                if r['path']:
+                    self.assertEqual(len(r['path']['nodes']),len(r['path']['steps'])+1)
+            self.assertTrue((output/'analysis.js').exists())
 
     def test_s_weights_paths_independently_of_n_and_deduplicates_context(self):
         from ranker import context_counts
