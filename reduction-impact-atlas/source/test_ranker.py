@@ -388,6 +388,7 @@ class ResearchTests(unittest.TestCase):
             original = sha256_file(output/"ranking.json")
             report = build_research(output=output)
             self.assertEqual(original, sha256_file(output/"ranking.json"))
+            self.assertEqual(report['questions'],sorted(report['questions'],key=lambda r:(-r['marginal']['S'],-r['marginal']['N'],-r['marginal']['B'],-r['marginal']['V'],r['id'])))
             counts = Counter(r["group"] for r in report["questions"])
             self.assertEqual(counts, {"new-direct":10,"downstream":10})
             self.assertEqual(len({r["id"] for r in report["questions"]}),20)

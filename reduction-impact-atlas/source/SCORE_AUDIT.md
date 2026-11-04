@@ -18,7 +18,7 @@ Path discounting does not resolve identical neighbourhoods: equal path profiles 
 
 ## Display and research decisions
 
-- The survey is one table. A comparison column distinguishes known-edge coverage from open-rule impact in known downstream context. There is no global rank mixing these two quantities.
+- The survey is one table. A comparison column distinguishes known-edge coverage from open-rule impact in known downstream context. The unified numerical order is S/N/B/V; comparison types remain labelled.
 - N is the default visible measure; B, V, D_half, evidence and example paths are inside each expandable row.
 - The next evidence improvement is to find specific, nontrivial known reductions with diverse targets and check their exact variants. Do not invent algorithm goals or arbitrary hypothetical links to fill the list.
 - Add only evidence-backed, directional adapters. Recompute on graph copies. Keep the official snapshot unchanged until review.
@@ -30,4 +30,4 @@ Run `python build.py` then inspect `dist/ranking.json` and `dist/research.json`.
 
 ## 2026-11-04 metric update
 
-S = sum(0.5 ** (shortest_path_hops - 1)) over newly reachable family pairs is now primary. N remains an unweighted count. Default order is S, N, B, V within each comparison type. D_half remains a compatibility alias. U/D are distinct before-graph upstream/downstream family counts, excluding the endpoint family; they are not added to S. The historical tuple counts above still describe the frozen coverage calculation, not the current display order. Equal path profiles still tie. JSON includes sensitivity at decay 0.25 and 0.75.
+S = sum(0.5 ** (shortest_path_hops - 1)) over newly reachable family pairs is now primary. N remains an unweighted count. Default order is S, N, B, V across all survey records. D_half remains a compatibility alias. U/D are distinct before-graph upstream/downstream family counts, excluding the endpoint family; they are not added to S. The historical tuple counts above still describe the frozen coverage calculation, not the current display order. Equal path profiles still tie. JSON includes sensitivity at decay 0.25 and 0.75.

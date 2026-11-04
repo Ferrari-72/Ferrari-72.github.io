@@ -47,4 +47,4 @@ The official sort key is descending `(S, N, B, V)`: newly reachable ordered prob
 
 ## Score audit
 
-See [SCORE_AUDIT.md](SCORE_AUDIT.md) for the checked causes of repeated scores. The survey uses one catalogue with an explicit comparison column; different comparison types do not share a global rank.
+See [SCORE_AUDIT.md](SCORE_AUDIT.md) for the checked causes of repeated scores. The survey uses one catalogue with an explicit comparison column; all records now share a descending numerical S/N/B/V order, with comparison types labelled.

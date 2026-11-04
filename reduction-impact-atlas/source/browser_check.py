@@ -55,6 +55,9 @@ with sync_playwright() as p:
         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), width
     page.goto((ROOT / "dist/research.html").resolve().as_uri())
     expect(page.locator(".research-card")).to_have_count(20)
+    survey=json.loads((ROOT/'dist/research.json').read_text(encoding='utf-8'))
+    assert page.locator('.research-card td:first-child').all_text_contents() == [r['id'] for r in survey['questions']]
+    assert all(a['marginal']['S'] >= b['marginal']['S'] for a,b in zip(survey['questions'],survey['questions'][1:]))
     expect(page.locator("thead")).to_contain_text("S / N / U / D")
     assert page.locator("a[href='research-method.pdf']").count() >= 1
     expect(page.locator("table")).to_have_count(1)
